@@ -9,6 +9,7 @@ const SETTINGS_KEY = 'lingostep:settings';
 export const DEFAULT_SETTINGS = {
   lang: 'en',            // 'en' | 'ar'
   theme: 'system',       // 'light' | 'dark' | 'system'
+  fontScale: 1,           // interface text size: 0.9 - 1.2
   voiceURI: '',          // preferred speechSynthesis voice
   rate: 1,               // speech rate 0.6 - 1.2
   dailyGoal: 20,         // exercises per day
@@ -53,6 +54,7 @@ export function saveSettings(patch = {}) {
   // sanitize
   next.lang = next.lang === 'ar' ? 'ar' : 'en';
   next.theme = ['light', 'dark', 'system'].includes(next.theme) ? next.theme : 'system';
+  next.fontScale = Math.min(1.2, Math.max(0.9, Number(next.fontScale) || 1));
   next.rate = Math.min(1.3, Math.max(0.5, Number(next.rate) || 1));
   next.dailyGoal = Math.min(200, Math.max(5, parseInt(next.dailyGoal, 10) || 20));
   next.userName = String(next.userName ?? '').trim().slice(0, 24);
@@ -72,6 +74,7 @@ export function applyDocumentSettings(settings = getSettings()) {
   html.lang = settings.lang;
   html.dir = settings.lang === 'ar' ? 'rtl' : 'ltr';
   html.setAttribute('data-theme', settings.theme);
+  html.style.fontSize = `${16 * Math.min(1.2, Math.max(0.9, Number(settings.fontScale) || 1))}px`;
 
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.setAttribute('content', settings.theme === 'dark' ? '#0f1626' : '#2e7ce6');
