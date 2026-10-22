@@ -17,12 +17,12 @@ export default {
     "explanationAr": "استخدم Hi وHello وHey للتحية في أي وقت. نقول Good morning قبل الظهر وGood afternoon بعد الظهر وGood evening عند مقابلة شخص في المساء. أما Good night فتقال غالبا عند الوداع ليلا أو قبل النوم. من الردود الشائعة على How are you? عبارة I’m fine, thanks. وللوداع يمكنك استخدام Bye أو Goodbye أو See you later أو Take care.",
     "examples": [
       {
-        "en": "Dialogue 1 — Friends:\\nA: Hey! What’s up?\\nB: Not much. How’s it going?\\nA: Pretty good. I gotta go now. See you later!\\nB: Take care!",
-        "ar": "حوار بين صديقين:\\nأ: أهلا! إيه الأخبار؟\\nب: مفيش جديد. الدنيا ماشية إزاي؟\\nأ: كويس جدا. لازم أمشي دلوقتي. أشوفك بعدين!\\nب: خلي بالك من نفسك!"
+        "en": "Dialogue 1 — Friends:\nA: Hey! What’s up?\nB: Not much. How’s it going?\nA: Pretty good. I gotta go now. See you later!\nB: Take care!",
+        "ar": "حوار بين صديقين:\nأ: أهلا! إيه الأخبار؟\nب: مفيش جديد. الدنيا ماشية إزاي؟\nأ: كويس جدا. لازم أمشي دلوقتي. أشوفك بعدين!\nب: خلي بالك من نفسك!"
       },
       {
-        "en": "Dialogue 2 — First meeting:\\nA: Good morning! Nice to meet you.\\nB: Nice to meet you too.\\nA: Have a good day!\\nB: You too. Bye!",
-        "ar": "حوار عند التعارف لأول مرة:\\nأ: صباح الخير! سعيد بمعرفتك.\\nب: وأنا كمان سعيد بمعرفتك.\\nأ: أتمنى لك يوما سعيدا!\\nب: وأنت كمان. سلام!"
+        "en": "Dialogue 2 — First meeting:\nA: Good morning! Nice to meet you.\nB: Nice to meet you too.\nA: Have a good day!\nB: You too. Bye!",
+        "ar": "حوار عند التعارف لأول مرة:\nأ: صباح الخير! سعيد بمعرفتك.\nب: وأنا كمان سعيد بمعرفتك.\nأ: أتمنى لك يوما سعيدا!\nب: وأنت كمان. سلام!"
       },
       { "en": "Good morning!", "ar": "صباح الخير" },
       { "en": "How are you?", "ar": "إزيك؟" },
