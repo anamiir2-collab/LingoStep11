@@ -36,7 +36,6 @@ let appRoot = null;
 let currentLang = 'en';
 
 const APP_VERSION = '2.0.0';
-const REPO_URL = 'https://github.com/anamiir2-collab/LingoStep11';
 
 /* ============================================================
    Boot
@@ -822,8 +821,16 @@ async function viewMore(view) {
     el('p', { class: 'small muted more-note', text: t(L, 'aboutText') }),
     el('div', { class: 'row-between small more-about-meta' }, [
       el('span', { class: 'chip', text: `${t(L, 'versionLabel')} ${APP_VERSION}` }),
-      el('a', { class: 'small', href: REPO_URL, target: '_blank', rel: 'noopener noreferrer', text: t(L, 'sourceLink') }),
     ]),
+    el('p', { class: 'small more-note', text: t(L, 'designedBy') }),
+    el('a', {
+      class: 'small more-note',
+      href: 'https://wa.me/201066227553',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      text: `${t(L, 'whatsappContact')}: 01066227553`,
+      'aria-label': `${t(L, 'whatsappContact')} 01066227553`,
+    }),
   ]);
 
   view.replaceChildren(
