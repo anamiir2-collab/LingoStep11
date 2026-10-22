@@ -18,6 +18,7 @@ export const ICONS = {
   book: { type: 'svg', src: './assets/icons/icons.svg#book' },
   headphones: { type: 'svg', src: './assets/icons/icons.svg#headphones' },
   play: { type: 'svg', src: './assets/icons/icons.svg#play' },
+  lock: { type: 'svg', src: './assets/icons/icons.svg#lock' },
   check: { type: 'svg', src: './assets/icons/icons.svg#check' },
   leaf: { type: 'svg', src: './assets/icons/icons.svg#leaf' },
   chart: { type: 'svg', src: './assets/icons/icons.svg#chart' },
