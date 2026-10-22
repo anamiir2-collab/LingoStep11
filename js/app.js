@@ -386,14 +386,24 @@ async function viewSection(view, sectionId) {
   const items = el('div', { class: 'lesson-list' });
   list.forEach((entry, i) => {
     const st = states[entry.id];
-    const cls = st?.completed ? 'done' : (st && Object.keys(st.attempted || {}).length ? 'active' : '');
-    items.append(el('a', { class: `lesson-item ${cls}`, href: `#/lesson/${entry.id}` }, [
-      el('span', { class: 'lesson-num' }, st?.completed ? [icon('check')] : [el('span', { text: String(i + 1) })]),
+    // Unlock lessons in order: every earlier lesson in this section must be completed.
+    const locked = list.slice(0, i).some((previous) => !states[previous.id]?.completed);
+    const cls = [st?.completed ? 'done' : (st && Object.keys(st.attempted || {}).length ? 'active' : ''), locked ? 'locked' : ''].filter(Boolean).join(' ');
+    const itemTag = locked ? 'div' : 'a';
+    const itemAttrs = locked
+      ? { class: `lesson-item ${cls}`, 'aria-disabled': 'true', title: L === 'ar' ? 'أكمل الدروس السابقة لفتح هذا الدرس' : 'Complete previous lessons to unlock this lesson' }
+      : { class: `lesson-item ${cls}`, href: `#/lesson/${entry.id}` };
+    items.append(el(itemTag, itemAttrs, [
+      el('span', { class: 'lesson-num' }, locked ? [icon('lock')] : (st?.completed ? [icon('check')] : [el('span', { text: String(i + 1) })])),
       el('div', { class: 'lesson-titles' }, [
         el('div', { class: 't', text: entry.title }),
-        el('div', { class: 's', text: `${entry.titleAr} · ${entry.level} · ${entry.exercises} ${t(L, 'exercises')}` }),
+        el('div', { class: 's', text: locked
+          ? (L === 'ar' ? 'أكمل الدروس السابقة لفتح هذا الدرس' : 'Complete previous lessons to unlock')
+          : `${entry.titleAr} · ${entry.level} · ${entry.exercises} ${t(L, 'exercises')}` }),
       ]),
-      el('span', { class: `chip ${st?.completed ? 'chip-done' : 'chip'}`, text: st?.completed ? t(L, 'markDone') : `${pct(Object.keys(st?.attempted || {}).length, entry.exercises)}%` }),
+      el('span', { class: `chip ${locked ? 'chip-locked' : (st?.completed ? 'chip-done' : 'chip')}`, text: locked
+        ? (L === 'ar' ? 'مقفل' : 'Locked')
+        : (st?.completed ? t(L, 'markDone') : `${pct(Object.keys(st?.attempted || {}).length, entry.exercises)}%`) }),
     ]));
   });
 
@@ -417,7 +427,20 @@ async function viewSection(view, sectionId) {
 
 async function viewLesson(view, lessonId) {
   loading(view);
-  const settings = getSettings();
+  const entry = getManifest().find((lesson) => lesson.id === lessonId);
+  if (entry) {
+    const states = await getAllLessonStates();
+    const sectionLessons = getManifestBySection(entry.section);
+    const entryIndex = sectionLessons.findIndex((lesson) => lesson.id === lessonId);
+    const locked = sectionLessons.slice(0, entryIndex).some((previous) => !states[previous.id]?.completed);
+    if (locked) {
+      toast(currentLang === 'ar'
+        ? 'لازم تخلص الدروس السابقة بالترتيب علشان تفتح الدرس ده'
+        : 'Complete the previous lessons in order to unlock this lesson', 3200);
+      navigate(`section/${entry.section}`);
+      return;
+    }
+  }
   await renderLessonPlayer(view, lessonId, {});
 }
 
