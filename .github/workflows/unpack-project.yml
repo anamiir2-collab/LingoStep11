@@ -26,7 +26,7 @@ jobs:
           mkdir -p /tmp/lingostep-extract
           unzip -q -o LingoStep22-curriculum-v2.zip -d /tmp/lingostep-extract
           test -d /tmp/lingostep-extract/LingoStep22
-          cp -a /tmp/lingostep-extract/LingoStep22/. .
+          rsync -a --exclude='.github/workflows/' /tmp/lingostep-extract/LingoStep22/ ./
           rm -f LingoStep22-curriculum-v2.zip
 
       - name: Commit extracted files
