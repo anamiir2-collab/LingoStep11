@@ -667,6 +667,18 @@ async function viewMore(view) {
     el('option', { value: th, text: t(L, `theme${th[0].toUpperCase()}${th.slice(1)}`), selected: s.theme === th ? '' : null })));
   themeSel.addEventListener('change', () => { saveSettings({ theme: themeSel.value }); applyDocumentSettings(); });
 
+  const fontScaleSel = el('select', { class: 'select-pill', 'aria-label': t(L, 'fontSize') }, [
+    el('option', { value: '0.9', text: t(L, 'fontSmall'), selected: s.fontScale <= 0.9 ? '' : null }),
+    el('option', { value: '1', text: t(L, 'fontNormal'), selected: s.fontScale > 0.9 && s.fontScale < 1.05 ? '' : null }),
+    el('option', { value: '1.1', text: t(L, 'fontLarge'), selected: s.fontScale >= 1.05 && s.fontScale < 1.15 ? '' : null }),
+    el('option', { value: '1.2', text: t(L, 'fontExtraLarge'), selected: s.fontScale >= 1.15 ? '' : null }),
+  ]);
+  fontScaleSel.addEventListener('change', () => {
+    saveSettings({ fontScale: parseFloat(fontScaleSel.value) });
+    applyDocumentSettings();
+    toast(t(L, 'dataSaved'));
+  });
+
   const goalInput = el('input', { type: 'number', min: '5', max: '200', value: String(s.dailyGoal), style: { maxWidth: '110px' }, 'aria-label': t(L, 'dailyGoalSetting') });
   goalInput.addEventListener('change', () => { saveSettings({ dailyGoal: parseInt(goalInput.value, 10) || 20 }); toast(t(L, 'dataSaved')); });
 
@@ -726,7 +738,10 @@ async function viewMore(view) {
   });
 
   const clearBtn = el('button', { class: 'btn btn-danger', onclick: async () => {
-    if (typeof confirm !== 'undefined' && !confirm(t(L, 'clearConfirm'))) return;
+    if (typeof confirm !== 'undefined') {
+      if (!confirm(t(L, 'clearConfirm'))) return;
+      if (!confirm(t(L, 'clearConfirmAgain'))) return;
+    }
     await clearAllProgress();
     toast(t(L, 'dataSaved'));
     setTimeout(() => onChangeRerun(), 500);
@@ -775,59 +790,71 @@ async function viewMore(view) {
     ]),
   ]);
 
+  const prefsContent = el('div', { class: 'more-section-content more-list' }, [
+    moreRow(pngIcon('languagePng'), t(L, 'interfaceLanguage'), langSel),
+    moreRow(icon('theme'), t(L, 'theme'), themeSel),
+    moreRow(icon('type'), t(L, 'fontSize'), fontScaleSel),
+  ]);
+
+  const trainingContent = el('div', { class: 'more-section-content more-list' }, [
+    settingRow(t(L, 'dailyGoalSetting'), null, goalInput),
+    settingRow(t(L, 'showArabic'), null, arabicToggle),
+    settingRow(t(L, 'strictGrading'), null, strictToggle),
+    settingRow(t(L, 'onScreenKeyboard'), null, keyboardToggle),
+    settingRow(t(L, 'soundEffects'), null, soundFxToggle),
+    shortcuts,
+  ]);
+
+  const speechContent = el('div', { class: 'more-section-content more-list' }, [
+    settingRow(t(L, 'voice'), null, voiceSel),
+    settingRow(t(L, 'speechRate'), null, el('div', { class: 'row' }, [rateSel, testVoiceBtn])),
+    el('p', { class: 'small muted more-note', text: t(L, 'speechNote') }),
+  ]);
+
+  const backupContent = el('div', { class: 'more-section-content more-list' }, [
+    settingRow(t(L, 'backupSection'), null, el('div', { class: 'row' }, [exportBtn, importBtn, importInput])),
+    el('p', { class: 'small muted more-note', text: t(L, 'offlineNote') }),
+    el('p', { class: 'small muted more-note', text: t(L, 'importWarn') }),
+    settingRow(t(L, 'offlineSection'), null, offlineBtn),
+  ]);
+
+  const aboutContent = el('div', { class: 'more-section-content more-list' }, [
+    el('p', { class: 'small muted more-note', text: t(L, 'aboutText') }),
+    el('div', { class: 'row-between small more-about-meta' }, [
+      el('span', { class: 'chip', text: `${t(L, 'versionLabel')} ${APP_VERSION}` }),
+      el('a', { class: 'small', href: REPO_URL, target: '_blank', rel: 'noopener noreferrer', text: t(L, 'sourceLink') }),
+    ]),
+  ]);
+
   view.replaceChildren(
     el('div', { class: 'page-head' }, [
       el('h2', { text: t(L, 'moreTitle') }),
       el('p', { text: t(L, 'moreIntro') }),
     ]),
     profileCard,
-    el('h3', { class: 'group-label' }, [iconLabel('theme', t(L, 'moreGroupPrefs'))]),
-    el('div', { class: 'card more-list' }, [
-      moreRow(pngIcon('languagePng'), t(L, 'interfaceLanguage'), langSel),
-      moreRow(icon('theme'), t(L, 'theme'), themeSel),
-    ]),
-    el('h3', { class: 'group-label' }, [iconLabel('bulb', t(L, 'moreGroupLearning'))]),
-    el('div', { class: 'card more-list' }, [
-      settingRow(t(L, 'dailyGoalSetting'), null, goalInput),
-      settingRow(t(L, 'showArabic'), null, arabicToggle),
-      settingRow(t(L, 'strictGrading'), null, strictToggle),
-      settingRow(t(L, 'onScreenKeyboard'), null, keyboardToggle),
-      settingRow(t(L, 'soundEffects'), null, soundFxToggle),
-    ]),
-    shortcuts,
-    el('h3', { class: 'group-label' }, [iconLabel('audio', t(L, 'speechSection'))]),
-    el('div', { class: 'card more-list' }, [
-      settingRow(t(L, 'voice'), null, voiceSel),
-      settingRow(t(L, 'speechRate'), null, el('div', { class: 'row' }, [rateSel, testVoiceBtn])),
-      el('p', { class: 'small muted', style: { margin: '.4rem 0 0' }, text: t(L, 'speechNote') }),
-    ]),
-    el('h3', { class: 'group-label' }, [iconLabel('info', t(L, 'appSection'))]),
-    el('div', { class: 'card more-list' }, [
-      settingRow(t(L, 'offlineSection'), null, offlineBtn),
-      el('p', { class: 'small muted', style: { margin: '0' }, text: t(L, 'offlineNote') }),
-    ]),
-    el('div', { class: 'card more-list' }, [
-      settingRow(t(L, 'backupSection'), null, el('div', { class: 'row' }, [exportBtn, importBtn, importInput])),
-      el('p', { class: 'small muted', style: { margin: '0' }, text: t(L, 'importWarn') }),
-    ]),
-    el('div', { class: 'card about-card' }, [
-      el('h3', { class: 'card-title' }, [iconLabel('sparkle', t(L, 'aboutTitle'))]),
-      el('p', { class: 'small muted', text: t(L, 'aboutText') }),
-      el('div', { class: 'row-between small', style: { marginTop: '.6rem' } }, [
-        el('span', { class: 'chip', text: `${t(L, 'versionLabel')} ${APP_VERSION}` }),
-        el('a', { class: 'small', href: REPO_URL, target: '_blank', rel: 'noopener noreferrer', text: t(L, 'sourceLink') }),
-      ]),
-    ]),
-    el('div', { class: 'card' }, [
-      el('h3', { class: 'card-title' }, [iconLabel('alert', t(L, 'dangerZone'))]),
-      clearBtn,
-    ]),
+    moreSection(t(L, 'moreGroupPrefs'), 'theme', prefsContent, true),
+    moreSection(t(L, 'moreGroupLearning'), 'bulb', trainingContent, true),
+    moreSection(t(L, 'speechSection'), 'audio', speechContent),
+    moreSection(t(L, 'backupSection'), 'package', backupContent),
+    moreSection(t(L, 'aboutTitle'), 'info', aboutContent),
+    moreSection(t(L, 'dangerZone'), 'alert', el('div', { class: 'more-section-content more-danger' }, [clearBtn])),
   );
 }
 
 /* PNG icon helper (existing colored assets under assets/icons) */
 function pngIcon(name) {
   return icon(name);
+}
+
+/* Compact, accessible accordion groups for the More page. */
+function moreSection(label, iconName, content, open = false) {
+  return el('details', { class: 'card more-section', open: open ? true : null }, [
+    el('summary', { class: 'more-section-summary' }, [
+      el('span', { class: 'more-section-heading' }, [icon(iconName), el('span', { text: label })]),
+      icon('arrowRight'),
+    ]),
+    content,
+  ]);
 }
 
 /* More-screen list row: leading icon tile + label + trailing control */
