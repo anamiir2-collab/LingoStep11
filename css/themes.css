@@ -15,17 +15,17 @@
   --surface: #ffffff;
   --surface-2: #eef2f8;
   --surface-blur: rgba(249, 251, 254, .92);
-  --border: #e3e8f1;
-  --border-strong: #d2dbe8;
+  --border: #dde4ef;            /* ← أوضح شوية */
+  --border-strong: #ccd5e4;     /* ← متناسق مع اللي فوق */
   --text: #1f2b3e;
-  --muted: #77839a;
+  --muted: #66718a;             /* ← تباين WCAG AA */
 
   --primary: #2e7ce6;
   --primary-strong: #1d63c4;
   --primary-deep: #173f77;
   --primary-soft: #a9c9f7;
   --primary-tint: #e7f0fd;
-  --focus-ring: #7fb1f4;
+  --focus-ring: #4f93ee;        /* ← focus واضح على الفاتح */
 
   /* pastel family for stat tiles and accents */
   --mint: #e7f0fd;
@@ -67,8 +67,8 @@
   --surface: #18223a;
   --surface-2: #1f2b45;
   --surface-blur: rgba(15, 22, 38, .9);
-  --border: #2b3852;
-  --border-strong: #3a4a6b;
+  --border: #33415c;            /* ← أوضح على الـ surface */
+  --border-strong: #42547a;     /* ← ما يتلخبطش مع الأساسي */
   --text: #e8edf5;
   --muted: #93a0b8;
 
@@ -119,8 +119,8 @@
     --surface: #18223a;
     --surface-2: #1f2b45;
     --surface-blur: rgba(15, 22, 38, .9);
-    --border: #2b3852;
-    --border-strong: #3a4a6b;
+    --border: #33415c;          /* ← نفس تعديل الدارك */
+    --border-strong: #42547a;   /* ← نفس تعديل الدارك */
     --text: #e8edf5;
     --muted: #93a0b8;
 
