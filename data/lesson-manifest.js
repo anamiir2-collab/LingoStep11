@@ -11,7 +11,7 @@ export const lessonManifest = [
     "section": "foundations",
     "level": "A1",
     "path": "lessons/foundations/lesson-001.js",
-    "exercises": 55,
+    "exercises": 15,
     "available": true
   },
   {
