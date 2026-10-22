@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-10-22T05:21:17.489Z",
+  "curriculum": "v2 — 250 lessons / 11 sections",
+  "totalLessons": 250,
+  "totalExercises": 13925,
+  "uniqueSentences": 11279,
+  "rawSentences": 13152,
+  "duplicates": 0,
+  "vocabularyItems": 2996,
+  "uniqueVocabularyWords": 1844,
+  "byLevel": {
+    "A1": 30,
+    "A2": 122,
+    "B1": 80,
+    "B2": 17,
+    "C1": 1
+  },
+  "sections": [
+    {
+      "section": "foundations",
+      "lessons": 20,
+      "exercises": 1115,
+      "vocab": 240
+    },
+    {
+      "section": "daily-life",
+      "lessons": 25,
+      "exercises": 1390,
+      "vocab": 300
+    },
+    {
+      "section": "home-family",
+      "lessons": 25,
+      "exercises": 1390,
+      "vocab": 300
+    },
+    {
+      "section": "food-services",
+      "lessons": 25,
+      "exercises": 1390,
+      "vocab": 300
+    },
+    {
+      "section": "travel",
+      "lessons": 25,
+      "exercises": 1390,
+      "vocab": 300
+    },
+    {
+      "section": "health-emergency",
+      "lessons": 25,
+      "exercises": 1390,
+      "vocab": 300
+    },
+    {
+      "section": "social-communication",
+      "lessons": 25,
+      "exercises": 1390,
+      "vocab": 300
+    },
+    {
+      "section": "work-money",
+      "lessons": 25,
+      "exercises": 1390,
+      "vocab": 299
+    },
+    {
+      "section": "education-digital",
+      "lessons": 25,
+      "exercises": 1390,
+      "vocab": 297
+    },
+    {
+      "section": "complex-rights",
+      "lessons": 20,
+      "exercises": 1115,
+      "vocab": 240
+    },
+    {
+      "section": "specialized",
+      "lessons": 10,
+      "exercises": 575,
+      "vocab": 120
+    }
+  ]
+}

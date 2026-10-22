@@ -1,0 +1,79 @@
+LingoStep — YouType-style dictation upgrade
+============================================
+Commit: "Upgrade dictation to word-grouped letter slots with instant validation"
+
+MODIFIED FILES (13):
+  js/letter-track.js                      (NEW - letter slot surface module)
+  tests/letter-track-tests.js             (NEW - unit tests)
+  js/listening-writing-enhancements.js    (prefix rejection + completion + shared AudioContext + mute)
+  js/lesson-engine.js                     (auto-check on completion + sound-effects toggle button)
+  css/style.css                           (word-grouped slots, gaps, success animations, iOS zoom fix)
+  js/word-cards.js                        (card order: word, meaning, IPA, POS chip)
+  js/app.js                               (soundEffects setting row + onChangeRerun routing fix)
+  js/settings.js                          (soundEffects preference)
+  js/i18n.js                              (EN/AR strings for new UI)
+  js/icon-config.js                       (volumeX icon registration)
+  assets/icons/icons.svg                  (volumeX symbol)
+  sw.js                                   (cache bump v1.3.0 + precache letter-track.js)
+  tests/run-all.js                        (register letter-track suite)
+
+TESTS: node tests/run-all.js  ->  8/8 suites passed
+BROWSER: correct/wrong typing, backspace, full-sentence paste, auto-check,
+         on-screen keyboard, mute toggle, AR/RTL, mobile + desktop, 75-char
+         sentence wrapping -> all verified in Chromium, zero console errors.
+
+HOW TO PUBLISH TO GITHUB PAGES:
+  Option A (full replace): upload the contents of this folder to your repo
+    main branch (replacing existing files), commit, push.
+  Option B (your clone): copy the 13 files above over your working copy,
+    then: git add -A && git commit -m "Upgrade dictation to word-grouped
+    letter slots" && git push origin main
+  Option C (patch file): from the sibling file
+    0001-Upgrade-dictation-to-word-grouped-letter-slots-with-.patch
+    run:  git am 0001-*.patch   (inside your LingoStep clone)
+GitHub Pages will redeploy automatically after the push (~1 minute).
+
+================================================================================
+v2.0.0 — Complete curriculum restructure: 250 lessons / 11 sections
+================================================================================
+
+CURRICULUM (new numbering 1–250, ids lesson-001..lesson-250 = official numbers):
+ 1. Foundations & Core Communication (1–20)   — starts with greetings, NOT letters
+ 2. Simple Daily Life (21–45)
+ 3. Home & Family (46–70)
+ 4. Food, Shopping & Services (71–95)
+ 5. Mobility & Travel (96–120)
+ 6. Health & Emergencies (121–145)
+ 7. Relationships & Social Communication (146–170)
+ 8. Work & Money (171–195)
+ 9. Education & Digital Skills (196–220)
+10. Complex Situations & Rights (221–240)
+11. Specialized English & Leadership (241–250)
+
+KEY CHANGES:
+- The course now opens with Greetings and Goodbyes / Introducing Yourself.
+  Letters, vowel/consonant sounds and numbers are no longer standalone opening
+  lessons: sounds are folded into lesson 19 (Listening and Pronunciation
+  Practice), spelling into lesson 27, and numbers/age into lesson 6.
+- All 250 lessons rebuilt on the v2 content compiler
+  (scripts/content/v2/): per-lesson authored scenarios + grammar-aware
+  pattern expansion, global cross-lesson sentence uniqueness, deterministic
+  exercise interleave (55 exercises/lesson, 70 per section review, 80 for
+  the capstone).
+- 10 section reviews (20, 45, 70, 95, 120, 145, 170, 195, 220, 240) +
+  final capstone (250) recycle earlier vocabulary in new sentences.
+- App integration updated: 11 section icons/names (en/ar), dashboard,
+  lesson-engine section labels, i18n strings, SW cache version v2.0.0,
+  PWA manifest descriptions, validators and tests re-targeted to 250.
+
+VERIFIED NUMBERS (scripts/content-report.json):
+  lessons: 250   exercises: 13,925
+  raw practice sentences: 13,152   unique: 11,279   cross-lesson duplicates: 0
+  vocabulary items: 2,996 (1,844 unique words)
+  levels: A1 30 · A2 122 · B1 80 · B2 17 · C1 1 (lesson 250)
+
+TESTS: node tests/run-all.js → 8/8 suites passed
+       node scripts/validate-project.js → PASSED (incl. validate-lessons +
+       detect-duplicates; no exact duplicates across 10,595 dictation lines)
+       Browser smoke test: dashboard/sections/lesson-001/lesson-250, answer
+       flow, XP advance, Arabic RTL interface — all verified.

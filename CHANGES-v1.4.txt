@@ -1,0 +1,138 @@
+LingoStep — v1.4.0 "Polish, Brand & Installable App" upgrade
+=============================================================
+Commit theme: "Content corrections, blue brand design, More hub,
+5-item bottom nav, real logo everywhere, PWA install readiness"
+
+CONTENT CORRECTIONS (the original data source was fixed, not the UI)
+--------------------------------------------------------------------
+- lessons/basics/lesson-002.js — 30 exercises ("Subject Pronouns",
+  listen-and-type) had Arabic adjectives inside the ENGLISH sentence
+  and acceptedAnswers fields. Examples of what was fixed:
+      "I am متعب."   → "I am tired."
+      "She is سعيدة." → "She is happy."
+      "They are سعداء." → "They are happy."   (60 string fixes total:
+      30 en + 30 acceptedAnswers). Arabic adjectives are invariant in
+      English: She is tired. / They are tired.
+  The `ar` fields (أنا متعب. / هي متعبة.) are intentional Arabic
+  translations and were left untouched, as were Arabic `hint` fields
+  elsewhere (they render with dir:auto as learning aids).
+- scripts/content/gen-basics.js — ROOT CAUSE fixed: the "{S} {be} {ADJ}."
+  pattern filled the `en` slot with ADJ_G[a].m (Arabic masculine form).
+  Now `en: a` (the English adjective). Any future regeneration keeps
+  the course pure English.
+- Verified with scripts/validate-lessons.js (PASSED, 123 lessons ↔
+  123 manifest entries) and the full test suite (8/8).
+- .github/workflows/deploy.yml trigger checked — it correctly fires on
+  `branches: [main]` (no change needed).
+
+BRAND & LOGO (no more placeholder "L")
+--------------------------------------
+- index.html — boot splash now shows the official LingoStep logo
+  (icons/icon-192.png) instead of a text "L" badge. Favicon now uses
+  the dedicated 64px logo file. Added PWA/iOS meta: mobile-web-app-capable,
+  apple-mobile-web-app-capable, apple-mobile-web-app-status-bar-style,
+  apple-mobile-web-app-title, application-name.
+- js/app.js — header brand badge is now the real logo image (38px,
+  rounded, object-fit contain). The header language/theme/avatar
+  buttons were REMOVED (moved under More, see below).
+- scripts/make-icons.py — rewritten: it used to DRAW a placeholder
+  green "L" icon. It now derives every size (192/512, maskable,
+  favicon-64) from the official 512px logo, preserving proportions
+  and transparency. Maskable icons put the artwork inside the 80%
+  safe zone on a brand-blue background.
+- manifest.json — added `id: "/LingoStep/"`, `display_override`,
+  background/theme colors now match the blue brand (#f4f7fb / #2e7ce6).
+- sw.js — VERSION bumped v1.3.0 → v1.4.0 (clean cache replacement).
+
+NAVIGATION & MORE HUB (inspired by SHIFTPRO22's organization)
+-------------------------------------------------------------
+- Bottom navigation is now 5 items: Home · Sections · Vocabulary ·
+  Progress · More (css/responsive.css grid-template-columns 4→5,
+  active pill, safe-area insets, RTL mirroring all preserved).
+- Desktop header nav: Home · Sections · Vocabulary · Progress ·
+  Revision · More. The mobile "More" screen exposes everything else.
+- NEW route #/more — organized hub with real, working controls:
+    · Profile card → #/profile
+    · Preferences — Interface language (select) + Appearance (select)
+    · Learning — daily goal, show Arabic, strict grading, on-screen
+      keyboard, typing sound effects
+    · Revision / Progress shortcut cards (existing colored PNG assets
+      assets/icons/review.png + stats.png)
+    · Speech — voice, speed, test button
+    · Application — offline download, backup & restore,
+      About LingoStep (version 1.4.0 + source link), danger zone
+- NEW route #/profile — avatar (initial or icon), display-name editor
+  with LIVE greeting preview, and real stats (lessons, sentences,
+  accuracy, streak, XP — nothing fabricated).
+- Language and Appearance removed from the top-level header; language
+  switch keeps the full re-render + RTL/LTR flip and persists.
+- #/settings still works and redirects to #/more (bookmarks safe).
+- assets/icons/icons.svg — added `more` (three dots) and `info`
+  symbols; registered in js/icon-config.js. Existing colored PNG
+  assets are now actually used (language.png in Preferences row;
+  review.png/stats.png as shortcut cards). theme.png turned out to
+  be an ice-cream graphic, so the theme row uses the appropriate SVG
+  sprite symbol instead; the PNG stays on disk untouched.
+
+HOME SCREEN
+-----------
+- Main heading is now the personalized greeting:
+    EN: "Welcome, {name}, to LingoStep!"  (no name → "Welcome to
+    LingoStep!" — never "undefined"/"null"/empty)
+    AR: "أهلًا {name} بك في LingoStep!" (no name → "أهلًا بك في
+    LingoStep!")
+  The time-based greeting (Good morning/night…) became the kicker chip.
+- NEW "Your learning paths" strip: horizontally scrollable cards for
+  all 7 sections with REAL per-section progress + "View all".
+- Existing hero plan, stat tiles, first-visit encouragement, daily
+  goal and quick revision cards all kept (real data only).
+
+DESIGN SYSTEM (SHIFTPRO22-inspired, LingoStep-blue)
+---------------------------------------------------
+- css/themes.css — full token refresh, light + dark + system:
+  neutral blue-gray surfaces (light bg #f4f7fb / dark #0f1626,
+  cards #fff / #18223a), brand-blue primary #2e7ce6, matching focus
+  rings, gradients and shadows; success/warn/danger semantics kept.
+- Hero, kicker, stat tiles, header gradient now follow the blue
+  identity of the official logo.
+- style.css — brand badge/boot logo image styles; new components:
+  group labels, More rows with icon tiles, pill selects, profile
+  card/avatar, shortcut cards, about card, home path cards; profile
+  name/text stacking fixes.
+- README/CHANGES wording updated to the new More locations.
+
+PWA / INSTALL
+-------------
+- Already-present service worker kept (precached shell + runtime
+  lesson cache, stale-while-revalidate, offline navigation fallback);
+  version bumped. Manifest gains id + display_override. iOS meta tags
+  added. README gains "Install LingoStep on an Android phone" steps.
+- docs/ANDROID-APK.md — optional Capacitor build guide (config file
+  capacitor.config.json included). No APK has been built or tested
+  from this working copy; the doc says so explicitly.
+
+FILES
+-----
+MODIFIED: index.html, manifest.json, sw.js, README.md,
+  lessons/basics/lesson-002.js, scripts/content/gen-basics.js,
+  scripts/make-icons.py, js/app.js, js/router.js, js/i18n.js,
+  js/icon-config.js, js/settings.js, assets/icons/icons.svg,
+  css/themes.css, css/style.css, css/responsive.css
+NEW: docs/ANDROID-APK.md, capacitor.config.json
+REMOVED: nothing (no files deleted).
+
+TESTS / QA
+----------
+- node scripts/validate-project.js → PASSED (structure, PWA sanity,
+  secrets, 123 lessons, duplicate scan)
+- node tests/run-all.js → 8/8 suites passed
+- Content audit across all 123 lessons / 6,825 exercises: zero
+  Arabic characters left in any English-only field (en,
+  acceptedAnswers, display, blankWord, words, question, options,
+  vocabulary.word/.example, grammar.examples[].en).
+- Browser (Chromium, 390×844 + 1280×800): home EN/AR greeting,
+  More hub groups, profile name→greeting update, lesson-002
+  "I am tired." typed → Correct! +10 XP, lesson player, sections,
+  legacy #/settings redirect, manifest + active service worker,
+  offline reload of a cached lesson, dark theme — all verified with
+  zero console/page errors.
