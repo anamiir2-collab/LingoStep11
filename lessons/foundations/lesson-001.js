@@ -142,7 +142,6 @@ export default {
       "ar": "مرحبا! كيف حالك؟",
       "acceptedAnswers": [
         "Hello",
-        "Hello",
         "hello"
       ],
       "grammarTags": [
@@ -262,8 +261,7 @@ export default {
       "ar": "صباح الخير يا معلم.",
       "acceptedAnswers": [
         "morning",
-        "Morning",
-        "morning"
+        "Morning"
       ],
       "grammarTags": [
         "greetings"
@@ -371,8 +369,7 @@ export default {
       "ar": "إلى اللقاء، أراك غدا.",
       "acceptedAnswers": [
         "tomorrow",
-        "Tomorrow",
-        "tomorrow"
+        "Tomorrow"
       ],
       "grammarTags": [
         "greetings"
@@ -432,55 +429,71 @@ export default {
     },
     {
       "id": "lesson-001-ex-024",
-      "type": "listen-and-type",
-      "en": "Good morning, Omar.",
-      "ar": "صباح الخير يا عمر.",
-      "acceptedAnswers": [
-        "Good morning, Omar."
+      "type": "multiple-choice",
+      "question": "It is 8 AM. Which greeting is correct?",
+      "options": [
+        "Good night",
+        "Good morning",
+        "Good evening",
+        "Goodbye"
       ],
+      "answerIndex": 1,
+      "ar": "الساعة 8 صباحا. أي تحية صحيحة؟",
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-025",
-      "type": "listen-and-type",
-      "en": "Good morning, Sara.",
-      "ar": "صباح الخير يا سارة.",
-      "acceptedAnswers": [
-        "Good morning, Sara."
+      "type": "multiple-choice",
+      "question": "It is 3 PM. Which greeting is correct?",
+      "options": [
+        "Good morning",
+        "Good night",
+        "Good afternoon",
+        "Goodbye"
       ],
+      "answerIndex": 2,
+      "ar": "الساعة 3 بعد الظهر. أي تحية صحيحة؟",
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-026",
-      "type": "listen-and-type",
-      "en": "Good morning, Lina.",
-      "ar": "صباح الخير يا لينا.",
-      "acceptedAnswers": [
-        "Good morning, Lina."
+      "type": "multiple-choice",
+      "question": "It is 9 PM. You meet a friend. What do you say?",
+      "options": [
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Goodbye"
       ],
+      "answerIndex": 2,
+      "ar": "الساعة 9 مساء. قابلت صديقا. ماذا تقول؟",
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-027",
-      "type": "listen-and-type",
-      "en": "Good morning, Khalid.",
-      "ar": "صباح الخير يا خالد.",
+      "type": "fill-blank",
+      "display": "Good ___, everyone.",
+      "blankWord": "evening",
+      "en": "Good evening, everyone.",
+      "ar": "مساء الخير يا جميع.",
       "acceptedAnswers": [
-        "Good morning, Khalid."
+        "evening",
+        "Evening"
       ],
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2,
+      "hint": "تحية بعد الغروب"
     },
     {
       "id": "lesson-001-ex-028",
@@ -491,8 +504,7 @@ export default {
       "ar": "سررت بلقائك يا سارة.",
       "acceptedAnswers": [
         "meet",
-        "Meet",
-        "meet"
+        "Meet"
       ],
       "grammarTags": [
         "greetings"
@@ -501,57 +513,68 @@ export default {
     },
     {
       "id": "lesson-001-ex-029",
-      "type": "listen-and-type",
-      "en": "Good morning, Youssef.",
-      "ar": "صباح الخير يا يوسف.",
-      "acceptedAnswers": [
-        "Good morning, Youssef."
-      ],
-      "grammarTags": [
-        "greetings"
-      ],
-      "difficulty": 1
-    },
-    {
-      "id": "lesson-001-ex-030",
-      "type": "listen-and-type",
-      "en": "Good afternoon, Omar.",
-      "ar": "مساء الخير يا عمر.",
-      "acceptedAnswers": [
-        "Good afternoon, Omar."
-      ],
-      "grammarTags": [
-        "greetings"
-      ],
-      "difficulty": 1
-    },
-    {
-      "id": "lesson-001-ex-031",
-      "type": "listen-and-type",
-      "en": "Good afternoon, Sara.",
-      "ar": "مساء الخير يا سارة.",
-      "acceptedAnswers": [
-        "Good afternoon, Sara."
-      ],
-      "grammarTags": [
-        "greetings"
-      ],
-      "difficulty": 1
-    },
-    {
-      "id": "lesson-001-ex-032",
       "type": "word-order",
-      "en": "Good morning, my teacher.",
-      "ar": "صباح الخير يا معلمي.",
+      "en": "Good evening, my friend.",
+      "ar": "مساء الخير يا صديقي.",
       "words": [
-        "morning,",
+        "evening,",
         "my",
-        "teacher",
+        "friend",
         "Good"
       ],
       "acceptedAnswers": [
-        "Good morning, my teacher.",
-        "Good morning, my teacher"
+        "Good evening, my friend.",
+        "Good evening, my friend"
+      ],
+      "grammarTags": [
+        "greetings"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-001-ex-030",
+      "type": "multiple-choice",
+      "question": "Which word completes the sentence: \"Good ___, teacher\" (in the morning)?",
+      "options": [
+        "night",
+        "morning",
+        "bye",
+        "later"
+      ],
+      "answerIndex": 1,
+      "ar": "أي كلمة تكمل الجملة: Good ___ يا معلم (في الصباح)؟",
+      "grammarTags": [
+        "greetings"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-001-ex-031",
+      "type": "multiple-choice",
+      "question": "What do you say when you go to bed?",
+      "options": [
+        "Good morning",
+        "Good afternoon",
+        "Good night",
+        "Goodbye"
+      ],
+      "answerIndex": 2,
+      "ar": "ماذا تقول عندما تذهب للنوم؟",
+      "grammarTags": [
+        "greetings"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-001-ex-032",
+      "type": "fill-blank",
+      "display": "Good morning, ___.",
+      "blankWord": "teacher",
+      "en": "Good morning, teacher.",
+      "ar": "صباح الخير يا معلم.",
+      "acceptedAnswers": [
+        "teacher",
+        "Teacher"
       ],
       "grammarTags": [
         "greetings"
@@ -561,10 +584,10 @@ export default {
     {
       "id": "lesson-001-ex-033",
       "type": "listen-and-type",
-      "en": "Good afternoon, Lina.",
-      "ar": "مساء الخير يا لينا.",
+      "en": "Good afternoon, everyone.",
+      "ar": "مساء الخير يا جميع.",
       "acceptedAnswers": [
-        "Good afternoon, Lina."
+        "Good afternoon, everyone."
       ],
       "grammarTags": [
         "greetings"
@@ -573,29 +596,40 @@ export default {
     },
     {
       "id": "lesson-001-ex-034",
-      "type": "listen-and-type",
-      "en": "Good afternoon, Khalid.",
-      "ar": "مساء الخير يا خالد.",
-      "acceptedAnswers": [
-        "Good afternoon, Khalid."
+      "type": "multiple-choice",
+      "question": "When do you say \"Good afternoon\"?",
+      "options": [
+        "In the morning",
+        "After noon",
+        "At night",
+        "Before bed"
       ],
+      "answerIndex": 1,
+      "ar": "متى تقول Good afternoon؟",
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-035",
-      "type": "listen-and-type",
-      "en": "Good afternoon, Youssef.",
-      "ar": "مساء الخير يا يوسف.",
+      "type": "word-order",
+      "en": "How are you today?",
+      "ar": "كيف حالك اليوم؟",
+      "words": [
+        "are",
+        "you",
+        "today?",
+        "How"
+      ],
       "acceptedAnswers": [
-        "Good afternoon, Youssef."
+        "How are you today?",
+        "How are you today"
       ],
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-036",
@@ -606,8 +640,7 @@ export default {
       "ar": "أنا بخير، شكرا لك.",
       "acceptedAnswers": [
         "fine",
-        "Fine",
-        "fine"
+        "Fine"
       ],
       "grammarTags": [
         "greetings"
@@ -635,10 +668,10 @@ export default {
     {
       "id": "lesson-001-ex-038",
       "type": "listen-and-type",
-      "en": "Good evening, Omar.",
-      "ar": "مساء الخير يا عمر.",
+      "en": "Nice to see you again.",
+      "ar": "سعيد برؤيتك مرة أخرى.",
       "acceptedAnswers": [
-        "Good evening, Omar."
+        "Nice to see you again."
       ],
       "grammarTags": [
         "greetings"
@@ -647,76 +680,92 @@ export default {
     },
     {
       "id": "lesson-001-ex-039",
-      "type": "listen-and-type",
-      "en": "Good evening, Sara.",
-      "ar": "مساء الخير يا سارة.",
-      "acceptedAnswers": [
-        "Good evening, Sara."
+      "type": "multiple-choice",
+      "question": "Your friend asks \"How are you?\" What do you say?",
+      "options": [
+        "Good night.",
+        "I am fine, thanks. And you?",
+        "My name is Omar.",
+        "Welcome."
       ],
+      "answerIndex": 1,
+      "ar": "سألك صديقك How are you؟ ماذا تقول؟",
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-040",
-      "type": "listen-and-type",
-      "en": "Good evening, Lina.",
-      "ar": "مساء الخير يا لينا.",
+      "type": "fill-blank",
+      "display": "How are ___?",
+      "blankWord": "you",
+      "en": "How are you?",
+      "ar": "كيف حالك؟",
       "acceptedAnswers": [
-        "Good evening, Lina."
-      ],
-      "grammarTags": [
-        "greetings"
-      ],
-      "difficulty": 1
-    },
-    {
-      "id": "lesson-001-ex-041",
-      "type": "listen-and-type",
-      "en": "Good evening, Khalid.",
-      "ar": "مساء الخير يا خالد.",
-      "acceptedAnswers": [
-        "Good evening, Khalid."
-      ],
-      "grammarTags": [
-        "greetings"
-      ],
-      "difficulty": 1
-    },
-    {
-      "id": "lesson-001-ex-042",
-      "type": "listen-and-type",
-      "en": "Good evening, Youssef.",
-      "ar": "مساء الخير يا يوسف.",
-      "acceptedAnswers": [
-        "Good evening, Youssef."
-      ],
-      "grammarTags": [
-        "greetings"
-      ],
-      "difficulty": 1
-    },
-    {
-      "id": "lesson-001-ex-043",
-      "type": "word-order",
-      "en": "See you later, my friend.",
-      "ar": "أراك لاحقا يا صديقي.",
-      "words": [
         "you",
-        "later,",
-        "my",
-        "friend",
-        "See"
-      ],
-      "acceptedAnswers": [
-        "See you later, my friend.",
-        "See you later, my friend"
+        "You"
       ],
       "grammarTags": [
         "greetings"
       ],
       "difficulty": 2
+    },
+    {
+      "id": "lesson-001-ex-041",
+      "type": "word-order",
+      "en": "Good night, sleep well.",
+      "ar": "تصبح على خير، نم جيدا.",
+      "words": [
+        "night,",
+        "sleep",
+        "well.",
+        "Good"
+      ],
+      "acceptedAnswers": [
+        "Good night, sleep well.",
+        "Good night, sleep well"
+      ],
+      "grammarTags": [
+        "greetings"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-001-ex-042",
+      "type": "multiple-choice",
+      "question": "Which reply is correct: \"Nice to meet you\" — ___",
+      "options": [
+        "Nice to meet you too.",
+        "Good night.",
+        "See you later.",
+        "Welcome."
+      ],
+      "answerIndex": 0,
+      "ar": "أي رد صحيح: Nice to meet you — ؟",
+      "grammarTags": [
+        "greetings"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-001-ex-043",
+      "type": "word-order",
+      "en": "See you soon.",
+      "ar": "أراك قريبا.",
+      "words": [
+        "you",
+        "soon.",
+        "See"
+      ],
+      "acceptedAnswers": [
+        "See you soon.",
+        "See you soon"
+      ],
+      "grammarTags": [
+        "greetings"
+      ],
+      "difficulty": 1
     },
     {
       "id": "lesson-001-ex-044",
@@ -726,7 +775,6 @@ export default {
       "en": "Welcome to our school.",
       "ar": "أهلا بك في مدرستنا.",
       "acceptedAnswers": [
-        "Welcome",
         "Welcome",
         "welcome"
       ],
@@ -738,10 +786,10 @@ export default {
     {
       "id": "lesson-001-ex-045",
       "type": "listen-and-type",
-      "en": "Hello, Omar.",
-      "ar": "مرحبا يا عمر.",
+      "en": "I have to go now.",
+      "ar": "يجب أن أذهب الآن.",
       "acceptedAnswers": [
-        "Hello, Omar."
+        "I have to go now."
       ],
       "grammarTags": [
         "greetings"
@@ -750,24 +798,28 @@ export default {
     },
     {
       "id": "lesson-001-ex-046",
-      "type": "listen-and-type",
-      "en": "Hello, Sara.",
-      "ar": "مرحبا يا سارة.",
-      "acceptedAnswers": [
-        "Hello, Sara."
+      "type": "multiple-choice",
+      "question": "What do you say when you leave a friend?",
+      "options": [
+        "Good morning",
+        "See you later",
+        "How are you?",
+        "Nice to meet you"
       ],
+      "answerIndex": 1,
+      "ar": "ماذا تقول عندما تترك صديقا؟",
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-047",
       "type": "listen-and-type",
-      "en": "Hello, Lina.",
-      "ar": "مرحبا يا لينا.",
+      "en": "Have a good day!",
+      "ar": "أتمنى لك يوما سعيدا!",
       "acceptedAnswers": [
-        "Hello, Lina."
+        "Have a good day!"
       ],
       "grammarTags": [
         "greetings"
@@ -776,102 +828,123 @@ export default {
     },
     {
       "id": "lesson-001-ex-048",
-      "type": "listen-and-type",
-      "en": "Hello, Khalid.",
-      "ar": "مرحبا يا خالد.",
+      "type": "fill-blank",
+      "display": "See you ___, friend.",
+      "blankWord": "tomorrow",
+      "en": "See you tomorrow, friend.",
+      "ar": "أراك غدا يا صديقي.",
       "acceptedAnswers": [
-        "Hello, Khalid."
+        "tomorrow",
+        "Tomorrow"
       ],
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-049",
-      "type": "listen-and-type",
-      "en": "Hello, Youssef.",
-      "ar": "مرحبا يا يوسف.",
+      "type": "word-order",
+      "en": "Let us meet tomorrow.",
+      "ar": "لنتقابل غدا.",
+      "words": [
+        "us",
+        "meet",
+        "tomorrow.",
+        "Let"
+      ],
       "acceptedAnswers": [
-        "Hello, Youssef."
+        "Let us meet tomorrow.",
+        "Let us meet tomorrow"
       ],
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-050",
       "type": "listen-and-type",
-      "en": "Hi, Omar.",
-      "ar": "أهلا يا عمر.",
+      "en": "How do you do?",
+      "ar": "كيف حالك؟ (تحية رسمية)",
       "acceptedAnswers": [
-        "Hi, Omar."
+        "How do you do?"
       ],
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-051",
-      "type": "listen-and-type",
-      "en": "Hi, Sara.",
-      "ar": "أهلا يا سارة.",
-      "acceptedAnswers": [
-        "Hi, Sara."
+      "type": "multiple-choice",
+      "question": "Which is a formal greeting?",
+      "options": [
+        "Hey!",
+        "How do you do?",
+        "Bye!",
+        "What's up?"
       ],
+      "answerIndex": 1,
+      "ar": "أي تحية رسمية؟",
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-052",
-      "type": "listen-and-type",
-      "en": "Hi, Lina.",
-      "ar": "أهلا يا لينا.",
+      "type": "fill-blank",
+      "display": "Take ___! See you later.",
+      "blankWord": "care",
+      "en": "Take care! See you later.",
+      "ar": "اعتنِ بنفسك! أراك لاحقا.",
       "acceptedAnswers": [
-        "Hi, Lina."
+        "care",
+        "Care"
       ],
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-053",
       "type": "listen-and-type",
-      "en": "Hi, Khalid.",
-      "ar": "أهلا يا خالد.",
+      "en": "Bye! Have a nice day!",
+      "ar": "إلى اللقاء! أتمنى لك يوما سعيدا!",
       "acceptedAnswers": [
-        "Hi, Khalid."
+        "Bye! Have a nice day!"
       ],
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-054",
-      "type": "listen-and-type",
-      "en": "Hi, Youssef.",
-      "ar": "أهلا يا يوسف.",
-      "acceptedAnswers": [
-        "Hi, Youssef."
+      "type": "multiple-choice",
+      "question": "What is the best reply to \"Have a nice day!\"?",
+      "options": [
+        "Good night.",
+        "You too!",
+        "How are you?",
+        "My name is Omar."
       ],
+      "answerIndex": 1,
+      "ar": "ما أفضل رد على Have a nice day!؟",
       "grammarTags": [
         "greetings"
       ],
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": "lesson-001-ex-055",
       "type": "listen-and-type",
-      "en": "Goodbye, Omar.",
-      "ar": "إلى اللقاء يا عمر.",
+      "en": "Goodbye, see you soon!",
+      "ar": "إلى اللقاء، أراك قريبا!",
       "acceptedAnswers": [
-        "Goodbye, Omar."
+        "Goodbye, see you soon!"
       ],
       "grammarTags": [
         "greetings"
