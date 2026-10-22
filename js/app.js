@@ -36,7 +36,7 @@ let appRoot = null;
 let currentLang = 'en';
 
 const APP_VERSION = '2.0.0';
-const REPO_URL = 'https://github.com/anamiir2-collab/LingoStep22';
+const REPO_URL = 'https://github.com/anamiir2-collab/LingoStep11';
 
 /* ============================================================
    Boot
