@@ -1,4 +1,4 @@
-name: Extract LingoStep project archive
+name: Extract LingoStep project archive # automated extraction
 
 on:
   push:
