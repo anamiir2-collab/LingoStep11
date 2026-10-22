@@ -1623,3 +1623,73 @@ kbd {
 .profile-card .grow { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
 .profile-card .grow strong { font-size: 1.02rem; }
 .profile-card .grow .muted { font-size: .82rem; }
+
+
+/* ---------- More page: calm, accessible accordion layout ---------- */
+.more-section {
+  padding: 0;
+  margin-top: .8rem;
+  overflow: clip;
+}
+.more-section > summary { list-style: none; }
+.more-section > summary::-webkit-details-marker { display: none; }
+.more-section-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .85rem;
+  min-height: 62px;
+  padding: .9rem 1.1rem;
+  cursor: pointer;
+  user-select: none;
+}
+.more-section-summary:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: -3px;
+  border-radius: var(--radius-lg);
+}
+.more-section-heading {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  min-width: 0;
+  font-weight: 800;
+  font-size: .98rem;
+}
+.more-section-heading > .ui-icon {
+  width: 21px;
+  height: 21px;
+  color: var(--primary-strong);
+  flex: 0 0 auto;
+}
+.more-section-summary > .ui-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+  flex: 0 0 auto;
+  transform: rotate(90deg);
+  transition: transform .18s ease;
+}
+.more-section[open] > .more-section-summary {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.more-section[open] > .more-section-summary > .ui-icon { transform: rotate(-90deg); }
+.more-section-content { padding: .3rem 1.1rem 1rem; }
+.more-section-content.more-list { margin: 0; }
+.more-section-content .more-shortcuts { margin-top: .7rem; }
+.more-note { margin: .65rem 0 0; line-height: 1.6; }
+.more-about-meta { margin-top: .8rem; gap: .7rem; }
+.more-danger { padding-top: 1rem; }
+.more-danger .btn-danger { width: 100%; }
+.more-section .setting-row { align-items: center; }
+.more-section .select-pill,
+.more-section select { max-width: min(100%, 270px); }
+@media (max-width: 520px) {
+  .more-section-summary { min-height: 58px; padding: .8rem .9rem; }
+  .more-section-content { padding: .2rem .9rem .9rem; }
+  .more-row { gap: .6rem; }
+  .more-icon { width: 38px; height: 38px; }
+  .more-section .setting-row { gap: .6rem; }
+  .more-section .setting-row > :last-child { max-width: 100%; }
+}
