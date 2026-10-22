@@ -1,6 +1,170 @@
-/* ============================================================
-   LingoStep — responsive rules (mobile-first enhancements)
-   ============================================================ */
+/* =========================================================
+   THEME TOKENS
+   ========================================================= */
+
+:root {
+  --radius: 20px;
+  --radius-lg: 26px;
+  --radius-sm: 14px;
+
+  /* light theme (default) */
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --surface-2: #eef2f8;
+  --surface-blur: rgba(249, 251, 254, .92);
+  --border: #dde4ef;
+  --border-strong: #ccd5e4;
+  --text: #1f2b3e;
+  --muted: #66718a;
+
+  --primary: #2e7ce6;
+  --primary-strong: #1d63c4;
+  --primary-deep: #173f77;
+  --primary-soft: #a9c9f7;
+  --primary-tint: #e7f0fd;
+  --focus-ring: #4f93ee;
+
+  /* pastel family for stat tiles and accents */
+  --mint: #e7f0fd;
+  --blue-soft: #a9d3f2;
+  --blue-tint: #e3f2fb;
+  --pink-soft: #f3c9d2;
+  --pink-tint: #fcedf1;
+  --yellow-soft: #f6e7a6;
+  --yellow-tint: #fdf6de;
+
+  /* green = correct · orange = hint · red = wrong */
+  --success: #2f9e5f;
+  --success-strong: #1f7d47;
+  --success-tint: #e5f5ea;
+  --success-border: #bfe5cd;
+
+  --warn: #d97b1d;
+  --warn-strong: #b25f0a;
+  --warn-tint: #fdf0dd;
+  --warn-border: #f2d9ac;
+
+  --danger: #d4636f;
+  --danger-strong: #b94a57;
+  --danger-tint: #fcecef;
+  --danger-border: #f3c9d0;
+
+  --level-tint: #e3f2fb;
+  --toast-bg: #1f2b3e;
+  --shadow-sm: 0 1px 2px rgba(23, 42, 76, .06);
+  --shadow-card: 0 6px 22px rgba(35, 62, 110, .08);
+  --shadow: 0 12px 30px rgba(35, 62, 110, .14);
+  --header-grad: linear-gradient(135deg, #4f9cf6 0%, #2e7ce6 55%, #1d63c4 100%);
+  --hero-grad: linear-gradient(140deg, #e3eefc 0%, #cfe3fa 55%, #b0d2f6 100%);
+  --nav-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #0f1626;
+  --surface: #18223a;
+  --surface-2: #1f2b45;
+  --surface-blur: rgba(15, 22, 38, .9);
+  --border: #33415c;
+  --border-strong: #42547a;
+  --text: #e8edf5;
+  --muted: #93a0b8;
+
+  --primary: #4f93ee;
+  --primary-strong: #82b4f6;
+  --primary-deep: #0d1f3c;
+  --primary-soft: #2b4a7e;
+  --primary-tint: #1c2c4a;
+  --focus-ring: #6aa5f0;
+
+  --mint: #1c2c4a;
+  --blue-soft: #24425c;
+  --blue-tint: #16283c;
+  --pink-soft: #463039;
+  --pink-tint: #37262c;
+  --yellow-soft: #46402a;
+  --yellow-tint: #35311d;
+
+  --success: #4bbd77;
+  --success-strong: #7dd3a0;
+  --success-tint: #1d3526;
+  --success-border: #2f5c40;
+
+  --warn: #e0973c;
+  --warn-strong: #efb46e;
+  --warn-tint: #352a17;
+  --warn-border: #5c4a27;
+
+  --danger: #e07e88;
+  --danger-strong: #eda3ab;
+  --danger-tint: #3a2428;
+  --danger-border: #66353c;
+
+  --level-tint: #16283c;
+  --toast-bg: #e8edf5;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+  --shadow-card: 0 6px 22px rgba(0, 0, 0, .35);
+  --shadow: 0 12px 30px rgba(0, 0, 0, .5);
+  --header-grad: linear-gradient(135deg, #16203a 0%, #0f1830 100%);
+  --hero-grad: linear-gradient(140deg, #1b2a4a 0%, #141e36 60%, #10182b 100%);
+  --nav-bg: #18223a;
+}
+
+/* system preference when theme = system */
+@media (prefers-color-scheme: dark) {
+  [data-theme="system"] {
+    --bg: #0f1626;
+    --surface: #18223a;
+    --surface-2: #1f2b45;
+    --surface-blur: rgba(15, 22, 38, .9);
+    --border: #33415c;
+    --border-strong: #42547a;
+    --text: #e8edf5;
+    --muted: #93a0b8;
+
+    --primary: #4f93ee;
+    --primary-strong: #82b4f6;
+    --primary-deep: #0d1f3c;
+    --primary-soft: #2b4a7e;
+    --primary-tint: #1c2c4a;
+    --focus-ring: #6aa5f0;
+
+    --mint: #1c2c4a;
+    --blue-soft: #24425c;
+    --blue-tint: #16283c;
+    --pink-soft: #463039;
+    --pink-tint: #37262c;
+    --yellow-soft: #46402a;
+    --yellow-tint: #35311d;
+
+    --success: #4bbd77;
+    --success-strong: #7dd3a0;
+    --success-tint: #1d3526;
+    --success-border: #2f5c40;
+
+    --warn: #e0973c;
+    --warn-strong: #efb46e;
+    --warn-tint: #352a17;
+    --warn-border: #5c4a27;
+
+    --danger: #e07e88;
+    --danger-strong: #eda3ab;
+    --danger-tint: #3a2428;
+    --danger-border: #66353c;
+
+    --level-tint: #16283c;
+    --toast-bg: #e8edf5;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+    --shadow-card: 0 6px 22px rgba(0, 0, 0, .35);
+    --shadow: 0 12px 30px rgba(0, 0, 0, .5);
+    --header-grad: linear-gradient(135deg, #16203a 0%, #0f1830 100%);
+    --hero-grad: linear-gradient(140deg, #1b2a4a 0%, #141e36 60%, #10182b 100%);
+    --nav-bg: #18223a;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE / LAYOUT
+   ========================================================= */
 
 /* small phones: tighten paddings */
 @media (max-width: 420px) {
@@ -52,6 +216,10 @@
   .brand span.brand-name { display: none; }
 }
 
+/* =========================================================
+   RTL + INPUT DIRECTION
+   ========================================================= */
+
 /* Arabic RTL fine-tuning */
 [dir="rtl"] body { letter-spacing: 0; }
 [dir="rtl"] .hero h1,
@@ -64,22 +232,32 @@
   text-align: center;
 }
 
-/* reduce motion preference */
+/* =========================================================
+   MOTION PREFERENCES (unified)
+   ========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
   }
+  .mobile-nav-icon { transition: none !important; }
 }
 
-/* print: only lesson content is useful */
+/* =========================================================
+   PRINT
+   ========================================================= */
+
 @media print {
   .app-header, .app-footer, .audio-row, .answer-row, .btn, .mobile-bottom-nav { display: none !important; }
   body { background: #fff; color: #000; }
 }
 
-/* ---------- Reference-style floating bottom navigation (mobile only) ---------- */
+/* =========================================================
+   FLOATING BOTTOM NAVIGATION (mobile only)
+   ========================================================= */
+
 .mobile-bottom-nav {
   display: none;
 }
@@ -103,7 +281,7 @@
     color: var(--muted);
     border: 1px solid var(--border);
     border-radius: 26px;
-    box-shadow: 0 10px 30px rgba(23, 42, 76, .16);
+    box-shadow: var(--shadow);
     isolation: isolate;
     direction: ltr;
   }
@@ -156,6 +334,16 @@
   }
   .mobile-nav-link.is-active .mobile-nav-icon { transform: translateY(-1px) scale(1.06); }
 
+  /* touch feedback */
+  .mobile-nav-link:active { background: var(--surface-2); }
+  .mobile-nav-link.is-active:active { background: var(--primary-soft); }
+
+  /* keyboard focus (a11y) */
+  .mobile-nav-link:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
   .mobile-nav-link:active .mobile-nav-icon { transform: scale(.92); }
 
   [dir="rtl"] .mobile-bottom-nav { direction: rtl; }
@@ -169,8 +357,4 @@
 
 @media (min-width: 640px) {
   .mobile-bottom-nav { display: none !important; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mobile-nav-icon { transition: none !important; }
 }
