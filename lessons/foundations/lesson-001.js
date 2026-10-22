@@ -13,7 +13,7 @@ export default {
     "Use simple goodbyes in everyday conversations"
   ],
   "grammar": {
-    "explanation": "English greetings change with the time of day: \"Good morning\" before noon, \"Good afternoon\" in the afternoon, \"Good evening\" after sunset, and \"Good night\" only when leaving at night or going to bed. \"Hello\" and \"Hi\" work any time; \"Hi\" is more friendly and informal. When someone asks \"How are you?\", answer with \"I am fine, thank you\" and then ask back \"And you?\". To leave politely, use \"Goodbye\", \"Bye\", \"See you later\", or \"See you tomorrow\".",
+    "explanation": "Use Hi, Hello, and Hey for greetings at any time. Good morning is used before noon, Good afternoon after noon, and Good evening when meeting someone in the evening. Good night is usually said when leaving at night or before sleep. After How are you?, a common reply is I’m fine, thanks. Use Bye, Goodbye, See you later, or Take care when leaving.",
     "explanationAr": "استخدم Hi وHello وHey للتحية في أي وقت. نقول Good morning قبل الظهر وGood afternoon بعد الظهر وGood evening عند مقابلة شخص في المساء. أما Good night فتقال غالبا عند الوداع ليلا أو قبل النوم. من الردود الشائعة على How are you? عبارة I’m fine, thanks. وللوداع يمكنك استخدام Bye أو Goodbye أو See you later أو Take care.",
     "examples": [
       {
