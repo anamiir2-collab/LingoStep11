@@ -437,7 +437,7 @@ async function viewLesson(view, lessonId) {
       toast(currentLang === 'ar'
         ? 'لازم تخلص الدروس السابقة بالترتيب علشان تفتح الدرس ده'
         : 'Complete the previous lessons in order to unlock this lesson', 3200);
-      navigate(`section/${entry.section}`);
+      navigate('section', [entry.section]);
       return;
     }
   }
