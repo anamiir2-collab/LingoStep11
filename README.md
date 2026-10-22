@@ -1,3 +1,4 @@
+
 # LingoStep — Learn English Step by Step
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-2e7ce6.svg)](LICENSE)
@@ -120,3 +121,207 @@ export default {
     // … fill-blank / word-order / multiple-choice
   ]
 };
+```
+
+data/lesson-manifest.js is the central registry (id, n, titles, section, level, path, exercise count, availability). The app never loads all lessons at startup — js/lesson-loader.js dynamically imports only the requested module, validates its structure before rendering, caches it, and shows a friendly error if a file is missing or invalid. All URLs resolve relative to the module location, so the app works at https://<user>.github.io/<repo>/ and at a domain root.
+
+---
+
+Adding a new lesson
+
+1. Create lessons/<section>/lesson-NNN.js following the structure above (id must match the filename; exercise ids are lesson-NNN-ex-001…).
+2. Register it in data/lesson-manifest.js:
+
+```js
+{
+  id: "lesson-251",
+  n: 251,
+  title: "My New Lesson",
+  titleAr: "درسي الجديد",
+  section: "vocabulary",       // one of the 11 sections listed above
+  level: "A2",
+  path: "lessons/vocabulary/lesson-251.js",
+  exercises: 55,               // keep in sync with the file
+  available: true
+}
+```
+
+3. Run npm run validate — it imports the lesson, checks the schema and counts, and fails on any problem.
+
+---
+
+Running locally
+
+Any static file server works (ES modules need http, not file://):
+
+```bash
+npm start
+# zero-dependency server on http://localhost:8080
+
+# or:
+python3 -m http.server 8080
+```
+
+Open http://localhost:8080, pick a section, press Listen, type what you hear.
+
+---
+
+Validation and tests
+
+```bash
+npm run validate          # structure + PWA + lessons + duplicates (CI gate)
+npm run validate:lessons  # content only
+npm run detect:duplicates # exact-dup check + similarity report
+npm test                  # 7 test suites: grading, storage/progress/review,
+                          # navigation/paths, lessons, XP, motivation, word cards
+npm run build:content     # regenerate all lessons + manifest from scripts/content/
+```
+
+· scripts/validate-lessons.js imports every lesson, validates the schema, checks manifest ↔ file mapping, per-section minimums, unique id/sentence rules and the 250-lesson / 11,279-sentence gates.
+· scripts/detect-duplicates.js fails on any exact cross-lesson duplicate and writes a similarity report (scripts/duplicates-report.json) for human review — similar sentences are not auto-removed.
+· The build must pass both before deployment (enforced by GitHub Actions).
+
+---
+
+Tech stack
+
+Layer Choice
+App shell Single-page index.html, hash-based router
+UI Plain HTML + CSS (no framework, no preprocessor)
+Logic Vanilla JavaScript ES modules — no bundler, no build step
+Speech Browser SpeechSynthesis (Web Speech API)
+Storage IndexedDB (primary), localStorage + in-memory fallbacks
+Offline Service worker with versioned cache
+PWA manifest.json, installable on Android & iOS
+
+---
+
+Enable GitHub Pages
+
+1. Push this project to a GitHub repository (name it LingoStep or anything you like).
+2. Repository Settings → Pages → Build and deployment → Source: GitHub Actions.
+3. The included workflow .github/workflows/deploy.yml runs validation + tests, then deploys the static site on every push to main (see .github/workflows/validate.yml for the validation-only PR workflow).
+4. Your app will be live at https://<username>.github.io/<repo>/ — all asset paths are relative, so sub-path hosting works out of the box.
+
+No Personal Access Token is needed for this flow; GitHub's built-in GITHUB_TOKEN handles deployment inside Actions.
+
+---
+
+Install LingoStep on Android (PWA — recommended)
+
+LingoStep is an installable Progressive Web App: it opens from your home screen in a standalone window (no browser bars), uses the real LingoStep logo, and keeps working offline for cached lessons.
+
+1. Open the live site in Chrome (or any modern Android browser): https://<username>.github.io/<repo>/
+2. Tap the browser's ⋮ menu → "Install app" / "Add to Home screen" (wording varies by browser).
+3. Confirm. The LingoStep icon appears on your home screen and in the app drawer.
+4. Launch it — it starts in standalone mode with the app name and logo, and remembers your progress, language, and theme.
+
+On iOS (Safari): Share → Add to Home Screen — same standalone experience.
+
+Notes
+
+· A PWA install is not a native Android app; it runs on the browser engine but behaves like one (own window, icon, offline cache).
+· Prefer an actual APK? See docs/ANDROID-APK.md for the optional Capacitor build (not pre-built in this repo).
+· After installing, open More → Application → Download all lessons once while online to make the whole course available offline.
+
+---
+
+Offline mode & local progress
+
+· The service worker precaches the app shell and caches each lesson module the first time you open it. More → Application → Download all lessons fetches every lesson once so the complete course works offline. The cache is versioned; new deployments replace old caches cleanly.
+· Progress (attempts, accuracy, streaks, revision schedule, settings) lives in IndexedDB (fallback: localStorage). Nothing is uploaded anywhere.
+· ⚠️ Browser-local data is lost if you clear site data or switch devices. More → Backup & restore → Export progress produces a JSON backup; Import progress restores it (validated, with confirmation). Keep regular backups.
+
+---
+
+Backup & restore
+
+1. More → Backup & restore → Export progress → downloads lingostep-backup-YYYY-MM-DD.json.
+2. On another device/browser: More → Backup & restore → Import progress → choose the file → confirm the overwrite warning.
+3. Import validates the file structure; invalid files are rejected without touching your data.
+
+---
+
+Known browser speech limitations
+
+· Voices come from your browser/OS via the Web Speech API. Quality and availability vary; Chrome downloads voices lazily (reload once if the voice list is empty).
+· Offline speech depends on locally installed voices; some systems have none. The app shows a clear message and reveals the sentence so every exercise stays usable.
+· No external speech service, API key or subscription is used — if it can't speak, the app still works.
+· Optional speech recognition (where supported) is never required.
+
+---
+
+Project structure
+
+```
+LingoStep11/
+├── index.html                     # single-page app shell
+├── manifest.json                  # PWA manifest
+├── sw.js                          # service worker (shell + lesson caching)
+├── capacitor.config.json          # optional Capacitor build config
+├── css/
+│   ├── style.css                  # main styles
+│   ├── themes.css                 # light / dark tokens
+│   └── responsive.css             # layout breakpoints
+├── js/
+│   ├── app.js                     # bootstrap
+│   ├── router.js                  # hash router
+│   ├── lesson-loader.js           # dynamic import + validation
+│   ├── lesson-engine.js           # exercise runtime
+│   ├── speech.js                  # Web Speech wrapper
+│   ├── grading.js                 # correct / minor / incorrect / empty
+│   ├── progress.js                # attempts, accuracy, streaks
+│   ├── review.js                  # SM-2-inspired scheduler
+│   ├── storage.js                 # IndexedDB + fallbacks
+│   ├── settings.js                # theme, language, strict mode
+│   ├── i18n.js                    # English / Arabic strings
+│   ├── lesson-schema.js           # schema validator
+│   ├── keyboard.js                # on-screen keyboard
+│   ├── xp.js                      # XP + anti-double-award ledger
+│   ├── motivation.js              # 57 Arabic messages
+│   ├── word-cards.js              # sentence analysis word cards
+│   ├── vocabulary.js              # vocabulary hub
+│   └── utils.js
+├── data/
+│   ├── lesson-manifest.js         # registry of all 250 lessons
+│   └── motivational-messages.js   # 57 Arabic messages ({name}-aware)
+├── lessons/                       # 11 section folders, one .js per lesson
+│   ├── foundations/               # lesson-001 … lesson-020
+│   ├── daily-life/                # lesson-021 … lesson-045
+│   ├── home-family/               # lesson-046 … lesson-070
+│   ├── food-services/             # lesson-071 … lesson-095
+│   ├── travel/                    # lesson-096 … lesson-120
+│   ├── health-emergency/          # lesson-121 … lesson-145
+│   ├── social-communication/      # lesson-146 … lesson-170
+│   ├── work-money/                # lesson-171 … lesson-195
+│   ├── education-digital/         # lesson-196 … lesson-220
+│   ├── complex-rights/            # lesson-221 … lesson-240
+│   └── specialized/               # lesson-241 … lesson-250
+├── scripts/
+│   ├── validate-lessons.js        # content gate
+│   ├── detect-duplicates.js       # exact-dup + similarity report
+│   ├── validate-project.js        # full pre-deployment gate
+│   ├── serve.js                   # zero-dependency dev server
+│   ├── make-icons.py              # PWA icon generator
+│   └── content/                   # content engine + generators
+│       ├── lib/                   # builder, conjugations, banks
+│       └── gen-*.js               # deterministic curriculum generators
+├── tests/                         # grading, storage, navigation, lesson, xp,
+│                                  # motivation, word-cards test suites
+├── docs/
+│   └── ANDROID-APK.md             # optional Capacitor APK build
+├── assets/icons/                  # PWA icons + lock symbol
+└── .github/workflows/
+    ├── validate.yml               # PR validation
+    └── deploy.yml                 # GitHub Pages deployment
+```
+
+---
+
+License
+
+MIT — see LICENSE.
+
+Original application, original curriculum content, original design. Not affiliated with any other English-learning product.
+
+```
