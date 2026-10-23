@@ -19,8 +19,15 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          ZIP="LingoStep11-updated.zip"
-          test -f "$ZIP"
+          if [ -f "LingoStep11-updated (1).zip" ]; then
+            ZIP="LingoStep11-updated (1).zip"
+          elif [ -f "LingoStep11-updated.zip" ]; then
+            ZIP="LingoStep11-updated.zip"
+          else
+            echo "No supported LingoStep11 ZIP archive found in repository root."
+            exit 1
+          fi
+          echo "Extracting: $ZIP"
           mkdir -p /tmp/lingostep-unzip
           unzip -q "$ZIP" -d /tmp/lingostep-unzip
 
@@ -48,5 +55,5 @@ jobs:
             echo "No new files to commit."
             exit 0
           fi
-          git commit -m "Extract LingoStep11 updated ZIP without deleting files"
+          git commit -m "Extract LingoStep11 ZIP without deleting existing files"
           git push
