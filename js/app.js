@@ -434,7 +434,7 @@ async function viewLesson(view, lessonId) {
     const locked = sectionLessons.slice(0, entryIndex).some((previous) => !states[previous.id]?.completed);
     if (locked) {
       toast(currentLang === 'ar'
-        ? 'لازم تخلص الدروس السابقة بالترتيب علشان تفتح الدرس ده'
+        ? 'أكمل الدروس السابقة بالترتيب لفتح هذا الدرس'
         : 'Complete the previous lessons in order to unlock this lesson', 3200);
       navigate('section', [entry.section]);
       return;

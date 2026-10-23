@@ -52,21 +52,71 @@ export function splitSegments(expected) {
  *               (transient: the rejection logic trims these away)
  *   'current' — the next position the user must type
  *   'empty'   — not reached yet
+ * Punctuation marks are optional: a mark the learner skipped is
+ * shown as 'filled' (auto-completed) and never blocks completion.
  */
 export function letterStates(expected, typed) {
   const exp = Array.from(String(expected ?? ''));
   const val = Array.from(String(typed ?? ''));
-  let good = 0;
-  while (good < val.length && good < exp.length
-    && val[good].toLocaleLowerCase() === exp[good].toLocaleLowerCase()) {
-    good += 1;
-  }
+  const a = alignTyped(expected, typed);
+  const wrongRun = a.complete ? 0 : Math.max(0, val.length - a.typedUsed);
   return exp.map((ch, i) => {
-    if (i < good) return 'filled';
-    if (i < val.length) return 'wrong';
-    if (i === good) return 'current';
+    if (i < a.matched) return 'filled';
+    if (i < a.matched + wrongRun) return 'wrong';
+    if (i === a.matched && !a.complete) return 'current';
     return 'empty';
   });
+}
+
+/* ---------- punctuation-optional alignment ---------- */
+
+/**
+ * True when the learner never has to type this character.
+ * - punctuation (. , ? ! : ; quotes, brackets, Arabic marks) → optional
+ * - apostrophes INSIDE words (don't, I'm, it's) stay required
+ * - hyphens stay required (they belong to compound words)
+ */
+export function isOptionalChar(ch, prev, next) {
+  if (!ch) return false;
+  if (ch === "'") {
+    const word = /[a-z0-9]/i;
+    return !(word.test(prev || '') && word.test(next || ''));
+  }
+  return '.,!?;:"()[]{}\u2026\u060C\u061B\u061F\u00A1\u00BF'.includes(ch);
+}
+
+/**
+ * Align a typed value against the expected sentence with optional
+ * punctuation. Pure and DOM-free (Node-testable).
+ * Returns:
+ *   matched    — number of EXPECTED chars consumed (slots to show filled)
+ *   typedUsed  — number of typed chars accepted
+ *   complete   — every required char of `expected` was matched
+ *   extraBad   — typed value continues past completion with real letters
+ */
+export function alignTyped(expected, typed) {
+  const exp = Array.from(String(expected ?? ''));
+  const val = Array.from(String(typed ?? ''));
+  let e = 0, v = 0;
+  while (e < exp.length) {
+    const ch = exp[e];
+    if (v < val.length && val[v].toLocaleLowerCase() === ch.toLocaleLowerCase()) {
+      v += 1; e += 1; continue;
+    }
+    if (isOptionalChar(ch, exp[e - 1], exp[e + 1])) { e += 1; continue; } // skip skipped punctuation
+    break; // real mismatch on a required char
+  }
+  let complete = true;
+  for (let k = e; k < exp.length; k++) {
+    if (!isOptionalChar(exp[k], exp[k - 1], exp[k + 1])) { complete = false; break; }
+  }
+  let extraBad = false;
+  if (complete && v < val.length) {
+    for (let k = v; k < val.length; k++) {
+      if (!isOptionalChar(val[k], val[k - 1], val[k + 1])) { extraBad = true; break; }
+    }
+  }
+  return { matched: e, typedUsed: v, complete: complete && !extraBad, extraBad };
 }
 
 /**
@@ -106,6 +156,7 @@ export function buildLetterSurface(expected, opts = {}) {
 
   function render(typedValue) {
     const val = String(typedValue ?? '');
+    const a = alignTyped(target, val);
     const states = letterStates(target, val);
     const typedChars = Array.from(val);
     track.replaceChildren();
@@ -127,8 +178,8 @@ export function buildLetterSurface(expected, opts = {}) {
         const slot = document.createElement('span');
         slot.className = `lw-letter-slot is-${states[i]}`;
         if (states[i] === 'filled' || states[i] === 'wrong') {
-          // show what the learner actually typed (rejections are trimmed
-          // away by the character check, so 'wrong' is transient only)
+          // show what the learner actually typed; skipped punctuation
+          // shows the expected mark auto-completed in green
           slot.textContent = typedChars[i] ?? targetChars[i] ?? '';
         }
         word.append(slot);
@@ -136,7 +187,7 @@ export function buildLetterSurface(expected, opts = {}) {
       track.append(word);
     }
 
-    surface.classList.toggle('is-complete', val.length >= target.length);
+    surface.classList.toggle('is-complete', a.complete);
   }
 
   const onClick = () => {

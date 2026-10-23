@@ -6,11 +6,21 @@
      'empty'     — nothing typed
      'correct'   — matches an accepted answer after core normalization
                    (case-insensitive, collapsed spaces, curly quotes)
-     'minor'     — matches only after lenient passes
-                   (trailing punctuation, or contraction expansion
-                    when strict grading is off)
-     'incorrect' — anything else (real grammar/spelling/punctuation
-                   differences are respected, never auto-forgiven)
+                   OR after stripping punctuation (see below)
+     'minor'     — matches only after contraction expansion
+                   (only when strict grading is off)
+     'incorrect' — anything else (real grammar/spelling differences
+                   are respected, never auto-forgiven)
+
+   PUNCTUATION POLICY (spec: the learner is never required to type
+   punctuation to pass a normal writing/dictation exercise):
+     - . , ? ! : ; quotes and brackets are ignored when comparing
+       the typed answer with the expected one — missing, extra or
+       different punctuation is still 'correct'.
+     - Apostrophes BETWEEN letters stay (contractions/possessives:
+       don't, I'm, it's) — dropping them is a real difference.
+     - Hyphens stay (compound words: twenty-one).
+     - The stored / displayed sentence is never modified.
 
    Contractions: "don't" and "do not" are considered DIFFERENT by
    default (strict). With strict grading off they compare as 'minor'.
@@ -31,6 +41,35 @@ export function normalizeCore(s) {
 /** Lenient pass 1: also drop trailing punctuation. */
 export function normalizeLenient(s) {
   return normalizeCore(s).replace(/[.!?;,:\u2026]+$/, '').replace(/\s+/g, ' ').trim();
+}
+
+/** Characters treated as punctuation that never decides correctness. */
+const PUNCT_RE = /[.,!?;:"()\[\]{}\u2026\u00A1\u00BF\u060C\u061B\u061F\u3001\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]/;
+
+function isWordChar(c) {
+  return /[a-z0-9]/.test(c);
+}
+
+/**
+ * Punctuation-free comparison form: normalizeCore + every punctuation
+ * mark removed (apostrophes kept ONLY inside words, hyphens kept).
+ * Used for comparison only — never to change stored or shown text.
+ */
+export function stripPunct(s) {
+  const src = normalizeCore(s);
+  let out = '';
+  for (let i = 0; i < src.length; i++) {
+    const c = src[i];
+    if (c === "'") {
+      const prev = src[i - 1] || '';
+      const next = src[i + 1] || '';
+      if (isWordChar(prev) && isWordChar(next)) out += c; // don't / I'm / it's
+      continue;                                           // quote → drop
+    }
+    if (PUNCT_RE.test(c)) { out += ' '; continue; }
+    out += c;
+  }
+  return out.replace(/\s+/g, ' ').trim();
 }
 
 /** Lenient pass 2 (only when strict grading is off): expand contractions. */
@@ -96,6 +135,7 @@ export function checkAnswer(userInput, acceptedAnswers, options = {}) {
   }
 
   const userCore = normalizeCore(userInput);
+  const userNoPunct = stripPunct(userInput);
   let best = null;
 
   for (const ans of accepted) {
@@ -109,14 +149,15 @@ export function checkAnswer(userInput, acceptedAnswers, options = {}) {
     let status = null;
     let usedAnswer = ans;
 
-    // lenient pass 1: trailing punctuation
-    if (normalizeLenient(userInput) === normalizeLenient(ans)) {
-      status = 'minor';
+    // punctuation pass: missing / extra / different punctuation marks
+    // never change the result (trailing, internal or both) → 'correct'
+    if (userNoPunct === stripPunct(ans)) {
+      status = 'correct';
     }
 
-    // lenient pass 2: contraction expansion (only when strict is off)
+    // lenient pass: contraction expansion (only when strict is off)
     if (!strict && status === null) {
-      if (expandContractions(normalizeLenient(userInput)) === expandContractions(normalizeLenient(ans))) {
+      if (expandContractions(userNoPunct) === expandContractions(stripPunct(ans))) {
         status = 'minor';
       }
     }
