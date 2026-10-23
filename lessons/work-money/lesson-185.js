@@ -14,19 +14,19 @@ export default {
   ],
   "grammar": {
     "explanation": "In professional negotiation we make offers with \"We can offer...\" or \"We will...\", and ask for ideas with \"What would you suggest about...?\". To propose agreement say \"Let us find a middle ground\" — let us (let's) is followed by the base verb. Ask politely for conditions with \"Could we pay in two steps?\". If you need time, say \"I need to think about it first\" — this is a normal, respected sentence in business.",
-    "explanationAr": "في التفاوض المهني نقدم العروض بـ We can offer... أو We will...، ونطلب الأفكار بـ What would you suggest about...؟ ولكي تقترح اتفاقا قل Let us find a middle ground، ويلي let us فعل مجرد. واطلب الشروط بأدب بـ Could we pay in two steps؟ وإذا احتجت وقتا قل I need to think about it first، وهي جملة محترمة وطبيعية في عالم الأعمال.",
+    "explanationAr": "في التفاوض المهني نقدم العروض بـ We can offer... أو We will...، ونطلب الأفكار بـ What would you suggest about...؟ ولكي تقترح اتفاقًا قل Let us find a middle ground، ويلي let us فعل مجرد. واطلب الشروط بأدب بـ Could we pay in two steps؟ وإذا احتجت وقتًا قل I need to think about it first، وهي جملة محترمة وطبيعية في عالم الأعمال.",
     "examples": [
       {
         "en": "We can offer a longer deadline instead.",
-        "ar": "يمكننا تقديم موعد نهائي أطول بدلا من ذلك."
+        "ar": "يمكننا تقديم موعد نهائي أطول بدلًا من ذلك."
       },
       {
         "en": "Let us find a middle ground on the budget.",
-        "ar": "لنجد حلا وسطا بشأن الميزانية."
+        "ar": "لنجد حلًا وسطًا بشأن الميزانية."
       },
       {
         "en": "I need to think about your offer first.",
-        "ar": "أحتاج أن أفكر في عرضك أولا."
+        "ar": "أحتاج أن أفكر في عرضك أولًا."
       }
     ]
   },
@@ -38,9 +38,9 @@ export default {
       "ipa": "nɪˈɡəʊʃieɪt"
     },
     {
-      "word": "offer",
-      "meaningAr": "عرض / يعرض",
-      "example": "They made a good offer yesterday."
+      "word": "budget",
+      "meaningAr": "ميزانية",
+      "example": "Let us find a middle ground on the budget."
     },
     {
       "word": "suggest",
@@ -78,9 +78,9 @@ export default {
       "example": "Our supplier lowered the price."
     },
     {
-      "word": "sign",
-      "meaningAr": "يوقع",
-      "example": "Do not sign before you read it."
+      "word": "training",
+      "meaningAr": "تدريب",
+      "example": "We can offer free training for your team instead."
     },
     {
       "word": "amount",
@@ -144,8 +144,6 @@ export default {
       "en": "What would you suggest about the deadline?",
       "ar": "ماذا تقترح بشأن الموعد النهائي؟",
       "acceptedAnswers": [
-        "suggest",
-        "Suggest",
         "suggest"
       ],
       "grammarTags": [
@@ -173,7 +171,7 @@ export default {
       "id": "lesson-185-ex-006",
       "type": "listen-and-type",
       "en": "That sounds like a middle ground.",
-      "ar": "يبدو ذلك حل وسط مقبولا.",
+      "ar": "يبدو ذلك حل وسط مقبولًا.",
       "acceptedAnswers": [
         "That sounds like a middle ground."
       ],
@@ -191,7 +189,7 @@ export default {
         "لنلغي الاتفاق",
         "لنبدأ من جديد",
         "لنتوقف عن الكلام",
-        "لنجد حلا يرضي الطرفين"
+        "لنجد حلًا يرضي الطرفين"
       ],
       "answerIndex": 3,
       "ar": "ماذا تعني Let us find a middle ground؟",
@@ -205,7 +203,7 @@ export default {
       "id": "lesson-185-ex-008",
       "type": "listen-and-type",
       "en": "Let us find a middle ground on the budget.",
-      "ar": "لنجد حلا وسطا بشأن الميزانية.",
+      "ar": "لنجد حلًا وسطًا بشأن الميزانية.",
       "acceptedAnswers": [
         "Let us find a middle ground on the budget."
       ],
@@ -273,10 +271,8 @@ export default {
       "display": "Let us find a ___ ground on the budget.",
       "blankWord": "middle",
       "en": "Let us find a middle ground on the budget.",
-      "ar": "لنجد حلا وسطا بشأن الميزانية.",
+      "ar": "لنجد حلًا وسطًا بشأن الميزانية.",
       "acceptedAnswers": [
-        "middle",
-        "Middle",
         "middle"
       ],
       "grammarTags": [
@@ -346,7 +342,7 @@ export default {
       "id": "lesson-185-ex-017",
       "type": "listen-and-type",
       "en": "Take your time; the offer stays open until Friday.",
-      "ar": "خذ وقتك؛ يبقى العرض مفتوحا حتى الجمعة.",
+      "ar": "خذ وقتك؛ يبقى العرض مفتوحًا حتى الجمعة.",
       "acceptedAnswers": [
         "Take your time; the offer stays open until Friday."
       ],
@@ -392,8 +388,6 @@ export default {
       "en": "I need to think about your offer.",
       "ar": "أحتاج أن أفكر في عرضك.",
       "acceptedAnswers": [
-        "offer",
-        "Offer",
         "offer"
       ],
       "grammarTags": [
@@ -407,7 +401,7 @@ export default {
       "id": "lesson-185-ex-021",
       "type": "word-order",
       "en": "Let us find a middle ground on the budget.",
-      "ar": "لنجد حلا وسطا بشأن الميزانية.",
+      "ar": "لنجد حلًا وسطًا بشأن الميزانية.",
       "words": [
         "us",
         "find",
@@ -440,7 +434,7 @@ export default {
         "I never sign anything."
       ],
       "answerIndex": 0,
-      "ar": "قدم الطرف الآخر عرضا، ما الرد الجيد؟",
+      "ar": "قدم الطرف الآخر عرضًا، ما الرد الجيد؟",
       "grammarTags": [
         "negotiation",
         "business"
@@ -451,7 +445,7 @@ export default {
       "id": "lesson-185-ex-023",
       "type": "listen-and-type",
       "en": "Both sides should win something from a deal.",
-      "ar": "ينبغي أن يكسب الطرفان شيئا من الصفقة.",
+      "ar": "ينبغي أن يكسب الطرفان شيئًا من الصفقة.",
       "acceptedAnswers": [
         "Both sides should win something from a deal."
       ],
@@ -493,7 +487,7 @@ export default {
       "id": "lesson-185-ex-026",
       "type": "listen-and-type",
       "en": "We can offer a longer deadline instead.",
-      "ar": "يمكننا تقديم موعدا نهائيا أطول بدلا من ذلك.",
+      "ar": "يمكننا تقديم موعدًا نهائيًا أطول بدلًا من ذلك.",
       "acceptedAnswers": [
         "We can offer a longer deadline instead."
       ],
@@ -507,7 +501,7 @@ export default {
       "id": "lesson-185-ex-027",
       "type": "listen-and-type",
       "en": "We can offer free training for your team instead.",
-      "ar": "يمكننا تقديم تدريبا مجانيا لفريقك بدلا من ذلك.",
+      "ar": "يمكننا تقديم تدريبًا مجانيًا لفريقك بدلًا من ذلك.",
       "acceptedAnswers": [
         "We can offer free training for your team instead."
       ],
@@ -525,8 +519,6 @@ export default {
       "en": "Could we pay in two steps, please?",
       "ar": "هل يمكننا الدفع على مرحلتين من فضلك؟",
       "acceptedAnswers": [
-        "steps",
-        "Steps",
         "steps"
       ],
       "grammarTags": [
@@ -540,7 +532,7 @@ export default {
       "id": "lesson-185-ex-029",
       "type": "listen-and-type",
       "en": "We can offer a smaller first order instead.",
-      "ar": "يمكننا تقديم طلبيا أول أصغر بدلا من ذلك.",
+      "ar": "يمكننا تقديم طلبيًا أول أصغر بدلًا من ذلك.",
       "acceptedAnswers": [
         "We can offer a smaller first order instead."
       ],
@@ -554,7 +546,7 @@ export default {
       "id": "lesson-185-ex-030",
       "type": "listen-and-type",
       "en": "We can offer payment in two steps instead.",
-      "ar": "يمكننا تقديم دفعا على مرحلتين بدلا من ذلك.",
+      "ar": "يمكننا تقديم دفعًا على مرحلتين بدلًا من ذلك.",
       "acceptedAnswers": [
         "We can offer payment in two steps instead."
       ],
@@ -568,7 +560,7 @@ export default {
       "id": "lesson-185-ex-031",
       "type": "listen-and-type",
       "en": "We can offer a written contract instead.",
-      "ar": "يمكننا تقديم عقدا مكتوبا بدلا من ذلك.",
+      "ar": "يمكننا تقديم عقدًا مكتوبًا بدلًا من ذلك.",
       "acceptedAnswers": [
         "We can offer a written contract instead."
       ],
@@ -606,7 +598,7 @@ export default {
       "id": "lesson-185-ex-033",
       "type": "listen-and-type",
       "en": "We can offer technical support for one year instead.",
-      "ar": "يمكننا تقديم دعما فنيا لسنة واحدة بدلا من ذلك.",
+      "ar": "يمكننا تقديم دعمًا فنيًا لسنة واحدة بدلًا من ذلك.",
       "acceptedAnswers": [
         "We can offer technical support for one year instead."
       ],
@@ -652,8 +644,6 @@ export default {
       "en": "They signed the contract this morning.",
       "ar": "وقعوا العقد هذا الصباح.",
       "acceptedAnswers": [
-        "signed",
-        "Signed",
         "signed"
       ],
       "grammarTags": [
@@ -727,7 +717,7 @@ export default {
       "id": "lesson-185-ex-041",
       "type": "listen-and-type",
       "en": "I need to think about your offer first.",
-      "ar": "أحتاج أن أفكر في عرضك أولا.",
+      "ar": "أحتاج أن أفكر في عرضك أولًا.",
       "acceptedAnswers": [
         "I need to think about your offer first."
       ],
@@ -741,7 +731,7 @@ export default {
       "id": "lesson-185-ex-042",
       "type": "listen-and-type",
       "en": "I need to think about the terms first.",
-      "ar": "أحتاج أن أفكر في الشروط أولا.",
+      "ar": "أحتاج أن أفكر في الشروط أولًا.",
       "acceptedAnswers": [
         "I need to think about the terms first."
       ],
@@ -782,8 +772,6 @@ export default {
       "en": "We did not accept the first terms.",
       "ar": "لم نقبل الشروط الأولى.",
       "acceptedAnswers": [
-        "accept",
-        "Accept",
         "accept"
       ],
       "grammarTags": [
@@ -797,7 +785,7 @@ export default {
       "id": "lesson-185-ex-045",
       "type": "listen-and-type",
       "en": "I need to think about this plan first.",
-      "ar": "أحتاج أن أفكر في هذه الخطة أولا.",
+      "ar": "أحتاج أن أفكر في هذه الخطة أولًا.",
       "acceptedAnswers": [
         "I need to think about this plan first."
       ],
@@ -811,7 +799,7 @@ export default {
       "id": "lesson-185-ex-046",
       "type": "listen-and-type",
       "en": "I need to think about the new numbers first.",
-      "ar": "أحتاج أن أفكر في الأرقام الجديدة أولا.",
+      "ar": "أحتاج أن أفكر في الأرقام الجديدة أولًا.",
       "acceptedAnswers": [
         "I need to think about the new numbers first."
       ],
@@ -825,7 +813,7 @@ export default {
       "id": "lesson-185-ex-047",
       "type": "listen-and-type",
       "en": "I need to think about your proposal first.",
-      "ar": "أحتاج أن أفكر في مقترحك أولا.",
+      "ar": "أحتاج أن أفكر في مقترحك أولًا.",
       "acceptedAnswers": [
         "I need to think about your proposal first."
       ],
@@ -839,7 +827,7 @@ export default {
       "id": "lesson-185-ex-048",
       "type": "listen-and-type",
       "en": "Let us find a middle ground on the deadline.",
-      "ar": "لنجد حلا وسطا بشأن الموعد النهائي.",
+      "ar": "لنجد حلًا وسطًا بشأن الموعد النهائي.",
       "acceptedAnswers": [
         "Let us find a middle ground on the deadline."
       ],
@@ -853,7 +841,7 @@ export default {
       "id": "lesson-185-ex-049",
       "type": "listen-and-type",
       "en": "Let us find a middle ground on the delivery date.",
-      "ar": "لنجد حلا وسطا بشأن موعد التسليم.",
+      "ar": "لنجد حلًا وسطًا بشأن موعد التسليم.",
       "acceptedAnswers": [
         "Let us find a middle ground on the delivery date."
       ],
@@ -867,7 +855,7 @@ export default {
       "id": "lesson-185-ex-050",
       "type": "listen-and-type",
       "en": "Let us find a middle ground on the working hours.",
-      "ar": "لنجد حلا وسطا بشأن ساعات العمل.",
+      "ar": "لنجد حلًا وسطًا بشأن ساعات العمل.",
       "acceptedAnswers": [
         "Let us find a middle ground on the working hours."
       ],
@@ -881,7 +869,7 @@ export default {
       "id": "lesson-185-ex-051",
       "type": "listen-and-type",
       "en": "Let us find a middle ground on the final cost.",
-      "ar": "لنجد حلا وسطا بشأن التكلفة النهائية.",
+      "ar": "لنجد حلًا وسطًا بشأن التكلفة النهائية.",
       "acceptedAnswers": [
         "Let us find a middle ground on the final cost."
       ],
@@ -895,7 +883,7 @@ export default {
       "id": "lesson-185-ex-052",
       "type": "listen-and-type",
       "en": "I will check the offer tomorrow.",
-      "ar": "أنا سأفحص العرض غدا.",
+      "ar": "أنا سأفحص العرض غدًا.",
       "acceptedAnswers": [
         "I will check the offer tomorrow."
       ],
@@ -909,7 +897,7 @@ export default {
       "id": "lesson-185-ex-053",
       "type": "listen-and-type",
       "en": "I will read the offer tomorrow.",
-      "ar": "أنا سأقرأ العرض غدا.",
+      "ar": "أنا سأقرأ العرض غدًا.",
       "acceptedAnswers": [
         "I will read the offer tomorrow."
       ],
@@ -923,7 +911,7 @@ export default {
       "id": "lesson-185-ex-054",
       "type": "listen-and-type",
       "en": "I will study the offer tomorrow.",
-      "ar": "أنا سأدرس العرض غدا.",
+      "ar": "أنا سأدرس العرض غدًا.",
       "acceptedAnswers": [
         "I will study the offer tomorrow."
       ],
@@ -937,7 +925,7 @@ export default {
       "id": "lesson-185-ex-055",
       "type": "listen-and-type",
       "en": "I will send the offer tomorrow.",
-      "ar": "أنا سأرسل العرض غدا.",
+      "ar": "أنا سأرسل العرض غدًا.",
       "acceptedAnswers": [
         "I will send the offer tomorrow."
       ],

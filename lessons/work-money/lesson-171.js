@@ -18,7 +18,7 @@ export default {
     "examples": [
       {
         "en": "Her employer gives her a good salary.",
-        "ar": "صاحب العمل يمنحها راتبا جيدا."
+        "ar": "صاحب العمل يمنحها راتبًا جيدًا."
       },
       {
         "en": "He has worked in the sales department since May.",
@@ -43,9 +43,9 @@ export default {
       "example": "Her employer is a kind man."
     },
     {
-      "word": "salary",
-      "meaningAr": "راتب",
-      "example": "The salary comes at the end of the month."
+      "word": "engineer",
+      "meaningAr": "مهندس",
+      "example": "The engineer earns a good salary."
     },
     {
       "word": "shift",
@@ -73,9 +73,9 @@ export default {
       "example": "He got a promotion in June."
     },
     {
-      "word": "manager",
-      "meaningAr": "مدير",
-      "example": "The manager signed the papers."
+      "word": "cashier",
+      "meaningAr": "أمين صندوق",
+      "example": "The cashier earns a good salary."
     },
     {
       "word": "meeting",
@@ -112,7 +112,7 @@ export default {
       "id": "lesson-171-ex-002",
       "type": "listen-and-type",
       "en": "Her employer gives her a good salary.",
-      "ar": "صاحب العمل يمنحها راتبا جيدا.",
+      "ar": "صاحب العمل يمنحها راتبًا جيدًا.",
       "acceptedAnswers": [
         "Her employer gives her a good salary."
       ],
@@ -144,8 +144,6 @@ export default {
       "en": "My sister is an employee at a big company.",
       "ar": "أختي موظفة في شركة كبيرة.",
       "acceptedAnswers": [
-        "employee",
-        "Employee",
         "employee"
       ],
       "grammarTags": [
@@ -193,7 +191,7 @@ export default {
         "A guest"
       ],
       "answerIndex": 1,
-      "ar": "من يتقاضى راتبا كل شهر؟",
+      "ar": "من يتقاضى راتبًا كل شهر؟",
       "grammarTags": [
         "work",
         "jobs"
@@ -272,10 +270,8 @@ export default {
       "display": "Her employer gives her a good ___.",
       "blankWord": "salary",
       "en": "Her employer gives her a good salary.",
-      "ar": "صاحب العمل يمنحها راتبا جيدا.",
+      "ar": "صاحب العمل يمنحها راتبًا جيدًا.",
       "acceptedAnswers": [
-        "salary",
-        "Salary",
         "salary"
       ],
       "grammarTags": [
@@ -302,7 +298,7 @@ export default {
       "id": "lesson-171-ex-014",
       "type": "listen-and-type",
       "en": "It starts at eight in the morning.",
-      "ar": "تبدأ في الثامنة صباحا.",
+      "ar": "تبدأ في الثامنة صباحًا.",
       "acceptedAnswers": [
         "It starts at eight in the morning."
       ],
@@ -390,8 +386,6 @@ export default {
       "en": "I work the night shift this week.",
       "ar": "أعمل الوردية الليلية هذا الأسبوع.",
       "acceptedAnswers": [
-        "shift",
-        "Shift",
         "shift"
       ],
       "grammarTags": [
@@ -519,8 +513,6 @@ export default {
       "en": "Do you like your new colleagues?",
       "ar": "هل تحب زملاءك الجدد؟",
       "acceptedAnswers": [
-        "colleagues",
-        "Colleagues",
         "colleagues"
       ],
       "grammarTags": [
@@ -645,8 +637,6 @@ export default {
       "en": "He has worked in the sales department since May.",
       "ar": "عمل في قسم المبيعات منذ مايو.",
       "acceptedAnswers": [
-        "department",
-        "Department",
         "department"
       ],
       "grammarTags": [
@@ -733,7 +723,7 @@ export default {
       "id": "lesson-171-ex-042",
       "type": "listen-and-type",
       "en": "The engineer earns a good salary.",
-      "ar": "المهندس يتقاضى راتبا جيدا.",
+      "ar": "المهندس يتقاضى راتبًا جيدًا.",
       "acceptedAnswers": [
         "The engineer earns a good salary."
       ],
@@ -775,8 +765,6 @@ export default {
       "en": "Our manager signs the contracts on Sunday.",
       "ar": "مديرنا يوقع العقود يوم الأحد.",
       "acceptedAnswers": [
-        "contracts",
-        "Contracts",
         "contracts"
       ],
       "grammarTags": [
@@ -790,7 +778,7 @@ export default {
       "id": "lesson-171-ex-045",
       "type": "listen-and-type",
       "en": "The accountant earns a good salary.",
-      "ar": "المحاسب يتقاضى راتبا جيدا.",
+      "ar": "المحاسب يتقاضى راتبًا جيدًا.",
       "acceptedAnswers": [
         "The accountant earns a good salary."
       ],
@@ -804,7 +792,7 @@ export default {
       "id": "lesson-171-ex-046",
       "type": "listen-and-type",
       "en": "The pharmacist earns a good salary.",
-      "ar": "الصيدلي يتقاضى راتبا جيدا.",
+      "ar": "الصيدلي يتقاضى راتبًا جيدًا.",
       "acceptedAnswers": [
         "The pharmacist earns a good salary."
       ],
@@ -818,7 +806,7 @@ export default {
       "id": "lesson-171-ex-047",
       "type": "listen-and-type",
       "en": "The manager earns a good salary.",
-      "ar": "المدير يتقاضى راتبا جيدا.",
+      "ar": "المدير يتقاضى راتبًا جيدًا.",
       "acceptedAnswers": [
         "The manager earns a good salary."
       ],
@@ -832,7 +820,7 @@ export default {
       "id": "lesson-171-ex-048",
       "type": "listen-and-type",
       "en": "The teacher earns a good salary.",
-      "ar": "المعلم يتقاضى راتبا جيدا.",
+      "ar": "المعلم يتقاضى راتبًا جيدًا.",
       "acceptedAnswers": [
         "The teacher earns a good salary."
       ],
@@ -846,7 +834,7 @@ export default {
       "id": "lesson-171-ex-049",
       "type": "listen-and-type",
       "en": "The driver earns a good salary.",
-      "ar": "السائق يتقاضى راتبا جيدا.",
+      "ar": "السائق يتقاضى راتبًا جيدًا.",
       "acceptedAnswers": [
         "The driver earns a good salary."
       ],
@@ -860,7 +848,7 @@ export default {
       "id": "lesson-171-ex-050",
       "type": "listen-and-type",
       "en": "The lawyer earns a good salary.",
-      "ar": "المحامي يتقاضى راتبا جيدا.",
+      "ar": "المحامي يتقاضى راتبًا جيدًا.",
       "acceptedAnswers": [
         "The lawyer earns a good salary."
       ],
@@ -874,7 +862,7 @@ export default {
       "id": "lesson-171-ex-051",
       "type": "listen-and-type",
       "en": "The cashier earns a good salary.",
-      "ar": "أمين الصندوق يتقاضى راتبا جيدا.",
+      "ar": "أمين الصندوق يتقاضى راتبًا جيدًا.",
       "acceptedAnswers": [
         "The cashier earns a good salary."
       ],
@@ -930,7 +918,7 @@ export default {
       "id": "lesson-171-ex-055",
       "type": "listen-and-type",
       "en": "We have a meeting tomorrow.",
-      "ar": "لدينا اجتماع غدا.",
+      "ar": "لدينا اجتماع غدًا.",
       "acceptedAnswers": [
         "We have a meeting tomorrow."
       ],

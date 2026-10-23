@@ -22,7 +22,7 @@ export default {
       },
       {
         "en": "The client pays within thirty days of the invoice date.",
-        "ar": "يدفع العميل خلال ثلاثين يوما من تاريخ الفاتورة."
+        "ar": "يدفع العميل خلال ثلاثين يومًا من تاريخ الفاتورة."
       },
       {
         "en": "The client has not received the invoice yet.",
@@ -144,8 +144,6 @@ export default {
       "en": "Please send the invoice to the client today.",
       "ar": "من فضلك أرسل الفاتورة إلى العميل اليوم.",
       "acceptedAnswers": [
-        "invoice",
-        "Invoice",
         "invoice"
       ],
       "grammarTags": [
@@ -159,7 +157,7 @@ export default {
       "id": "lesson-192-ex-005",
       "type": "listen-and-type",
       "en": "The client pays within thirty days of the invoice date.",
-      "ar": "يدفع العميل خلال ثلاثين يوما من تاريخ الفاتورة.",
+      "ar": "يدفع العميل خلال ثلاثين يومًا من تاريخ الفاتورة.",
       "acceptedAnswers": [
         "The client pays within thirty days of the invoice date."
       ],
@@ -276,8 +274,6 @@ export default {
       "en": "The invoice number is on the top right.",
       "ar": "رقم الفاتورة في أعلى اليمين.",
       "acceptedAnswers": [
-        "number",
-        "Number",
         "number"
       ],
       "grammarTags": [
@@ -361,7 +357,7 @@ export default {
       "id": "lesson-192-ex-018",
       "type": "listen-and-type",
       "en": "We always remind clients one week before the deadline.",
-      "ar": "نذكّر العملاء دائما قبل أسبوع من الموعد النهائي.",
+      "ar": "نذكّر العملاء دائمًا قبل أسبوع من الموعد النهائي.",
       "acceptedAnswers": [
         "We always remind clients one week before the deadline."
       ],
@@ -393,8 +389,6 @@ export default {
       "en": "What are the payment terms for this order?",
       "ar": "ما شروط الدفع لهذا الطلب؟",
       "acceptedAnswers": [
-        "terms",
-        "Terms",
         "terms"
       ],
       "grammarTags": [
@@ -479,7 +473,7 @@ export default {
       "id": "lesson-192-ex-025",
       "type": "listen-and-type",
       "en": "Do we charge for late payments?",
-      "ar": "هل نتقاضى رسوما على التأخر في الدفع؟",
+      "ar": "هل نتقاضى رسومًا على التأخر في الدفع؟",
       "acceptedAnswers": [
         "Do we charge for late payments?"
       ],
@@ -523,10 +517,8 @@ export default {
       "display": "The client pays within ___ days of the invoice date.",
       "blankWord": "thirty",
       "en": "The client pays within thirty days of the invoice date.",
-      "ar": "يدفع العميل خلال ثلاثين يوما من تاريخ الفاتورة.",
+      "ar": "يدفع العميل خلال ثلاثين يومًا من تاريخ الفاتورة.",
       "acceptedAnswers": [
-        "thirty",
-        "Thirty",
         "thirty"
       ],
       "grammarTags": [
@@ -582,7 +574,7 @@ export default {
       "id": "lesson-192-ex-032",
       "type": "word-order",
       "en": "The client pays within thirty days of the invoice date.",
-      "ar": "يدفع العميل خلال ثلاثين يوما من تاريخ الفاتورة.",
+      "ar": "يدفع العميل خلال ثلاثين يومًا من تاريخ الفاتورة.",
       "words": [
         "client",
         "pays",
@@ -623,7 +615,7 @@ export default {
       "id": "lesson-192-ex-034",
       "type": "listen-and-type",
       "en": "The payment terms are thirty days.",
-      "ar": "شروط الدفع هي ثلاثون يوما.",
+      "ar": "شروط الدفع هي ثلاثون يومًا.",
       "acceptedAnswers": [
         "The payment terms are thirty days."
       ],
@@ -637,7 +629,7 @@ export default {
       "id": "lesson-192-ex-035",
       "type": "listen-and-type",
       "en": "The payment terms are fifteen days.",
-      "ar": "شروط الدفع هي خمسة عشر يوما.",
+      "ar": "شروط الدفع هي خمسة عشر يومًا.",
       "acceptedAnswers": [
         "The payment terms are fifteen days."
       ],
@@ -655,8 +647,6 @@ export default {
       "en": "Did you include the tax in the total amount?",
       "ar": "هل أدرجت الضريبة في المبلغ الإجمالي؟",
       "acceptedAnswers": [
-        "tax",
-        "Tax",
         "tax"
       ],
       "grammarTags": [
@@ -688,7 +678,7 @@ export default {
       "id": "lesson-192-ex-038",
       "type": "listen-and-type",
       "en": "The payment terms are sixty days.",
-      "ar": "شروط الدفع هي ستون يوما.",
+      "ar": "شروط الدفع هي ستون يومًا.",
       "acceptedAnswers": [
         "The payment terms are sixty days."
       ],
@@ -702,7 +692,7 @@ export default {
       "id": "lesson-192-ex-039",
       "type": "listen-and-type",
       "en": "The payment terms are half now and half later.",
-      "ar": "شروط الدفع هي نصف الآن ونصف لاحقا.",
+      "ar": "شروط الدفع هي نصف الآن ونصف لاحقًا.",
       "acceptedAnswers": [
         "The payment terms are half now and half later."
       ],
@@ -716,7 +706,7 @@ export default {
       "id": "lesson-192-ex-040",
       "type": "listen-and-type",
       "en": "The payment terms are cash on delivery.",
-      "ar": "شروط الدفع هي نقدا عند التسليم.",
+      "ar": "شروط الدفع هي نقدًا عند التسليم.",
       "acceptedAnswers": [
         "The payment terms are cash on delivery."
       ],
@@ -786,8 +776,6 @@ export default {
       "en": "Please check the quantity and the unit price again.",
       "ar": "من فضلك تحقق من الكمية وسعر الوحدة مرة أخرى.",
       "acceptedAnswers": [
-        "quantity",
-        "Quantity",
         "quantity"
       ],
       "grammarTags": [
@@ -801,7 +789,7 @@ export default {
       "id": "lesson-192-ex-045",
       "type": "listen-and-type",
       "en": "The total amount is seven hundred and fifty dollars.",
-      "ar": "المبلغ الإجمالي سبعمئة وخمسون دولارا.",
+      "ar": "المبلغ الإجمالي سبعمئة وخمسون دولارًا.",
       "acceptedAnswers": [
         "The total amount is seven hundred and fifty dollars."
       ],

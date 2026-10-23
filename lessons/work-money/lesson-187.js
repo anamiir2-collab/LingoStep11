@@ -18,7 +18,7 @@ export default {
     "examples": [
       {
         "en": "This is our best seller this month.",
-        "ar": "هذا هو الأكثر مبيعا لدينا هذا الشهر."
+        "ar": "هذا هو الأكثر مبيعًا لدينا هذا الشهر."
       },
       {
         "en": "We have a special offer on printers this week.",
@@ -33,7 +33,7 @@ export default {
   "vocabulary": [
     {
       "word": "best seller",
-      "meaningAr": "الأكثر مبيعا",
+      "meaningAr": "الأكثر مبيعًا",
       "example": "This phone is our best seller."
     },
     {
@@ -97,7 +97,7 @@ export default {
       "id": "lesson-187-ex-001",
       "type": "listen-and-type",
       "en": "Welcome to our new shop section.",
-      "ar": "أهلا بك في قسم متجرنا الجديد.",
+      "ar": "أهلًا بك في قسم متجرنا الجديد.",
       "acceptedAnswers": [
         "Welcome to our new shop section."
       ],
@@ -111,7 +111,7 @@ export default {
       "id": "lesson-187-ex-002",
       "type": "listen-and-type",
       "en": "This is our best seller this month.",
-      "ar": "هذا هو الأكثر مبيعا لدينا هذا الشهر.",
+      "ar": "هذا هو الأكثر مبيعًا لدينا هذا الشهر.",
       "acceptedAnswers": [
         "This is our best seller this month."
       ],
@@ -125,7 +125,7 @@ export default {
       "id": "lesson-187-ex-003",
       "type": "listen-and-type",
       "en": "Wow, it looks really popular.",
-      "ar": "واو، يبدو شعبيا جدا.",
+      "ar": "واو، يبدو شعبيًا جدًا.",
       "acceptedAnswers": [
         "Wow, it looks really popular."
       ],
@@ -141,10 +141,8 @@ export default {
       "display": "This is our best ___ this month.",
       "blankWord": "seller",
       "en": "This is our best seller this month.",
-      "ar": "هذا هو الأكثر مبيعا لدينا هذا الشهر.",
+      "ar": "هذا هو الأكثر مبيعًا لدينا هذا الشهر.",
       "acceptedAnswers": [
-        "seller",
-        "Seller",
         "seller"
       ],
       "grammarTags": [
@@ -152,7 +150,7 @@ export default {
         "business"
       ],
       "difficulty": 2,
-      "hint": "الأكثر مبيعا"
+      "hint": "الأكثر مبيعًا"
     },
     {
       "id": "lesson-187-ex-005",
@@ -188,7 +186,7 @@ export default {
       "question": "\"Best seller\" means:",
       "options": [
         "منتج معيب",
-        "المنتج الأكثر مبيعا",
+        "المنتج الأكثر مبيعًا",
         "المنتج الأغلى",
         "أقدم منتج"
       ],
@@ -232,7 +230,7 @@ export default {
       "id": "lesson-187-ex-010",
       "type": "word-order",
       "en": "This is our best seller this month.",
-      "ar": "هذا هو الأكثر مبيعا لدينا هذا الشهر.",
+      "ar": "هذا هو الأكثر مبيعًا لدينا هذا الشهر.",
       "words": [
         "is",
         "our",
@@ -274,8 +272,6 @@ export default {
       "en": "Would you like to try it?",
       "ar": "هل تود أن تجربه؟",
       "acceptedAnswers": [
-        "try",
-        "Try",
         "try"
       ],
       "grammarTags": [
@@ -289,7 +285,7 @@ export default {
       "id": "lesson-187-ex-013",
       "type": "listen-and-type",
       "en": "The offer gives you twenty percent off.",
-      "ar": "العرض يمنحك خصما بعشرين بالمئة.",
+      "ar": "العرض يمنحك خصمًا بعشرين بالمئة.",
       "acceptedAnswers": [
         "The offer gives you twenty percent off."
       ],
@@ -345,7 +341,7 @@ export default {
       "id": "lesson-187-ex-017",
       "type": "listen-and-type",
       "en": "We do not charge for delivery in the city.",
-      "ar": "لا نتقاضى أجرا للتوصيل داخل المدينة.",
+      "ar": "لا نتقاضى أجرًا للتوصيل داخل المدينة.",
       "acceptedAnswers": [
         "We do not charge for delivery in the city."
       ],
@@ -391,8 +387,6 @@ export default {
       "en": "It comes with a two-year warranty.",
       "ar": "يأتي مع ضمان لسنتين.",
       "acceptedAnswers": [
-        "warranty",
-        "Warranty",
         "warranty"
       ],
       "grammarTags": [
@@ -489,7 +483,7 @@ export default {
       "id": "lesson-187-ex-026",
       "type": "listen-and-type",
       "en": "This is our best seller this week.",
-      "ar": "هذا هو الأكثر مبيعا لدينا هذا الأسبوع.",
+      "ar": "هذا هو الأكثر مبيعًا لدينا هذا الأسبوع.",
       "acceptedAnswers": [
         "This is our best seller this week."
       ],
@@ -503,7 +497,7 @@ export default {
       "id": "lesson-187-ex-027",
       "type": "listen-and-type",
       "en": "This is our best seller this season.",
-      "ar": "هذا هو الأكثر مبيعا لدينا هذا الموسم.",
+      "ar": "هذا هو الأكثر مبيعًا لدينا هذا الموسم.",
       "acceptedAnswers": [
         "This is our best seller this season."
       ],
@@ -521,8 +515,6 @@ export default {
       "en": "We have a special offer on laptops this week.",
       "ar": "لدينا عرض خاص على الحواسيب المحمولة هذا الأسبوع.",
       "acceptedAnswers": [
-        "special",
-        "Special",
         "special"
       ],
       "grammarTags": [
@@ -536,7 +528,7 @@ export default {
       "id": "lesson-187-ex-029",
       "type": "listen-and-type",
       "en": "This is our best seller this year.",
-      "ar": "هذا هو الأكثر مبيعا لدينا هذا العام.",
+      "ar": "هذا هو الأكثر مبيعًا لدينا هذا العام.",
       "acceptedAnswers": [
         "This is our best seller this year."
       ],
@@ -550,7 +542,7 @@ export default {
       "id": "lesson-187-ex-030",
       "type": "listen-and-type",
       "en": "This is our best seller this summer.",
-      "ar": "هذا هو الأكثر مبيعا لدينا هذا الصيف.",
+      "ar": "هذا هو الأكثر مبيعًا لدينا هذا الصيف.",
       "acceptedAnswers": [
         "This is our best seller this summer."
       ],
@@ -647,8 +639,6 @@ export default {
       "en": "Do you have this model in stock?",
       "ar": "هل لديك هذا الطراز في المخزن؟",
       "acceptedAnswers": [
-        "stock",
-        "Stock",
         "stock"
       ],
       "grammarTags": [
@@ -776,10 +766,8 @@ export default {
       "display": "The ___er gives you twenty percent off.",
       "blankWord": "off",
       "en": "The offer gives you twenty percent off.",
-      "ar": "العرض يمنحك خصما بعشرين بالمئة.",
+      "ar": "العرض يمنحك خصمًا بعشرين بالمئة.",
       "acceptedAnswers": [
-        "off",
-        "Off",
         "off"
       ],
       "grammarTags": [

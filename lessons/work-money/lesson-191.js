@@ -22,7 +22,7 @@ export default {
       },
       {
         "en": "You can cancel the contract within thirty days.",
-        "ar": "يمكنك إلغاء العقد خلال ثلاثين يوما."
+        "ar": "يمكنك إلغاء العقد خلال ثلاثين يومًا."
       },
       {
         "en": "Have you read the terms and conditions?",
@@ -144,8 +144,6 @@ export default {
       "en": "Read the contract carefully before you sign.",
       "ar": "اقرأ العقد بعناية قبل أن توقّع.",
       "acceptedAnswers": [
-        "contract",
-        "Contract",
         "contract"
       ],
       "grammarTags": [
@@ -275,8 +273,6 @@ export default {
       "en": "Have you read the terms and conditions?",
       "ar": "هل قرأت الشروط والأحكام؟",
       "acceptedAnswers": [
-        "terms",
-        "Terms",
         "terms"
       ],
       "grammarTags": [
@@ -392,9 +388,7 @@ export default {
       "en": "Sign here at the bottom of the page.",
       "ar": "وقّع هنا في أسفل الصفحة.",
       "acceptedAnswers": [
-        "Sign",
-        "Sign",
-        "sign"
+        "Sign"
       ],
       "grammarTags": [
         "contracts",
@@ -505,7 +499,7 @@ export default {
       "id": "lesson-191-ex-027",
       "type": "listen-and-type",
       "en": "Read the contract line by line before you sign.",
-      "ar": "اقرأ العقد سطرا سطرا قبل أن توقّع.",
+      "ar": "اقرأ العقد سطرًا سطرًا قبل أن توقّع.",
       "acceptedAnswers": [
         "Read the contract line by line before you sign."
       ],
@@ -523,8 +517,6 @@ export default {
       "en": "Can I cancel the contract after one year?",
       "ar": "هل أستطيع إلغاء العقد بعد سنة؟",
       "acceptedAnswers": [
-        "cancel",
-        "Cancel",
         "cancel"
       ],
       "grammarTags": [
@@ -566,7 +558,7 @@ export default {
       "id": "lesson-191-ex-031",
       "type": "listen-and-type",
       "en": "Read the agreement line by line before you sign.",
-      "ar": "اقرأ الاتفاقية سطرا سطرا قبل أن توقّع.",
+      "ar": "اقرأ الاتفاقية سطرًا سطرًا قبل أن توقّع.",
       "acceptedAnswers": [
         "Read the agreement line by line before you sign."
       ],
@@ -635,7 +627,7 @@ export default {
       "id": "lesson-191-ex-035",
       "type": "listen-and-type",
       "en": "Read the terms line by line before you sign.",
-      "ar": "اقرأ الشروط سطرا سطرا قبل أن توقّع.",
+      "ar": "اقرأ الشروط سطرًا سطرًا قبل أن توقّع.",
       "acceptedAnswers": [
         "Read the terms line by line before you sign."
       ],
@@ -653,8 +645,6 @@ export default {
       "en": "The contract expires at the end of June.",
       "ar": "ينتهي العقد في نهاية يونيو.",
       "acceptedAnswers": [
-        "expires",
-        "Expires",
         "expires"
       ],
       "grammarTags": [
@@ -714,7 +704,7 @@ export default {
       "id": "lesson-191-ex-040",
       "type": "listen-and-type",
       "en": "Read the small print line by line before you sign.",
-      "ar": "اقرأ الطباعة الصغيرة سطرا سطرا قبل أن توقّع.",
+      "ar": "اقرأ الطباعة الصغيرة سطرًا سطرًا قبل أن توقّع.",
       "acceptedAnswers": [
         "Read the small print line by line before you sign."
       ],
@@ -742,7 +732,7 @@ export default {
       "id": "lesson-191-ex-042",
       "type": "listen-and-type",
       "en": "We signed a two-year contract with the company.",
-      "ar": "وقّعنا عقدا لسنتين مع الشركة.",
+      "ar": "وقّعنا عقدًا لسنتين مع الشركة.",
       "acceptedAnswers": [
         "We signed a two-year contract with the company."
       ],
@@ -785,8 +775,6 @@ export default {
       "en": "Yes, but you must give two months of notice.",
       "ar": "نعم، لكن عليك تقديم إشعار بمدة شهرين.",
       "acceptedAnswers": [
-        "notice",
-        "Notice",
         "notice"
       ],
       "grammarTags": [
@@ -800,7 +788,7 @@ export default {
       "id": "lesson-191-ex-045",
       "type": "listen-and-type",
       "en": "We signed a one-year contract with the company.",
-      "ar": "وقّعنا عقدا لسنة واحدة مع الشركة.",
+      "ar": "وقّعنا عقدًا لسنة واحدة مع الشركة.",
       "acceptedAnswers": [
         "We signed a one-year contract with the company."
       ],
@@ -814,7 +802,7 @@ export default {
       "id": "lesson-191-ex-046",
       "type": "listen-and-type",
       "en": "We signed a five-year contract with the company.",
-      "ar": "وقّعنا عقدا لخمس سنوات مع الشركة.",
+      "ar": "وقّعنا عقدًا لخمس سنوات مع الشركة.",
       "acceptedAnswers": [
         "We signed a five-year contract with the company."
       ],
@@ -828,7 +816,7 @@ export default {
       "id": "lesson-191-ex-047",
       "type": "listen-and-type",
       "en": "We signed a six-month contract with the company.",
-      "ar": "وقّعنا عقدا لستة أشهر مع الشركة.",
+      "ar": "وقّعنا عقدًا لستة أشهر مع الشركة.",
       "acceptedAnswers": [
         "We signed a six-month contract with the company."
       ],
@@ -842,7 +830,7 @@ export default {
       "id": "lesson-191-ex-048",
       "type": "listen-and-type",
       "en": "We signed a three-year contract with the company.",
-      "ar": "وقّعنا عقدا لثلاث سنوات مع الشركة.",
+      "ar": "وقّعنا عقدًا لثلاث سنوات مع الشركة.",
       "acceptedAnswers": [
         "We signed a three-year contract with the company."
       ],
@@ -856,7 +844,7 @@ export default {
       "id": "lesson-191-ex-049",
       "type": "listen-and-type",
       "en": "We signed a ten-month contract with the company.",
-      "ar": "وقّعنا عقدا لعشرة أشهر مع الشركة.",
+      "ar": "وقّعنا عقدًا لعشرة أشهر مع الشركة.",
       "acceptedAnswers": [
         "We signed a ten-month contract with the company."
       ],
@@ -884,7 +872,7 @@ export default {
       "id": "lesson-191-ex-051",
       "type": "listen-and-type",
       "en": "You can cancel the contract within thirty days.",
-      "ar": "يمكنك إلغاء العقد خلال ثلاثين يوما.",
+      "ar": "يمكنك إلغاء العقد خلال ثلاثين يومًا.",
       "acceptedAnswers": [
         "You can cancel the contract within thirty days."
       ],
@@ -912,7 +900,7 @@ export default {
       "id": "lesson-191-ex-053",
       "type": "listen-and-type",
       "en": "You can cancel the contract within fourteen days.",
-      "ar": "يمكنك إلغاء العقد خلال أربعة عشر يوما.",
+      "ar": "يمكنك إلغاء العقد خلال أربعة عشر يومًا.",
       "acceptedAnswers": [
         "You can cancel the contract within fourteen days."
       ],

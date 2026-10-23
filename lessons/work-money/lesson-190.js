@@ -22,7 +22,7 @@ export default {
       },
       {
         "en": "If you miss a payment, the bank charges a late fee.",
-        "ar": "إذا فوّت قسطا، يفرض البنك رسوم تأخير."
+        "ar": "إذا فوّت قسطًا، يفرض البنك رسوم تأخير."
       },
       {
         "en": "I am behind on payments because I lost my job.",
@@ -143,8 +143,6 @@ export default {
       "en": "Did you pay the electricity bill before the due date?",
       "ar": "هل دفعت فاتورة الكهرباء قبل تاريخ الاستحقاق؟",
       "acceptedAnswers": [
-        "due",
-        "Due",
         "due"
       ],
       "grammarTags": [
@@ -277,8 +275,6 @@ export default {
       "en": "We took a car loan from the bank last year.",
       "ar": "أخذنا قرض سيارة من البنك العام الماضي.",
       "acceptedAnswers": [
-        "loan",
-        "Loan",
         "loan"
       ],
       "grammarTags": [
@@ -292,7 +288,7 @@ export default {
       "id": "lesson-190-ex-013",
       "type": "listen-and-type",
       "en": "That is high; try to repay it early.",
-      "ar": "هذا مرتفع؛ حاول سداده مبكرا.",
+      "ar": "هذا مرتفع؛ حاول سداده مبكرًا.",
       "acceptedAnswers": [
         "That is high; try to repay it early."
       ],
@@ -348,7 +344,7 @@ export default {
       "id": "lesson-190-ex-017",
       "type": "listen-and-type",
       "en": "My sister has never borrowed money from anyone.",
-      "ar": "لم تستلف أختي مالا من أحد قط.",
+      "ar": "لم تستلف أختي مالًا من أحد قط.",
       "acceptedAnswers": [
         "My sister has never borrowed money from anyone."
       ],
@@ -394,8 +390,6 @@ export default {
       "en": "How much is your monthly payment?",
       "ar": "كم قسطك الشهري؟",
       "acceptedAnswers": [
-        "payment",
-        "Payment",
         "payment"
       ],
       "grammarTags": [
@@ -438,7 +432,7 @@ export default {
       "question": "\"I am behind on payments\" means:",
       "options": [
         "أنا أرفض الدفع",
-        "أنا أدفع نقدا",
+        "أنا أدفع نقدًا",
         "أنا دفعت مرتين",
         "أنا متأخر عن الأقساط"
       ],
@@ -454,7 +448,7 @@ export default {
       "id": "lesson-190-ex-023",
       "type": "listen-and-type",
       "en": "If you miss a payment, the bank charges a late fee.",
-      "ar": "إذا فوّت قسطا، يفرض البنك رسوم تأخير.",
+      "ar": "إذا فوّت قسطًا، يفرض البنك رسوم تأخير.",
       "acceptedAnswers": [
         "If you miss a payment, the bank charges a late fee."
       ],
@@ -528,8 +522,6 @@ export default {
       "en": "The interest rate on my loan is six percent.",
       "ar": "سعر الفائدة على قرضي ستة بالمئة.",
       "acceptedAnswers": [
-        "interest",
-        "Interest",
         "interest"
       ],
       "grammarTags": [
@@ -625,7 +617,7 @@ export default {
       "id": "lesson-190-ex-034",
       "type": "listen-and-type",
       "en": "I took a loan from the bank last year.",
-      "ar": "أنا أخذت قرضا من البنك العام الماضي.",
+      "ar": "أنا أخذت قرضًا من البنك العام الماضي.",
       "acceptedAnswers": [
         "I took a loan from the bank last year."
       ],
@@ -639,7 +631,7 @@ export default {
       "id": "lesson-190-ex-035",
       "type": "listen-and-type",
       "en": "You took a loan from the bank last year.",
-      "ar": "أنت أخذت قرضا من البنك العام الماضي.",
+      "ar": "أنت أخذت قرضًا من البنك العام الماضي.",
       "acceptedAnswers": [
         "You took a loan from the bank last year."
       ],
@@ -657,8 +649,6 @@ export default {
       "en": "I am behind on payments because I lost my job.",
       "ar": "أنا متأخر عن الأقساط لأنني فقدت عملي.",
       "acceptedAnswers": [
-        "behind",
-        "Behind",
         "behind"
       ],
       "grammarTags": [
@@ -679,7 +669,7 @@ export default {
         "notice period"
       ],
       "answerIndex": 0,
-      "ar": "البنك يأخذ مالا إضافيا مقابل الاستلاف، وهذا هو:",
+      "ar": "البنك يأخذ مالًا إضافيًا مقابل الاستلاف، وهذا هو:",
       "grammarTags": [
         "loans",
         "money"
@@ -690,7 +680,7 @@ export default {
       "id": "lesson-190-ex-038",
       "type": "listen-and-type",
       "en": "He took a loan from the bank last year.",
-      "ar": "هو أخذ قرضا من البنك العام الماضي.",
+      "ar": "هو أخذ قرضًا من البنك العام الماضي.",
       "acceptedAnswers": [
         "He took a loan from the bank last year."
       ],
@@ -704,7 +694,7 @@ export default {
       "id": "lesson-190-ex-039",
       "type": "listen-and-type",
       "en": "She took a loan from the bank last year.",
-      "ar": "هي أخذت قرضا من البنك العام الماضي.",
+      "ar": "هي أخذت قرضًا من البنك العام الماضي.",
       "acceptedAnswers": [
         "She took a loan from the bank last year."
       ],
@@ -718,7 +708,7 @@ export default {
       "id": "lesson-190-ex-040",
       "type": "listen-and-type",
       "en": "We took a loan from the bank last year.",
-      "ar": "نحن أخذنا قرضا من البنك العام الماضي.",
+      "ar": "نحن أخذنا قرضًا من البنك العام الماضي.",
       "acceptedAnswers": [
         "We took a loan from the bank last year."
       ],
@@ -732,7 +722,7 @@ export default {
       "id": "lesson-190-ex-041",
       "type": "listen-and-type",
       "en": "They took a loan from the bank last year.",
-      "ar": "هم أخذوا قرضا من البنك العام الماضي.",
+      "ar": "هم أخذوا قرضًا من البنك العام الماضي.",
       "acceptedAnswers": [
         "They took a loan from the bank last year."
       ],
@@ -791,8 +781,6 @@ export default {
       "en": "They allowed me to pay in smaller installments.",
       "ar": "سمحوا لي بالدفع بأقساط أصغر.",
       "acceptedAnswers": [
-        "installments",
-        "Installments",
         "installments"
       ],
       "grammarTags": [

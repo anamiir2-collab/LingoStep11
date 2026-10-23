@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "On the first day at work you use short, simple sentences. Point to things with \"This is my desk\" and \"These are my colleagues\" (singular \"this\", plural \"these\"). Ask where places are with \"Where is ...?\" — \"Where is the meeting room?\". Ask for help politely with \"Can you help me, please?\". Use the verb be to describe feelings: \"I am excited\", \"I am a little nervous\". Reassure yourself with the negative: \"I am not late\".",
-    "explanationAr": "في أول يوم عمل تستخدم جملا قصيرة وبسيطة. أشِر إلى الأشياء بـ This is my desk وThese are my colleagues (المفرد this والجمع these). واسأل عن الأماكن بـ Where is ...؟ مثل Where is the meeting room؟ واطلب المساعدة بأدب بـ Can you help me, please؟ وصف مشاعرك بفعل الكينونة: I am excited، I am a little nervous. وطمّن نفسك بالنفي: I am not late.",
+    "explanationAr": "في أول يوم عمل تستخدم جملًا قصيرة وبسيطة. أشِر إلى الأشياء بـ This is my desk وThese are my colleagues (المفرد this والجمع these). واسأل عن الأماكن بـ Where is ...؟ مثل Where is the meeting room؟ واطلب المساعدة بأدب بـ Can you help me, please؟ وصف مشاعرك بفعل الكينونة: I am excited، I am a little nervous. وطمّن نفسك بالنفي: I am not late.",
     "examples": [
       {
         "en": "Today is my first day at work.",
@@ -63,9 +63,9 @@ export default {
       "example": "Where is the meeting room?"
     },
     {
-      "word": "elevator",
-      "meaningAr": "مصعد",
-      "example": "It is next to the elevator."
+      "word": "calendar",
+      "meaningAr": "تقويم",
+      "example": "This is my calendar."
     },
     {
       "word": "badge",
@@ -73,9 +73,9 @@ export default {
       "example": "This is my badge."
     },
     {
-      "word": "floor",
-      "meaningAr": "طابق",
-      "example": "His office is on the second floor."
+      "word": "computer",
+      "meaningAr": "حاسوب",
+      "example": "My computer and my phone are on the desk."
     },
     {
       "word": "introduce",
@@ -113,7 +113,7 @@ export default {
       "id": "lesson-175-ex-002",
       "type": "listen-and-type",
       "en": "I am a little nervous, but I am excited.",
-      "ar": "أنا متوتر قليلا، لكنني متحمس.",
+      "ar": "أنا متوتر قليلًا، لكنني متحمس.",
       "acceptedAnswers": [
         "I am a little nervous, but I am excited."
       ],
@@ -147,8 +147,6 @@ export default {
       "en": "Today is my first day at work.",
       "ar": "اليوم أول يوم عمل لي.",
       "acceptedAnswers": [
-        "first",
-        "First",
         "first"
       ],
       "grammarTags": [
@@ -227,7 +225,7 @@ export default {
       "id": "lesson-175-ex-009",
       "type": "listen-and-type",
       "en": "Excuse me, where is the boss's office?",
-      "ar": "عفوا، أين مكتب المدير؟",
+      "ar": "عفوًا، أين مكتب المدير؟",
       "acceptedAnswers": [
         "Excuse me, where is the boss's office?"
       ],
@@ -286,8 +284,6 @@ export default {
       "en": "This is my desk.",
       "ar": "هذا مكتبي.",
       "acceptedAnswers": [
-        "desk",
-        "Desk",
         "desk"
       ],
       "grammarTags": [
@@ -317,7 +313,7 @@ export default {
       "id": "lesson-175-ex-014",
       "type": "listen-and-type",
       "en": "Welcome to the team, Sara!",
-      "ar": "أهلا بك في الفريق يا سارة!",
+      "ar": "أهلًا بك في الفريق يا سارة!",
       "acceptedAnswers": [
         "Welcome to the team, Sara!"
       ],
@@ -377,7 +373,7 @@ export default {
       "id": "lesson-175-ex-018",
       "type": "listen-and-type",
       "en": "I am not late. The meeting starts at ten.",
-      "ar": "أنا لست متأخرا. يبدأ الاجتماع في العاشرة.",
+      "ar": "أنا لست متأخرًا. يبدأ الاجتماع في العاشرة.",
       "acceptedAnswers": [
         "I am not late. The meeting starts at ten."
       ],
@@ -411,8 +407,6 @@ export default {
       "en": "Where is the meeting room?",
       "ar": "أين قاعة الاجتماعات؟",
       "acceptedAnswers": [
-        "meeting",
-        "Meeting",
         "meeting"
       ],
       "grammarTags": [
@@ -470,7 +464,7 @@ export default {
       "id": "lesson-175-ex-023",
       "type": "listen-and-type",
       "en": "Thank you! My first day is great.",
-      "ar": "شكرا! يومي الأول رائع.",
+      "ar": "شكرًا! يومي الأول رائع.",
       "acceptedAnswers": [
         "Thank you! My first day is great."
       ],
@@ -545,8 +539,6 @@ export default {
       "en": "It is next to the elevator.",
       "ar": "إنها بجانب المصعد.",
       "acceptedAnswers": [
-        "elevator",
-        "Elevator",
         "elevator"
       ],
       "grammarTags": [
@@ -673,8 +665,6 @@ export default {
       "en": "Let me introduce you to the team.",
       "ar": "دعني أعرّفك بالفريق.",
       "acceptedAnswers": [
-        "team",
-        "Team",
         "team"
       ],
       "grammarTags": [
@@ -693,7 +683,7 @@ export default {
         "أنت متأخر",
         "الاجتماع ملغى",
         "أغلق الباب",
-        "أهلا بك في الفريق"
+        "أهلًا بك في الفريق"
       ],
       "answerIndex": 3,
       "ar": "قال لك مديرك Welcome to the team! أي يعني:",
@@ -807,8 +797,6 @@ export default {
       "en": "Can you help me with this report, please?",
       "ar": "هل يمكنك مساعدتي في هذا التقرير من فضلك؟",
       "acceptedAnswers": [
-        "help",
-        "Help",
         "help"
       ],
       "grammarTags": [
@@ -920,7 +908,7 @@ export default {
       "id": "lesson-175-ex-052",
       "type": "listen-and-type",
       "en": "I am happy about my new job.",
-      "ar": "أنا سعيد جدا بعملي الجديد.",
+      "ar": "أنا سعيد جدًا بعملي الجديد.",
       "acceptedAnswers": [
         "I am happy about my new job."
       ],
@@ -948,7 +936,7 @@ export default {
       "id": "lesson-175-ex-054",
       "type": "listen-and-type",
       "en": "I am a little nervous about my new job.",
-      "ar": "أنا متوتر قليلا بعملي الجديد.",
+      "ar": "أنا متوتر قليلًا بعملي الجديد.",
       "acceptedAnswers": [
         "I am a little nervous about my new job."
       ],

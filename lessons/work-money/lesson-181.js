@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "Team language starts with \"let's\": \"Let's divide the tasks before we start\". Accept a duty with \"I will handle this part\" — will shows a decision made now. Praise the team with \"Good job, team!\" and encourage support: \"We should support each other\". Disagree politely with \"I do not agree with this plan; it costs too much\". Use present perfect for team news: \"Have you talked to the other members yet?\", \"We have agreed on a new idea\". Real teamwork follows if-clauses: \"If everyone helps, we will finish before six\".",
-    "explanationAr": "لغة الفريق تبدأ بـ let's: Let's divide the tasks before we start. وتقبل المسؤولية بـ I will handle this part، فـ will تفيد قرارا اتُّخذ الآن. وامدح الفريق بـ Good job, team! وشجع الدعم: We should support each other. واعترض بأدب بـ I do not agree with this plan; it costs too much. واستخدم المضارع التام لأخبار الفريق: Have you talked to the other members yet؟ وWe have agreed on a new idea. ويقوم العمل الجماعي على الشرط: If everyone helps, we will finish before six.",
+    "explanationAr": "لغة الفريق تبدأ بـ let's: Let's divide the tasks before we start. وتقبل المسؤولية بـ I will handle this part، فـ will تفيد قرارًا اتُّخذ الآن. وامدح الفريق بـ Good job, team! وشجع الدعم: We should support each other. واعترض بأدب بـ I do not agree with this plan; it costs too much. واستخدم المضارع التام لأخبار الفريق: Have you talked to the other members yet؟ وWe have agreed on a new idea. ويقوم العمل الجماعي على الشرط: If everyone helps, we will finish before six.",
     "examples": [
       {
         "en": "Let's divide the tasks before we start.",
@@ -58,9 +58,9 @@ export default {
       "example": "We should support each other during busy weeks."
     },
     {
-      "word": "share",
-      "meaningAr": "يشارك",
-      "example": "Can you share your notes with Omar, please?"
+      "word": "tasks",
+      "meaningAr": "مهام",
+      "example": "Let's divide the tasks before we start."
     },
     {
       "word": "responsibility",
@@ -84,7 +84,7 @@ export default {
     },
     {
       "word": "together",
-      "meaningAr": "معا",
+      "meaningAr": "معًا",
       "example": "The designers and the writers are working together."
     },
     {
@@ -144,8 +144,6 @@ export default {
       "en": "Let's divide the tasks before we start.",
       "ar": "لنقسم المهام قبل أن نبدأ.",
       "acceptedAnswers": [
-        "divide",
-        "Divide",
         "divide"
       ],
       "grammarTags": [
@@ -159,7 +157,7 @@ export default {
       "id": "lesson-181-ex-005",
       "type": "listen-and-type",
       "en": "We should support each other during busy weeks.",
-      "ar": "ينبغي أن ندعم بعضنا بعضا في الأسابيع المزدحمة.",
+      "ar": "ينبغي أن ندعم بعضنا بعضًا في الأسابيع المزدحمة.",
       "acceptedAnswers": [
         "We should support each other during busy weeks."
       ],
@@ -205,7 +203,7 @@ export default {
       "id": "lesson-181-ex-008",
       "type": "listen-and-type",
       "en": "He was absent yesterday.",
-      "ar": "كان غائبا أمس.",
+      "ar": "كان غائبًا أمس.",
       "acceptedAnswers": [
         "He was absent yesterday."
       ],
@@ -275,8 +273,6 @@ export default {
       "en": "I will handle this part; it is easy for me.",
       "ar": "سأتولى هذا الجزء؛ إنه سهل بالنسبة لي.",
       "acceptedAnswers": [
-        "handle",
-        "Handle",
         "handle"
       ],
       "grammarTags": [
@@ -304,7 +300,7 @@ export default {
       "id": "lesson-181-ex-014",
       "type": "listen-and-type",
       "en": "I do not agree with this plan; it costs too much.",
-      "ar": "لا أوافق على هذه الخطة؛ كلفتها كبيرة جدا.",
+      "ar": "لا أوافق على هذه الخطة؛ كلفتها كبيرة جدًا.",
       "acceptedAnswers": [
         "I do not agree with this plan; it costs too much."
       ],
@@ -346,7 +342,7 @@ export default {
       "id": "lesson-181-ex-017",
       "type": "listen-and-type",
       "en": "The designers and the writers are working together.",
-      "ar": "المصممون والكتّاب يعملون معا.",
+      "ar": "المصممون والكتّاب يعملون معًا.",
       "acceptedAnswers": [
         "The designers and the writers are working together."
       ],
@@ -392,8 +388,6 @@ export default {
       "en": "Good job, team! We finished the report on time.",
       "ar": "عمل رائع يا فريق! أنهينا التقرير في وقته.",
       "acceptedAnswers": [
-        "report",
-        "Report",
         "report"
       ],
       "grammarTags": [
@@ -439,7 +433,7 @@ export default {
         "Never mind!"
       ],
       "answerIndex": 0,
-      "ar": "أنجزت زميلتك جزءها جيدا، فتقول لها:",
+      "ar": "أنجزت زميلتك جزءها جيدًا، فتقول لها:",
       "grammarTags": [
         "work",
         "teamwork"
@@ -450,7 +444,7 @@ export default {
       "id": "lesson-181-ex-023",
       "type": "listen-and-type",
       "en": "Thank you all for your great work.",
-      "ar": "شكرا لكم جميعا على عملكم الرائع.",
+      "ar": "شكرًا لكم جميعًا على عملكم الرائع.",
       "acceptedAnswers": [
         "Thank you all for your great work."
       ],
@@ -518,10 +512,8 @@ export default {
       "display": "We should ___ each other during busy weeks.",
       "blankWord": "support",
       "en": "We should support each other during busy weeks.",
-      "ar": "ينبغي أن ندعم بعضنا بعضا في الأسابيع المزدحمة.",
+      "ar": "ينبغي أن ندعم بعضنا بعضًا في الأسابيع المزدحمة.",
       "acceptedAnswers": [
-        "support",
-        "Support",
         "support"
       ],
       "grammarTags": [
@@ -645,8 +637,6 @@ export default {
       "en": "Can you share your notes with Omar, please?",
       "ar": "هل تشارك ملاحظاتك مع عمر من فضلك؟",
       "acceptedAnswers": [
-        "share",
-        "Share",
         "share"
       ],
       "grammarTags": [
@@ -748,7 +738,7 @@ export default {
       "id": "lesson-181-ex-043",
       "type": "word-order",
       "en": "We should support each other during busy weeks.",
-      "ar": "ينبغي أن ندعم بعضنا بعضا في الأسابيع المزدحمة.",
+      "ar": "ينبغي أن ندعم بعضنا بعضًا في الأسابيع المزدحمة.",
       "words": [
         "should",
         "support",
@@ -777,8 +767,6 @@ export default {
       "en": "What is my responsibility in this project?",
       "ar": "ما مسؤوليتي في هذا المشروع؟",
       "acceptedAnswers": [
-        "responsibility",
-        "Responsibility",
         "responsibility"
       ],
       "grammarTags": [
@@ -904,7 +892,7 @@ export default {
       "id": "lesson-181-ex-053",
       "type": "listen-and-type",
       "en": "We should support each other.",
-      "ar": "ينبغي أن ندعم بعضنا بعضا.",
+      "ar": "ينبغي أن ندعم بعضنا بعضًا.",
       "acceptedAnswers": [
         "We should support each other."
       ],
@@ -918,7 +906,7 @@ export default {
       "id": "lesson-181-ex-054",
       "type": "listen-and-type",
       "en": "We should help each other.",
-      "ar": "ينبغي أن نساعد بعضنا بعضا.",
+      "ar": "ينبغي أن نساعد بعضنا بعضًا.",
       "acceptedAnswers": [
         "We should help each other."
       ],
@@ -932,7 +920,7 @@ export default {
       "id": "lesson-181-ex-055",
       "type": "listen-and-type",
       "en": "We should respect each other.",
-      "ar": "ينبغي أن نحترم بعضنا بعضا.",
+      "ar": "ينبغي أن نحترم بعضنا بعضًا.",
       "acceptedAnswers": [
         "We should respect each other."
       ],

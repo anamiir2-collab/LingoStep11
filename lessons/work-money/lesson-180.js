@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "Deadlines use \"due\": \"The report is due on Friday\" — the answer must be ready by that day. Describe problems with \"I am running behind schedule\" and ask for more time with \"Can we extend the deadline by two days?\". Present perfect reports progress: \"Have you finished the sales report yet?\", \"We have not made much progress today\". Promise results with if + present and will: \"If we start now, we can finish the report by Friday\". Work that must be delivered at the agreed time is \"on time\"; late work is \"behind schedule\".",
-    "explanationAr": "تستخدم كلمة due للمواعيد النهائية: The report is due on Friday، أي يجب أن يكون التقرير جاهزا قبل ذلك اليوم. وصف مشكلتك بـ I am running behind schedule واطلب وقتا إضافيا بـ Can we extend the deadline by two days؟ وتبلغ عن التقدم بالمضارع التام: Have you finished the sales report yet؟ وWe have not made much progress today. وعد بالنتائج بـ if مع المضارع وwill: If we start now, we can finish the report by Friday. والعمل المسلَّم في وقته المحدد هو on time، والمتأخر عن الجدول هو behind schedule.",
+    "explanationAr": "تستخدم كلمة due للمواعيد النهائية: The report is due on Friday، أي يجب أن يكون التقرير جاهزًا قبل ذلك اليوم. وصف مشكلتك بـ I am running behind schedule واطلب وقتًا إضافيًا بـ Can we extend the deadline by two days؟ وتبلغ عن التقدم بالمضارع التام: Have you finished the sales report yet؟ وWe have not made much progress today. وعد بالنتائج بـ if مع المضارع وwill: If we start now, we can finish the report by Friday. والعمل المسلَّم في وقته المحدد هو on time، والمتأخر عن الجدول هو behind schedule.",
     "examples": [
       {
         "en": "The report is due on Friday.",
@@ -144,8 +144,6 @@ export default {
       "en": "The report is due on Friday.",
       "ar": "التقرير مطلوب يوم الجمعة.",
       "acceptedAnswers": [
-        "due",
-        "Due",
         "due"
       ],
       "grammarTags": [
@@ -205,7 +203,7 @@ export default {
       "id": "lesson-180-ex-008",
       "type": "listen-and-type",
       "en": "I will ask the manager, but he is very strict.",
-      "ar": "سأسأل المدير، لكنه صارم جدا.",
+      "ar": "سأسأل المدير، لكنه صارم جدًا.",
       "acceptedAnswers": [
         "I will ask the manager, but he is very strict."
       ],
@@ -219,7 +217,7 @@ export default {
       "id": "lesson-180-ex-009",
       "type": "listen-and-type",
       "en": "If we finish early, we can review it together.",
-      "ar": "إذا انتهينا مبكرا، يمكننا مراجعته معا.",
+      "ar": "إذا انتهينا مبكرًا، يمكننا مراجعته معًا.",
       "acceptedAnswers": [
         "If we finish early, we can review it together."
       ],
@@ -274,8 +272,6 @@ export default {
       "en": "I am running behind schedule this week.",
       "ar": "أنا متأخر عن الجدول هذا الأسبوع.",
       "acceptedAnswers": [
-        "behind",
-        "Behind",
         "behind"
       ],
       "grammarTags": [
@@ -289,7 +285,7 @@ export default {
       "id": "lesson-180-ex-013",
       "type": "listen-and-type",
       "en": "No, not yet. I need one more day.",
-      "ar": "لا، ليس بعد. أحتاج يوما إضافيا.",
+      "ar": "لا، ليس بعد. أحتاج يومًا إضافيًا.",
       "acceptedAnswers": [
         "No, not yet. I need one more day."
       ],
@@ -317,7 +313,7 @@ export default {
       "id": "lesson-180-ex-015",
       "type": "listen-and-type",
       "en": "We have not made much progress today.",
-      "ar": "لم نحرز تقدما كبيرا اليوم.",
+      "ar": "لم نحرز تقدما كبيرًا اليوم.",
       "acceptedAnswers": [
         "We have not made much progress today."
       ],
@@ -331,7 +327,7 @@ export default {
       "id": "lesson-180-ex-016",
       "type": "listen-and-type",
       "en": "That is true; the schedule is too tight.",
-      "ar": "هذا صحيح؛ الجدول ضيق جدا.",
+      "ar": "هذا صحيح؛ الجدول ضيق جدًا.",
       "acceptedAnswers": [
         "That is true; the schedule is too tight."
       ],
@@ -391,8 +387,6 @@ export default {
       "en": "Can we extend the deadline by two days?",
       "ar": "هل يمكننا تمديد الموعد النهائي يومين؟",
       "acceptedAnswers": [
-        "extend",
-        "Extend",
         "extend"
       ],
       "grammarTags": [
@@ -448,7 +442,7 @@ export default {
       "id": "lesson-180-ex-023",
       "type": "listen-and-type",
       "en": "Yes, it is very urgent; the client is waiting.",
-      "ar": "نعم، إنها عاجلة جدا؛ العميل ينتظر.",
+      "ar": "نعم، إنها عاجلة جدًا؛ العميل ينتظر.",
       "acceptedAnswers": [
         "Yes, it is very urgent; the client is waiting."
       ],
@@ -522,8 +516,6 @@ export default {
       "en": "Have you finished the sales report yet?",
       "ar": "هل أنهيت تقرير المبيعات بعد؟",
       "acceptedAnswers": [
-        "yet",
-        "Yet",
         "yet"
       ],
       "grammarTags": [
@@ -648,10 +640,8 @@ export default {
       "display": "We have not made much ___ today.",
       "blankWord": "progress",
       "en": "We have not made much progress today.",
-      "ar": "لم نحرز تقدما كبيرا اليوم.",
+      "ar": "لم نحرز تقدما كبيرًا اليوم.",
       "acceptedAnswers": [
-        "progress",
-        "Progress",
         "progress"
       ],
       "grammarTags": [
@@ -781,8 +771,6 @@ export default {
       "en": "The team worked late to meet the deadline.",
       "ar": "عمل الفريق حتى وقت متأخر ليلبي الموعد النهائي.",
       "acceptedAnswers": [
-        "deadline",
-        "Deadline",
         "deadline"
       ],
       "grammarTags": [
@@ -936,7 +924,7 @@ export default {
       "id": "lesson-180-ex-055",
       "type": "listen-and-type",
       "en": "Can we extend the deadline by one week?",
-      "ar": "هل يمكننا تمديد الموعد النهائي أسبوعا؟",
+      "ar": "هل يمكننا تمديد الموعد النهائي أسبوعًا؟",
       "acceptedAnswers": [
         "Can we extend the deadline by one week?"
       ],

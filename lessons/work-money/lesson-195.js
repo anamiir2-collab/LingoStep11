@@ -72,14 +72,14 @@ export default {
       "example": "The last payment left my account."
     },
     {
-      "word": "appointment",
-      "meaningAr": "موعد",
-      "example": "I moved my appointment to Thursday."
+      "word": "bank",
+      "meaningAr": "بنك",
+      "example": "No, I will ask the bank tomorrow."
     },
     {
-      "word": "colleague",
-      "meaningAr": "زميل",
-      "example": "My colleague covered my shift."
+      "word": "interview",
+      "meaningAr": "مقابلة عمل",
+      "example": "After the interview, they offered me the job on Monday."
     },
     {
       "word": "goal",
@@ -143,8 +143,6 @@ export default {
       "en": "After the interview, they offered me the job on Monday.",
       "ar": "بعد المقابلة، عرضوا علي الوظيفة يوم الاثنين.",
       "acceptedAnswers": [
-        "interview",
-        "Interview",
         "interview"
       ],
       "grammarTags": [
@@ -158,7 +156,7 @@ export default {
       "id": "lesson-195-ex-005",
       "type": "listen-and-type",
       "en": "Sorry, I am behind on my invoices this week.",
-      "ar": "عذرا، أنا متأخر عن فواتيري هذا الأسبوع.",
+      "ar": "عذرًا، أنا متأخر عن فواتيري هذا الأسبوع.",
       "acceptedAnswers": [
         "Sorry, I am behind on my invoices this week."
       ],
@@ -193,7 +191,7 @@ export default {
         "the late fee"
       ],
       "answerIndex": 1,
-      "ar": "تريد معرفة ما تمنحه الوظيفة شهريا، تسأل عن:",
+      "ar": "تريد معرفة ما تمنحه الوظيفة شهريًا، تسأل عن:",
       "grammarTags": [
         "review",
         "work-money"
@@ -261,8 +259,6 @@ export default {
       "en": "I have worked in this department for three years.",
       "ar": "عملت في هذا القسم لثلاث سنوات.",
       "acceptedAnswers": [
-        "department",
-        "Department",
         "department"
       ],
       "grammarTags": [
@@ -304,7 +300,7 @@ export default {
       "id": "lesson-195-ex-014",
       "type": "listen-and-type",
       "en": "No, I will ask the bank tomorrow.",
-      "ar": "لا، سأسأل البنك غدا.",
+      "ar": "لا، سأسأل البنك غدًا.",
       "acceptedAnswers": [
         "No, I will ask the bank tomorrow."
       ],
@@ -364,8 +360,6 @@ export default {
       "en": "Could we move the meeting to eleven, please?",
       "ar": "هل يمكن نقل الاجتماع إلى الحادية عشرة من فضلك؟",
       "acceptedAnswers": [
-        "meeting",
-        "Meeting",
         "meeting"
       ],
       "grammarTags": [
@@ -436,7 +430,7 @@ export default {
       "id": "lesson-195-ex-022",
       "type": "listen-and-type",
       "en": "Working from home saves me money on transport.",
-      "ar": "يوفر لي العمل من المنزل مالا على المواصلات.",
+      "ar": "يوفر لي العمل من المنزل مالًا على المواصلات.",
       "acceptedAnswers": [
         "Working from home saves me money on transport."
       ],
@@ -482,8 +476,6 @@ export default {
       "en": "The client agreed to the new payment terms.",
       "ar": "وافق العميل على شروط الدفع الجديدة.",
       "acceptedAnswers": [
-        "client",
-        "Client",
         "client"
       ],
       "grammarTags": [
@@ -601,8 +593,6 @@ export default {
       "en": "Have you checked the interest rate on your loan?",
       "ar": "هل تحققت من سعر الفائدة على قرضك؟",
       "acceptedAnswers": [
-        "interest",
-        "Interest",
         "interest"
       ],
       "grammarTags": [
@@ -715,8 +705,6 @@ export default {
       "en": "She deserves a raise for her excellent work.",
       "ar": "تستحق زيادة في الراتب لعملها الممتاز.",
       "acceptedAnswers": [
-        "raise",
-        "Raise",
         "raise"
       ],
       "grammarTags": [
@@ -822,8 +810,6 @@ export default {
       "en": "Did you open a savings account at the new bank?",
       "ar": "هل فتحت حساب توفير في البنك الجديد؟",
       "acceptedAnswers": [
-        "savings",
-        "Savings",
         "savings"
       ],
       "grammarTags": [
@@ -936,10 +922,8 @@ export default {
       "display": "Working from home saves me money on ___.",
       "blankWord": "transport",
       "en": "Working from home saves me money on transport.",
-      "ar": "يوفر لي العمل من المنزل مالا على المواصلات.",
+      "ar": "يوفر لي العمل من المنزل مالًا على المواصلات.",
       "acceptedAnswers": [
-        "transport",
-        "Transport",
         "transport"
       ],
       "grammarTags": [
@@ -1056,8 +1040,6 @@ export default {
       "en": "If the invoice is late, the client pays a penalty.",
       "ar": "إذا تأخرت الفاتورة، يدفع العميل غرامة.",
       "acceptedAnswers": [
-        "penalty",
-        "Penalty",
         "penalty"
       ],
       "grammarTags": [
@@ -1071,7 +1053,7 @@ export default {
       "id": "lesson-195-ex-061",
       "type": "listen-and-type",
       "en": "If you save ten percent monthly, you will reach your goal.",
-      "ar": "إذا ودّرت عشرة بالمئة شهريا، ستحقق هدفك.",
+      "ar": "إذا ودّرت عشرة بالمئة شهريًا، ستحقق هدفك.",
       "acceptedAnswers": [
         "If you save ten percent monthly, you will reach your goal."
       ],
@@ -1085,7 +1067,7 @@ export default {
       "id": "lesson-195-ex-062",
       "type": "listen-and-type",
       "en": "If you save ten percent monthly, you will avoid the late fee.",
-      "ar": "إذا ودّرت عشرة بالمئة شهريا، ستتفادى رسوم التأخير.",
+      "ar": "إذا ودّرت عشرة بالمئة شهريًا، ستتفادى رسوم التأخير.",
       "acceptedAnswers": [
         "If you save ten percent monthly, you will avoid the late fee."
       ],
@@ -1099,7 +1081,7 @@ export default {
       "id": "lesson-195-ex-063",
       "type": "listen-and-type",
       "en": "If you save ten percent monthly, you will pass the review.",
-      "ar": "إذا ودّرت عشرة بالمئة شهريا، ستنجح في التقييم.",
+      "ar": "إذا ودّرت عشرة بالمئة شهريًا، ستنجح في التقييم.",
       "acceptedAnswers": [
         "If you save ten percent monthly, you will pass the review."
       ],
@@ -1197,7 +1179,7 @@ export default {
       "id": "lesson-195-ex-070",
       "type": "listen-and-type",
       "en": "If you arrive early, you will reach your goal.",
-      "ar": "إذا وصلت مبكرا، ستحقق هدفك.",
+      "ar": "إذا وصلت مبكرًا، ستحقق هدفك.",
       "acceptedAnswers": [
         "If you arrive early, you will reach your goal."
       ],

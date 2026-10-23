@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "At the bank, polite requests use \"I would like to ...\" or \"Could I ... ?\": \"I would like to open a savings account, please\". Staff ask about rules with do/does and the present simple: \"Does this account have a monthly fee?\". \"Need\" and \"require\" both ask about obligations: \"What documents do you require?\". After a number, the noun stays singular: \"five working days\", \"two dollars\". Present perfect shows finished steps: \"They have not approved my application yet\".",
-    "explanationAr": "في البنك نستخدم الطلبات المهذبة بصيغة I would like to أو Could I: I would like to open a savings account, please. ويسأل الموظفون عن القواعد بـ do/does مع المضارع البسيط: Does this account have a monthly fee؟ وتعبر need وrequire عن الإلزام: What documents do you require؟ وبعد الأرقام يبقى الاسم مفردا: five working days وtwo dollars. ويعبر المضارع التام عن خطوات منتهية: They have not approved my application yet.",
+    "explanationAr": "في البنك نستخدم الطلبات المهذبة بصيغة I would like to أو Could I: I would like to open a savings account, please. ويسأل الموظفون عن القواعد بـ do/does مع المضارع البسيط: Does this account have a monthly fee؟ وتعبر need وrequire عن الإلزام: What documents do you require؟ وبعد الأرقام يبقى الاسم مفردًا: five working days وtwo dollars. ويعبر المضارع التام عن خطوات منتهية: They have not approved my application yet.",
     "examples": [
       {
         "en": "I would like to open a savings account, please.",
@@ -73,9 +73,9 @@ export default {
       "example": "Put your signature at the bottom."
     },
     {
-      "word": "form",
-      "meaningAr": "استمارة",
-      "example": "Please fill in this form first."
+      "word": "savings",
+      "meaningAr": "مدخرات",
+      "example": "I would like to open a savings account, please."
     },
     {
       "word": "clerk",
@@ -145,8 +145,6 @@ export default {
       "en": "I would like to open a savings account, please.",
       "ar": "أود فتح حساب توفير من فضلك.",
       "acceptedAnswers": [
-        "savings",
-        "Savings",
         "savings"
       ],
       "grammarTags": [
@@ -278,8 +276,6 @@ export default {
       "en": "What documents do I need for a current account?",
       "ar": "ما المستندات التي أحتاجها لحساب جاري؟",
       "acceptedAnswers": [
-        "documents",
-        "Documents",
         "documents"
       ],
       "grammarTags": [
@@ -395,8 +391,6 @@ export default {
       "en": "Does this account have a monthly fee?",
       "ar": "هل لهذا الحساب رسوم شهرية؟",
       "acceptedAnswers": [
-        "fee",
-        "Fee",
         "fee"
       ],
       "grammarTags": [
@@ -468,7 +462,7 @@ export default {
       "id": "lesson-189-ex-024",
       "type": "listen-and-type",
       "en": "Do you charge for money transfers?",
-      "ar": "هل تتقاضون رسوما على التحويلات؟",
+      "ar": "هل تتقاضون رسومًا على التحويلات؟",
       "acceptedAnswers": [
         "Do you charge for money transfers?"
       ],
@@ -528,8 +522,6 @@ export default {
       "en": "The minimum deposit is one hundred dollars.",
       "ar": "الحد الأدنى للإيداع مئة دولار.",
       "acceptedAnswers": [
-        "deposit",
-        "Deposit",
         "deposit"
       ],
       "grammarTags": [
@@ -655,8 +647,6 @@ export default {
       "en": "You need an identity card and a proof of address.",
       "ar": "تحتاج إلى بطاقة هوية وإثبات سكن.",
       "acceptedAnswers": [
-        "identity",
-        "Identity",
         "identity"
       ],
       "grammarTags": [
@@ -789,8 +779,6 @@ export default {
       "en": "Please fill in this form and sign at the bottom.",
       "ar": "من فضلك املأ هذه الاستمارة ووقّع في الأسفل.",
       "acceptedAnswers": [
-        "sign",
-        "Sign",
         "sign"
       ],
       "grammarTags": [
@@ -846,7 +834,7 @@ export default {
       "id": "lesson-189-ex-048",
       "type": "listen-and-type",
       "en": "The yearly fee for this account is fifty dollars.",
-      "ar": "الرسوم السنوية لهذا الحساب خمسون دولارا.",
+      "ar": "الرسوم السنوية لهذا الحساب خمسون دولارًا.",
       "acceptedAnswers": [
         "The yearly fee for this account is fifty dollars."
       ],
@@ -916,7 +904,7 @@ export default {
       "id": "lesson-189-ex-053",
       "type": "listen-and-type",
       "en": "The transfer charge for this account is fifty dollars.",
-      "ar": "رسوم التحويل لهذا الحساب خمسون دولارا.",
+      "ar": "رسوم التحويل لهذا الحساب خمسون دولارًا.",
       "acceptedAnswers": [
         "The transfer charge for this account is fifty dollars."
       ],

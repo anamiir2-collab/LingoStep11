@@ -73,9 +73,9 @@ export default {
       "example": "They want to hire two engineers."
     },
     {
-      "word": "available",
-      "meaningAr": "متاح / جاهز",
-      "example": "I am available from Monday."
+      "word": "relaxed",
+      "meaningAr": "مرتاح",
+      "example": "I am relaxed about the interview."
     },
     {
       "word": "team",
@@ -139,8 +139,6 @@ export default {
       "en": "I have a job interview on Tuesday.",
       "ar": "لدي مقابلة عمل يوم الثلاثاء.",
       "acceptedAnswers": [
-        "interview",
-        "Interview",
         "interview"
       ],
       "grammarTags": [
@@ -167,7 +165,7 @@ export default {
       "id": "lesson-174-ex-006",
       "type": "listen-and-type",
       "en": "My strength is patience, but I am sometimes shy.",
-      "ar": "نقطة قوتي الصبر، لكنني خجول أحيانا.",
+      "ar": "نقطة قوتي الصبر، لكنني خجول أحيانًا.",
       "acceptedAnswers": [
         "My strength is patience, but I am sometimes shy."
       ],
@@ -267,8 +265,6 @@ export default {
       "en": "What are your strengths and weaknesses?",
       "ar": "ما نقاط قوتك وضعفك؟",
       "acceptedAnswers": [
-        "weaknesses",
-        "Weaknesses",
         "weaknesses"
       ],
       "grammarTags": [
@@ -296,7 +292,7 @@ export default {
       "id": "lesson-174-ex-014",
       "type": "listen-and-type",
       "en": "Yes, I have led a team of five people.",
-      "ar": "نعم، قت فريقا من خمسة أشخاص.",
+      "ar": "نعم، قت فريقًا من خمسة أشخاص.",
       "acceptedAnswers": [
         "Yes, I have led a team of five people."
       ],
@@ -384,8 +380,6 @@ export default {
       "en": "Why do you want this job?",
       "ar": "لماذا تريد هذه الوظيفة؟",
       "acceptedAnswers": [
-        "want",
-        "Want",
         "want"
       ],
       "grammarTags": [
@@ -513,8 +507,6 @@ export default {
       "en": "Have you worked in a team before?",
       "ar": "هل عملت في فريق من قبل؟",
       "acceptedAnswers": [
-        "team",
-        "Team",
         "team"
       ],
       "grammarTags": [
@@ -638,8 +630,6 @@ export default {
       "en": "When can you start?",
       "ar": "متى يمكنك البدء؟",
       "acceptedAnswers": [
-        "start",
-        "Start",
         "start"
       ],
       "grammarTags": [
@@ -740,7 +730,7 @@ export default {
       "id": "lesson-174-ex-043",
       "type": "word-order",
       "en": "I have led a team of five people.",
-      "ar": "قت فريقا من خمسة أشخاص.",
+      "ar": "قت فريقًا من خمسة أشخاص.",
       "words": [
         "have",
         "led",
@@ -769,8 +759,6 @@ export default {
       "en": "I can start next week.",
       "ar": "يمكنني البدء الأسبوع القادم.",
       "acceptedAnswers": [
-        "next",
-        "Next",
         "next"
       ],
       "grammarTags": [
@@ -895,7 +883,7 @@ export default {
       "id": "lesson-174-ex-053",
       "type": "listen-and-type",
       "en": "I can start tomorrow.",
-      "ar": "يمكنني البدء غدا.",
+      "ar": "يمكنني البدء غدًا.",
       "acceptedAnswers": [
         "I can start tomorrow."
       ],
@@ -923,7 +911,7 @@ export default {
       "id": "lesson-174-ex-055",
       "type": "listen-and-type",
       "en": "I can start immediately.",
-      "ar": "يمكنني البدء فورا.",
+      "ar": "يمكنني البدء فورًا.",
       "acceptedAnswers": [
         "I can start immediately."
       ],

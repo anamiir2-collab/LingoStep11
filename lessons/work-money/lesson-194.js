@@ -87,9 +87,9 @@ export default {
       "example": "They hired two designers in June."
     },
     {
-      "word": "offer",
-      "meaningAr": "عرض عمل",
-      "example": "I accepted their offer yesterday."
+      "word": "week",
+      "meaningAr": "أسبوع",
+      "example": "The recruiter will call me back next week."
     }
   ],
   "exercises": [
@@ -143,8 +143,6 @@ export default {
       "en": "I apply online for most jobs these days.",
       "ar": "أتقدم بطلبات عبر الإنترنت لمعظم الوظائف هذه الأيام.",
       "acceptedAnswers": [
-        "apply",
-        "Apply",
         "apply"
       ],
       "grammarTags": [
@@ -275,8 +273,6 @@ export default {
       "en": "Which job board do you use?",
       "ar": "أي لوحة وظائف تستخدم؟",
       "acceptedAnswers": [
-        "board",
-        "Board",
         "board"
       ],
       "grammarTags": [
@@ -346,7 +342,7 @@ export default {
       "id": "lesson-194-ex-017",
       "type": "listen-and-type",
       "en": "How many applicants did they invite?",
-      "ar": "كم متنافسا دعوا؟",
+      "ar": "كم متنافسًا دعوا؟",
       "acceptedAnswers": [
         "How many applicants did they invite?"
       ],
@@ -392,8 +388,6 @@ export default {
       "en": "Did you fill out the application form?",
       "ar": "هل ملأت استمارة الطلب؟",
       "acceptedAnswers": [
-        "application",
-        "Application",
         "application"
       ],
       "grammarTags": [
@@ -463,7 +457,7 @@ export default {
       "id": "lesson-194-ex-024",
       "type": "listen-and-type",
       "en": "Please follow up on my application tomorrow.",
-      "ar": "من فضلك تابع طلبي غدا.",
+      "ar": "من فضلك تابع طلبي غدًا.",
       "acceptedAnswers": [
         "Please follow up on my application tomorrow."
       ],
@@ -523,8 +517,6 @@ export default {
       "en": "Yes, and I attached my cover letter.",
       "ar": "نعم، وأرفقت خطابي التعريفي.",
       "acceptedAnswers": [
-        "cover",
-        "Cover",
         "cover"
       ],
       "grammarTags": [
@@ -651,8 +643,6 @@ export default {
       "en": "The recruiter will call me back next week.",
       "ar": "سيعاود مسؤول التوظيف الاتصال بي الأسبوع القادم.",
       "acceptedAnswers": [
-        "recruiter",
-        "Recruiter",
         "recruiter"
       ],
       "grammarTags": [
@@ -785,8 +775,6 @@ export default {
       "en": "There is a new opening in the sales team.",
       "ar": "هناك شاغر جديد في فريق المبيعات.",
       "acceptedAnswers": [
-        "opening",
-        "Opening",
         "opening"
       ],
       "grammarTags": [
@@ -926,7 +914,7 @@ export default {
       "id": "lesson-194-ex-054",
       "type": "listen-and-type",
       "en": "They will call me back tomorrow morning.",
-      "ar": "سيعاودون الاتصال بي غدا صباحا.",
+      "ar": "سيعاودون الاتصال بي غدًا صباحًا.",
       "acceptedAnswers": [
         "They will call me back tomorrow morning."
       ],

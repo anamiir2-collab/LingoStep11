@@ -18,7 +18,7 @@ export default {
     "examples": [
       {
         "en": "Good morning, everyone. Let's get started.",
-        "ar": "صباح الخير جميعا. لنبدأ."
+        "ar": "صباح الخير جميعًا. لنبدأ."
       },
       {
         "en": "Have you read the minutes from last week?",
@@ -26,7 +26,7 @@ export default {
       },
       {
         "en": "If we finish early, we can discuss the new project.",
-        "ar": "إذا انتهينا مبكرا، يمكننا مناقشة المشروع الجديد."
+        "ar": "إذا انتهينا مبكرًا، يمكننا مناقشة المشروع الجديد."
       }
     ]
   },
@@ -98,7 +98,7 @@ export default {
       "id": "lesson-176-ex-001",
       "type": "listen-and-type",
       "en": "Good morning, everyone. Let's get started.",
-      "ar": "صباح الخير جميعا. لنبدأ.",
+      "ar": "صباح الخير جميعًا. لنبدأ.",
       "acceptedAnswers": [
         "Good morning, everyone. Let's get started."
       ],
@@ -126,7 +126,7 @@ export default {
       "id": "lesson-176-ex-003",
       "type": "listen-and-type",
       "en": "First, let's look at the sales numbers for March.",
-      "ar": "أولا، لننظر إلى أرقام المبيعات لشهر مارس.",
+      "ar": "أولًا، لننظر إلى أرقام المبيعات لشهر مارس.",
       "acceptedAnswers": [
         "First, let's look at the sales numbers for March."
       ],
@@ -144,8 +144,6 @@ export default {
       "en": "Let's get started with the first item.",
       "ar": "لنبدأ بالبند الأول.",
       "acceptedAnswers": [
-        "started",
-        "Started",
         "started"
       ],
       "grammarTags": [
@@ -173,7 +171,7 @@ export default {
       "id": "lesson-176-ex-006",
       "type": "listen-and-type",
       "en": "Yes, I have. They are very clear.",
-      "ar": "نعم، قرأتها. إنها واضحة جدا.",
+      "ar": "نعم، قرأتها. إنها واضحة جدًا.",
       "acceptedAnswers": [
         "Yes, I have. They are very clear."
       ],
@@ -219,7 +217,7 @@ export default {
       "id": "lesson-176-ex-009",
       "type": "listen-and-type",
       "en": "Sorry, I do not agree with this decision.",
-      "ar": "عذرا، لا أوافق على هذا القرار.",
+      "ar": "عذرًا، لا أوافق على هذا القرار.",
       "acceptedAnswers": [
         "Sorry, I do not agree with this decision."
       ],
@@ -275,8 +273,6 @@ export default {
       "en": "We have a lot on the agenda today.",
       "ar": "لدينا الكثير في جدول الأعمال اليوم.",
       "acceptedAnswers": [
-        "agenda",
-        "Agenda",
         "agenda"
       ],
       "grammarTags": [
@@ -318,7 +314,7 @@ export default {
       "id": "lesson-176-ex-015",
       "type": "listen-and-type",
       "en": "If we finish early, we can discuss the new project.",
-      "ar": "إذا انتهينا مبكرا، يمكننا مناقشة المشروع الجديد.",
+      "ar": "إذا انتهينا مبكرًا، يمكننا مناقشة المشروع الجديد.",
       "acceptedAnswers": [
         "If we finish early, we can discuss the new project."
       ],
@@ -374,7 +370,7 @@ export default {
       "id": "lesson-176-ex-019",
       "type": "listen-and-type",
       "en": "How many people are attending the meeting?",
-      "ar": "كم شخصا يحضر الاجتماع؟",
+      "ar": "كم شخصًا يحضر الاجتماع؟",
       "acceptedAnswers": [
         "How many people are attending the meeting?"
       ],
@@ -392,8 +388,6 @@ export default {
       "en": "Have you read the minutes from last week?",
       "ar": "هل قرأت محضر الاجتماع الأسبوع الماضي؟",
       "acceptedAnswers": [
-        "minutes",
-        "Minutes",
         "minutes"
       ],
       "grammarTags": [
@@ -520,8 +514,6 @@ export default {
       "en": "Can we move to the next point?",
       "ar": "هل يمكننا الانتقال إلى البند التالي؟",
       "acceptedAnswers": [
-        "point",
-        "Point",
         "point"
       ],
       "grammarTags": [
@@ -646,8 +638,6 @@ export default {
       "en": "Could you send me the action items, please?",
       "ar": "هل ترسل لي بنود العمل من فضلك؟",
       "acceptedAnswers": [
-        "action",
-        "Action",
         "action"
       ],
       "grammarTags": [
@@ -778,8 +768,6 @@ export default {
       "en": "We have not discussed the budget yet.",
       "ar": "لم نناقش الموازنة بعد.",
       "acceptedAnswers": [
-        "discussed",
-        "Discussed",
         "discussed"
       ],
       "grammarTags": [
@@ -848,10 +836,10 @@ export default {
     {
       "id": "lesson-176-ex-049",
       "type": "listen-and-type",
-      "en": "Khalid will send the action items.",
-      "ar": "خالد سيرسل بنود العمل.",
+      "en": "I will send the action items after the meeting.",
+      "ar": "سأرسل بنود العمل بعد الاجتماع.",
       "acceptedAnswers": [
-        "Khalid will send the action items."
+        "I will send the action items after the meeting."
       ],
       "grammarTags": [
         "meetings",
@@ -862,10 +850,10 @@ export default {
     {
       "id": "lesson-176-ex-050",
       "type": "listen-and-type",
-      "en": "Khalid will check the action items.",
-      "ar": "خالد سيفحص بنود العمل.",
+      "en": "Please check the action items before Friday.",
+      "ar": "من فضلك راجع بنود العمل قبل الجمعة.",
       "acceptedAnswers": [
-        "Khalid will check the action items."
+        "Please check the action items before Friday."
       ],
       "grammarTags": [
         "meetings",
@@ -904,10 +892,10 @@ export default {
     {
       "id": "lesson-176-ex-053",
       "type": "listen-and-type",
-      "en": "Youssef will send the action items.",
-      "ar": "يوسف سيرسل بنود العمل.",
+      "en": "The action items are clear to everyone.",
+      "ar": "بنود العمل واضحة للجميع.",
       "acceptedAnswers": [
-        "Youssef will send the action items."
+        "The action items are clear to everyone."
       ],
       "grammarTags": [
         "meetings",
@@ -918,10 +906,10 @@ export default {
     {
       "id": "lesson-176-ex-054",
       "type": "listen-and-type",
-      "en": "Youssef will check the action items.",
-      "ar": "يوسف سيفحص بنود العمل.",
+      "en": "Who checks the action items each week?",
+      "ar": "من يراجع بنود العمل كل أسبوع؟",
       "acceptedAnswers": [
-        "Youssef will check the action items."
+        "Who checks the action items each week?"
       ],
       "grammarTags": [
         "meetings",

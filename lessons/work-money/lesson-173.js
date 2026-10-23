@@ -125,7 +125,7 @@ export default {
       "id": "lesson-173-ex-003",
       "type": "listen-and-type",
       "en": "I have worked as a waiter for four years.",
-      "ar": "عملت نادلا لمدة أربع سنوات.",
+      "ar": "عملت نادلًا لمدة أربع سنوات.",
       "acceptedAnswers": [
         "I have worked as a waiter for four years."
       ],
@@ -143,8 +143,6 @@ export default {
       "en": "I am writing to apply for the accountant position.",
       "ar": "أكتب للتقدم إلى وظيفة المحاسب.",
       "acceptedAnswers": [
-        "apply",
-        "Apply",
         "apply"
       ],
       "grammarTags": [
@@ -192,7 +190,7 @@ export default {
         "Dear Hiring Manager"
       ],
       "answerIndex": 3,
-      "ar": "كيف تبدأ خطاب تقديم رسميا؟",
+      "ar": "كيف تبدأ خطاب تقديم رسميًا؟",
       "grammarTags": [
         "work",
         "writing"
@@ -203,7 +201,7 @@ export default {
       "id": "lesson-173-ex-008",
       "type": "listen-and-type",
       "en": "Do you need more information about my qualifications?",
-      "ar": "هل تحتاجون مزيدا من المعلومات عن مؤهلاتي؟",
+      "ar": "هل تحتاجون مزيدًا من المعلومات عن مؤهلاتي؟",
       "acceptedAnswers": [
         "Do you need more information about my qualifications?"
       ],
@@ -274,8 +272,6 @@ export default {
       "en": "I saw your advertisement on the company website.",
       "ar": "رأيت إعلانكم على موقع الشركة.",
       "acceptedAnswers": [
-        "advertisement",
-        "Advertisement",
         "advertisement"
       ],
       "grammarTags": [
@@ -390,8 +386,6 @@ export default {
       "en": "I have attached my CV and certificates.",
       "ar": "أرفقت سيرتي الذاتية وشهاداتي.",
       "acceptedAnswers": [
-        "attached",
-        "Attached",
         "attached"
       ],
       "grammarTags": [
@@ -518,10 +512,8 @@ export default {
       "display": "Do you need more information about my ___?",
       "blankWord": "qualifications",
       "en": "Do you need more information about my qualifications?",
-      "ar": "هل تحتاجون مزيدا من المعلومات عن مؤهلاتي؟",
+      "ar": "هل تحتاجون مزيدًا من المعلومات عن مؤهلاتي؟",
       "acceptedAnswers": [
-        "qualifications",
-        "Qualifications",
         "qualifications"
       ],
       "grammarTags": [
@@ -576,7 +568,7 @@ export default {
       "id": "lesson-173-ex-032",
       "type": "word-order",
       "en": "Do you need more information about me?",
-      "ar": "هل تحتاجون مزيدا من المعلومات عني؟",
+      "ar": "هل تحتاجون مزيدًا من المعلومات عني؟",
       "words": [
         "you",
         "need",
@@ -646,8 +638,6 @@ export default {
       "en": "I would like an opportunity to join your team.",
       "ar": "أود الحصول على فرصة للانضمام إلى فريقكم.",
       "acceptedAnswers": [
-        "opportunity",
-        "Opportunity",
         "opportunity"
       ],
       "grammarTags": [
@@ -661,7 +651,7 @@ export default {
       "type": "multiple-choice",
       "question": "\"I look forward to your reply\" means:",
       "options": [
-        "سأعمل غدا",
+        "سأعمل غدًا",
         "أتطلع إلى ردكم",
         "أرفض وظيفتكم",
         "أرسلت رسالة خاطئة"
@@ -775,8 +765,6 @@ export default {
       "en": "I look forward to your reply.",
       "ar": "أتطلع إلى ردكم.",
       "acceptedAnswers": [
-        "forward",
-        "Forward",
         "forward"
       ],
       "grammarTags": [
@@ -887,7 +875,7 @@ export default {
       "id": "lesson-173-ex-052",
       "type": "listen-and-type",
       "en": "I look forward to receiving an answer from you.",
-      "ar": "أتطلع إلى تلقائي جوابا منكم.",
+      "ar": "أتطلع إلى تلقائي جوابًا منكم.",
       "acceptedAnswers": [
         "I look forward to receiving an answer from you."
       ],

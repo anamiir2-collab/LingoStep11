@@ -125,7 +125,7 @@ export default {
       "id": "lesson-177-ex-003",
       "type": "listen-and-type",
       "en": "Please write a clear subject line for every email.",
-      "ar": "اكتب سطر موضوع واضحا لكل رسالة من فضلك.",
+      "ar": "اكتب سطر موضوع واضحًا لكل رسالة من فضلك.",
       "acceptedAnswers": [
         "Please write a clear subject line for every email."
       ],
@@ -141,10 +141,8 @@ export default {
       "display": "Please write a clear ___ line for every email.",
       "blankWord": "subject",
       "en": "Please write a clear subject line for every email.",
-      "ar": "اكتب سطر موضوع واضحا لكل رسالة من فضلك.",
+      "ar": "اكتب سطر موضوع واضحًا لكل رسالة من فضلك.",
       "acceptedAnswers": [
-        "subject",
-        "Subject",
         "subject"
       ],
       "grammarTags": [
@@ -204,7 +202,7 @@ export default {
       "id": "lesson-177-ex-008",
       "type": "listen-and-type",
       "en": "Thank you for your quick reply.",
-      "ar": "شكرا لردك السريع.",
+      "ar": "شكرًا لردك السريع.",
       "acceptedAnswers": [
         "Thank you for your quick reply."
       ],
@@ -232,7 +230,7 @@ export default {
       "id": "lesson-177-ex-010",
       "type": "word-order",
       "en": "Please write a clear subject line for every email.",
-      "ar": "اكتب سطر موضوع واضحا لكل رسالة من فضلك.",
+      "ar": "اكتب سطر موضوع واضحًا لكل رسالة من فضلك.",
       "words": [
         "write",
         "a",
@@ -276,8 +274,6 @@ export default {
       "en": "I have attached the report you asked for.",
       "ar": "أرفقت التقرير الذي طلبته.",
       "acceptedAnswers": [
-        "attached",
-        "Attached",
         "attached"
       ],
       "grammarTags": [
@@ -291,7 +287,7 @@ export default {
       "id": "lesson-177-ex-013",
       "type": "listen-and-type",
       "en": "I have not received a reply yet.",
-      "ar": "لم أستلم ردا بعد.",
+      "ar": "لم أستلم ردًا بعد.",
       "acceptedAnswers": [
         "I have not received a reply yet."
       ],
@@ -305,7 +301,7 @@ export default {
       "id": "lesson-177-ex-014",
       "type": "listen-and-type",
       "en": "If you need more information, please contact me.",
-      "ar": "إذا احتجت مزيدا من المعلومات، تواصل معي من فضلك.",
+      "ar": "إذا احتجت مزيدًا من المعلومات، تواصل معي من فضلك.",
       "acceptedAnswers": [
         "If you need more information, please contact me."
       ],
@@ -347,7 +343,7 @@ export default {
       "id": "lesson-177-ex-017",
       "type": "listen-and-type",
       "en": "The attachment is too large to send.",
-      "ar": "المرفق كبير جدا ولا يمكن إرساله.",
+      "ar": "المرفق كبير جدًا ولا يمكن إرساله.",
       "acceptedAnswers": [
         "The attachment is too large to send."
       ],
@@ -361,7 +357,7 @@ export default {
       "id": "lesson-177-ex-018",
       "type": "listen-and-type",
       "en": "I will send the draft to my manager first.",
-      "ar": "سأرسل المسودة إلى مديري أولا.",
+      "ar": "سأرسل المسودة إلى مديري أولًا.",
       "acceptedAnswers": [
         "I will send the draft to my manager first."
       ],
@@ -391,10 +387,8 @@ export default {
       "display": "Thank you for your quick ___.",
       "blankWord": "reply",
       "en": "Thank you for your quick reply.",
-      "ar": "شكرا لردك السريع.",
+      "ar": "شكرًا لردك السريع.",
       "acceptedAnswers": [
-        "reply",
-        "Reply",
         "reply"
       ],
       "grammarTags": [
@@ -525,8 +519,6 @@ export default {
       "en": "I am following up on my email from Monday.",
       "ar": "أتابع بشأن بريدي الإلكتروني يوم الاثنين.",
       "acceptedAnswers": [
-        "following",
-        "Following",
         "following"
       ],
       "grammarTags": [
@@ -654,8 +646,6 @@ export default {
       "en": "Could you please forward this message to the manager?",
       "ar": "هل تعيد إرسال هذه الرسالة إلى المدير من فضلك؟",
       "acceptedAnswers": [
-        "forward",
-        "Forward",
         "forward"
       ],
       "grammarTags": [
@@ -757,7 +747,7 @@ export default {
       "id": "lesson-177-ex-043",
       "type": "word-order",
       "en": "Thank you for your quick reply, Mr. Ali.",
-      "ar": "شكرا لردك السريع يا سيد علي.",
+      "ar": "شكرًا لردك السريع يا سيد علي.",
       "words": [
         "you",
         "for",
@@ -784,10 +774,8 @@ export default {
       "display": "I have not ___ a reply yet.",
       "blankWord": "received",
       "en": "I have not received a reply yet.",
-      "ar": "لم أستلم ردا بعد.",
+      "ar": "لم أستلم ردًا بعد.",
       "acceptedAnswers": [
-        "received",
-        "Received",
         "received"
       ],
       "grammarTags": [

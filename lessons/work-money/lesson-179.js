@@ -144,8 +144,6 @@ export default {
       "en": "Today I will talk about our new marketing plan.",
       "ar": "اليوم سأتحدث عن خطة التسويق الجديدة.",
       "acceptedAnswers": [
-        "talk",
-        "Talk",
         "talk"
       ],
       "grammarTags": [
@@ -277,8 +275,6 @@ export default {
       "en": "As you can see on this slide, sales are growing.",
       "ar": "كما ترون في هذه الشريحة، المبيعات في ازدياد.",
       "acceptedAnswers": [
-        "slide",
-        "Slide",
         "slide"
       ],
       "grammarTags": [
@@ -394,8 +390,6 @@ export default {
       "en": "This chart shows the numbers for last year.",
       "ar": "يبين هذا الرسم البياني أرقام العام الماضي.",
       "acceptedAnswers": [
-        "chart",
-        "Chart",
         "chart"
       ],
       "grammarTags": [
@@ -454,7 +448,7 @@ export default {
       "id": "lesson-179-ex-023",
       "type": "listen-and-type",
       "en": "Thank you for your attention.",
-      "ar": "شكرا لانتباهكم.",
+      "ar": "شكرًا لانتباهكم.",
       "acceptedAnswers": [
         "Thank you for your attention."
       ],
@@ -528,8 +522,6 @@ export default {
       "en": "The projector is not working.",
       "ar": "جهاز العرض لا يعمل.",
       "acceptedAnswers": [
-        "projector",
-        "Projector",
         "projector"
       ],
       "grammarTags": [
@@ -657,8 +649,6 @@ export default {
       "en": "To sum up, we need more time and support.",
       "ar": "وفي الختام، نحتاج المزيد من الوقت والدعم.",
       "acceptedAnswers": [
-        "sum",
-        "Sum",
         "sum"
       ],
       "grammarTags": [
@@ -760,7 +750,7 @@ export default {
       "id": "lesson-179-ex-043",
       "type": "word-order",
       "en": "Thank you for your attention, everyone.",
-      "ar": "شكرا لانتباهكم جميعا.",
+      "ar": "شكرًا لانتباهكم جميعًا.",
       "words": [
         "you",
         "for",
@@ -785,10 +775,8 @@ export default {
       "display": "Thank you for your ___.",
       "blankWord": "attention",
       "en": "Thank you for your attention.",
-      "ar": "شكرا لانتباهكم.",
+      "ar": "شكرًا لانتباهكم.",
       "acceptedAnswers": [
-        "attention",
-        "Attention",
         "attention"
       ],
       "grammarTags": [
@@ -900,7 +888,7 @@ export default {
       "id": "lesson-179-ex-052",
       "type": "listen-and-type",
       "en": "To sum up, we should ask the customers first.",
-      "ar": "وفي الختام، نحن ينبغي أن نسأل العملاء أولا.",
+      "ar": "وفي الختام، نحن ينبغي أن نسأل العملاء أولًا.",
       "acceptedAnswers": [
         "To sum up, we should ask the customers first."
       ],

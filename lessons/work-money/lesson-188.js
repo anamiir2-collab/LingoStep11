@@ -78,9 +78,9 @@ export default {
       "example": "Try to save twenty percent."
     },
     {
-      "word": "bill",
-      "meaningAr": "فاتورة",
-      "example": "I pay the electricity bill online."
+      "word": "expenses",
+      "meaningAr": "مصاريف",
+      "example": "I track my expenses in a small notebook."
     },
     {
       "word": "afford",
@@ -144,8 +144,6 @@ export default {
       "en": "I track my expenses in a small notebook.",
       "ar": "أتتبع مصروفي في دفتر صغير.",
       "acceptedAnswers": [
-        "track",
-        "Track",
         "track"
       ],
       "grammarTags": [
@@ -276,8 +274,6 @@ export default {
       "en": "I save ten percent of my income every month.",
       "ar": "أدخر عشرة بالمئة من دخلي كل شهر.",
       "acceptedAnswers": [
-        "income",
-        "Income",
         "income"
       ],
       "grammarTags": [
@@ -305,7 +301,7 @@ export default {
       "id": "lesson-188-ex-014",
       "type": "listen-and-type",
       "en": "My brother does not plan his budget at all.",
-      "ar": "أخي لا يخطط لميزانيته إطلاقا.",
+      "ar": "أخي لا يخطط لميزانيته إطلاقًا.",
       "acceptedAnswers": [
         "My brother does not plan his budget at all."
       ],
@@ -347,7 +343,7 @@ export default {
       "id": "lesson-188-ex-017",
       "type": "listen-and-type",
       "en": "First, write your income at the top.",
-      "ar": "أولا، اكتب دخلك في الأعلى.",
+      "ar": "أولًا، اكتب دخلك في الأعلى.",
       "acceptedAnswers": [
         "First, write your income at the top."
       ],
@@ -393,8 +389,6 @@ export default {
       "en": "Rent takes half my salary.",
       "ar": "الإيجار يأخذ نصف راتبي.",
       "acceptedAnswers": [
-        "half",
-        "Half",
         "half"
       ],
       "grammarTags": [
@@ -437,7 +431,7 @@ export default {
         "a gift card"
       ],
       "answerIndex": 1,
-      "ar": "تريد مالا للطوارئ، فتحتفظ بـ:",
+      "ar": "تريد مالًا للطوارئ، فتحتفظ بـ:",
       "grammarTags": [
         "budgeting",
         "money"
@@ -448,7 +442,7 @@ export default {
       "id": "lesson-188-ex-023",
       "type": "listen-and-type",
       "en": "If I buy less take-away, I will save more money.",
-      "ar": "إذا اشتريت طعاما جاهزا أقل، سأدخر مالا أكثر.",
+      "ar": "إذا اشتريت طعامًا جاهزًا أقل، سأدخر مالًا أكثر.",
       "acceptedAnswers": [
         "If I buy less take-away, I will save more money."
       ],
@@ -476,7 +470,7 @@ export default {
       "id": "lesson-188-ex-025",
       "type": "listen-and-type",
       "en": "A discount card saves us money at the supermarket.",
-      "ar": "بطاقة الخصم توفر لنا مالا في السوبر ماركت.",
+      "ar": "بطاقة الخصم توفر لنا مالًا في السوبر ماركت.",
       "acceptedAnswers": [
         "A discount card saves us money at the supermarket."
       ],
@@ -522,8 +516,6 @@ export default {
       "en": "We keep an emergency fund for bad days.",
       "ar": "نحتفظ بصندوق طوارئ للأيام الصعبة.",
       "acceptedAnswers": [
-        "emergency",
-        "Emergency",
         "emergency"
       ],
       "grammarTags": [
@@ -651,8 +643,6 @@ export default {
       "en": "He spends all his cash in the first week.",
       "ar": "ينفق كل نقوده في الأسبوع الأول.",
       "acceptedAnswers": [
-        "cash",
-        "Cash",
         "cash"
       ],
       "grammarTags": [
@@ -660,7 +650,7 @@ export default {
         "money"
       ],
       "difficulty": 2,
-      "hint": "نقدا"
+      "hint": "نقدًا"
     },
     {
       "id": "lesson-188-ex-037",
@@ -783,8 +773,6 @@ export default {
       "en": "Do you write down every small expense?",
       "ar": "هل تدون كل مصروف صغير؟",
       "acceptedAnswers": [
-        "expense",
-        "Expense",
         "expense"
       ],
       "grammarTags": [
@@ -924,7 +912,7 @@ export default {
       "id": "lesson-188-ex-054",
       "type": "listen-and-type",
       "en": "I save money every month for the future.",
-      "ar": "أنا أدخر مالا كل شهر للمستقبل.",
+      "ar": "أنا أدخر مالًا كل شهر للمستقبل.",
       "acceptedAnswers": [
         "I save money every month for the future."
       ],
@@ -938,7 +926,7 @@ export default {
       "id": "lesson-188-ex-055",
       "type": "listen-and-type",
       "en": "He saves money every month for the future.",
-      "ar": "هو يدخر مالا كل شهر للمستقبل.",
+      "ar": "هو يدخر مالًا كل شهر للمستقبل.",
       "acceptedAnswers": [
         "He saves money every month for the future."
       ],

@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "Business calls follow a routine. Answer with \"Good morning, this is Sara from Star Company. How can I help you today?\" — use \"this is\", not \"I am\", to say your name on the phone. State your purpose with \"I am calling about ...\". Ask for a person politely: \"Could you put me through to the accounts department, please?\". The receptionist says \"Please hold the line\" or \"One moment, please. I am transferring you now.\" If the person is out: \"He is not available at the moment. Would you like to leave a message?\" Promise a call back with will: \"I will call again after lunch\".",
-    "explanationAr": "للمكالمات المهنية روتين ثابت. أجب بـ Good morning, this is Sara from Star Company. How can I help you today؟ واستخدم this is وليس I am لتذكر اسمك على الهاتف. واذكر هدفك بـ I am calling about ... واطلب شخصا بأدب: Could you put me through to the accounts department, please؟ ويقول موظف الاستقبال Please hold the line أو One moment, please. I am transferring you now. وإذا كان الشخص غير موجود: He is not available at the moment. Would you like to leave a message؟ وعد بالاتصال مجددا بـ will: I will call again after lunch.",
+    "explanationAr": "للمكالمات المهنية روتين ثابت. أجب بـ Good morning, this is Sara from Star Company. How can I help you today؟ واستخدم this is وليس I am لتذكر اسمك على الهاتف. واذكر هدفك بـ I am calling about ... واطلب شخصًا بأدب: Could you put me through to the accounts department, please؟ ويقول موظف الاستقبال Please hold the line أو One moment, please. I am transferring you now. وإذا كان الشخص غير موجود: He is not available at the moment. Would you like to leave a message؟ وعد بالاتصال مجددًا بـ will: I will call again after lunch.",
     "examples": [
       {
         "en": "Good morning, this is Sara from Star Company.",
@@ -83,9 +83,9 @@ export default {
       "example": "Dial zero for the reception."
     },
     {
-      "word": "busy",
-      "meaningAr": "مشغول (الخط)",
-      "example": "I am sorry, but the line is busy."
+      "word": "star",
+      "meaningAr": "نجم",
+      "example": "Good morning, this is Sara from Star Company."
     },
     {
       "word": "take a message",
@@ -147,8 +147,6 @@ export default {
       "en": "Good morning, this is Sara from Star Company.",
       "ar": "صباح الخير، أنا سارة من شركة ستار.",
       "acceptedAnswers": [
-        "morning",
-        "Morning",
         "morning"
       ],
       "grammarTags": [
@@ -287,8 +285,6 @@ export default {
       "en": "I am calling about the invoice for March.",
       "ar": "أتصل بخصوص فاتورة شهر مارس.",
       "acceptedAnswers": [
-        "calling",
-        "Calling",
         "calling"
       ],
       "grammarTags": [
@@ -412,8 +408,6 @@ export default {
       "en": "Could you put me through to the accounts department, please?",
       "ar": "هل توصلني بقسم الحسابات من فضلك؟",
       "acceptedAnswers": [
-        "through",
-        "Through",
         "through"
       ],
       "grammarTags": [
@@ -456,7 +450,7 @@ export default {
       "question": "\"Could you put me through to sales?\" means:",
       "options": [
         "هل تغلق المكالمة؟",
-        "هل تعيد الاتصال غدا؟",
+        "هل تعيد الاتصال غدًا؟",
         "هل تسجل رسالة؟",
         "هل توصلني بقسم المبيعات؟"
       ],
@@ -488,7 +482,7 @@ export default {
       "id": "lesson-178-ex-024",
       "type": "listen-and-type",
       "en": "Thank you for calling. Have a nice day!",
-      "ar": "شكرا لاتصالك. أتمنى لك يوما سعيدا!",
+      "ar": "شكرًا لاتصالك. أتمنى لك يومًا سعيدًا!",
       "acceptedAnswers": [
         "Thank you for calling. Have a nice day!"
       ],
@@ -549,8 +543,6 @@ export default {
       "en": "Would you like to leave a message?",
       "ar": "هل تود ترك رسالة؟",
       "acceptedAnswers": [
-        "message",
-        "Message",
         "message"
       ],
       "grammarTags": [
@@ -680,8 +672,6 @@ export default {
       "en": "I am sorry, but the line is busy.",
       "ar": "آسف، لكن الخط مشغول.",
       "acceptedAnswers": [
-        "busy",
-        "Busy",
         "busy"
       ],
       "grammarTags": [
@@ -814,8 +804,6 @@ export default {
       "en": "Please hold the line for a second.",
       "ar": "انتظر على الخط لحظة من فضلك.",
       "acceptedAnswers": [
-        "hold",
-        "Hold",
         "hold"
       ],
       "grammarTags": [
@@ -843,10 +831,10 @@ export default {
     {
       "id": "lesson-178-ex-046",
       "type": "listen-and-type",
-      "en": "Good morning, this is Youssef from Star Company.",
-      "ar": "صباح الخير، أنا يوسف من شركة ستار.",
+      "en": "Good morning, this is Nada from the design team.",
+      "ar": "صباح الخير، معك ندى من فريق التصميم.",
       "acceptedAnswers": [
-        "Good morning, this is Youssef from Star Company."
+        "Good morning, this is Nada from the design team."
       ],
       "grammarTags": [
         "phone",

@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "Start a salary conversation politely with \"I would like to discuss my salary\" or \"Could I talk to you about my salary, please?\". Support your request with the present perfect for achievements: \"I have taken on more responsibility\", \"I have never missed a deadline\". Name your reason: \"My raise should be based on my performance\". If the answer is no, stay calm and ask \"When can we review it again?\"",
-    "explanationAr": "ابدأ الحديث عن الراتب بأدب بعبارة I would like to discuss my salary أو Could I talk to you about my salary, please؟ ادعم طلبك بالمضارع التام للإنجازات: I have taken on more responsibility، I have never missed a deadline. واذكر سببك: My raise should be based on my performance. وإذا كان الجواب لا فابق هادئا واسأل: When can we review it again؟",
+    "explanationAr": "ابدأ الحديث عن الراتب بأدب بعبارة I would like to discuss my salary أو Could I talk to you about my salary, please؟ ادعم طلبك بالمضارع التام للإنجازات: I have taken on more responsibility، I have never missed a deadline. واذكر سببك: My raise should be based on my performance. وإذا كان الجواب لا فابق هادئًا واسأل: When can we review it again؟",
     "examples": [
       {
         "en": "I would like to discuss my salary with you.",
@@ -144,8 +144,6 @@ export default {
       "en": "I'd like to discuss my salary with you.",
       "ar": "أود أن أناقش راتبي معك.",
       "acceptedAnswers": [
-        "discuss",
-        "Discuss",
         "discuss"
       ],
       "grammarTags": [
@@ -194,7 +192,7 @@ export default {
         "a holiday"
       ],
       "answerIndex": 0,
-      "ar": "تريد مالا أكثر لعملك، تطلب:",
+      "ar": "تريد مالًا أكثر لعملك، تطلب:",
       "grammarTags": [
         "salary",
         "work"
@@ -276,8 +274,6 @@ export default {
       "en": "I have taken on more responsibility this year.",
       "ar": "لقد تحملت مسؤولية أكبر هذا العام.",
       "acceptedAnswers": [
-        "responsibility",
-        "Responsibility",
         "responsibility"
       ],
       "grammarTags": [
@@ -291,7 +287,7 @@ export default {
       "id": "lesson-184-ex-013",
       "type": "listen-and-type",
       "en": "Yes, and I have never missed a deadline.",
-      "ar": "نعم، ولم أفوت موعدا نهائيا أبدا.",
+      "ar": "نعم، ولم أفوت موعدًا نهائيًا أبدًا.",
       "acceptedAnswers": [
         "Yes, and I have never missed a deadline."
       ],
@@ -375,7 +371,7 @@ export default {
       "id": "lesson-184-ex-019",
       "type": "listen-and-type",
       "en": "Please send me the numbers in writing.",
-      "ar": "من فضلك أرسل لي الأرقام كتابيا.",
+      "ar": "من فضلك أرسل لي الأرقام كتابيًا.",
       "acceptedAnswers": [
         "Please send me the numbers in writing."
       ],
@@ -393,8 +389,6 @@ export default {
       "en": "I believe my raise should be based on my performance.",
       "ar": "أعتقد أن زيادتي يجب أن تكون على أساس أدائي.",
       "acceptedAnswers": [
-        "performance",
-        "Performance",
         "performance"
       ],
       "grammarTags": [
@@ -525,8 +519,6 @@ export default {
       "en": "I am thinking about a ten percent raise.",
       "ar": "أفكر في زيادة عشرة بالمئة.",
       "acceptedAnswers": [
-        "percent",
-        "Percent",
         "percent"
       ],
       "grammarTags": [
@@ -636,7 +628,7 @@ export default {
       "id": "lesson-184-ex-035",
       "type": "listen-and-type",
       "en": "I have taken on more work this year.",
-      "ar": "لقد تحملت عملا أكبر هذا العام.",
+      "ar": "لقد تحملت عملًا أكبر هذا العام.",
       "acceptedAnswers": [
         "I have taken on more work this year."
       ],
@@ -654,8 +646,6 @@ export default {
       "en": "Could I talk to you about my salary, please?",
       "ar": "هل يمكنني التحدث معك عن راتبي من فضلك؟",
       "acceptedAnswers": [
-        "salary",
-        "Salary",
         "salary"
       ],
       "grammarTags": [
@@ -701,7 +691,7 @@ export default {
       "id": "lesson-184-ex-039",
       "type": "listen-and-type",
       "en": "I have taken on more duties this year.",
-      "ar": "لقد تحملت مهاما أكبر هذا العام.",
+      "ar": "لقد تحملت مهامًا أكبر هذا العام.",
       "acceptedAnswers": [
         "I have taken on more duties this year."
       ],
@@ -786,8 +776,6 @@ export default {
       "en": "He deserves a bonus for his hard work.",
       "ar": "يستحق مكافأة على عمله الجاد.",
       "acceptedAnswers": [
-        "deserves",
-        "Deserves",
         "deserves"
       ],
       "grammarTags": [

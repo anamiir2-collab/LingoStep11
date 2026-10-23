@@ -18,7 +18,7 @@ export default {
     "examples": [
       {
         "en": "I'll check that for you right away.",
-        "ar": "سأتحقق من ذلك لك حالا."
+        "ar": "سأتحقق من ذلك لك حالًا."
       },
       {
         "en": "We are sorry for the delay, sir.",
@@ -26,7 +26,7 @@ export default {
       },
       {
         "en": "You will receive a replacement within three days.",
-        "ar": "ستستلم بديلا خلال ثلاثة أيام."
+        "ar": "ستستلم بديلًا خلال ثلاثة أيام."
       }
     ]
   },
@@ -44,7 +44,7 @@ export default {
     },
     {
       "word": "right away",
-      "meaningAr": "حالا / فورا",
+      "meaningAr": "حالًا / فورًا",
       "example": "I will fix it right away."
     },
     {
@@ -78,18 +78,18 @@ export default {
       "example": "A representative will call you back."
     },
     {
-      "word": "refund",
-      "meaningAr": "استرداد المال",
-      "example": "You can ask for a full refund."
+      "word": "invoice",
+      "meaningAr": "فاتورة",
+      "example": "She apologized for the mistake in the invoice."
     },
     {
-      "word": "receipt",
-      "meaningAr": "إيصال",
-      "example": "Keep the receipt for your records."
+      "word": "guarantee",
+      "meaningAr": "ضمان",
+      "example": "Does the guarantee cover the repair costs?"
     },
     {
       "word": "hold on",
-      "meaningAr": "ينتظر قليلا",
+      "meaningAr": "ينتظر قليلًا",
       "example": "Hold on a moment, please."
     }
   ],
@@ -98,7 +98,7 @@ export default {
       "id": "lesson-186-ex-001",
       "type": "listen-and-type",
       "en": "Thank you for calling our support line.",
-      "ar": "شكرا لاتصالكم بخط الدعم لدينا.",
+      "ar": "شكرًا لاتصالكم بخط الدعم لدينا.",
       "acceptedAnswers": [
         "Thank you for calling our support line."
       ],
@@ -142,10 +142,8 @@ export default {
       "display": "I'll ___ that for you right away.",
       "blankWord": "check",
       "en": "I'll check that for you right away.",
-      "ar": "سأتحقق من ذلك لك حالا.",
+      "ar": "سأتحقق من ذلك لك حالًا.",
       "acceptedAnswers": [
-        "check",
-        "Check",
         "check"
       ],
       "grammarTags": [
@@ -173,7 +171,7 @@ export default {
       "id": "lesson-186-ex-006",
       "type": "listen-and-type",
       "en": "I'll check that for you right away.",
-      "ar": "سأتحقق من ذلك لك حالا.",
+      "ar": "سأتحقق من ذلك لك حالًا.",
       "acceptedAnswers": [
         "I'll check that for you right away."
       ],
@@ -194,7 +192,7 @@ export default {
         "Go away please"
       ],
       "answerIndex": 2,
-      "ar": "انتظر العميل طويلا، ماذا تقول؟",
+      "ar": "انتظر العميل طويلًا، ماذا تقول؟",
       "grammarTags": [
         "customer-service",
         "work"
@@ -233,7 +231,7 @@ export default {
       "id": "lesson-186-ex-010",
       "type": "word-order",
       "en": "I'll check that for you right away.",
-      "ar": "سأتحقق من ذلك لك حالا.",
+      "ar": "سأتحقق من ذلك لك حالًا.",
       "words": [
         "check",
         "that",
@@ -257,7 +255,7 @@ export default {
       "id": "lesson-186-ex-011",
       "type": "listen-and-type",
       "en": "Thank you for your patience this morning.",
-      "ar": "شكرا على صبركم هذا الصباح.",
+      "ar": "شكرًا على صبركم هذا الصباح.",
       "acceptedAnswers": [
         "Thank you for your patience this morning."
       ],
@@ -275,8 +273,6 @@ export default {
       "en": "We are sorry for the long delay.",
       "ar": "نحن آسفون على التأخير الطويل.",
       "acceptedAnswers": [
-        "delay",
-        "Delay",
         "delay"
       ],
       "grammarTags": [
@@ -304,7 +300,7 @@ export default {
       "id": "lesson-186-ex-014",
       "type": "listen-and-type",
       "en": "The customer is waiting for a written answer.",
-      "ar": "العميل ينتظر جوابا مكتوبا.",
+      "ar": "العميل ينتظر جوابًا مكتوبًا.",
       "acceptedAnswers": [
         "The customer is waiting for a written answer."
       ],
@@ -392,8 +388,6 @@ export default {
       "en": "Could you send me a replacement, please?",
       "ar": "هل يمكنكم إرسال بديل لي من فضلك؟",
       "acceptedAnswers": [
-        "replacement",
-        "Replacement",
         "replacement"
       ],
       "grammarTags": [
@@ -438,7 +432,7 @@ export default {
         "We will send you a replacement"
       ],
       "answerIndex": 3,
-      "ar": "وصل المنتج مكسورا، ماذا تعد؟",
+      "ar": "وصل المنتج مكسورًا، ماذا تعد؟",
       "grammarTags": [
         "customer-service",
         "work"
@@ -521,10 +515,8 @@ export default {
       "display": "Thank you for your ___ this morning.",
       "blankWord": "patience",
       "en": "Thank you for your patience this morning.",
-      "ar": "شكرا على صبركم هذا الصباح.",
+      "ar": "شكرًا على صبركم هذا الصباح.",
       "acceptedAnswers": [
-        "patience",
-        "Patience",
         "patience"
       ],
       "grammarTags": [
@@ -650,8 +642,6 @@ export default {
       "en": "She apologized for the mistake in the invoice.",
       "ar": "اعتذرت عن الخطأ في الفاتورة.",
       "acceptedAnswers": [
-        "apologized",
-        "Apologized",
         "apologized"
       ],
       "grammarTags": [
@@ -666,10 +656,10 @@ export default {
       "type": "multiple-choice",
       "question": "\"I will check that right away\" means:",
       "options": [
-        "سأتحقق من ذلك حالا",
+        "سأتحقق من ذلك حالًا",
         "سأتحقق بعد شهر",
         "لا أستطيع التحقق",
-        "اسأل شخصا آخر"
+        "اسأل شخصًا آخر"
       ],
       "answerIndex": 0,
       "ar": "ماذا تعني I will check that right away؟",
@@ -739,7 +729,7 @@ export default {
       "id": "lesson-186-ex-042",
       "type": "listen-and-type",
       "en": "Could you send me a written answer, please?",
-      "ar": "هل يمكنك إرسال جوابا مكتوبا لي من فضلك؟",
+      "ar": "هل يمكنك إرسال جوابًا مكتوبًا لي من فضلك؟",
       "acceptedAnswers": [
         "Could you send me a written answer, please?"
       ],
@@ -781,8 +771,6 @@ export default {
       "en": "Does the guarantee cover the repair costs?",
       "ar": "هل يغطي الضمان تكاليف الإصلاح؟",
       "acceptedAnswers": [
-        "guarantee",
-        "Guarantee",
         "guarantee"
       ],
       "grammarTags": [
@@ -810,7 +798,7 @@ export default {
       "id": "lesson-186-ex-046",
       "type": "listen-and-type",
       "en": "Could you send me a full refund, please?",
-      "ar": "هل يمكنك إرسال استردادا كاملا لي من فضلك؟",
+      "ar": "هل يمكنك إرسال استردادًا كاملًا لي من فضلك؟",
       "acceptedAnswers": [
         "Could you send me a full refund, please?"
       ],
@@ -852,7 +840,7 @@ export default {
       "id": "lesson-186-ex-049",
       "type": "listen-and-type",
       "en": "Thank you for your patience today.",
-      "ar": "شكرا على صبركم اليوم.",
+      "ar": "شكرًا على صبركم اليوم.",
       "acceptedAnswers": [
         "Thank you for your patience today."
       ],
@@ -866,7 +854,7 @@ export default {
       "id": "lesson-186-ex-050",
       "type": "listen-and-type",
       "en": "Thank you for your patience on the phone.",
-      "ar": "شكرا على صبركم على الهاتف.",
+      "ar": "شكرًا على صبركم على الهاتف.",
       "acceptedAnswers": [
         "Thank you for your patience on the phone."
       ],
@@ -880,7 +868,7 @@ export default {
       "id": "lesson-186-ex-051",
       "type": "listen-and-type",
       "en": "Thank you for your patience during the busy week.",
-      "ar": "شكرا على صبركم خلال الأسبوع المزدحم.",
+      "ar": "شكرًا على صبركم خلال الأسبوع المزدحم.",
       "acceptedAnswers": [
         "Thank you for your patience during the busy week."
       ],
@@ -894,7 +882,7 @@ export default {
       "id": "lesson-186-ex-052",
       "type": "listen-and-type",
       "en": "We will fix the problem right away.",
-      "ar": "سنصلح المشكلة حالا.",
+      "ar": "سنصلح المشكلة حالًا.",
       "acceptedAnswers": [
         "We will fix the problem right away."
       ],
@@ -908,7 +896,7 @@ export default {
       "id": "lesson-186-ex-053",
       "type": "listen-and-type",
       "en": "We will check the problem right away.",
-      "ar": "سنفحص المشكلة حالا.",
+      "ar": "سنفحص المشكلة حالًا.",
       "acceptedAnswers": [
         "We will check the problem right away."
       ],
@@ -922,7 +910,7 @@ export default {
       "id": "lesson-186-ex-054",
       "type": "listen-and-type",
       "en": "We will solve the problem right away.",
-      "ar": "سنحل المشكلة حالا.",
+      "ar": "سنحل المشكلة حالًا.",
       "acceptedAnswers": [
         "We will solve the problem right away."
       ],
@@ -936,7 +924,7 @@ export default {
       "id": "lesson-186-ex-055",
       "type": "listen-and-type",
       "en": "We will review the problem right away.",
-      "ar": "سنراجع المشكلة حالا.",
+      "ar": "سنراجع المشكلة حالًا.",
       "acceptedAnswers": [
         "We will review the problem right away."
       ],

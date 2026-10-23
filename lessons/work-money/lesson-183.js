@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "To complain politely at work, start with \"I want to report a problem\" and describe the facts with the present simple: \"The overtime is too much\", \"We do not get enough breaks\". Give advice with should: \"You should talk to HR about it\". A polite complaint says what is wrong, gives one clear example, and asks for a solution: \"Could we solve the problem with our manager?\" Avoid angry words; calm sentences get faster answers.",
-    "explanationAr": "للتذمر بأدب في العمل ابدأ بعبارة I want to report a problem ثم صف الحقائق بالمضارع البسيط: The overtime is too much، We do not get enough breaks. وقدّم النصيحة بـ should: You should talk to HR about it. والشكوى المهذبة تذكر الخطأ وتعطي مثالا واضحا وتطلب حلا: Could we solve the problem with our manager؟ تجنب الكلمات الغاضبة؛ فالجمل الهادئة تجيب أسرع.",
+    "explanationAr": "للتذمر بأدب في العمل ابدأ بعبارة I want to report a problem ثم صف الحقائق بالمضارع البسيط: The overtime is too much، We do not get enough breaks. وقدّم النصيحة بـ should: You should talk to HR about it. والشكوى المهذبة تذكر الخطأ وتعطي مثالًا واضحًا وتطلب حلًا: Could we solve the problem with our manager؟ تجنب الكلمات الغاضبة؛ فالجمل الهادئة تجيب أسرع.",
     "examples": [
       {
         "en": "I want to report a problem with the schedule.",
@@ -22,7 +22,7 @@ export default {
       },
       {
         "en": "The overtime is too much this month.",
-        "ar": "العمل الإضافي كثير جدا هذا الشهر."
+        "ar": "العمل الإضافي كثير جدًا هذا الشهر."
       },
       {
         "en": "You should talk to HR about the unfair schedule.",
@@ -126,7 +126,7 @@ export default {
       "id": "lesson-183-ex-003",
       "type": "listen-and-type",
       "en": "The overtime is too much this month.",
-      "ar": "العمل الإضافي كثير جدا هذا الشهر.",
+      "ar": "العمل الإضافي كثير جدًا هذا الشهر.",
       "acceptedAnswers": [
         "The overtime is too much this month."
       ],
@@ -144,8 +144,6 @@ export default {
       "en": "I want to report a problem in the office.",
       "ar": "أريد الإبلاغ عن مشكلة في المكتب.",
       "acceptedAnswers": [
-        "report",
-        "Report",
         "report"
       ],
       "grammarTags": [
@@ -273,10 +271,8 @@ export default {
       "display": "The ___ is too much this month.",
       "blankWord": "overtime",
       "en": "The overtime is too much this month.",
-      "ar": "العمل الإضافي كثير جدا هذا الشهر.",
+      "ar": "العمل الإضافي كثير جدًا هذا الشهر.",
       "acceptedAnswers": [
-        "overtime",
-        "Overtime",
         "overtime"
       ],
       "grammarTags": [
@@ -360,7 +356,7 @@ export default {
       "id": "lesson-183-ex-018",
       "type": "listen-and-type",
       "en": "Did you receive an answer from HR?",
-      "ar": "هل تلقيت ردا من الموارد البشرية؟",
+      "ar": "هل تلقيت ردًا من الموارد البشرية؟",
       "acceptedAnswers": [
         "Did you receive an answer from HR?"
       ],
@@ -392,9 +388,7 @@ export default {
       "en": "You should talk to HR about it.",
       "ar": "يجب أن تتحدث مع الموارد البشرية حيال ذلك.",
       "acceptedAnswers": [
-        "HR",
-        "HR",
-        "hr"
+        "HR"
       ],
       "grammarTags": [
         "complaints",
@@ -524,8 +518,6 @@ export default {
       "en": "That is an unfair schedule for the team.",
       "ar": "هذا جدول غير عادل للفريق.",
       "acceptedAnswers": [
-        "unfair",
-        "Unfair",
         "unfair"
       ],
       "grammarTags": [
@@ -650,8 +642,6 @@ export default {
       "en": "Several workers complained about the noise.",
       "ar": "شكا عمال عدة من الضوضاء.",
       "acceptedAnswers": [
-        "complained",
-        "Complained",
         "complained"
       ],
       "grammarTags": [
@@ -683,7 +673,7 @@ export default {
       "id": "lesson-183-ex-038",
       "type": "listen-and-type",
       "en": "The overtime is too much this week.",
-      "ar": "العمل الإضافي كثير جدا هذا الأسبوع.",
+      "ar": "العمل الإضافي كثير جدًا هذا الأسبوع.",
       "acceptedAnswers": [
         "The overtime is too much this week."
       ],
@@ -697,7 +687,7 @@ export default {
       "id": "lesson-183-ex-039",
       "type": "listen-and-type",
       "en": "The overtime is too much this season.",
-      "ar": "العمل الإضافي كثير جدا هذا الموسم.",
+      "ar": "العمل الإضافي كثير جدًا هذا الموسم.",
       "acceptedAnswers": [
         "The overtime is too much this season."
       ],
@@ -711,7 +701,7 @@ export default {
       "id": "lesson-183-ex-040",
       "type": "listen-and-type",
       "en": "The overtime is too much this year.",
-      "ar": "العمل الإضافي كثير جدا هذا العام.",
+      "ar": "العمل الإضافي كثير جدًا هذا العام.",
       "acceptedAnswers": [
         "The overtime is too much this year."
       ],
@@ -781,8 +771,6 @@ export default {
       "en": "Please write your complaint in an email.",
       "ar": "من فضلك اكتب شكواك في رسالة إلكترونية.",
       "acceptedAnswers": [
-        "complaint",
-        "Complaint",
         "complaint"
       ],
       "grammarTags": [

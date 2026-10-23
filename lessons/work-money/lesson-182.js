@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "In a performance review we often talk about the past year with the present perfect: \"You have done well on this project\", \"She has met all her targets\". Give praise with \"You did well on...\" and describe a growth area with \"An area to improve is...\". Constructive feedback is polite and specific: it names one strength and one thing to work on. Respond calmly: say \"Thank you for the feedback\", or ask \"Could you give me an example?\" so you understand exactly what to change.",
-    "explanationAr": "في التقييم السنوي نتحدث كثيرا عن العام الماضي بالمضارع التام: You have done well on this project، She has met all her targets. وامدح بعبارة You did well on... واذكر مجال التحسين بعبارة An area to improve is.... الملاحظات البناءة مهذبة ومحددة: تذكر نقطة قوة واحدة وشيئا واحدا يحتاج عملا. وأجب بهدوء: قل Thank you for the feedback أو اسأل Could you give me an example؟ لتعرف بالضبط ما يجب تغييره.",
+    "explanationAr": "في التقييم السنوي نتحدث كثيرًا عن العام الماضي بالمضارع التام: You have done well on this project، She has met all her targets. وامدح بعبارة You did well on... واذكر مجال التحسين بعبارة An area to improve is.... الملاحظات البناءة مهذبة ومحددة: تذكر نقطة قوة واحدة وشيئًا واحدًا يحتاج عملًا. وأجب بهدوء: قل Thank you for the feedback أو اسأل Could you give me an example؟ لتعرف بالضبط ما يجب تغييره.",
     "examples": [
       {
         "en": "You have done well on the monthly report.",
@@ -26,7 +26,7 @@ export default {
       },
       {
         "en": "Thank you for the constructive feedback.",
-        "ar": "شكرا لك على الملاحظات البناءة."
+        "ar": "شكرًا لك على الملاحظات البناءة."
       }
     ]
   },
@@ -144,8 +144,6 @@ export default {
       "en": "You did well on the new project.",
       "ar": "أحسنت في المشروع الجديد.",
       "acceptedAnswers": [
-        "well",
-        "Well",
         "well"
       ],
       "grammarTags": [
@@ -159,7 +157,7 @@ export default {
       "id": "lesson-182-ex-005",
       "type": "listen-and-type",
       "en": "Thank you, I worked hard on it.",
-      "ar": "شكرا لك، لقد عملت بجد فيه.",
+      "ar": "شكرًا لك، لقد عملت بجد فيه.",
       "acceptedAnswers": [
         "Thank you, I worked hard on it."
       ],
@@ -275,8 +273,6 @@ export default {
       "en": "An area to improve is your writing.",
       "ar": "المجال الذي تحتاج تحسينه هو كتابتك.",
       "acceptedAnswers": [
-        "improve",
-        "Improve",
         "improve"
       ],
       "grammarTags": [
@@ -360,7 +356,7 @@ export default {
       "id": "lesson-182-ex-018",
       "type": "listen-and-type",
       "en": "We set clear goals for the next quarter.",
-      "ar": "نضع أهدافا واضحة للربع القادم.",
+      "ar": "نضع أهدافًا واضحة للربع القادم.",
       "acceptedAnswers": [
         "We set clear goals for the next quarter."
       ],
@@ -374,7 +370,7 @@ export default {
       "id": "lesson-182-ex-019",
       "type": "listen-and-type",
       "en": "Please send me your feedback in writing.",
-      "ar": "من فضلك أرسل لي ملاحظاتك كتابيا.",
+      "ar": "من فضلك أرسل لي ملاحظاتك كتابيًا.",
       "acceptedAnswers": [
         "Please send me your feedback in writing."
       ],
@@ -392,8 +388,6 @@ export default {
       "en": "When is my annual review, please?",
       "ar": "متى تقييمي السنوي من فضلك؟",
       "acceptedAnswers": [
-        "annual",
-        "Annual",
         "annual"
       ],
       "grammarTags": [
@@ -432,7 +426,7 @@ export default {
       "type": "multiple-choice",
       "question": "\"An area to improve\" means:",
       "options": [
-        "شيء تجيده جدا",
+        "شيء تجيده جدًا",
         "وظيفة جديدة",
         "عطلة طويلة",
         "شيء تحتاج إلى تحسينه"
@@ -449,7 +443,7 @@ export default {
       "id": "lesson-182-ex-023",
       "type": "listen-and-type",
       "en": "Her evaluation was fair and useful.",
-      "ar": "كان تقييمها عادلا ومفيدا.",
+      "ar": "كان تقييمها عادلًا ومفيدًا.",
       "acceptedAnswers": [
         "Her evaluation was fair and useful."
       ],
@@ -523,8 +517,6 @@ export default {
       "en": "Constructive feedback helps us grow.",
       "ar": "الملاحظات البناءة تساعدنا على النمو.",
       "acceptedAnswers": [
-        "feedback",
-        "Feedback",
         "feedback"
       ],
       "grammarTags": [
@@ -650,8 +642,6 @@ export default {
       "en": "Did you meet your targets this month?",
       "ar": "هل حققت أهدافك هذا الشهر؟",
       "acceptedAnswers": [
-        "targets",
-        "Targets",
         "targets"
       ],
       "grammarTags": [
@@ -753,7 +743,7 @@ export default {
       "id": "lesson-182-ex-043",
       "type": "word-order",
       "en": "Please send me your feedback in writing.",
-      "ar": "من فضلك أرسل لي ملاحظاتك كتابيا.",
+      "ar": "من فضلك أرسل لي ملاحظاتك كتابيًا.",
       "words": [
         "send",
         "me",
@@ -781,8 +771,6 @@ export default {
       "en": "I hope to get a promotion this year.",
       "ar": "آمل أن أحصل على ترقية هذا العام.",
       "acceptedAnswers": [
-        "promotion",
-        "Promotion",
         "promotion"
       ],
       "grammarTags": [

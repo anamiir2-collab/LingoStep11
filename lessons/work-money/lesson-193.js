@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "Remote work talk mixes polite requests and ability: \"Could I join the call from my phone, please?\", \"Can everyone see my screen?\". The present simple describes routines: \"I work from home three days a week\". Will makes quick promises: \"If my connection drops, I will call you back\". Present perfect checks status: \"Have you joined the online meeting yet?\". Keep answers short and clear: \"Yes, we can see it clearly now\".",
-    "explanationAr": "يمزج حديث العمل عن بعد بين الطلبات المهذبة والقدرة: Could I join the call from my phone, please؟، Can everyone see my screen؟ ويصف المضارع البسيط الروتين: I work from home three days a week. ويصنع will وعودا سريعة: If my connection drops, I will call you back. ويتحقق المضارع التام من الحالة: Have you joined the online meeting yet؟ وحافظ على أجوبة قصيرة واضحة: Yes, we can see it clearly now.",
+    "explanationAr": "يمزج حديث العمل عن بعد بين الطلبات المهذبة والقدرة: Could I join the call from my phone, please؟، Can everyone see my screen؟ ويصف المضارع البسيط الروتين: I work from home three days a week. ويصنع will وعودًا سريعة: If my connection drops, I will call you back. ويتحقق المضارع التام من الحالة: Have you joined the online meeting yet؟ وحافظ على أجوبة قصيرة واضحة: Yes, we can see it clearly now.",
     "examples": [
       {
         "en": "Could I join the call from my phone, please?",
@@ -143,8 +143,6 @@ export default {
       "en": "I work from home three days a week.",
       "ar": "أعمل من المنزل ثلاثة أيام في الأسبوع.",
       "acceptedAnswers": [
-        "home",
-        "Home",
         "home"
       ],
       "grammarTags": [
@@ -193,7 +191,7 @@ export default {
         "My internet is slow today."
       ],
       "answerIndex": 3,
-      "ar": "لا تسمع الاجتماع جيدا، ماذا تقول؟",
+      "ar": "لا تسمع الاجتماع جيدًا، ماذا تقول؟",
       "grammarTags": [
         "remote-work",
         "work"
@@ -275,8 +273,6 @@ export default {
       "en": "Could I join the call from my phone, please?",
       "ar": "هل أستطيع الانضمام إلى المكالمة من هاتفي من فضلك؟",
       "acceptedAnswers": [
-        "join",
-        "Join",
         "join"
       ],
       "grammarTags": [
@@ -304,7 +300,7 @@ export default {
       "id": "lesson-193-ex-014",
       "type": "listen-and-type",
       "en": "I start early and finish before the traffic.",
-      "ar": "أبدأ مبكرا وأنتهي قبل الازدحام.",
+      "ar": "أبدأ مبكرًا وأنتهي قبل الازدحام.",
       "acceptedAnswers": [
         "I start early and finish before the traffic."
       ],
@@ -332,7 +328,7 @@ export default {
       "id": "lesson-193-ex-016",
       "type": "listen-and-type",
       "en": "The children make a lot of noise in the afternoon.",
-      "ar": "يُحدث الأطفال ضجيجا كثيرا بعد الظهر.",
+      "ar": "يُحدث الأطفال ضجيجًا كثيرًا بعد الظهر.",
       "acceptedAnswers": [
         "The children make a lot of noise in the afternoon."
       ],
@@ -360,7 +356,7 @@ export default {
       "id": "lesson-193-ex-018",
       "type": "listen-and-type",
       "en": "Sorry, my headphones were broken this morning.",
-      "ar": "عذرا، كانت سماعاتي معطلة هذا الصباح.",
+      "ar": "عذرًا، كانت سماعاتي معطلة هذا الصباح.",
       "acceptedAnswers": [
         "Sorry, my headphones were broken this morning."
       ],
@@ -392,8 +388,6 @@ export default {
       "en": "My internet is slow today.",
       "ar": "إنترنتي بطيء اليوم.",
       "acceptedAnswers": [
-        "slow",
-        "Slow",
         "slow"
       ],
       "grammarTags": [
@@ -493,7 +487,7 @@ export default {
       "id": "lesson-193-ex-026",
       "type": "listen-and-type",
       "en": "I work from home one day a week.",
-      "ar": "أعمل من المنزل يوما واحدا في الأسبوع.",
+      "ar": "أعمل من المنزل يومًا واحدًا في الأسبوع.",
       "acceptedAnswers": [
         "I work from home one day a week."
       ],
@@ -525,8 +519,6 @@ export default {
       "en": "I will share my screen for the presentation.",
       "ar": "سأشارك شاشتي للعرض التقديمي.",
       "acceptedAnswers": [
-        "share",
-        "Share",
         "share"
       ],
       "grammarTags": [
@@ -650,8 +642,6 @@ export default {
       "en": "Our company gives us flexible hours.",
       "ar": "شركتنا تمنحنا ساعات مرنة.",
       "acceptedAnswers": [
-        "flexible",
-        "Flexible",
         "flexible"
       ],
       "grammarTags": [
@@ -711,7 +701,7 @@ export default {
       "id": "lesson-193-ex-040",
       "type": "listen-and-type",
       "en": "My internet is very slow today.",
-      "ar": "إنترنتي بطيئا جدا اليوم.",
+      "ar": "إنترنتي بطيئًا جدًا اليوم.",
       "acceptedAnswers": [
         "My internet is very slow today."
       ],
@@ -725,7 +715,7 @@ export default {
       "id": "lesson-193-ex-041",
       "type": "listen-and-type",
       "en": "My internet is not working today.",
-      "ar": "إنترنتي معطلا اليوم.",
+      "ar": "إنترنتي معطلًا اليوم.",
       "acceptedAnswers": [
         "My internet is not working today."
       ],
@@ -739,7 +729,7 @@ export default {
       "id": "lesson-193-ex-042",
       "type": "listen-and-type",
       "en": "My internet is weak today.",
-      "ar": "إنترنتي ضعيفا اليوم.",
+      "ar": "إنترنتي ضعيفًا اليوم.",
       "acceptedAnswers": [
         "My internet is weak today."
       ],
@@ -782,8 +772,6 @@ export default {
       "en": "Of course, but please mute your microphone.",
       "ar": "بالتأكيد، لكن من فضلك أسكت الميكروفون.",
       "acceptedAnswers": [
-        "mute",
-        "Mute",
         "mute"
       ],
       "grammarTags": [

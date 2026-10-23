@@ -144,8 +144,6 @@ export default {
       "en": "My CV is two pages long.",
       "ar": "سيرتي الذاتية من صفحتين.",
       "acceptedAnswers": [
-        "pages",
-        "Pages",
         "pages"
       ],
       "grammarTags": [
@@ -194,7 +192,7 @@ export default {
         "A funny story"
       ],
       "answerIndex": 0,
-      "ar": "ماذا يأتي أولا في السيرة الذاتية؟",
+      "ar": "ماذا يأتي أولًا في السيرة الذاتية؟",
       "grammarTags": [
         "work",
         "cv"
@@ -274,8 +272,6 @@ export default {
       "en": "The CV starts with your personal details.",
       "ar": "تبدأ السيرة الذاتية ببياناتك الشخصية.",
       "acceptedAnswers": [
-        "details",
-        "Details",
         "details"
       ],
       "grammarTags": [
@@ -390,8 +386,6 @@ export default {
       "en": "Write your work experience after the education section.",
       "ar": "اكتب خبرة عملك بعد قسم التعليم.",
       "acceptedAnswers": [
-        "experience",
-        "Experience",
         "experience"
       ],
       "grammarTags": [
@@ -520,8 +514,6 @@ export default {
       "en": "Do not write your full life story.",
       "ar": "لا تكتب قصة حياتك كاملة.",
       "acceptedAnswers": [
-        "story",
-        "Story",
         "story"
       ],
       "grammarTags": [
@@ -646,8 +638,6 @@ export default {
       "en": "Have you updated your CV this year?",
       "ar": "هل حدّثت سيرتك الذاتية هذا العام؟",
       "acceptedAnswers": [
-        "updated",
-        "Updated",
         "updated"
       ],
       "grammarTags": [
@@ -776,8 +766,6 @@ export default {
       "en": "My brother is fluent in two languages.",
       "ar": "أخي طليق في لغتين.",
       "acceptedAnswers": [
-        "fluent",
-        "Fluent",
         "fluent"
       ],
       "grammarTags": [
