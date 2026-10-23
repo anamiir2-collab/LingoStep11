@@ -35,7 +35,7 @@ const SECTIONS_META = [
 let appRoot = null;
 let currentLang = 'en';
 
-const APP_VERSION = '2.0.0';
+const APP_VERSION = '2.1.0';
 
 /* ============================================================
    Boot
@@ -162,6 +162,8 @@ function onChangeRerun() {
 async function handleRoute(route) {
   const view = document.getElementById('view');
   if (!view) return;
+  // remove any leftover practice overlays (feedback sheet, combo badge)
+  document.querySelectorAll('.duo-sheet-wrap, .duo-backdrop, .combo-badge').forEach((n) => n.remove());
   window.scrollTo(0, 0);
   updateNavState(route.name);
 
@@ -807,6 +809,7 @@ async function viewMore(view) {
   const speechContent = el('div', { class: 'more-section-content more-list' }, [
     settingRow(t(L, 'voice'), null, voiceSel),
     settingRow(t(L, 'speechRate'), null, el('div', { class: 'row' }, [rateSel, testVoiceBtn])),
+    settingRow(t(L, 'slowWordByWord'), t(L, 'slowWordByWordNote'), toggle(s.slowWordByWord !== false, (on) => saveSettings({ slowWordByWord: on }))),
     el('p', { class: 'small muted more-note', text: t(L, 'speechNote') }),
   ]);
 

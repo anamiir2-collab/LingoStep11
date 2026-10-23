@@ -12,6 +12,10 @@
 let cachedVoices = [];
 let voicesLoaded = false;
 
+/* Generation token: every speak()/stopSpeaking() call invalidates any
+   running word-by-word queue, so cancelation is always reliable. */
+let speakGeneration = 0;
+
 export function isSupported() {
   return typeof window !== 'undefined'
     && 'speechSynthesis' in window
@@ -80,6 +84,7 @@ export function pickDefaultVoice() {
  */
 export function speak(text, opts = {}) {
   if (!isSupported() || !text) return false;
+  speakGeneration += 1; // invalidates any word-by-word queue
   const s = synth();
   s.cancel(); // stop previous speech immediately
   const u = new window.SpeechSynthesisUtterance(String(text));
@@ -100,9 +105,63 @@ export function speak(text, opts = {}) {
 }
 
 export function stopSpeaking() {
+  speakGeneration += 1; // invalidates any word-by-word queue
   if (isSupported()) {
     try { synth().cancel(); } catch { /* ignore */ }
   }
+}
+
+/**
+ * Word-by-word playback ("slow audio reads one word at a time").
+ * Speaks each word as its own short utterance with a small pause
+ * between words — much easier for beginners than a slow-rate sentence.
+ *
+ * opts: { voiceURI, rate (per-word rate), gapMs (pause between words),
+ *         onword(i, total), onend() }  — onend fires ONLY on natural
+ * completion, never after cancelation.
+ * Returns { stop() } — stopping is also done by speak()/stopSpeaking().
+ */
+export function speakWordByWord(text, opts = {}) {
+  if (!isSupported() || !text) return { stop() {}, active: false };
+  const words = String(text).trim().split(/\s+/).filter(Boolean);
+  if (!words.length) return { stop() {}, active: false };
+
+  const gen = ++speakGeneration;
+  const s = synth();
+  s.cancel();
+
+  const voice = findVoice(opts.voiceURI);
+  const rate = clampRate(opts.rate ?? 0.6);
+  const gap = Math.min(1500, Math.max(0, Number(opts.gapMs ?? 320)));
+  let stopped = false;
+
+  const advance = (i) => {
+    if (stopped || gen !== speakGeneration) return; // canceled upstream
+    if (i >= words.length) {
+      if (typeof opts.onend === 'function') opts.onend();
+      return;
+    }
+    if (typeof opts.onword === 'function') opts.onword(i, words.length);
+    const u = new window.SpeechSynthesisUtterance(words[i]);
+    u.lang = (voice && voice.lang) || 'en-US';
+    if (voice) u.voice = voice;
+    u.rate = rate;
+    u.pitch = 1;
+    u.volume = 1;
+    const next = () => { if (!stopped && gen === speakGeneration) setTimeout(() => advance(i + 1), gap); };
+    u.onend = next;
+    u.onerror = next;
+    try { s.speak(u); } catch { next(); }
+  };
+
+  advance(0);
+  return {
+    active: true,
+    stop() {
+      stopped = true;
+      try { s.cancel(); } catch { /* ignore */ }
+    },
+  };
 }
 
 export function clampRate(r) {

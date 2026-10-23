@@ -17,6 +17,7 @@ export const DEFAULT_SETTINGS = {
   strictGrading: true,   // contractions/punctuation count as differences
   onScreenKeyboard: true, // show the built-in Latin keyboard under typing inputs
   soundEffects: true,    // short tones for correct/wrong letters while typing
+  slowWordByWord: true,  // slow (turtle) audio reads the sentence word by word
   userName: '',          // optional display name used in the greeting
 };
 
@@ -60,6 +61,7 @@ export function saveSettings(patch = {}) {
   next.userName = String(next.userName ?? '').trim().slice(0, 24);
   next.onScreenKeyboard = next.onScreenKeyboard !== false; // boolean, default true
   next.soundEffects = next.soundEffects !== false; // boolean, default true
+  next.slowWordByWord = next.slowWordByWord !== false; // boolean, default true
   next.showArabic = next.showArabic !== false;
   next.strictGrading = next.strictGrading !== false;
   cache = next;
@@ -77,7 +79,7 @@ export function applyDocumentSettings(settings = getSettings()) {
   html.style.fontSize = `${16 * Math.min(1.2, Math.max(0.9, Number(settings.fontScale) || 1))}px`;
 
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', settings.theme === 'dark' ? '#0f1626' : '#2e7ce6');
+  if (meta) meta.setAttribute('content', settings.theme === 'dark' ? '#000000' : '#F2F2F7');
 }
 
 export function getLang() {
