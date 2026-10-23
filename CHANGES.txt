@@ -1,3 +1,69 @@
+LingoStep — iOS-style design + Duolingo-style practice feedback (v2.2.0)
+=========================================================================
+Scope: new design layer + richer practice interactions; no content or
+grading changes. All 9 test suites still pass; validated live in browser
+(light/dark, LTR/RTL, correct/wrong/combo paths).
+
+NEW FILES:
+  css/ios-duo.css                  (iOS design layer: tokens, frosted glass,
+                                    iOS components; loaded last, overrides only)
+  js/feedback-fx.js                (Web-Audio fanfares correct/wrong/finish +
+                                    DOM confetti burst; respects soundEffects)
+  .github/workflows/sync-lingostep-zip.yml (NEW deploy workflow: overwrite mode)
+  docs/HOW-TO-UPDATE.md            (Arabic guide: why the mixed-file problem
+                                    happened and the correct 2-step update)
+
+MODIFIED FILES:
+  js/speech.js                     (speakWordByWord: word-by-word playback with
+                                    generation-based cancelation; onend only on
+                                    natural completion)
+  js/lesson-engine.js              (turtle button reads word by word with live
+                                    progress dots + pulsing state; Duolingo-style
+                                    bottom feedback sheet after EVERY answer with
+                                    big icon, punchy title, correct answer + MSA
+                                    meaning on wrong, floating +XP chip, Continue
+                                    button; combo badge at 3+ streak; finish
+                                    fanfare + confetti on the summary screen;
+                                    all overlays cleaned on exit/next/route change)
+  js/settings.js                   (new setting slowWordByWord default ON; iOS
+                                    theme-color values)
+  js/app.js                        (version 2.1.0->shell 2.1, speech settings row
+                                    for word-by-word toggle; overlay cleanup on
+                                    route change)
+  js/i18n.js                       (new keys EN/AR: continueBtn, duoExcellent,
+                                    duoGoodJob, duoKeepGoing, duoCorrectAnswer,
+                                    slowWordByWord(+Note), comboAria)
+  index.html                       (load css/ios-duo.css)
+  sw.js                            (cache bump v2.2.0 + precache new files)
+
+DESIGN (iPhone style — implemented as an override layer, easy to revert):
+  - System font stack (-apple-system/SF) with Arabic-safe letter-spacing rules
+  - iOS palette: #F2F2F7 light / #000000 dark surfaces, #007AFF/#0A84FF blue,
+    #34C759 green, #FF3B30 red, #FF9500 orange, hairline separators
+  - Frosted-glass header + full-width bottom tab bar (saturate(180%) blur(20px))
+  - Real iOS switches (green when on), gray-fill inputs, rounded cards,
+    springy button press (scale .96), slimmer progress bars, iOS-style toast
+
+PRACTICE FEEL (Duolingo-style, after every answer):
+  - Bottom sheet slides up: green "ممتاز!"/"Excellent!" or red title,
+    correct answer + Arabic meaning on wrong answers, "+N XP" float
+  - Confetti burst on correct; gentle low buzz on wrong; fanfare on finish
+  - Combo badge (flame ×N) from 3 correct answers in a row
+  - Turtle button: word-by-word speech with one dot per word lighting up
+    (can be turned off in More → Speech → "الصوت البطيء كلمة كلمة")
+
+DEPLOYMENT NOTE (important):
+  The old GitHub workflow (extract-lingostep-zip.yml) used `cp -an` which
+  NEVER overwrites existing files — it left the repository a mix of old and
+  new files (this caused the reported breakage). Follow docs/HOW-TO-UPDATE.md:
+  upload the ZIP, run the old workflow once (registers the new sync workflow),
+  then run "Sync LingoStep11 ZIP (overwrite all files)" once. After that the
+  repository always matches the ZIP exactly and the old workflow is retired.
+
+================================================================================
+(previous release below)
+================================================================================
+
 LingoStep — content review & punctuation-free grading (v2.1.0)
 ============================================================
 Scope: full review of all 252 lessons; grading policy change;
@@ -28,94 +94,3 @@ MODIFIED FILES (key ones):
   README.md, package.json                (updated numbers, gates and scripts)
 
 GRADING CHANGE (spec):
-  . , ? ! : ; quotes and brackets are ignored when comparing the typed
-  answer with the expected one — missing/extra/different punctuation is
-  still correct. Apostrophes inside contractions (don't, I'm) and hyphens
-  stay required. Wrong words, extra words and grammar errors are still
-  rejected. The displayed sentence is never modified.
-
-TESTS: node tests/run-all.js -> 9/9 suites passed
-GATES: validate-lessons PASSED (252 lessons / 14,035 exercises / 11,364
-       unique sentences); detect-duplicates PASSED;
-       check:repetition PASSED (sentences/templates/vocab all <= 4).
-
-
-LingoStep — YouType-style dictation upgrade
-============================================
-Commit: "Upgrade dictation to word-grouped letter slots with instant validation"
-
-MODIFIED FILES (13):
-  js/letter-track.js                      (NEW - letter slot surface module)
-  tests/letter-track-tests.js             (NEW - unit tests)
-  js/listening-writing-enhancements.js    (prefix rejection + completion + shared AudioContext + mute)
-  js/lesson-engine.js                     (auto-check on completion + sound-effects toggle button)
-  css/style.css                           (word-grouped slots, gaps, success animations, iOS zoom fix)
-  js/word-cards.js                        (card order: word, meaning, IPA, POS chip)
-  js/app.js                               (soundEffects setting row + onChangeRerun routing fix)
-  js/settings.js                          (soundEffects preference)
-  js/i18n.js                              (EN/AR strings for new UI)
-  js/icon-config.js                       (volumeX icon registration)
-  assets/icons/icons.svg                  (volumeX symbol)
-  sw.js                                   (cache bump v1.3.0 + precache letter-track.js)
-  tests/run-all.js                        (register letter-track suite)
-
-TESTS: node tests/run-all.js  ->  8/8 suites passed
-BROWSER: correct/wrong typing, backspace, full-sentence paste, auto-check,
-         on-screen keyboard, mute toggle, AR/RTL, mobile + desktop, 75-char
-         sentence wrapping -> all verified in Chromium, zero console errors.
-
-HOW TO PUBLISH TO GITHUB PAGES:
-  Option A (full replace): upload the contents of this folder to your repo
-    main branch (replacing existing files), commit, push.
-  Option B (your clone): copy the 13 files above over your working copy,
-    then: git add -A && git commit -m "Upgrade dictation to word-grouped
-    letter slots" && git push origin main
-  Option C (patch file): from the sibling file
-    0001-Upgrade-dictation-to-word-grouped-letter-slots-with-.patch
-    run:  git am 0001-*.patch   (inside your LingoStep clone)
-GitHub Pages will redeploy automatically after the push (~1 minute).
-
-================================================================================
-v2.0.0 — Complete curriculum restructure: 250 lessons / 11 sections
-================================================================================
-
-CURRICULUM (new numbering 1–250, ids lesson-001..lesson-250 = official numbers):
- 1. Foundations & Core Communication (1–20)   — starts with greetings, NOT letters
- 2. Simple Daily Life (21–45)
- 3. Home & Family (46–70)
- 4. Food, Shopping & Services (71–95)
- 5. Mobility & Travel (96–120)
- 6. Health & Emergencies (121–145)
- 7. Relationships & Social Communication (146–170)
- 8. Work & Money (171–195)
- 9. Education & Digital Skills (196–220)
-10. Complex Situations & Rights (221–240)
-11. Specialized English & Leadership (241–250)
-
-KEY CHANGES:
-- The course now opens with Greetings and Goodbyes / Introducing Yourself.
-  Letters, vowel/consonant sounds and numbers are no longer standalone opening
-  lessons: sounds are folded into lesson 19 (Listening and Pronunciation
-  Practice), spelling into lesson 27, and numbers/age into lesson 6.
-- All 250 lessons rebuilt on the v2 content compiler
-  (scripts/content/v2/): per-lesson authored scenarios + grammar-aware
-  pattern expansion, global cross-lesson sentence uniqueness, deterministic
-  exercise interleave (55 exercises/lesson, 70 per section review, 80 for
-  the capstone).
-- 10 section reviews (20, 45, 70, 95, 120, 145, 170, 195, 220, 240) +
-  final capstone (250) recycle earlier vocabulary in new sentences.
-- App integration updated: 11 section icons/names (en/ar), dashboard,
-  lesson-engine section labels, i18n strings, SW cache version v2.0.0,
-  PWA manifest descriptions, validators and tests re-targeted to 250.
-
-VERIFIED NUMBERS (scripts/content-report.json):
-  lessons: 250   exercises: 13,925
-  raw practice sentences: 13,152   unique: 11,279   cross-lesson duplicates: 0
-  vocabulary items: 2,996 (1,844 unique words)
-  levels: A1 30 · A2 122 · B1 80 · B2 17 · C1 1 (lesson 250)
-
-TESTS: node tests/run-all.js → 8/8 suites passed
-       node scripts/validate-project.js → PASSED (incl. validate-lessons +
-       detect-duplicates; no exact duplicates across 10,595 dictation lines)
-       Browser smoke test: dashboard/sections/lesson-001/lesson-250, answer
-       flow, XP advance, Arabic RTL interface — all verified.
