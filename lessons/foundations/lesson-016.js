@@ -126,7 +126,7 @@ export default {
       "id": "lesson-016-ex-003",
       "type": "listen-and-type",
       "en": "We eat dinner together at home.",
-      "ar": "نأكل العشاء معا في المنزل.",
+      "ar": "نأكل العشاء معًا في المنزل.",
       "acceptedAnswers": [
         "We eat dinner together at home."
       ],
@@ -144,8 +144,6 @@ export default {
       "en": "I go to work every morning.",
       "ar": "أذهب إلى العمل كل صباح.",
       "acceptedAnswers": [
-        "go",
-        "Go",
         "go"
       ],
       "grammarTags": [
@@ -173,7 +171,7 @@ export default {
       "id": "lesson-016-ex-006",
       "type": "listen-and-type",
       "en": "He writes a letter to his friend.",
-      "ar": "يكتب خطابا إلى صديقه.",
+      "ar": "يكتب خطابًا إلى صديقه.",
       "acceptedAnswers": [
         "He writes a letter to his friend."
       ],
@@ -274,8 +272,6 @@ export default {
       "en": "She drinks coffee after lunch.",
       "ar": "تشرب القهوة بعد الغداء.",
       "acceptedAnswers": [
-        "drinks",
-        "Drinks",
         "drinks"
       ],
       "grammarTags": [
@@ -391,8 +387,6 @@ export default {
       "en": "The baby sleeps in the afternoon.",
       "ar": "ينام الطفل بعد الظهر.",
       "acceptedAnswers": [
-        "sleeps",
-        "Sleeps",
         "sleeps"
       ],
       "grammarTags": [
@@ -520,8 +514,6 @@ export default {
       "en": "The children buy fresh bread.",
       "ar": "يشتري الأطفال الخبز الطازج.",
       "acceptedAnswers": [
-        "buy",
-        "Buy",
         "buy"
       ],
       "grammarTags": [
@@ -644,8 +636,6 @@ export default {
       "en": "I do not eat meat.",
       "ar": "أنا لا آكل اللحم.",
       "acceptedAnswers": [
-        "eat",
-        "Eat",
         "eat"
       ],
       "grammarTags": [
@@ -665,7 +655,7 @@ export default {
         "I sleep at morning."
       ],
       "answerIndex": 2,
-      "ar": "تنام ليلا، فتقول:",
+      "ar": "تنام ليلًا، فتقول:",
       "grammarTags": [
         "verbs",
         "present-simple"
@@ -772,8 +762,6 @@ export default {
       "en": "Can you help me, please?",
       "ar": "هل يمكنك مساعدتي من فضلك؟",
       "acceptedAnswers": [
-        "help",
-        "Help",
         "help"
       ],
       "grammarTags": [

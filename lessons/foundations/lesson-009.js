@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "Question words ask for different information: \"What?\" asks about a thing, \"Where?\" about a place, \"When?\" about a time, \"Who?\" about a person, \"Why?\" about a reason, and \"How?\" about manner or state. Use \"Whose\" for possession (\"Whose bag is this?\"), \"How many\" for countable things (\"How many brothers do you have?\"), \"How much\" for price or uncountable things (\"How much is this shirt?\"), and \"How old\" for age. The question word comes first, then the verb be or a helping verb: \"Where is your car?\", \"What does this word mean?\". Answer with a short full sentence.",
-    "explanationAr": "أدوات الاستفهام تسأل عن معلومات مختلفة: What تسأل عن الشيء، وWhere عن المكان، وWhen عن الزمان، وWho عن الشخص، وWhy عن السبب، وHow عن الحالة أو الكيفية. استخدم Whose للملكية: Whose bag is this؟ وHow many للأشياء المعدودة: How many brothers do you have؟ وHow much للسعر أو غير المعدود: How much is this shirt؟ وHow old للعمر. تأتي أداة الاستفهام أولا ثم فعل الكينونة أو الفعل المساعد: Where is your car؟ وWhat does this word mean؟ وأجب بجملة قصيرة كاملة.",
+    "explanationAr": "أدوات الاستفهام تسأل عن معلومات مختلفة: What تسأل عن الشيء، وWhere عن المكان، وWhen عن الزمان، وWho عن الشخص، وWhy عن السبب، وHow عن الحالة أو الكيفية. استخدم Whose للملكية: Whose bag is this؟ وHow many للأشياء المعدودة: How many brothers do you have؟ وHow much للسعر أو غير المعدود: How much is this shirt؟ وHow old للعمر. تأتي أداة الاستفهام أولًا ثم فعل الكينونة أو الفعل المساعد: Where is your car؟ وWhat does this word mean؟ وأجب بجملة قصيرة كاملة.",
     "examples": [
       {
         "en": "Where is your car? It is here.",
@@ -26,7 +26,7 @@ export default {
       },
       {
         "en": "How many seasons are in the year?",
-        "ar": "كم فصلا في السنة؟"
+        "ar": "كم فصلًا في السنة؟"
       }
     ]
   },
@@ -143,9 +143,7 @@ export default {
       "en": "What is this?",
       "ar": "ما هذا؟",
       "acceptedAnswers": [
-        "What",
-        "What",
-        "what"
+        "What"
       ],
       "grammarTags": [
         "questions",
@@ -272,9 +270,7 @@ export default {
       "en": "Where do you live now?",
       "ar": "أين تسكن الآن؟",
       "acceptedAnswers": [
-        "Where",
-        "Where",
-        "where"
+        "Where"
       ],
       "grammarTags": [
         "questions",
@@ -357,7 +353,7 @@ export default {
       "id": "lesson-009-ex-018",
       "type": "listen-and-type",
       "en": "There are twenty students in my class.",
-      "ar": "في صفّي عشرون طالبا.",
+      "ar": "في صفّي عشرون طالبًا.",
       "acceptedAnswers": [
         "There are twenty students in my class."
       ],
@@ -389,8 +385,6 @@ export default {
       "en": "When is your birthday?",
       "ar": "متى عيد ميلادك؟",
       "acceptedAnswers": [
-        "birthday",
-        "Birthday",
         "birthday"
       ],
       "grammarTags": [
@@ -516,9 +510,7 @@ export default {
       "en": "Who is that woman?",
       "ar": "من تلك المرأة؟",
       "acceptedAnswers": [
-        "Who",
-        "Who",
-        "who"
+        "Who"
       ],
       "grammarTags": [
         "questions",
@@ -642,9 +634,7 @@ export default {
       "en": "Why are you not at work?",
       "ar": "لماذا لست في العمل؟",
       "acceptedAnswers": [
-        "Why",
-        "Why",
-        "why"
+        "Why"
       ],
       "grammarTags": [
         "questions",
@@ -773,9 +763,7 @@ export default {
       "en": "Whose bag is this?",
       "ar": "لمن هذه الحقيبة؟",
       "acceptedAnswers": [
-        "Whose",
-        "Whose",
-        "whose"
+        "Whose"
       ],
       "grammarTags": [
         "questions",
@@ -886,7 +874,7 @@ export default {
       "id": "lesson-009-ex-052",
       "type": "listen-and-type",
       "en": "How many days are in January?",
-      "ar": "كم يوما في شهر يناير؟",
+      "ar": "كم يومًا في شهر يناير؟",
       "acceptedAnswers": [
         "How many days are in January?"
       ],
@@ -900,7 +888,7 @@ export default {
       "id": "lesson-009-ex-053",
       "type": "listen-and-type",
       "en": "How many days are in February?",
-      "ar": "كم يوما في شهر فبراير؟",
+      "ar": "كم يومًا في شهر فبراير؟",
       "acceptedAnswers": [
         "How many days are in February?"
       ],
@@ -914,7 +902,7 @@ export default {
       "id": "lesson-009-ex-054",
       "type": "listen-and-type",
       "en": "How many days are in March?",
-      "ar": "كم يوما في شهر مارس؟",
+      "ar": "كم يومًا في شهر مارس؟",
       "acceptedAnswers": [
         "How many days are in March?"
       ],
@@ -928,7 +916,7 @@ export default {
       "id": "lesson-009-ex-055",
       "type": "listen-and-type",
       "en": "How many days are in April?",
-      "ar": "كم يوما في شهر أبريل؟",
+      "ar": "كم يومًا في شهر أبريل؟",
       "acceptedAnswers": [
         "How many days are in April?"
       ],

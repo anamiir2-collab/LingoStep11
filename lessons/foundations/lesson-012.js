@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "English has three small words before nouns: a, an and the. Use \"a\" before a consonant sound: a book, a car, a house. Use \"an\" before a vowel sound (a, e, i, o, u): an apple, an egg, an engineer. Use \"the\" for one specific thing that both people know: \"Close the door\" (our door), \"the sun\", \"the moon\". First introduce a thing with a/an — \"I have a car\" — then talk about it with the — \"The car is new\".",
-    "explanationAr": "للإنجليزية ثلاث كلمات صغيرة قبل الأسماء: a وan وthe. استخدم a قبل الصوت الساكن: a book، a car. واستخدم an قبل صوت العلة (a, e, i, o, u): an apple، an egg، an engineer. واستخدم the للشيء المحدد المعروف لدى الطرفين: Close the door أي بابنا المعروف، وthe sun وthe moon. عرّف الشيء أولا بـ a أو an: I have a car، ثم تحدث عنه بـ the: The car is new.",
+    "explanationAr": "للإنجليزية ثلاث كلمات صغيرة قبل الأسماء: a وan وthe. استخدم a قبل الصوت الساكن: a book، a car. واستخدم an قبل صوت العلة (a, e, i, o, u): an apple، an egg، an engineer. واستخدم the للشيء المحدد المعروف لدى الطرفين: Close the door أي بابنا المعروف، وthe sun وthe moon. عرّف الشيء أولًا بـ a أو an: I have a car، ثم تحدث عنه بـ the: The car is new.",
     "examples": [
       {
         "en": "She eats an apple every morning.",
@@ -26,7 +26,7 @@ export default {
       },
       {
         "en": "The sun is very hot today.",
-        "ar": "الشمس حارة جدا اليوم."
+        "ar": "الشمس حارة جدًا اليوم."
       }
     ]
   },
@@ -141,8 +141,6 @@ export default {
       "en": "I have a new car.",
       "ar": "لدي سيارة جديدة.",
       "acceptedAnswers": [
-        "car",
-        "Car",
         "car"
       ],
       "grammarTags": [
@@ -198,7 +196,7 @@ export default {
       "id": "lesson-012-ex-008",
       "type": "listen-and-type",
       "en": "The sun is very hot today.",
-      "ar": "الشمس حارة جدا اليوم.",
+      "ar": "الشمس حارة جدًا اليوم.",
       "acceptedAnswers": [
         "The sun is very hot today."
       ],
@@ -262,8 +260,6 @@ export default {
       "en": "She eats an apple every morning.",
       "ar": "تأكل تفاحة كل صباح.",
       "acceptedAnswers": [
-        "apple",
-        "Apple",
         "apple"
       ],
       "grammarTags": [
@@ -371,8 +367,6 @@ export default {
       "en": "My neighbor is an engineer.",
       "ar": "جاري مهندس.",
       "acceptedAnswers": [
-        "engineer",
-        "Engineer",
         "engineer"
       ],
       "grammarTags": [
@@ -489,10 +483,8 @@ export default {
       "display": "The ___ is very hot today.",
       "blankWord": "sun",
       "en": "The sun is very hot today.",
-      "ar": "الشمس حارة جدا اليوم.",
+      "ar": "الشمس حارة جدًا اليوم.",
       "acceptedAnswers": [
-        "sun",
-        "Sun",
         "sun"
       ],
       "grammarTags": [
@@ -608,8 +600,6 @@ export default {
       "en": "Close the door, please.",
       "ar": "أغلق الباب من فضلك.",
       "acceptedAnswers": [
-        "door",
-        "Door",
         "door"
       ],
       "grammarTags": [
@@ -727,8 +717,6 @@ export default {
       "en": "We have a dog and two cats.",
       "ar": "لدينا كلب وقطتان.",
       "acceptedAnswers": [
-        "dog",
-        "Dog",
         "dog"
       ],
       "grammarTags": [

@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "To ask a yes/no question with other verbs, start with Do or Does: \"Do you like tea?\", \"Does he work here?\" — the main verb stays in the base form. Use Do with I, you, we and they, and Does with he, she and it. For the verb be, move it before the subject: \"Is she happy?\", \"Are they at home?\". Wh- questions start with a question word — What, Where, When, Who, Why, How — for example \"Where do you live?\" or \"What does she eat?\". Give short answers with do/does: \"Yes, I do.\" / \"No, he does not.\"",
-    "explanationAr": "للسؤال بنعم أو لا مع الأفعال العادية نبدأ بـ Do أو Does: Do you like tea؟ وDoes he work here؟ ويبقى الفعل الأساسي في صورته المجردة. نستخدم Do مع I وyou وwe وthey، وDoes مع he وshe وit. أما مع فعل الكينونة فنقدمه على الفاعل: Is she happy؟ وAre they at home؟ وتبدأ أسئلة الاستفهام بكلمة سؤال مثل What وWhere وWhen وWho وWhy وHow، مثل Where do you live؟ ونعطي جوابا مختصرا بـ do/does: Yes, I do. أو No, he does not.",
+    "explanationAr": "للسؤال بنعم أو لا مع الأفعال العادية نبدأ بـ Do أو Does: Do you like tea؟ وDoes he work here؟ ويبقى الفعل الأساسي في صورته المجردة. نستخدم Do مع I وyou وwe وthey، وDoes مع he وshe وit. أما مع فعل الكينونة فنقدمه على الفاعل: Is she happy؟ وAre they at home؟ وتبدأ أسئلة الاستفهام بكلمة سؤال مثل What وWhere وWhen وWho وWhy وHow، مثل Where do you live؟ ونعطي جوابًا مختصرًا بـ do/does: Yes, I do. أو No, he does not.",
     "examples": [
       {
         "en": "Do you like this city?",
@@ -144,9 +144,7 @@ export default {
       "en": "Do you speak English at home?",
       "ar": "هل تتكلم الإنجليزية في المنزل؟",
       "acceptedAnswers": [
-        "Do",
-        "Do",
-        "do"
+        "Do"
       ],
       "grammarTags": [
         "questions",
@@ -274,9 +272,7 @@ export default {
       "en": "Does your brother like football?",
       "ar": "هل يحب أخوك كرة القدم؟",
       "acceptedAnswers": [
-        "Does",
-        "Does",
-        "does"
+        "Does"
       ],
       "grammarTags": [
         "questions",
@@ -391,9 +387,7 @@ export default {
       "en": "Where do you work?",
       "ar": "أين تعمل؟",
       "acceptedAnswers": [
-        "Where",
-        "Where",
-        "where"
+        "Where"
       ],
       "grammarTags": [
         "questions",
@@ -520,9 +514,7 @@ export default {
       "en": "When do you go to bed?",
       "ar": "متى تنام؟",
       "acceptedAnswers": [
-        "When",
-        "When",
-        "when"
+        "When"
       ],
       "grammarTags": [
         "questions",
@@ -644,9 +636,7 @@ export default {
       "en": "What does your father do?",
       "ar": "ماذا يعمل والدك؟",
       "acceptedAnswers": [
-        "What",
-        "What",
-        "what"
+        "What"
       ],
       "grammarTags": [
         "questions",
@@ -772,9 +762,7 @@ export default {
       "en": "Who is your teacher?",
       "ar": "من هو معلمك؟",
       "acceptedAnswers": [
-        "Who",
-        "Who",
-        "who"
+        "Who"
       ],
       "grammarTags": [
         "questions",

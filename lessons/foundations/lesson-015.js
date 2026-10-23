@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "The home words you need every day: rooms (kitchen, bathroom, bedroom, living room), furniture (table, chair, bed, sofa) and parts of the house (door, window, wall, roof). Use \"in\" for things inside rooms: \"The fridge is in the kitchen\". Use \"the\" for the things in your house because they are known: \"Close the door\", \"Open the window\". To ask: \"Where is the bathroom?\" and \"How many rooms are in your house?\".",
-    "explanationAr": "كلمات المنزل التي تحتاجها يوميا: الغرف (المطبخ، الحمام، غرفة النوم، غرفة الجلوس)، والأثاث (الطاولة، الكرسي، السرير، الأريكة)، وأجزاء المنزل (الباب، النافذة، الحائط، السطح). استخدم in للأشياء داخل الغرف: The fridge is in the kitchen. واستخدم the لأشياء منزلك لأنها معروفة: Close the door، Open the window. وللسؤال: Where is the bathroom؟ وHow many rooms are in your house؟",
+    "explanationAr": "كلمات المنزل التي تحتاجها يوميًا: الغرف (المطبخ، الحمام، غرفة النوم، غرفة الجلوس)، والأثاث (الطاولة، الكرسي، السرير، الأريكة)، وأجزاء المنزل (الباب، النافذة، الحائط، السطح). استخدم in للأشياء داخل الغرف: The fridge is in the kitchen. واستخدم the لأشياء منزلك لأنها معروفة: Close the door، Open the window. وللسؤال: Where is the bathroom؟ وHow many rooms are in your house؟",
     "examples": [
       {
         "en": "The kitchen is small and clean.",
@@ -144,8 +144,6 @@ export default {
       "en": "Our house has two bedrooms.",
       "ar": "منزلنا فيه غرفتا نوم.",
       "acceptedAnswers": [
-        "house",
-        "House",
         "house"
       ],
       "grammarTags": [
@@ -254,7 +252,7 @@ export default {
       "id": "lesson-015-ex-011",
       "type": "listen-and-type",
       "en": "The bathroom is not big.",
-      "ar": "الحمام ليس كبيرا.",
+      "ar": "الحمام ليس كبيرًا.",
       "acceptedAnswers": [
         "The bathroom is not big."
       ],
@@ -272,8 +270,6 @@ export default {
       "en": "The milk is in the fridge.",
       "ar": "الحليب في الثلاجة.",
       "acceptedAnswers": [
-        "fridge",
-        "Fridge",
         "fridge"
       ],
       "grammarTags": [
@@ -389,8 +385,6 @@ export default {
       "en": "I clean the bathroom on Saturday.",
       "ar": "أنظف الحمام يوم السبت.",
       "acceptedAnswers": [
-        "clean",
-        "Clean",
         "clean"
       ],
       "grammarTags": [
@@ -472,7 +466,7 @@ export default {
       "id": "lesson-015-ex-025",
       "type": "listen-and-type",
       "en": "Welcome to our new house!",
-      "ar": "أهلا بكم في منزلنا الجديد!",
+      "ar": "أهلًا بكم في منزلنا الجديد!",
       "acceptedAnswers": [
         "Welcome to our new house!"
       ],
@@ -518,8 +512,6 @@ export default {
       "en": "Please turn on the light.",
       "ar": "من فضلك أضئ الضوء.",
       "acceptedAnswers": [
-        "light",
-        "Light",
         "light"
       ],
       "grammarTags": [
@@ -641,8 +633,6 @@ export default {
       "en": "Where is the bathroom?",
       "ar": "أين الحمام؟",
       "acceptedAnswers": [
-        "bathroom",
-        "Bathroom",
         "bathroom"
       ],
       "grammarTags": [
@@ -770,8 +760,6 @@ export default {
       "en": "How many rooms are in your house?",
       "ar": "كم غرفة في منزلك؟",
       "acceptedAnswers": [
-        "rooms",
-        "Rooms",
         "rooms"
       ],
       "grammarTags": [

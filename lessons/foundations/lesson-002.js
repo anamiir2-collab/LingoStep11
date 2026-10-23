@@ -26,7 +26,7 @@ export default {
       },
       {
         "en": "How old are you? I am twenty.",
-        "ar": "كم عمرك؟ عمري عشرون عاما."
+        "ar": "كم عمرك؟ عمري عشرون عامًا."
       }
     ]
   },
@@ -144,8 +144,6 @@ export default {
       "en": "My name is Omar.",
       "ar": "اسمي عمر.",
       "acceptedAnswers": [
-        "name",
-        "Name",
         "name"
       ],
       "grammarTags": [
@@ -173,7 +171,7 @@ export default {
       "id": "lesson-002-ex-006",
       "type": "listen-and-type",
       "en": "I am twenty years old.",
-      "ar": "عمري عشرون عاما.",
+      "ar": "عمري عشرون عامًا.",
       "acceptedAnswers": [
         "I am twenty years old."
       ],
@@ -272,8 +270,6 @@ export default {
       "en": "I am from Egypt.",
       "ar": "أنا من مصر.",
       "acceptedAnswers": [
-        "from",
-        "From",
         "from"
       ],
       "grammarTags": [
@@ -389,8 +385,6 @@ export default {
       "en": "I live in Cairo.",
       "ar": "أسكن في القاهرة.",
       "acceptedAnswers": [
-        "live",
-        "Live",
         "live"
       ],
       "grammarTags": [
@@ -495,10 +489,10 @@ export default {
     {
       "id": "lesson-002-ex-027",
       "type": "listen-and-type",
-      "en": "My name is Khalid.",
-      "ar": "اسمي خالد.",
+      "en": "What is your family name?",
+      "ar": "ما اسم عائلتك؟",
       "acceptedAnswers": [
-        "My name is Khalid."
+        "What is your family name?"
       ],
       "grammarTags": [
         "introductions"
@@ -513,8 +507,6 @@ export default {
       "en": "I am a student.",
       "ar": "أنا طالب.",
       "acceptedAnswers": [
-        "student",
-        "Student",
         "student"
       ],
       "grammarTags": [
@@ -539,10 +531,10 @@ export default {
     {
       "id": "lesson-002-ex-030",
       "type": "listen-and-type",
-      "en": "My name is Youssef.",
-      "ar": "اسمي يوسف.",
+      "en": "Please write your full name.",
+      "ar": "من فضلك اكتب اسمك الكامل.",
       "acceptedAnswers": [
-        "My name is Youssef."
+        "Please write your full name."
       ],
       "grammarTags": [
         "introductions"
@@ -633,8 +625,6 @@ export default {
       "en": "How old are you?",
       "ar": "كم عمرك؟",
       "acceptedAnswers": [
-        "old",
-        "Old",
         "old"
       ],
       "grammarTags": [
@@ -736,7 +726,7 @@ export default {
       "id": "lesson-002-ex-043",
       "type": "word-order",
       "en": "I am twenty years old.",
-      "ar": "عمري عشرون عاما.",
+      "ar": "عمري عشرون عامًا.",
       "words": [
         "am",
         "twenty",
@@ -762,8 +752,6 @@ export default {
       "en": "I speak Arabic and English.",
       "ar": "أتكلم العربية والإنجليزية.",
       "acceptedAnswers": [
-        "speak",
-        "Speak",
         "speak"
       ],
       "grammarTags": [

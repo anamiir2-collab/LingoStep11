@@ -144,8 +144,6 @@ export default {
       "en": "Listen and repeat after me, please.",
       "ar": "استمع وكرر بعدی من فضلك.",
       "acceptedAnswers": [
-        "repeat",
-        "Repeat",
         "repeat"
       ],
       "grammarTags": [
@@ -219,7 +217,7 @@ export default {
       "id": "lesson-019-ex-009",
       "type": "listen-and-type",
       "en": "How many syllables are in banana?",
-      "ar": "كم مقطعا في كلمة banana؟",
+      "ar": "كم مقطعًا في كلمة banana؟",
       "acceptedAnswers": [
         "How many syllables are in banana?"
       ],
@@ -274,8 +272,6 @@ export default {
       "en": "How do you spell your name?",
       "ar": "كيف تتهجى اسمك؟",
       "acceptedAnswers": [
-        "spell",
-        "Spell",
         "spell"
       ],
       "grammarTags": [
@@ -391,8 +387,6 @@ export default {
       "en": "Banana has three syllables.",
       "ar": "كلمة banana فيها ثلاثة مقاطع.",
       "acceptedAnswers": [
-        "syllables",
-        "Syllables",
         "syllables"
       ],
       "grammarTags": [
@@ -519,8 +513,6 @@ export default {
       "en": "Sheep has a long vowel sound.",
       "ar": "كلمة sheep فيها صوت حرف علة طويل.",
       "acceptedAnswers": [
-        "vowel",
-        "Vowel",
         "vowel"
       ],
       "grammarTags": [
@@ -639,8 +631,6 @@ export default {
       "en": "The word knife starts with a silent k.",
       "ar": "كلمة knife تبدأ بكاف صامتة.",
       "acceptedAnswers": [
-        "silent",
-        "Silent",
         "silent"
       ],
       "grammarTags": [
@@ -661,7 +651,7 @@ export default {
         "three"
       ],
       "answerIndex": 3,
-      "ar": "كم مقطعا في كلمة banana؟",
+      "ar": "كم مقطعًا في كلمة banana؟",
       "grammarTags": [
         "pronunciation",
         "listening"
@@ -763,8 +753,6 @@ export default {
       "en": "What is the first letter of Sunday?",
       "ar": "ما الحرف الأول من كلمة Sunday؟",
       "acceptedAnswers": [
-        "letter",
-        "Letter",
         "letter"
       ],
       "grammarTags": [

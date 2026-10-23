@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "In English the simple sentence follows a fixed order: Subject + Verb + Object — \"Sara eats an apple\". The subject does the action, the verb is the action, and the object receives the action. Unlike Arabic, where the verb may come first (تأكل سارة تفاحة), English keeps this order almost always. With he, she and it we add -s to the verb: he eats, she drinks, it closes. To make a negative, use do not / does not, and to ask a question, start with Do / Does.",
-    "explanationAr": "في الإنجليزية تتبع الجملة البسيطة ترتيبا ثابتا: الفاعل ثم الفعل ثم المفعول به: Sara eats an apple. الفاعل من يقوم بالفعل، والفعل هو الحدث، والمفعول به من يقع عليه الفعل. هذا الترتيب لا يتغير تقريبا في الإنجليزية، بخلاف العربية التي يجوز فيها تقديم الفعل. مع he وshe وit نضيف s للفعل: he eats، she drinks. وللنفي نستخدم do not أو does not، وللسؤال نبدأ بـ Do أو Does.",
+    "explanationAr": "في الإنجليزية تتبع الجملة البسيطة ترتيبا ثابتًا: الفاعل ثم الفعل ثم المفعول به: Sara eats an apple. الفاعل من يقوم بالفعل، والفعل هو الحدث، والمفعول به من يقع عليه الفعل. هذا الترتيب لا يتغير تقريبًا في الإنجليزية، بخلاف العربية التي يجوز فيها تقديم الفعل. مع he وshe وit نضيف s للفعل: he eats، she drinks. وللنفي نستخدم do not أو does not، وللسؤال نبدأ بـ Do أو Does.",
     "examples": [
       {
         "en": "Sara eats an apple.",
@@ -145,8 +145,6 @@ export default {
       "en": "I eat bread and cheese in the morning.",
       "ar": "آكل الخبز والجبن في الصباح.",
       "acceptedAnswers": [
-        "eat",
-        "Eat",
         "eat"
       ],
       "grammarTags": [
@@ -206,7 +204,7 @@ export default {
       "id": "lesson-011-ex-008",
       "type": "listen-and-type",
       "en": "The workers open the shop early.",
-      "ar": "يفتح العمال المتجر مبكرا.",
+      "ar": "يفتح العمال المتجر مبكرًا.",
       "acceptedAnswers": [
         "The workers open the shop early."
       ],
@@ -274,8 +272,6 @@ export default {
       "en": "She drinks tea with her family.",
       "ar": "تشرب الشاي مع عائلتها.",
       "acceptedAnswers": [
-        "tea",
-        "Tea",
         "tea"
       ],
       "grammarTags": [
@@ -289,7 +285,7 @@ export default {
       "id": "lesson-011-ex-013",
       "type": "listen-and-type",
       "en": "I do not drink coffee at night.",
-      "ar": "لا أشرب القهوة ليلا.",
+      "ar": "لا أشرب القهوة ليلًا.",
       "acceptedAnswers": [
         "I do not drink coffee at night."
       ],
@@ -391,8 +387,6 @@ export default {
       "en": "Please close the window, Sara.",
       "ar": "من فضلك أغلقي النافذة يا سارة.",
       "acceptedAnswers": [
-        "close",
-        "Close",
         "close"
       ],
       "grammarTags": [
@@ -519,10 +513,8 @@ export default {
       "display": "I do not drink ___ at night.",
       "blankWord": "coffee",
       "en": "I do not drink coffee at night.",
-      "ar": "لا أشرب القهوة ليلا.",
+      "ar": "لا أشرب القهوة ليلًا.",
       "acceptedAnswers": [
-        "coffee",
-        "Coffee",
         "coffee"
       ],
       "grammarTags": [
@@ -647,8 +639,6 @@ export default {
       "en": "The children watch TV after dinner.",
       "ar": "يشاهد الأطفال التلفاز بعد العشاء.",
       "acceptedAnswers": [
-        "watch",
-        "Watch",
         "watch"
       ],
       "grammarTags": [
@@ -775,8 +765,6 @@ export default {
       "en": "Omar buys fresh bread every morning.",
       "ar": "يشتري عمر الخبز الطازج كل صباح.",
       "acceptedAnswers": [
-        "bread",
-        "Bread",
         "bread"
       ],
       "grammarTags": [

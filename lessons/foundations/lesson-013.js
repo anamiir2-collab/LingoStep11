@@ -140,8 +140,6 @@ export default {
       "en": "The keys are on the table.",
       "ar": "المفاتيح على الطاولة.",
       "acceptedAnswers": [
-        "on",
-        "On",
         "on"
       ],
       "grammarTags": [
@@ -262,8 +260,6 @@ export default {
       "en": "The cat is under the chair.",
       "ar": "القطة تحت الكرسي.",
       "acceptedAnswers": [
-        "under",
-        "Under",
         "under"
       ],
       "grammarTags": [
@@ -341,7 +337,7 @@ export default {
       "id": "lesson-013-ex-018",
       "type": "listen-and-type",
       "en": "Excuse me, where is the market?",
-      "ar": "عفوا، أين السوق؟",
+      "ar": "عفوًا، أين السوق؟",
       "acceptedAnswers": [
         "Excuse me, where is the market?"
       ],
@@ -371,8 +367,6 @@ export default {
       "en": "The mosque is next to the market.",
       "ar": "الجامع بجانب السوق.",
       "acceptedAnswers": [
-        "market",
-        "Market",
         "market"
       ],
       "grammarTags": [
@@ -492,8 +486,6 @@ export default {
       "en": "The car is in front of the house.",
       "ar": "السيارة أمام المنزل.",
       "acceptedAnswers": [
-        "front",
-        "Front",
         "front"
       ],
       "grammarTags": [
@@ -611,8 +603,6 @@ export default {
       "en": "My phone is not in my bag.",
       "ar": "هاتفي ليس في حقيبتي.",
       "acceptedAnswers": [
-        "in",
-        "In",
         "in"
       ],
       "grammarTags": [
@@ -731,9 +721,7 @@ export default {
       "en": "Where are the children?",
       "ar": "أين الأطفال؟",
       "acceptedAnswers": [
-        "Where",
-        "Where",
-        "where"
+        "Where"
       ],
       "grammarTags": [
         "prepositions"

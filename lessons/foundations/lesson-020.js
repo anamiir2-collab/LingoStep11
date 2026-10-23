@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "This lesson reviews the first twenty lessons. Say hello and answer \"How are you?\"; introduce yourself with \"My name is...\" and \"I am from...\". Use the pronouns with the verb be, name colors, shapes, days, months and numbers, and talk about family, appearance, weather and the home. Build sentences in subject-verb-object order, ask questions with do/does and is/are, and make them negative with not, don't and doesn't. Listen for English sounds inside new words. Every sentence here is new, so read and listen carefully.",
-    "explanationAr": "هذا الدرس مراجعة للدروس العشرين الأولى. حيِ وأجب عن سؤال How are you؟ وعرف نفسك بـ My name is وI am from. استخدم الضمائر مع فعل الكينونة، وسمِّ الألوان والأشكال والأيام والشهور والأرقام، وتحدث عن العائلة والمظهر والطقس والمنزل. كوّن جملا بترتيب فاعل فعل مفعول، واسأل بـ do/does وis/are، وأنفها بـ not وdo not وdoes not. واستمع للأصوات الإنجليزية داخل الكلمات الجديدة. كل الجمل هنا جديدة، فاقرأ واستمع بعناية.",
+    "explanationAr": "هذا الدرس مراجعة للدروس العشرين الأولى. حيِ وأجب عن سؤال How are you؟ وعرف نفسك بـ My name is وI am from. استخدم الضمائر مع فعل الكينونة، وسمِّ الألوان والأشكال والأيام والشهور والأرقام، وتحدث عن العائلة والمظهر والطقس والمنزل. كوّن جملًا بترتيب فاعل فعل مفعول، واسأل بـ do/does وis/are، وأنفها بـ not وdo not وdoes not. واستمع للأصوات الإنجليزية داخل الكلمات الجديدة. كل الجمل هنا جديدة، فاقرأ واستمع بعناية.",
     "examples": [
       {
         "en": "My grandmother drinks tea every evening.",
@@ -144,8 +144,6 @@ export default {
       "en": "Good morning, how are you today?",
       "ar": "صباح الخير، كيف حالك اليوم؟",
       "acceptedAnswers": [
-        "morning",
-        "Morning",
         "morning"
       ],
       "grammarTags": [
@@ -205,7 +203,7 @@ export default {
       "id": "lesson-020-ex-008",
       "type": "listen-and-type",
       "en": "It rains a lot in November.",
-      "ar": "تمطر كثيرا في نوفمبر.",
+      "ar": "تمطر كثيرًا في نوفمبر.",
       "acceptedAnswers": [
         "It rains a lot in November."
       ],
@@ -219,7 +217,7 @@ export default {
       "id": "lesson-020-ex-009",
       "type": "listen-and-type",
       "en": "Our class has thirty students.",
-      "ar": "صفنا فيه ثلاثون طالبا.",
+      "ar": "صفنا فيه ثلاثون طالبًا.",
       "acceptedAnswers": [
         "Our class has thirty students."
       ],
@@ -261,8 +259,6 @@ export default {
       "en": "We are from Tunisia.",
       "ar": "نحن من تونس.",
       "acceptedAnswers": [
-        "from",
-        "From",
         "from"
       ],
       "grammarTags": [
@@ -304,7 +300,7 @@ export default {
       "id": "lesson-020-ex-014",
       "type": "listen-and-type",
       "en": "The moon is very bright tonight.",
-      "ar": "القمر مضيء جدا الليلة.",
+      "ar": "القمر مضيء جدًا الليلة.",
       "acceptedAnswers": [
         "The moon is very bright tonight."
       ],
@@ -364,8 +360,6 @@ export default {
       "en": "The walls in my room are white.",
       "ar": "جدران غرفتي بيضاء.",
       "acceptedAnswers": [
-        "white",
-        "White",
         "white"
       ],
       "grammarTags": [
@@ -480,9 +474,7 @@ export default {
       "en": "We visit our grandmother on Saturday.",
       "ar": "نزور جدتنا يوم السبت.",
       "acceptedAnswers": [
-        "Saturday",
-        "Saturday",
-        "saturday"
+        "Saturday"
       ],
       "grammarTags": [
         "review",
@@ -546,7 +538,7 @@ export default {
       "id": "lesson-020-ex-029",
       "type": "listen-and-type",
       "en": "Yes, they are very kind people.",
-      "ar": "نعم، هم أشخاص طيبون جدا.",
+      "ar": "نعم، هم أشخاص طيبون جدًا.",
       "acceptedAnswers": [
         "Yes, they are very kind people."
       ],
@@ -596,8 +588,6 @@ export default {
       "en": "My uncle works in a big hospital.",
       "ar": "يعمل عمي في مستشفى كبير.",
       "acceptedAnswers": [
-        "hospital",
-        "Hospital",
         "hospital"
       ],
       "grammarTags": [
@@ -708,8 +698,6 @@ export default {
       "en": "My sister has long curly hair.",
       "ar": "لأختي شعر طويل مجعد.",
       "acceptedAnswers": [
-        "hair",
-        "Hair",
         "hair"
       ],
       "grammarTags": [
@@ -815,8 +803,6 @@ export default {
       "en": "My father does not drink coffee.",
       "ar": "أبي لا يشرب القهوة.",
       "acceptedAnswers": [
-        "does",
-        "Does",
         "does"
       ],
       "grammarTags": [
@@ -927,9 +913,7 @@ export default {
       "en": "Repeat these words after me, please.",
       "ar": "كرر هذه الكلمات بعدی من فضلك.",
       "acceptedAnswers": [
-        "Repeat",
-        "Repeat",
-        "repeat"
+        "Repeat"
       ],
       "grammarTags": [
         "review",
@@ -974,7 +958,7 @@ export default {
       "id": "lesson-020-ex-056",
       "type": "word-order",
       "en": "My mother speaks a little English.",
-      "ar": "أمي تتكلم قليلا من الإنجليزية.",
+      "ar": "أمي تتكلم قليلًا من الإنجليزية.",
       "words": [
         "mother",
         "speaks",
@@ -1043,8 +1027,6 @@ export default {
       "en": "My grandmother visits us every Friday.",
       "ar": "تزورنا جدتي كل جمعة.",
       "acceptedAnswers": [
-        "grandmother",
-        "Grandmother",
         "grandmother"
       ],
       "grammarTags": [
@@ -1114,7 +1096,7 @@ export default {
       "id": "lesson-020-ex-065",
       "type": "listen-and-type",
       "en": "My father is eighteen years old.",
-      "ar": "أبي عمره ثمانية عشر عاما.",
+      "ar": "أبي عمره ثمانية عشر عامًا.",
       "acceptedAnswers": [
         "My father is eighteen years old."
       ],
@@ -1129,7 +1111,7 @@ export default {
       "id": "lesson-020-ex-066",
       "type": "listen-and-type",
       "en": "My father is twenty-five years old.",
-      "ar": "أبي عمره خمسة وعشرون عاما.",
+      "ar": "أبي عمره خمسة وعشرون عامًا.",
       "acceptedAnswers": [
         "My father is twenty-five years old."
       ],
@@ -1144,7 +1126,7 @@ export default {
       "id": "lesson-020-ex-067",
       "type": "listen-and-type",
       "en": "My father is forty years old.",
-      "ar": "أبي عمره أربعون عاما.",
+      "ar": "أبي عمره أربعون عامًا.",
       "acceptedAnswers": [
         "My father is forty years old."
       ],
@@ -1159,7 +1141,7 @@ export default {
       "id": "lesson-020-ex-068",
       "type": "listen-and-type",
       "en": "My father is sixty years old.",
-      "ar": "أبي عمره ستون عاما.",
+      "ar": "أبي عمره ستون عامًا.",
       "acceptedAnswers": [
         "My father is sixty years old."
       ],
@@ -1174,7 +1156,7 @@ export default {
       "id": "lesson-020-ex-069",
       "type": "listen-and-type",
       "en": "My mother is eighteen years old.",
-      "ar": "أمي عمرها ثمانية عشر عاما.",
+      "ar": "أمي عمرها ثمانية عشر عامًا.",
       "acceptedAnswers": [
         "My mother is eighteen years old."
       ],
@@ -1189,7 +1171,7 @@ export default {
       "id": "lesson-020-ex-070",
       "type": "listen-and-type",
       "en": "My mother is twenty-five years old.",
-      "ar": "أمي عمرها خمسة وعشرون عاما.",
+      "ar": "أمي عمرها خمسة وعشرون عامًا.",
       "acceptedAnswers": [
         "My mother is twenty-five years old."
       ],

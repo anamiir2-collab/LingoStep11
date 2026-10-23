@@ -26,7 +26,7 @@ export default {
       },
       {
         "en": "Please help me. I will help you later.",
-        "ar": "ساعدني من فضلك. سأساعدك لاحقا."
+        "ar": "ساعدني من فضلك. سأساعدك لاحقًا."
       }
     ]
   },
@@ -143,9 +143,7 @@ export default {
       "en": "He is my brother.",
       "ar": "هو أخي.",
       "acceptedAnswers": [
-        "He",
-        "He",
-        "he"
+        "He"
       ],
       "grammarTags": [
         "pronouns",
@@ -271,9 +269,7 @@ export default {
       "en": "She is my sister.",
       "ar": "هي أختي.",
       "acceptedAnswers": [
-        "She",
-        "She",
-        "she"
+        "She"
       ],
       "grammarTags": [
         "pronouns",
@@ -286,7 +282,7 @@ export default {
       "id": "lesson-003-ex-013",
       "type": "listen-and-type",
       "en": "Call him tomorrow.",
-      "ar": "اتصل به غدا.",
+      "ar": "اتصل به غدًا.",
       "acceptedAnswers": [
         "Call him tomorrow."
       ],
@@ -328,7 +324,7 @@ export default {
       "id": "lesson-003-ex-016",
       "type": "listen-and-type",
       "en": "I know them well.",
-      "ar": "أعرفهم جيدا.",
+      "ar": "أعرفهم جيدًا.",
       "acceptedAnswers": [
         "I know them well."
       ],
@@ -370,7 +366,7 @@ export default {
       "id": "lesson-003-ex-019",
       "type": "listen-and-type",
       "en": "They help us a lot.",
-      "ar": "هم يساعدوننا كثيرا.",
+      "ar": "هم يساعدوننا كثيرًا.",
       "acceptedAnswers": [
         "They help us a lot."
       ],
@@ -388,9 +384,7 @@ export default {
       "en": "We are students.",
       "ar": "نحن طلاب.",
       "acceptedAnswers": [
-        "We",
-        "We",
-        "we"
+        "We"
       ],
       "grammarTags": [
         "pronouns",
@@ -516,8 +510,6 @@ export default {
       "en": "Please help me.",
       "ar": "ساعدني من فضلك.",
       "acceptedAnswers": [
-        "me",
-        "Me",
         "me"
       ],
       "grammarTags": [
@@ -639,10 +631,8 @@ export default {
       "display": "Call ___ tomorrow.",
       "blankWord": "him",
       "en": "Call him tomorrow.",
-      "ar": "اتصل به غدا.",
+      "ar": "اتصل به غدًا.",
       "acceptedAnswers": [
-        "him",
-        "Him",
         "him"
       ],
       "grammarTags": [
@@ -769,8 +759,6 @@ export default {
       "en": "I see her every day.",
       "ar": "أراها كل يوم.",
       "acceptedAnswers": [
-        "her",
-        "Her",
         "her"
       ],
       "grammarTags": [

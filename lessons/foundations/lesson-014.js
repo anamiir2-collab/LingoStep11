@@ -22,7 +22,7 @@ export default {
       },
       {
         "en": "It is very hot in July.",
-        "ar": "الجو حار جدا في يوليو."
+        "ar": "الجو حار جدًا في يوليو."
       },
       {
         "en": "What is the weather like today? It is sunny and warm.",
@@ -144,8 +144,6 @@ export default {
       "en": "The weather is nice today.",
       "ar": "الجو جميل اليوم.",
       "acceptedAnswers": [
-        "weather",
-        "Weather",
         "weather"
       ],
       "grammarTags": [
@@ -273,8 +271,6 @@ export default {
       "en": "It is cold in the morning.",
       "ar": "الجو بارد في الصباح.",
       "acceptedAnswers": [
-        "cold",
-        "Cold",
         "cold"
       ],
       "grammarTags": [
@@ -288,7 +284,7 @@ export default {
       "id": "lesson-014-ex-013",
       "type": "listen-and-type",
       "en": "It is very hot in July.",
-      "ar": "الجو حار جدا في يوليو.",
+      "ar": "الجو حار جدًا في يوليو.",
       "acceptedAnswers": [
         "It is very hot in July."
       ],
@@ -330,7 +326,7 @@ export default {
       "id": "lesson-014-ex-016",
       "type": "listen-and-type",
       "en": "It is not cold in April.",
-      "ar": "الجو ليس باردا في أبريل.",
+      "ar": "الجو ليس باردًا في أبريل.",
       "acceptedAnswers": [
         "It is not cold in April."
       ],
@@ -390,8 +386,6 @@ export default {
       "en": "Is it rainy in April?",
       "ar": "هل الجو ممطر في أبريل؟",
       "acceptedAnswers": [
-        "rainy",
-        "Rainy",
         "rainy"
       ],
       "grammarTags": [
@@ -404,7 +398,7 @@ export default {
       "id": "lesson-014-ex-021",
       "type": "word-order",
       "en": "It is very hot in July.",
-      "ar": "الجو حار جدا في يوليو.",
+      "ar": "الجو حار جدًا في يوليو.",
       "words": [
         "is",
         "very",
@@ -473,7 +467,7 @@ export default {
       "id": "lesson-014-ex-025",
       "type": "listen-and-type",
       "en": "Please bring me a cup of tea.",
-      "ar": "من فضلك أحضر لي كوبا من الشاي.",
+      "ar": "من فضلك أحضر لي كوبًا من الشاي.",
       "acceptedAnswers": [
         "Please bring me a cup of tea."
       ],
@@ -517,8 +511,6 @@ export default {
       "en": "We drink hot tea in winter.",
       "ar": "نشرب الشاي الساخن في الشتاء.",
       "acceptedAnswers": [
-        "tea",
-        "Tea",
         "tea"
       ],
       "grammarTags": [
@@ -636,8 +628,6 @@ export default {
       "en": "The wind is strong near the sea.",
       "ar": "الريح قوية بالقرب من البحر.",
       "acceptedAnswers": [
-        "wind",
-        "Wind",
         "wind"
       ],
       "grammarTags": [
@@ -761,9 +751,7 @@ export default {
       "en": "What is the weather like today?",
       "ar": "كيف الطقس اليوم؟",
       "acceptedAnswers": [
-        "What",
-        "What",
-        "what"
+        "What"
       ],
       "grammarTags": [
         "weather",

@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "Colors are adjectives, so they come before the noun: \"a red car\", \"a blue bag\". You can also describe with the verb be: \"The car is red\". In English the color never changes, but in Arabic it matches the noun: \"السيارة حمراء\" (feminine) and \"الباب أحمر\" (masculine). Basic shapes are circle, square, triangle, rectangle and star. To ask about a color, say \"What color is it?\" — the answer is \"It is green\".",
-    "explanationAr": "الألوان صفات، فتأتي قبل الاسم: a red car، a blue bag. ويمكنك الوصف بفعل الكينونة: The car is red. في الإنجليزية لا يتغير اللون أبدا، أما في العربية فيطابق الاسم: السيارة حمراء (مؤنث) والباب أحمر (مذكر). الأشكال الأساسية هي دائرة ومربع ومثلث ومستطيل ونجمة. وللسؤال عن اللون قل What color is it؟ والجواب It is green.",
+    "explanationAr": "الألوان صفات، فتأتي قبل الاسم: a red car، a blue bag. ويمكنك الوصف بفعل الكينونة: The car is red. في الإنجليزية لا يتغير اللون أبدًا، أما في العربية فيطابق الاسم: السيارة حمراء (مؤنث) والباب أحمر (مذكر). الأشكال الأساسية هي دائرة ومربع ومثلث ومستطيل ونجمة. وللسؤال عن اللون قل What color is it؟ والجواب It is green.",
     "examples": [
       {
         "en": "I have a red pen and a blue bag.",
@@ -144,8 +144,6 @@ export default {
       "en": "The car is red.",
       "ar": "السيارة حمراء.",
       "acceptedAnswers": [
-        "red",
-        "Red",
         "red"
       ],
       "grammarTags": [
@@ -272,8 +270,6 @@ export default {
       "en": "My bag is blue.",
       "ar": "حقيبتي زرقاء.",
       "acceptedAnswers": [
-        "blue",
-        "Blue",
         "blue"
       ],
       "grammarTags": [
@@ -389,8 +385,6 @@ export default {
       "en": "The apple is green.",
       "ar": "التفاحة خضراء.",
       "acceptedAnswers": [
-        "green",
-        "Green",
         "green"
       ],
       "grammarTags": [
@@ -516,8 +510,6 @@ export default {
       "en": "My phone is black.",
       "ar": "هاتفي أسود.",
       "acceptedAnswers": [
-        "black",
-        "Black",
         "black"
       ],
       "grammarTags": [
@@ -639,8 +631,6 @@ export default {
       "en": "This is a circle.",
       "ar": "هذه دائرة.",
       "acceptedAnswers": [
-        "circle",
-        "Circle",
         "circle"
       ],
       "grammarTags": [
@@ -767,8 +757,6 @@ export default {
       "en": "Draw a square, please.",
       "ar": "ارسم مربعا من فضلك.",
       "acceptedAnswers": [
-        "square",
-        "Square",
         "square"
       ],
       "grammarTags": [

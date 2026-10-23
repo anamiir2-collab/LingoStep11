@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "Family words name the people in your home: mother, father, brother, sister, grandmother, grandfather, uncle, aunt, cousin, son and daughter. Use \"my\" before family words: \"my mother\", \"my cousins\". Introduce one person with \"This is my brother\" and a group with \"These are my parents\". Use have/has to talk about your family: \"I have two sisters\", \"She has one brother\". Ask simple questions: \"How many people are in your family?\", \"Do you have any brothers?\".",
-    "explanationAr": "كلمات العائلة تسمي أفراد بيتك: الأم والأب والأخ والأخت والجدة والجد والعم والعمة وابن العم والابن والابنة. استخدم my قبل كلمات العائلة: my mother، my cousins. قدّم شخصا واحدا بـ This is my brother ومجموعة بـ These are my parents. واستخدم have/has للحديث عن عائلتك: I have two sisters، She has one brother. واسأل أسئلة بسيطة: How many people are in your family؟ وDo you have any brothers؟",
+    "explanationAr": "كلمات العائلة تسمي أفراد بيتك: الأم والأب والأخ والأخت والجدة والجد والعم والعمة وابن العم والابن والابنة. استخدم my قبل كلمات العائلة: my mother، my cousins. قدّم شخصًا واحدًا بـ This is my brother ومجموعة بـ These are my parents. واستخدم have/has للحديث عن عائلتك: I have two sisters، She has one brother. واسأل أسئلة بسيطة: How many people are in your family؟ وDo you have any brothers؟",
     "examples": [
       {
         "en": "This is my mother. She is a teacher.",
@@ -143,8 +143,6 @@ export default {
       "en": "This is my father.",
       "ar": "هذا أبي.",
       "acceptedAnswers": [
-        "father",
-        "Father",
         "father"
       ],
       "grammarTags": [
@@ -204,7 +202,7 @@ export default {
       "id": "lesson-007-ex-008",
       "type": "listen-and-type",
       "en": "My grandparents live with us.",
-      "ar": "جدا يسكان معنا.",
+      "ar": "جدًا يسكان معنا.",
       "acceptedAnswers": [
         "My grandparents live with us."
       ],
@@ -271,8 +269,6 @@ export default {
       "en": "I have one brother and two sisters.",
       "ar": "لدي أخ واحد وأختان.",
       "acceptedAnswers": [
-        "have",
-        "Have",
         "have"
       ],
       "grammarTags": [
@@ -388,8 +384,6 @@ export default {
       "en": "How many people are in your family?",
       "ar": "كم عدد أفراد عائلتك؟",
       "acceptedAnswers": [
-        "family",
-        "Family",
         "family"
       ],
       "grammarTags": [
@@ -472,7 +466,7 @@ export default {
       "id": "lesson-007-ex-025",
       "type": "listen-and-type",
       "en": "Please say hello to your family.",
-      "ar": "قل مرحبا لعائلتك من فضلك.",
+      "ar": "قل مرحبًا لعائلتك من فضلك.",
       "acceptedAnswers": [
         "Please say hello to your family."
       ],
@@ -518,8 +512,6 @@ export default {
       "en": "My mother is an English teacher.",
       "ar": "أمي معلمة إنجليزية.",
       "acceptedAnswers": [
-        "mother",
-        "Mother",
         "mother"
       ],
       "grammarTags": [
@@ -642,10 +634,8 @@ export default {
       "display": "My grandparents ___ with us.",
       "blankWord": "live",
       "en": "My grandparents live with us.",
-      "ar": "جدا يسكان معنا.",
+      "ar": "جدًا يسكان معنا.",
       "acceptedAnswers": [
-        "live",
-        "Live",
         "live"
       ],
       "grammarTags": [
@@ -774,8 +764,6 @@ export default {
       "en": "Do you have any brothers or sisters?",
       "ar": "هل لديك إخوة أو أخوات؟",
       "acceptedAnswers": [
-        "any",
-        "Any",
         "any"
       ],
       "grammarTags": [

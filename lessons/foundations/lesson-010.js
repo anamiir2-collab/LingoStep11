@@ -14,11 +14,11 @@ export default {
   ],
   "grammar": {
     "explanation": "A simple English sentence has a subject, a verb and a complement or object, in that order: \"I read books\", \"She is a teacher\", \"We drink tea\". The subject comes first, then the verb, then the rest. Use am/is/are before adjectives and nouns: \"My sentence is short\". Add \"not\" to make a negative: \"This word is not easy\", \"I do not know\". Start every sentence with a capital letter and finish it with a period (.), a question mark (?) or an exclamation mark (!).",
-    "explanationAr": "الجملة الإنجليزية البسيطة تحتوي فاعلا وفعلًا ومفعولا أو تكملة بهذا الترتيب: I read books، She is a teacher، We drink tea. يأتي الفاعل أولا ثم الفعل ثم بقية الجملة. استخدم am/is/are قبل الصفات والأسماء: My sentence is short. ولتكوين النفي أضف not: This word is not easy، I do not know. ابدأ كل جملة بحرف كبير وأنهها بنقطة أو علامة استفهام أو تعجب.",
+    "explanationAr": "الجملة الإنجليزية البسيطة تحتوي فاعلا وفعلًا ومفعولا أو تكملة بهذا الترتيب: I read books، She is a teacher، We drink tea. يأتي الفاعل أولًا ثم الفعل ثم بقية الجملة. استخدم am/is/are قبل الصفات والأسماء: My sentence is short. ولتكوين النفي أضف not: This word is not easy، I do not know. ابدأ كل جملة بحرف كبير وأنهها بنقطة أو علامة استفهام أو تعجب.",
     "examples": [
       {
         "en": "I read a book at night.",
-        "ar": "أقرأ كتابا في الليل."
+        "ar": "أقرأ كتابًا في الليل."
       },
       {
         "en": "They eat rice at home.",
@@ -97,7 +97,7 @@ export default {
       "id": "lesson-010-ex-001",
       "type": "listen-and-type",
       "en": "I read a book at night.",
-      "ar": "أقرأ كتابا في الليل.",
+      "ar": "أقرأ كتابًا في الليل.",
       "acceptedAnswers": [
         "I read a book at night."
       ],
@@ -141,10 +141,8 @@ export default {
       "display": "I ___ a book at night.",
       "blankWord": "read",
       "en": "I read a book at night.",
-      "ar": "أقرأ كتابا في الليل.",
+      "ar": "أقرأ كتابًا في الليل.",
       "acceptedAnswers": [
-        "read",
-        "Read",
         "read"
       ],
       "grammarTags": [
@@ -231,7 +229,7 @@ export default {
       "id": "lesson-010-ex-010",
       "type": "word-order",
       "en": "I read a book at night.",
-      "ar": "أقرأ كتابا في الليل.",
+      "ar": "أقرأ كتابًا في الليل.",
       "words": [
         "read",
         "a",
@@ -272,8 +270,6 @@ export default {
       "en": "Please write your name here.",
       "ar": "اكتب اسمك هنا من فضلك.",
       "acceptedAnswers": [
-        "write",
-        "Write",
         "write"
       ],
       "grammarTags": [
@@ -300,7 +296,7 @@ export default {
       "id": "lesson-010-ex-014",
       "type": "listen-and-type",
       "en": "Sorry, I do not know.",
-      "ar": "عفوا لا أعرف.",
+      "ar": "عفوًا لا أعرف.",
       "acceptedAnswers": [
         "Sorry, I do not know."
       ],
@@ -314,7 +310,7 @@ export default {
       "id": "lesson-010-ex-015",
       "type": "listen-and-type",
       "en": "She speaks English very well.",
-      "ar": "هي تتكلم الإنجليزية جيدا جدا.",
+      "ar": "هي تتكلم الإنجليزية جيدًا جدًا.",
       "acceptedAnswers": [
         "She speaks English very well."
       ],
@@ -388,8 +384,6 @@ export default {
       "en": "What does this word mean?",
       "ar": "ماذا تعني هذه الكلمة؟",
       "acceptedAnswers": [
-        "mean",
-        "Mean",
         "mean"
       ],
       "grammarTags": [
@@ -442,7 +436,7 @@ export default {
       "id": "lesson-010-ex-023",
       "type": "listen-and-type",
       "en": "Yes, it is very easy.",
-      "ar": "نعم إنها سهلة جدا.",
+      "ar": "نعم إنها سهلة جدًا.",
       "acceptedAnswers": [
         "Yes, it is very easy."
       ],
@@ -516,8 +510,6 @@ export default {
       "en": "These sentences are correct.",
       "ar": "هذه الجمل صحيحة.",
       "acceptedAnswers": [
-        "correct",
-        "Correct",
         "correct"
       ],
       "grammarTags": [
@@ -642,8 +634,6 @@ export default {
       "en": "Do you understand this sentence?",
       "ar": "هل تفهم هذه الجملة؟",
       "acceptedAnswers": [
-        "understand",
-        "Understand",
         "understand"
       ],
       "grammarTags": [
@@ -744,7 +734,7 @@ export default {
       "id": "lesson-010-ex-043",
       "type": "word-order",
       "en": "She speaks English very well.",
-      "ar": "هي تتكلم الإنجليزية جيدا جدا.",
+      "ar": "هي تتكلم الإنجليزية جيدًا جدًا.",
       "words": [
         "speaks",
         "English",
@@ -770,8 +760,6 @@ export default {
       "en": "This word is not easy.",
       "ar": "هذه الكلمة ليست سهلة.",
       "acceptedAnswers": [
-        "easy",
-        "Easy",
         "easy"
       ],
       "grammarTags": [

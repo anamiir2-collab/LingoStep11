@@ -14,11 +14,11 @@ export default {
   ],
   "grammar": {
     "explanation": "To make a negative sentence with the verb be, put not after it: \"I am not ready\", \"He is not (isn't) here\", \"They are not (aren't) late\". With other verbs, use do not (don't) or does not (doesn't) before the base verb: \"I don't like onions\", \"She doesn't eat meat\". Use doesn't only with he, she and it; the main verb never takes -s in the negative. For polite requests you can also say \"Please don't open the window\". The full forms are better in writing; the contractions are common in speech.",
-    "explanationAr": "لنفي جملة مع فعل الكينونة نضع not بعده: I am not ready، وHe is not here، وThey are not late. ومع باقي الأفعال نستخدم do not أو does not قبل الفعل المجرد: I do not like onions، وShe does not eat meat. نستخدم does not مع he وshe وit فقط، ولا يأخذ الفعل بعدها s أبدا. وفي الطلبات المهذبة نقول: Please do not open the window. الصيغ الكاملة أنسب للكتابة، والصيغ المختصرة أشهر في الكلام.",
+    "explanationAr": "لنفي جملة مع فعل الكينونة نضع not بعده: I am not ready، وHe is not here، وThey are not late. ومع باقي الأفعال نستخدم do not أو does not قبل الفعل المجرد: I do not like onions، وShe does not eat meat. نستخدم does not مع he وshe وit فقط، ولا يأخذ الفعل بعدها s أبدًا. وفي الطلبات المهذبة نقول: Please do not open the window. الصيغ الكاملة أنسب للكتابة، والصيغ المختصرة أشهر في الكلام.",
     "examples": [
       {
         "en": "I am not tired today.",
-        "ar": "أنا لست متعبا اليوم."
+        "ar": "أنا لست متعبًا اليوم."
       },
       {
         "en": "He does not like fish.",
@@ -64,7 +64,7 @@ export default {
     },
     {
       "word": "never",
-      "meaningAr": "أبدا",
+      "meaningAr": "أبدًا",
       "example": "He never drinks coffee."
     },
     {
@@ -144,8 +144,6 @@ export default {
       "en": "No, he is not here today.",
       "ar": "لا، هو ليس هنا اليوم.",
       "acceptedAnswers": [
-        "not",
-        "Not",
         "not"
       ],
       "grammarTags": [
@@ -274,8 +272,6 @@ export default {
       "en": "The shop is not open today.",
       "ar": "المتجر غير مفتوح اليوم.",
       "acceptedAnswers": [
-        "open",
-        "Open",
         "open"
       ],
       "grammarTags": [
@@ -390,8 +386,6 @@ export default {
       "en": "She does not eat meat.",
       "ar": "هي لا تأكل اللحم.",
       "acceptedAnswers": [
-        "does",
-        "Does",
         "does"
       ],
       "grammarTags": [
@@ -445,7 +439,7 @@ export default {
       "id": "lesson-018-ex-023",
       "type": "listen-and-type",
       "en": "I am not a teacher.",
-      "ar": "أنا لست معلما.",
+      "ar": "أنا لست معلمًا.",
       "acceptedAnswers": [
         "I am not a teacher."
       ],
@@ -459,7 +453,7 @@ export default {
       "id": "lesson-018-ex-024",
       "type": "listen-and-type",
       "en": "I am not a doctor.",
-      "ar": "أنا لست طبيبا.",
+      "ar": "أنا لست طبيبًا.",
       "acceptedAnswers": [
         "I am not a doctor."
       ],
@@ -473,7 +467,7 @@ export default {
       "id": "lesson-018-ex-025",
       "type": "listen-and-type",
       "en": "I am not a student.",
-      "ar": "أنا لست طالبا.",
+      "ar": "أنا لست طالبًا.",
       "acceptedAnswers": [
         "I am not a student."
       ],
@@ -487,7 +481,7 @@ export default {
       "id": "lesson-018-ex-026",
       "type": "listen-and-type",
       "en": "I am not an engineer.",
-      "ar": "أنا لست مهندسا.",
+      "ar": "أنا لست مهندسًا.",
       "acceptedAnswers": [
         "I am not an engineer."
       ],
@@ -501,7 +495,7 @@ export default {
       "id": "lesson-018-ex-027",
       "type": "listen-and-type",
       "en": "I am not a worker.",
-      "ar": "أنا لست عاملا.",
+      "ar": "أنا لست عاملًا.",
       "acceptedAnswers": [
         "I am not a worker."
       ],
@@ -519,8 +513,6 @@ export default {
       "en": "We do not watch TV in the morning.",
       "ar": "لا نشاهد التلفاز في الصباح.",
       "acceptedAnswers": [
-        "watch",
-        "Watch",
         "watch"
       ],
       "grammarTags": [
@@ -533,7 +525,7 @@ export default {
       "id": "lesson-018-ex-029",
       "type": "listen-and-type",
       "en": "You aren't a teacher.",
-      "ar": "أنت لست معلما.",
+      "ar": "أنت لست معلمًا.",
       "acceptedAnswers": [
         "You aren't a teacher."
       ],
@@ -547,7 +539,7 @@ export default {
       "id": "lesson-018-ex-030",
       "type": "listen-and-type",
       "en": "You aren't a student.",
-      "ar": "أنت لست طالبا.",
+      "ar": "أنت لست طالبًا.",
       "acceptedAnswers": [
         "You aren't a student."
       ],
@@ -561,7 +553,7 @@ export default {
       "id": "lesson-018-ex-031",
       "type": "listen-and-type",
       "en": "You aren't a driver.",
-      "ar": "أنت لست سائقا.",
+      "ar": "أنت لست سائقًا.",
       "acceptedAnswers": [
         "You aren't a driver."
       ],
@@ -599,7 +591,7 @@ export default {
       "id": "lesson-018-ex-033",
       "type": "listen-and-type",
       "en": "You aren't an engineer.",
-      "ar": "أنت لست مهندسا.",
+      "ar": "أنت لست مهندسًا.",
       "acceptedAnswers": [
         "You aren't an engineer."
       ],
@@ -613,7 +605,7 @@ export default {
       "id": "lesson-018-ex-034",
       "type": "listen-and-type",
       "en": "He isn't a teacher.",
-      "ar": "هو ليس معلما.",
+      "ar": "هو ليس معلمًا.",
       "acceptedAnswers": [
         "He isn't a teacher."
       ],
@@ -627,7 +619,7 @@ export default {
       "id": "lesson-018-ex-035",
       "type": "listen-and-type",
       "en": "He isn't a doctor.",
-      "ar": "هو ليس طبيبا.",
+      "ar": "هو ليس طبيبًا.",
       "acceptedAnswers": [
         "He isn't a doctor."
       ],
@@ -645,8 +637,6 @@ export default {
       "en": "The bus does not come at six.",
       "ar": "الحافلة لا تأتي في السادسة.",
       "acceptedAnswers": [
-        "come",
-        "Come",
         "come"
       ],
       "grammarTags": [
@@ -677,7 +667,7 @@ export default {
       "id": "lesson-018-ex-038",
       "type": "listen-and-type",
       "en": "He isn't a student.",
-      "ar": "هو ليس طالبا.",
+      "ar": "هو ليس طالبًا.",
       "acceptedAnswers": [
         "He isn't a student."
       ],
@@ -691,7 +681,7 @@ export default {
       "id": "lesson-018-ex-039",
       "type": "listen-and-type",
       "en": "He isn't an engineer.",
-      "ar": "هو ليس مهندسا.",
+      "ar": "هو ليس مهندسًا.",
       "acceptedAnswers": [
         "He isn't an engineer."
       ],
@@ -705,7 +695,7 @@ export default {
       "id": "lesson-018-ex-040",
       "type": "listen-and-type",
       "en": "He isn't a worker.",
-      "ar": "هو ليس عاملا.",
+      "ar": "هو ليس عاملًا.",
       "acceptedAnswers": [
         "He isn't a worker."
       ],
@@ -719,7 +709,7 @@ export default {
       "id": "lesson-018-ex-041",
       "type": "listen-and-type",
       "en": "She isn't a teacher.",
-      "ar": "هي ليست معلما.",
+      "ar": "هي ليست معلمًا.",
       "acceptedAnswers": [
         "She isn't a teacher."
       ],
@@ -733,7 +723,7 @@ export default {
       "id": "lesson-018-ex-042",
       "type": "listen-and-type",
       "en": "She isn't a student.",
-      "ar": "هي ليست طالبا.",
+      "ar": "هي ليست طالبًا.",
       "acceptedAnswers": [
         "She isn't a student."
       ],
@@ -775,8 +765,6 @@ export default {
       "en": "Please do not open the window.",
       "ar": "من فضلك لا تفتح النافذة.",
       "acceptedAnswers": [
-        "window",
-        "Window",
         "window"
       ],
       "grammarTags": [
@@ -789,7 +777,7 @@ export default {
       "id": "lesson-018-ex-045",
       "type": "listen-and-type",
       "en": "She isn't a driver.",
-      "ar": "هي ليست سائقا.",
+      "ar": "هي ليست سائقًا.",
       "acceptedAnswers": [
         "She isn't a driver."
       ],
@@ -803,7 +791,7 @@ export default {
       "id": "lesson-018-ex-046",
       "type": "listen-and-type",
       "en": "She isn't an engineer.",
-      "ar": "هي ليست مهندسا.",
+      "ar": "هي ليست مهندسًا.",
       "acceptedAnswers": [
         "She isn't an engineer."
       ],
@@ -817,7 +805,7 @@ export default {
       "id": "lesson-018-ex-047",
       "type": "listen-and-type",
       "en": "We aren't students.",
-      "ar": "نحن لسنا طلابا.",
+      "ar": "نحن لسنا طلابًا.",
       "acceptedAnswers": [
         "We aren't students."
       ],
@@ -859,7 +847,7 @@ export default {
       "id": "lesson-018-ex-050",
       "type": "listen-and-type",
       "en": "They aren't students.",
-      "ar": "هم ليسوا طلابا.",
+      "ar": "هم ليسوا طلابًا.",
       "acceptedAnswers": [
         "They aren't students."
       ],

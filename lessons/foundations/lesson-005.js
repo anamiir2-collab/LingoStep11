@@ -14,11 +14,11 @@ export default {
   ],
   "grammar": {
     "explanation": "There are seven days in a week: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday and Sunday. Days and months always start with a capital letter in English. Use \"on\" with days: \"I go to work on Monday\". Use \"in\" with months: \"My birthday is in June\". A week has seven days, a month has about thirty days, and a year has twelve months. The weekend is usually Saturday and Sunday.",
-    "explanationAr": "في الأسبوع سبعة أيام: الاثنين، الثلاثاء، الأربعاء، الخميس، الجمعة، السبت والأحد. تبدأ الأيام والشهور دائما بحرف كبير في الإنجليزية. استخدم on مع الأيام: I go to work on Monday. واستخدم in مع الشهور: My birthday is in June. الأسبوع سبعة أيام، والشهر نحو ثلاثين يوما، والسنة اثنا عشر شهرا. وعطلة نهاية الأسبوع عادة السبت والأحد.",
+    "explanationAr": "في الأسبوع سبعة أيام: الاثنين، الثلاثاء، الأربعاء، الخميس، الجمعة، السبت والأحد. تبدأ الأيام والشهور دائمًا بحرف كبير في الإنجليزية. استخدم on مع الأيام: I go to work on Monday. واستخدم in مع الشهور: My birthday is in June. الأسبوع سبعة أيام، والشهر نحو ثلاثين يومًا، والسنة اثنا عشر شهرًا. وعطلة نهاية الأسبوع عادة السبت والأحد.",
     "examples": [
       {
         "en": "Today is Sunday. Tomorrow is Monday.",
-        "ar": "اليوم الأحد. غدا الاثنين."
+        "ar": "اليوم الأحد. غدًا الاثنين."
       },
       {
         "en": "We visit grandma on Friday.",
@@ -111,7 +111,7 @@ export default {
       "id": "lesson-005-ex-002",
       "type": "listen-and-type",
       "en": "Tomorrow is Monday.",
-      "ar": "غدا الاثنين.",
+      "ar": "غدًا الاثنين.",
       "acceptedAnswers": [
         "Tomorrow is Monday."
       ],
@@ -143,9 +143,7 @@ export default {
       "en": "Today is Sunday.",
       "ar": "اليوم الأحد.",
       "acceptedAnswers": [
-        "Today",
-        "Today",
-        "today"
+        "Today"
       ],
       "grammarTags": [
         "time",
@@ -271,8 +269,6 @@ export default {
       "en": "There are seven days in a week.",
       "ar": "في الأسبوع سبعة أيام.",
       "acceptedAnswers": [
-        "week",
-        "Week",
         "week"
       ],
       "grammarTags": [
@@ -286,7 +282,7 @@ export default {
       "id": "lesson-005-ex-013",
       "type": "listen-and-type",
       "en": "There are twelve months in a year.",
-      "ar": "في السنة اثنا عشر شهرا.",
+      "ar": "في السنة اثنا عشر شهرًا.",
       "acceptedAnswers": [
         "There are twelve months in a year."
       ],
@@ -356,7 +352,7 @@ export default {
       "id": "lesson-005-ex-018",
       "type": "listen-and-type",
       "en": "It is very hot in August.",
-      "ar": "الجو حار جدا في أغسطس.",
+      "ar": "الجو حار جدًا في أغسطس.",
       "acceptedAnswers": [
         "It is very hot in August."
       ],
@@ -388,8 +384,6 @@ export default {
       "en": "My birthday is in June.",
       "ar": "عيد ميلادي في يونيو.",
       "acceptedAnswers": [
-        "birthday",
-        "Birthday",
         "birthday"
       ],
       "grammarTags": [
@@ -402,7 +396,7 @@ export default {
       "id": "lesson-005-ex-021",
       "type": "word-order",
       "en": "Tomorrow is Monday, my friend.",
-      "ar": "غدا الاثنين يا صديقي.",
+      "ar": "غدًا الاثنين يا صديقي.",
       "words": [
         "is",
         "Monday,",
@@ -512,8 +506,6 @@ export default {
       "en": "We travel in July.",
       "ar": "نسافر في يوليو.",
       "acceptedAnswers": [
-        "travel",
-        "Travel",
         "travel"
       ],
       "grammarTags": [
@@ -634,9 +626,7 @@ export default {
       "en": "School starts in September.",
       "ar": "تبدأ المدرسة في سبتمبر.",
       "acceptedAnswers": [
-        "September",
-        "September",
-        "september"
+        "September"
       ],
       "grammarTags": [
         "time",
@@ -655,7 +645,7 @@ export default {
         "thirty"
       ],
       "answerIndex": 1,
-      "ar": "كم شهرا في السنة؟",
+      "ar": "كم شهرًا في السنة؟",
       "grammarTags": [
         "time",
         "days-months"
@@ -762,9 +752,7 @@ export default {
       "en": "I go to work on Monday.",
       "ar": "أذهب إلى العمل يوم الاثنين.",
       "acceptedAnswers": [
-        "Monday",
-        "Monday",
-        "monday"
+        "Monday"
       ],
       "grammarTags": [
         "time",

@@ -125,7 +125,7 @@ export default {
       "id": "lesson-008-ex-003",
       "type": "listen-and-type",
       "en": "He is not very tall.",
-      "ar": "هو ليس طويلا جدا.",
+      "ar": "هو ليس طويلًا جدًا.",
       "acceptedAnswers": [
         "He is not very tall."
       ],
@@ -143,8 +143,6 @@ export default {
       "en": "My brother is tall and strong.",
       "ar": "أخي طويل وقوي.",
       "acceptedAnswers": [
-        "tall",
-        "Tall",
         "tall"
       ],
       "grammarTags": [
@@ -273,8 +271,6 @@ export default {
       "en": "She has long black hair.",
       "ar": "لديها شعر طويل أسود.",
       "acceptedAnswers": [
-        "hair",
-        "Hair",
         "hair"
       ],
       "grammarTags": [
@@ -343,7 +339,7 @@ export default {
       "id": "lesson-008-ex-017",
       "type": "listen-and-type",
       "en": "She is young and very kind.",
-      "ar": "هي شابة وطيبة جدا.",
+      "ar": "هي شابة وطيبة جدًا.",
       "acceptedAnswers": [
         "She is young and very kind."
       ],
@@ -389,8 +385,6 @@ export default {
       "en": "My father has a beard.",
       "ar": "لدي أبي لحية.",
       "acceptedAnswers": [
-        "beard",
-        "Beard",
         "beard"
       ],
       "grammarTags": [
@@ -457,7 +451,7 @@ export default {
       "id": "lesson-008-ex-024",
       "type": "listen-and-type",
       "en": "I am not tall, but I am strong.",
-      "ar": "لست طويلا لكني قوي.",
+      "ar": "لست طويلًا لكني قوي.",
       "acceptedAnswers": [
         "I am not tall, but I am strong."
       ],
@@ -471,7 +465,7 @@ export default {
       "id": "lesson-008-ex-025",
       "type": "listen-and-type",
       "en": "My two brothers are very tall.",
-      "ar": "أخواي طويلان جدا.",
+      "ar": "أخواي طويلان جدًا.",
       "acceptedAnswers": [
         "My two brothers are very tall."
       ],
@@ -517,8 +511,6 @@ export default {
       "en": "My cousin wears glasses.",
       "ar": "ابن عمي يرتدي نظارة.",
       "acceptedAnswers": [
-        "glasses",
-        "Glasses",
         "glasses"
       ],
       "grammarTags": [
@@ -640,8 +632,6 @@ export default {
       "en": "I have brown eyes.",
       "ar": "لدي عينان بنيتان.",
       "acceptedAnswers": [
-        "eyes",
-        "Eyes",
         "eyes"
       ],
       "grammarTags": [
@@ -767,10 +757,8 @@ export default {
       "display": "He is not ___ tall.",
       "blankWord": "very",
       "en": "He is not very tall.",
-      "ar": "هو ليس طويلا جدا.",
+      "ar": "هو ليس طويلًا جدًا.",
       "acceptedAnswers": [
-        "very",
-        "Very",
         "very"
       ],
       "grammarTags": [

@@ -18,7 +18,7 @@ export default {
     "examples": [
       {
         "en": "I am twenty-one years old.",
-        "ar": "عمري واحد وعشرون عاما."
+        "ar": "عمري واحد وعشرون عامًا."
       },
       {
         "en": "My sister is six years old.",
@@ -88,9 +88,9 @@ export default {
       "example": "Count the books, please."
     },
     {
-      "word": "address",
-      "meaningAr": "عنوان",
-      "example": "I live at number five, Palm Street."
+      "word": "room",
+      "meaningAr": "غرفة",
+      "example": "There is one big window in my room."
     }
   ],
   "exercises": [
@@ -144,8 +144,6 @@ export default {
       "en": "I have two brothers and one sister.",
       "ar": "لدي أخوان وأخت واحدة.",
       "acceptedAnswers": [
-        "two",
-        "Two",
         "two"
       ],
       "grammarTags": [
@@ -173,7 +171,7 @@ export default {
       "id": "lesson-006-ex-006",
       "type": "listen-and-type",
       "en": "I am twenty-one years old.",
-      "ar": "عمري واحد وعشرون عاما.",
+      "ar": "عمري واحد وعشرون عامًا.",
       "acceptedAnswers": [
         "I am twenty-one years old."
       ],
@@ -256,7 +254,7 @@ export default {
       "id": "lesson-006-ex-011",
       "type": "listen-and-type",
       "en": "I am not good at numbers.",
-      "ar": "لست جيدا في الأرقام.",
+      "ar": "لست جيدًا في الأرقام.",
       "acceptedAnswers": [
         "I am not good at numbers."
       ],
@@ -274,8 +272,6 @@ export default {
       "en": "How old is your brother?",
       "ar": "كم عمر أخيك؟",
       "acceptedAnswers": [
-        "old",
-        "Old",
         "old"
       ],
       "grammarTags": [
@@ -303,7 +299,7 @@ export default {
       "id": "lesson-006-ex-014",
       "type": "listen-and-type",
       "en": "There are fifteen students in my class.",
-      "ar": "في صفّي خمسة عشر طالبا.",
+      "ar": "في صفّي خمسة عشر طالبًا.",
       "acceptedAnswers": [
         "There are fifteen students in my class."
       ],
@@ -331,7 +327,7 @@ export default {
       "id": "lesson-006-ex-016",
       "type": "listen-and-type",
       "en": "How many brothers do you have?",
-      "ar": "كم أخا لديك؟",
+      "ar": "كم أخًا لديك؟",
       "acceptedAnswers": [
         "How many brothers do you have?"
       ],
@@ -345,7 +341,7 @@ export default {
       "id": "lesson-006-ex-017",
       "type": "listen-and-type",
       "en": "My grandmother is seventy years old.",
-      "ar": "عمر جدتي سبعون عاما.",
+      "ar": "عمر جدتي سبعون عامًا.",
       "acceptedAnswers": [
         "My grandmother is seventy years old."
       ],
@@ -391,8 +387,6 @@ export default {
       "en": "What is your phone number?",
       "ar": "ما رقم هاتفك؟",
       "acceptedAnswers": [
-        "number",
-        "Number",
         "number"
       ],
       "grammarTags": [
@@ -517,10 +511,8 @@ export default {
       "display": "I am not ___ at numbers.",
       "blankWord": "good",
       "en": "I am not good at numbers.",
-      "ar": "لست جيدا في الأرقام.",
+      "ar": "لست جيدًا في الأرقام.",
       "acceptedAnswers": [
-        "good",
-        "Good",
         "good"
       ],
       "grammarTags": [
@@ -576,7 +568,7 @@ export default {
       "id": "lesson-006-ex-032",
       "type": "word-order",
       "en": "There are fifteen students in my class.",
-      "ar": "في صفّي خمسة عشر طالبا.",
+      "ar": "في صفّي خمسة عشر طالبًا.",
       "words": [
         "are",
         "fifteen",
@@ -646,8 +638,6 @@ export default {
       "en": "Please count from one to ten.",
       "ar": "عُدّ من واحد إلى عشرة من فضلك.",
       "acceptedAnswers": [
-        "count",
-        "Count",
         "count"
       ],
       "grammarTags": [
@@ -774,10 +764,8 @@ export default {
       "display": "There are ___ students in my class.",
       "blankWord": "fifteen",
       "en": "There are fifteen students in my class.",
-      "ar": "في صفّي خمسة عشر طالبا.",
+      "ar": "في صفّي خمسة عشر طالبًا.",
       "acceptedAnswers": [
-        "fifteen",
-        "Fifteen",
         "fifteen"
       ],
       "grammarTags": [
