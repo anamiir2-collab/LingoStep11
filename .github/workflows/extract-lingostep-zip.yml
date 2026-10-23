@@ -1,0 +1,52 @@
+name: Extract LingoStep11 ZIP into repository
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract ZIP and preserve existing files
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP="LingoStep11-updated.zip"
+          test -f "$ZIP"
+          mkdir -p /tmp/lingostep-unzip
+          unzip -q "$ZIP" -d /tmp/lingostep-unzip
+
+          # If the archive contains one wrapper folder, extract its contents.
+          shopt -s dotglob nullglob
+          entries=(/tmp/lingostep-unzip/*)
+          if [ "${#entries[@]}" -eq 1 ] && [ -d "${entries[0]}" ]; then
+            SOURCE="${entries[0]}"
+          else
+            SOURCE="/tmp/lingostep-unzip"
+          fi
+
+          # Copy only missing paths; do not overwrite or delete repository files.
+          cp -an "$SOURCE"/. .
+          git status --short
+
+      - name: Commit extracted files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No new files to commit."
+            exit 0
+          fi
+          git commit -m "Extract LingoStep11 updated ZIP without deleting files"
+          git push
