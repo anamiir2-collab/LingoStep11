@@ -2,8 +2,8 @@
 # LingoStep — Learn English Step by Step
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-2e7ce6.svg)](LICENSE)
-[![Lessons](https://img.shields.io/badge/lessons-250-2e7ce6.svg)](#the-eleven-learning-sections)
-[![Exercises](https://img.shields.io/badge/exercises-13%2C925-2f9e5f.svg)](#the-eleven-learning-sections)
+[![Lessons](https://img.shields.io/badge/lessons-252-2e7ce6.svg)](#the-eleven-learning-sections)
+[![Exercises](https://img.shields.io/badge/exercises-14%2C035-2f9e5f.svg)](#the-eleven-learning-sections)
 [![PWA](https://img.shields.io/badge/PWA-installable-d97b1d.svg)](#install-lingostep-on-android-pwa--recommended)
 [![Zero deps](https://img.shields.io/badge/runtime%20deps-0-77839a.svg)](#tech-stack)
 [![Languages](https://img.shields.io/badge/UI-English%20%2B%20Arabic%20(RTL)-d4636f.svg)](#bilingual-ui)
@@ -34,8 +34,8 @@ LingoStep is a free, offline-friendly English learning web app. Listen to Englis
 
 ## Highlights
 
-- **250 independent lessons** (numbered 1–250) in **11 progressive sections** — from first greetings to specialized English and a final capstone project.
-- **13,925 exercises** carrying **11,279 verified unique practice sentences** (dictation, gap-fill and word-order) plus **2,996 vocabulary items** (1,844 unique words).
+- **252 independent lessons** (numbered 1–252) in **11 progressive sections** — from first greetings to specialized English and a final capstone project, plus dedicated operational-work lessons (warehouse, inventory, quality, safety).
+- **14,035 exercises** carrying **11,364 verified unique practice sentences** (dictation, gap-fill and word-order) plus **3,022 vocabulary items** (1,924 unique words).
 - **Zero runtime dependencies** — plain HTML/CSS/JS ES modules, no build step.
 - **Browser-native speech** (Web Speech API) — no paid API, no keys.
 - **XP system with anti-double-award ledger** — first-try 10 XP, hint-assisted 5 XP, lesson bonus 20 XP; reloads and repeated lessons never re-award.
@@ -56,7 +56,7 @@ LingoStep is a free, offline-friendly English learning web app. Listen to Englis
 | **Listening & typing** | Web Speech playback (normal + slow), replay, typed answers, instant feedback with the expected answer, Arabic meaning and a word-level diff. |
 | **Exercise types** | `listen-and-type` (dictation), `fill-blank`, `word-order`, `multiple-choice`. |
 | **Grammar** | Every lesson opens with an English + Arabic explanation, worked examples and key vocabulary. |
-| **Grading** | Predictable and testable: `correct` / `minor` / `incorrect` / `empty`. Case and spacing are forgiven; missing final punctuation is `minor`; contractions and grammar differences are respected (configurable strict mode). |
+| **Grading** | Predictable and testable: `correct` / `minor` / `incorrect` / `empty`. Case and spacing are forgiven; **punctuation never decides the result** — missing, extra or different `. , ? ! : ;` marks still count as `correct`, while apostrophes inside contractions (`don't`, `I'm`) stay required; contraction differences are respected (configurable strict mode). |
 | **Progress** | Completed lessons, accuracy, streaks, daily goal, time spent, resume position — all stored locally (IndexedDB with localStorage/memory fallbacks). |
 | **Revision** | SM-2-inspired spaced repetition: mistakes return sooner, repeated correct answers push items away (1 → 2 → 4 → 8 → 16 → 35 days). Filter revision by lesson or grammar topic. |
 | **Bilingual UI** | Full English/Arabic interface with automatic LTR/RTL layout switching. |
@@ -77,7 +77,7 @@ LingoStep is a free, offline-friendly English learning web app. Listen to Englis
 | 5 | **Mobility & Travel** | 25 | 096–120 | buses, metro, taxis, driving, trains, airports, hotels, customs, currency, tours, travel problems |
 | 6 | **Health & Emergencies** | 25 | 121–145 | doctors, symptoms, medicine, hospitals, insurance, emergency calls, first aid, healthy habits, caregiving |
 | 7 | **Relationships & Social Communication** | 25 | 146–170 | small talk, invitations, opinions, advice, boundaries, conflicts, friendship, celebrations, etiquette |
-| 8 | **Work & Money** | 25 | 171–195 | CVs, interviews, meetings, emails, presentations, salaries, budgeting, banking, contracts, invoices, remote work |
+| 8 | **Work & Money** | 27 | 171–195, 251–252 | CVs, interviews, meetings, emails, presentations, salaries, budgeting, banking, contracts, invoices, remote work, plus warehouse & inventory and tasks, quality & safety |
 | 9 | **Education & Digital Skills** | 25 | 196–220 | schools, courses, exams, online learning, devices, security, video calls, AI tools, study skills |
 | 10 | **Complex Situations & Rights** | 20 | 221–240 | formal complaints, refunds, landlord issues, police reports, insurance claims, immigration, formal letters |
 | 11 | **Specialized English & Leadership** | 10 | 241–250 | business, finance, healthcare, technology, tourism, legal and HR English, leadership, public speaking, and a final real-life communication project (80-exercise capstone) |
@@ -172,14 +172,17 @@ Validation and tests
 npm run validate          # structure + PWA + lessons + duplicates (CI gate)
 npm run validate:lessons  # content only
 npm run detect:duplicates # exact-dup check + similarity report
-npm test                  # 7 test suites: grading, storage/progress/review,
-                          # navigation/paths, lessons, XP, motivation, word cards
+npm run check:repetition  # max-4 repetition gate (sentences / templates / vocab)
+npm run audit:content     # full content inventory + Arabic quality audit
+npm test                  # 9 test suites: grading, punctuation, storage/progress/review,
+                          # navigation/paths, lessons, XP, motivation, word cards, letter track
 npm run build:content     # regenerate all lessons + manifest from scripts/content/
 ```
 
-· scripts/validate-lessons.js imports every lesson, validates the schema, checks manifest ↔ file mapping, per-section minimums, unique id/sentence rules and the 250-lesson / 11,279-sentence gates.
+· scripts/validate-lessons.js imports every lesson, validates the schema, checks manifest ↔ file mapping, per-section minimums, unique id/sentence rules and the 250-lesson / 11,000-sentence gates.
 · scripts/detect-duplicates.js fails on any exact cross-lesson duplicate and writes a similarity report (scripts/duplicates-report.json) for human review — similar sentences are not auto-removed.
-· The build must pass both before deployment (enforced by GitHub Actions).
+· scripts/check-repetition.js enforces the content rule that no sentence, name/number template group or vocabulary word is presented as new content more than four times across the whole app (methodology documented in the script header).
+· The build must pass all of the above before deployment (enforced by GitHub Actions).
 
 ---
 

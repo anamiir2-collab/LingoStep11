@@ -1,3 +1,45 @@
+LingoStep — content review & punctuation-free grading (v2.1.0)
+============================================================
+Scope: full review of all 252 lessons; grading policy change;
+MSA translation unification; max-4 repetition rule; new tools.
+
+MODIFIED FILES (key ones):
+  js/grading.js                          (punctuation never decides correctness: stripPunct pass)
+  js/letter-track.js                     (alignTyped: punctuation-optional letter alignment)
+  js/listening-writing-enhancements.js   (no shake / no block on missing punctuation; completion without marks)
+  tests/grading-tests.js                 (updated expectations + spec-mandated punctuation examples)
+  tests/punctuation-tests.js             (NEW - acceptance matrix + letter alignment)
+  tests/run-all.js                       (register punctuation suite)
+  scripts/content-audit.js               (NEW - inventory + repetition + Arabic quality audit)
+  scripts/check-repetition.js            (NEW - permanent max-4 gate; npm run check:repetition)
+  scripts/fix-arabic.js                  (NEW - MSA tanween + mistranslation fixer, 250 files)
+  scripts/fix-repetition.js              (NEW - template padding + vocab over-cap replacements)
+  scripts/repetition-bank.js             (NEW - replacement sentence bank + verified word dictionary)
+  scripts/build-lesson001.js             (NEW - hand-authored greetings lesson rebuild)
+  scripts/build-work-lessons.js          (NEW - lesson-251/252 operational work lessons)
+  lessons/foundations/lesson-001.js      (REBUILT - 55 purposeful greeting exercises, manifest synced)
+  lessons/work-money/lesson-251.js       (NEW - Warehouse and Inventory)
+  lessons/work-money/lesson-252.js       (NEW - Work Tasks, Quality and Safety)
+  data/lesson-manifest.js                (lesson-001 count 15->55; 251/252 registered)
+  ~240 lesson files                      (MSA tanween, mistranslation fixes, deduped
+                                          acceptedAnswers, 32 template-padding exercises and
+                                          137 over-cap vocabulary cards replaced)
+  sw.js                                  (cache bump v2.1.0)
+  README.md, package.json                (updated numbers, gates and scripts)
+
+GRADING CHANGE (spec):
+  . , ? ! : ; quotes and brackets are ignored when comparing the typed
+  answer with the expected one — missing/extra/different punctuation is
+  still correct. Apostrophes inside contractions (don't, I'm) and hyphens
+  stay required. Wrong words, extra words and grammar errors are still
+  rejected. The displayed sentence is never modified.
+
+TESTS: node tests/run-all.js -> 9/9 suites passed
+GATES: validate-lessons PASSED (252 lessons / 14,035 exercises / 11,364
+       unique sentences); detect-duplicates PASSED;
+       check:repetition PASSED (sentences/templates/vocab all <= 4).
+
+
 LingoStep — YouType-style dictation upgrade
 ============================================
 Commit: "Upgrade dictation to word-grouped letter slots with instant validation"
