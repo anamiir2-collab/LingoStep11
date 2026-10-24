@@ -78,11 +78,10 @@ export function letterStates(expected, typed) {
  */
 export function isOptionalChar(ch, prev, next) {
   if (!ch) return false;
-  // Punctuation is fixed in the exercise surface; learners type letters only.
-  // This includes apostrophes in contractions such as I'm and don't.
-  return '.,!?;:"()[]{}\\'\\u2018\\u2019\\u201C\\u201D\\u2026\\u060C\\u061B\\u061F\\u00A1\\u00BF'.includes(ch);
-}
-/**
+  // Punctuation stays printed in place; learners type letters and spaces only.
+  return '.,!?;:"()[]{}'.includes(ch)
+    || ["'", "‘", "’", "“", "”", "…", "،", "؛", "؟", "¡", "¿"].includes(ch);
+}/**
  * Align a typed value against the expected sentence with optional
  * punctuation. Pure and DOM-free (Node-testable).
  * Returns:
