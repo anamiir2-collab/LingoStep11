@@ -15,7 +15,7 @@ export async function renderBookDialoguesView(view, params = [], lang = 'en') {
   ]);
   if (id >= 1 && id <= 44) {
     let dialogue;
-    try { const modulePath = id === 39 ? '../dialogues/dialogue-39a.js' : `../dialogues/dialogue-${String(id).padStart(2,'0')}.js`; dialogue = (await import(modulePath)).default; }
+    try { const aliases = {23:'23a',34:'34b',35:'35a',36:'36a',39:'39a'}; const modulePath = aliases[id] ? `../dialogues/dialogue-${aliases[id]}.js` : `../dialogues/dialogue-${String(id).padStart(2,'0')}.js`; dialogue = (await import(modulePath)).default; }
     catch { view.replaceChildren(head,el('div',{class:'card',text:ar?'تعذر تحميل هذا الحوار حالياً. تأكد من اتصالك بالإنترنت ثم أعد المحاولة.':'This dialogue could not be loaded. Check your connection and try again.'}),el('a',{class:'btn',href:'#/dialogues',text:ar?'العودة للقائمة':'Back to dialogues'})); return; }
     const settings = getSettings();
     const showArabic = settings.bookDialoguesShowArabic !== false;
