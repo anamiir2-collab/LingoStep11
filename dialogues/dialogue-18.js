@@ -1,1 +1,88 @@
-export default {id:18,level:2,title:"Can you spell your name?",titleAr:"التهجئة والجمارك",groups:[{label:"",lines:[["Customs Officer","What's that, sir? I can't understand you.","ما هذا يا سيدي؟ لا أستطيع فهمك."],["Mr. James","Pardon!","عفواً!"],["Customs Officer","Can you speak English?","هل تستطيع التحدث بالإنجليزية؟"],["Mr. James","Yes, I can speak English.","نعم، أستطيع التحدث بالإنجليزية."],["Customs Officer","Well, what's your name?","حسناً، ما اسمك؟"],["Mr. James","James Walkman.","جيمس واكمان."],["Customs Officer","Can you spell it, please?","هل تستطيع تهجئة اسمك من فضلك؟"],["Mr. James","James, J-A-M-E-S. Walkman, W-A-L-K-M-A-N.","جيمس J-A-M-E-S. واكمان W-A-L-K-M-A-N."],["Customs Officer","All right. Can I see your passport?","حسناً. هل أستطيع رؤية جواز سفرك؟"],["Mr. James","Yes, here you are.","نعم، تفضل."],["Customs Officer","Where are your luggage?","وأين حقائبك؟"],["Mr. James","Here, these two.","ها هما، هاتان الحقيبتان."],["Customs Officer","Can you open them?","هل بإمكانك فتحهما؟"],["Mr. James","No, I can't. I don't have the keys.","لا أستطيع، ليس معي المفاتيح."],["Customs Officer","Mmm, I can open them.","همم، أستطيع فتحهما."]]}]};
+export default{
+  id: 18,
+  level: 2,
+  title: "Can you spell your name?",
+  titleAr: "التهجئة والجمارك",
+  groups:[
+    {
+      label: "",
+      lines:[
+        [
+          "Customs Officer",
+          "What's that, sir? I can't understand you.",
+          "ما هذا يا سيدي؟ لا أستطيع فهمك."
+        ],
+        [
+          "Mr. James",
+          "Pardon!",
+          "عفواً!"
+        ],
+        [
+          "Customs Officer",
+          "Can you speak English?",
+          "هل تستطيع التحدث بالإنجليزية؟"
+        ],
+        [
+          "Mr. James",
+          "Yes, I can speak English.",
+          "نعم، أستطيع التحدث بالإنجليزية."
+        ],
+        [
+          "Customs Officer",
+          "Well, what's your name?",
+          "حسناً، ما اسمك؟"
+        ],
+        [
+          "Mr. James",
+          "James Walkman.",
+          "جيمس واكمان."
+        ],
+        [
+          "Customs Officer",
+          "Can you spell it, please?",
+          "هل تستطيع تهجئة اسمك من فضلك؟"
+        ],
+        [
+          "Mr. James",
+          "James, J-A-M-E-S. Walkman, W-A-L-K-M-A-N.",
+          "جيمس J-A-M-E-S. واكمان W-A-L-K-M-A-N."
+        ],
+        [
+          "Customs Officer",
+          "All right. Can I see your passport?",
+          "حسناً. هل أستطيع رؤية جواز سفرك؟"
+        ],
+        [
+          "Mr. James",
+          "Yes, here you are.",
+          "نعم، تفضل."
+        ],
+        [
+          "Customs Officer",
+          "Where are your luggage?",
+          "وأين حقائبك؟"
+        ],
+        [
+          "Mr. James",
+          "Here, these two.",
+          "ها هما، هاتان الحقيبتان."
+        ],
+        [
+          "Customs Officer",
+          "Can you open them?",
+          "هل بإمكانك فتحهما؟"
+        ],
+        [
+          "Mr. James",
+          "No, I can't. I don't have the keys.",
+          "لا أستطيع، ليس معي المفاتيح."
+        ],
+        [
+          "Customs Officer",
+          "Mmm, I can open them.",
+          "همم، أستطيع فتحهما."
+        ]
+      ]
+    }
+  ]
+};
