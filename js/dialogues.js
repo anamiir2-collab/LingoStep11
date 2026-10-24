@@ -149,6 +149,7 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
   });
   const feedback = el('p', { class: 'dialogue-practice-feedback', id: 'dlg-feedback', role: 'status', 'aria-live': 'polite' });
   const diffRow = el('div', { class: 'dlg-word-diff', hidden: true, 'aria-label': T('dlgMissingWords') });
+  const letterSlots = el('div', { class: 'dlg-letter-slots', role: 'group', 'aria-label': T('dlgTypeAria'), tabindex: '0' });
   const check = el('button', { class: 'btn btn-primary dlg-check', type: 'button', text: T('checkAnswer') });
   const skip = el('button', { class: 'btn btn-ghost', type: 'button', text: T('skip') });
   const reveal = el('button', { class: 'btn btn-ghost dlg-reveal', type: 'button', text: T('dlgShowAnswer'), hidden: true });
@@ -184,7 +185,7 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     el('h2', { class: 'dialogue-practice-title', text: T('typeWhatYouHear') }),
     el('div', { class: 'dialogue-practice-audio' }, [play, slow, hintBtn]),
     hint,
-    el('div', { class: 'dialogue-practice-typing' }, [input]),
+    el('div', { class: 'dialogue-practice-typing' }, [input, letterSlots]),
     diffRow,
     feedback,
     el('div', { class: 'dialogue-practice-actions' }, [check, skip]),
@@ -380,6 +381,33 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
 
   /* ---------- core flow ---------- */
 
+  // Render one blank tile per expected character; letters themselves stay hidden until typed.
+  function renderLetterSlots(markWrong = false) {
+    const expected = exercises[index]?.en || '';
+    const typed = Array.from(input.value);
+    let typedIndex = 0;
+    const nodes = Array.from(expected).map((expectedChar, charIndex) => {
+      if (/\\s/.test(expectedChar)) {
+        return el('span', { class: 'dlg-letter-space', 'aria-hidden': 'true' });
+      }
+      const value = typed[charIndex] || '';
+      let state = 'is-empty';
+      if (value) {
+        state = value.toLocaleLowerCase() === expectedChar.toLocaleLowerCase() ? 'is-correct' : 'is-wrong';
+      }
+      if (markWrong && value) state = 'is-wrong';
+      typedIndex++;
+      return el('span', {
+        class: 'dlg-letter-slot ' + state,
+        dir: 'ltr',
+        'aria-label': value ? (state === 'is-wrong' ? 'Incorrect character' : 'Entered character') : 'Empty character',
+        text: value,
+      });
+    });
+    letterSlots.replaceChildren(...nodes);
+    letterSlots.classList.toggle('has-error', markWrong);
+  }
+
   function renderSentence() {
     locked = false;
     revealedThis = false;
@@ -402,6 +430,7 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     hint.hidden = true;
     hintBtn.hidden = true;
     input.value = '';
+    renderLetterSlots();
     updateProgress();
 
     input.focus({ preventScroll: true });
@@ -444,6 +473,7 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     } else {
       wrongThis = true;
       input.classList.add('wrong-border');
+      renderLetterSlots(true);
       feedback.textContent = T('dlgAlmost');
       feedback.classList.add('is-bad');
       feedback.classList.remove('is-ok');
@@ -552,7 +582,12 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
   skip.addEventListener('click', skipSentence);
   reveal.addEventListener('click', revealAnswer);
   hintBtn.addEventListener('click', () => { hint.hidden = false; });
-  input.addEventListener('input', () => input.classList.remove('wrong-border', 'correct-border'));
+  letterSlots.addEventListener('click', () => input.focus({ preventScroll: true }));
+  input.addEventListener('input', () => {
+    input.classList.remove('wrong-border', 'correct-border');
+    letterSlots.classList.remove('has-error');
+    renderLetterSlots();
+  });
   input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
