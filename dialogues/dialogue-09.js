@@ -1,7 +1,6 @@
 export default{
   id: "lesson-009",
   dialogueId: 9,
-  level: 1,
   title: "Whose dog is this?",
   titleAr: "الملكية",
   section: "foundations",
