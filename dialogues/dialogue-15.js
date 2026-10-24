@@ -1,7 +1,6 @@
 export default{
   id: "lesson-015",
   dialogueId: 15,
-  level: 2,
   title: "What are you doing now?",
   titleAr: "الأنشطة اليومية",
   section: "daily-life",
