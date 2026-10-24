@@ -265,6 +265,4 @@ export default{
       ]
     }
   ]
-,
-  ...buildLessonFields({ dialogueId: 17, title, titleAr, groups })
-};
+;\n\nexport default {\n  ...dialogue,\n  ...buildLessonFields({ dialogueId: 17, title: dialogue.title, titleAr: dialogue.titleAr, groups: dialogue.groups })\n};\n
