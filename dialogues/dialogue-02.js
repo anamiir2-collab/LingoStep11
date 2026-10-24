@@ -4,35 +4,35 @@ export default{
   title: "This is my family",
   titleAr: "العائلة",
   groups:[
-{
+    {
       label: "",
       lines:[
-[
+        [
           "Samy",
           "Hi, I am Sami.",
           "مرحبا أنا سامي"
         ],
-[
+        [
           "Samy",
           "This is my mother.",
           "هذه أمي"
         ],
-[
+        [
           "Samy",
           "This is my father.",
           "هذا أبي"
         ],
-[
+        [
           "Samy",
           "This is my brother.",
           "هذا أخي"
         ],
-[
+        [
           "Samy",
           "This is my sister.",
           "هذه أختي"
         ],
-[
+        [
           "Samy",
           "This is my grandfather.",
           "هذا جدي"
