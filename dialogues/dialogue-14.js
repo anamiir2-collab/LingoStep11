@@ -1,7 +1,6 @@
 export default{
   id: "lesson-014",
   dialogueId: 14,
-  level: 2,
   title: "How old is your grandmother?",
   titleAr: "السؤال عن العمر",
   section: "daily-life",
