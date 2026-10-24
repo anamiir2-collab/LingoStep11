@@ -1,7 +1,6 @@
 export default{
   id: "lesson-012",
   dialogueId: 12,
-  level: 2,
   title: "What's the time?",
   titleAr: "السؤال عن الوقت",
   section: "daily-life",
