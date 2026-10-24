@@ -168,6 +168,8 @@ export async function renderBookDialoguesView(view, params = [], lang = 'en') {
       el('a', { class: 'breadcrumb', href: '#/dialogues', text: T('dlgAllDialogues') }),
       chat
     );
+    return;
+  }
 
   /* ---------- library list ---------- */
   const search = el('input', {
