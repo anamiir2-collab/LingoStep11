@@ -187,6 +187,7 @@ export const I18N = {
     /* ---- upgrade: keyboard / XP / analysis / vocabulary ---- */
     words: 'words',
     navVocabulary: 'Vocabulary',
+    navDialogues: 'Dialogues',
     onScreenKeyboard: 'Show on-screen keyboard while typing',
     soundEffects: 'Typing sound effects (tones for correct and wrong letters)',
     soundFxOn: 'Typing sounds on',
@@ -440,6 +441,7 @@ export const I18N = {
     /* ---- upgrade: keyboard / XP / analysis / vocabulary ---- */
     words: 'كلمات',
     navVocabulary: 'المفردات',
+    navDialogues: 'الحوارات',
     onScreenKeyboard: 'إظهار لوحة المفاتيح على الشاشة أثناء الكتابة',
     soundEffects: 'مؤثرات صوتية للكتابة (نغمة للحرف الصحيح والخاطئ)',
     soundFxOn: 'أصوات الكتابة مفعّلة',
