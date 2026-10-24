@@ -17,6 +17,7 @@ import { isSupported as speechSupported, loadVoices, englishVoices, speak } from
 import { getTotalXp } from './xp.js';
 import { renderVocabularyView } from './vocabulary.js';
 import { renderBookDialoguesView } from './book-dialogues.js';
+import { renderDialoguePractice } from './dialogues.js';
 import { messageForFirstVisit } from './motivation.js';
 
 const SECTIONS_META = [
@@ -177,6 +178,7 @@ async function handleRoute(route) {
     if (route.name === 'lesson') return await viewLesson(view, route.params[0]);
     if (route.name === 'vocabulary') return await viewVocabulary(view);
     if (route.name === 'dialogues') return await renderBookDialoguesView(view, route.params, currentLang);
+    if (route.name === 'dialogue-practice') return await renderDialoguePractice(view, route.params, currentLang);
     if (route.name === 'review') return await viewReview(view);
     if (route.name === 'progress' || route.name === 'stats') return await viewProgress(view);
     if (route.name === 'settings') { navigate('more'); return; } // legacy route → More hub
