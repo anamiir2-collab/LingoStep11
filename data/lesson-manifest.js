@@ -2752,5 +2752,27 @@ export const lessonManifest = [
     "path": "lessons/specialized/lesson-250.js",
     "exercises": 80,
     "available": true
+  },
+  {
+    "id": "lesson-251",
+    "n": 251,
+    "title": "Warehouse and Inventory",
+    "titleAr": "المستودعات والمخزون",
+    "section": "work-money",
+    "level": "A2",
+    "path": "lessons/work-money/lesson-251.js",
+    "exercises": 55,
+    "available": true
+  },
+  {
+    "id": "lesson-252",
+    "n": 252,
+    "title": "Work Tasks, Quality and Safety",
+    "titleAr": "المهام والجودة والسلامة في العمل",
+    "section": "work-money",
+    "level": "A2",
+    "path": "lessons/work-money/lesson-252.js",
+    "exercises": 55,
+    "available": true
   }
 ];
