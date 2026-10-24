@@ -2,8 +2,6 @@ export default{
   id: "lesson-004",
   dialogueId: 4,
   level: 1,
-  title: "My clothes",
-  titleAr: "شراء الملابس",
 
   title: "My clothes",
   titleAr: "شراء الملابس",
