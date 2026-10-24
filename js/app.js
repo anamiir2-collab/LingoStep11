@@ -106,6 +106,7 @@ function renderShell() {
     mobileNavLink('navHome', '#/', 'home', 'home'),
     mobileNavLink('navSections', '#/sections', 'sections', 'grid'),
     mobileNavLink('navVocabulary', '#/vocabulary', 'vocabulary', 'book'),
+    mobileNavLink('navDialogues', '#/dialogues', 'dialogues', 'book'),
     mobileNavLink('navProgress', '#/progress', 'progress', 'chart'),
     mobileNavLink('navMore', '#/more', 'more', 'more'),
   ]);
@@ -139,7 +140,7 @@ function updateNavState(routeName) {
   });
 
   // Mobile bar destinations; review lives under Home, everything secondary under More.
-  const mobileMap = { home: 'home', review: 'home', sections: 'sections', section: 'sections', lesson: 'sections', vocabulary: 'vocabulary', progress: 'progress', stats: 'progress', settings: 'more', more: 'more', profile: 'more' };
+  const mobileMap = { home: 'home', review: 'home', sections: 'sections', section: 'sections', lesson: 'sections', vocabulary: 'vocabulary', dialogues: 'dialogues', progress: 'progress', stats: 'progress', settings: 'more', more: 'more', profile: 'more' };
   const target = mobileMap[routeName] || '';
   [...document.querySelectorAll('.mobile-nav-link')].forEach((a) => {
     const active = a.dataset.route === target;
