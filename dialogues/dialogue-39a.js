@@ -1,1 +1,23 @@
-export default {id:39,level:2,title:"If I were you",titleAr:"تقديم النصيحة",groups:[{label:"",lines:[["A","I need some advice.","أحتاج إلى نصيحة."],["B","I can help you.","أستطيع مساعدتك."]]}]};
+export default{
+  id: 39,
+  level: 2,
+  title: "If I were you",
+  titleAr: "تقديم النصيحة",
+  groups:[
+    {
+      label: "",
+      lines:[
+        [
+          "A",
+          "I need some advice.",
+          "أحتاج إلى نصيحة."
+        ],
+        [
+          "B",
+          "I can help you.",
+          "أستطيع مساعدتك."
+        ]
+      ]
+    }
+  ]
+};
