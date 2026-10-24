@@ -13,7 +13,7 @@ import { getManifest, getManifestBySection } from './lesson-loader.js';
 import { renderLessonPlayer, renderErrorState } from './lesson-engine.js';
 import { getOverview, getToday, getDailyHistory, getAllLessonStates, exportBackup, importBackup, clearAllProgress } from './progress.js';
 import { dueCount, dueItems, availableTags, totalCount as reviewTotalCount } from './review.js';
-import { isSupported as speechSupported, loadVoices, englishVoices, speak } from './speech.js';
+import { isSupported as speechSupported, loadVoices, englishVoices, speak, stopSpeaking } from './speech.js';
 import { getTotalXp } from './xp.js';
 import { renderVocabularyView } from './vocabulary.js';
 import { renderBookDialoguesView } from './book-dialogues.js';
@@ -168,6 +168,7 @@ async function handleRoute(route) {
   if (!view) return;
   // remove any leftover practice overlays (feedback sheet, combo badge)
   document.querySelectorAll('.duo-sheet-wrap, .duo-backdrop, .combo-badge').forEach((n) => n.remove());
+  stopSpeaking(); // never let practice audio leak into the next screen
   window.scrollTo(0, 0);
   updateNavState(route.name);
 
