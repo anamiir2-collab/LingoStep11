@@ -17,8 +17,8 @@
      - . , ? ! : ; quotes and brackets are ignored when comparing
        the typed answer with the expected one — missing, extra or
        different punctuation is still 'correct'.
-     - Apostrophes BETWEEN letters stay (contractions/possessives:
-       don't, I'm, it's) — dropping them is a real difference.
+     - Apostrophes are optional in typing and ignored in answer comparison
+       because they remain visible in their fixed positions.
      - Hyphens stay (compound words: twenty-one).
      - The stored / displayed sentence is never modified.
 
@@ -52,7 +52,7 @@ function isWordChar(c) {
 
 /**
  * Punctuation-free comparison form: normalizeCore + every punctuation
- * mark removed (apostrophes kept ONLY inside words, hyphens kept).
+ * mark removed (including apostrophes; hyphens stay required).
  * Used for comparison only — never to change stored or shown text.
  */
 export function stripPunct(s) {
@@ -197,6 +197,11 @@ function pairScore(typed, expected) {
   return 0;
 }
 
+/** Normalize words for feedback alignment while preserving original display text. */
+function wordKey(word) {
+  return String(word ?? '').replace(/[\u0027\u2018\u2019\u02BC]/g, '');
+}
+
 /**
  * Word-level alignment between what the user typed and one expected
  * answer. Used ONLY for feedback visualization — the accept/reject
@@ -217,7 +222,7 @@ export function wordDiff(userInput, expected) {
   const dp = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
   for (let i = n - 1; i >= 0; i--) {
     for (let j = m - 1; j >= 0; j--) {
-      dp[i][j] = u[i] === e[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+      dp[i][j] = wordKey(u[i]) === wordKey(e[j]) ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
     }
   }
 
@@ -225,7 +230,7 @@ export function wordDiff(userInput, expected) {
   const expectedMatch = new Array(m).fill(false);
   let i = 0, j = 0;
   while (i < n && j < m) {
-    if (u[i] === e[j]) { typedMatch[i] = true; expectedMatch[j] = true; i++; j++; }
+    if (wordKey(u[i]) === wordKey(e[j])) { typedMatch[i] = true; expectedMatch[j] = true; i++; j++; }
     else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
     else j++;
   }
@@ -242,7 +247,7 @@ export function wordDiff(userInput, expected) {
     let best = -1, bestScore = 0;
     for (const b of unmatchedE) {
       if (usedE.has(b)) continue;
-      const s = pairScore(u[a], e[b]);
+      const s = pairScore(wordKey(u[a]), wordKey(e[b]));
       if (s > bestScore) { bestScore = s; best = b; }
     }
     if (best >= 0) { pairOf.set(a, best); usedE.add(best); }
