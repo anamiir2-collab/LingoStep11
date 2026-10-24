@@ -2,8 +2,6 @@ export default{
   id: "lesson-001",
   dialogueId: 1,
   level: 1,
-  title: "Hello, I'm Khaled",
-  titleAr: "التعارف",
 
   title: "Hello, I'm Khaled",
   titleAr: "التعارف",
