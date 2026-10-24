@@ -61,10 +61,9 @@ export function stripPunct(s) {
   for (let i = 0; i < src.length; i++) {
     const c = src[i];
     if (c === "'") {
-      const prev = src[i - 1] || '';
-      const next = src[i + 1] || '';
-      if (isWordChar(prev) && isWordChar(next)) out += c; // don't / I'm / it's
-      continue;                                           // quote → drop
+      // Apostrophes are displayed in their fixed sentence position, not typed.
+      // Ignore them for answer comparison, just like other punctuation.
+      continue;
     }
     if (PUNCT_RE.test(c)) { out += ' '; continue; }
     out += c;
