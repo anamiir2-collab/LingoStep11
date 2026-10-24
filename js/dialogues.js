@@ -29,6 +29,8 @@ import { checkAnswer, wordDiff } from './grading.js';
 import { getSettings } from './settings.js';
 import { t } from './i18n.js';
 import { attachKeyboard } from './keyboard.js';
+import { buildLetterSurface } from './letter-track.js';
+import { attachCharacterCheck } from './listening-writing-enhancements.js';
 import { recordAttempt } from './progress.js';
 
 /** Alias filenames for the five book dialogues that ship under a suffixed file. */
@@ -116,6 +118,8 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
   let wrongThis = false;         // current sentence has a wrong attempt
   let wordQueue = null;          // { stop() } active word-by-word playback
   const acceptedAnswers = new Map();
+  const historyRows = new Map();
+  let characterCheck = null;
   const skippedSentences = new Set();
   let sentenceStartedAt = Date.now();
   const resolved = new Set();    // sentence indexes already counted (no double stats)
@@ -134,22 +138,11 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
   /* ---------- exercise panel ---------- */
 
   const hint = el('p', { class: 'dialogue-practice-hint', dir: 'rtl', lang: 'ar' });
-  const input = el('input', {
-    class: 'input dialogue-practice-input',
-    type: 'text',
-    autocomplete: 'off',
-    autocapitalize: 'off',
-    autocorrect: 'off',
-    spellcheck: false,
-    enterkeyhint: 'send',
-    dir: 'ltr',
-    placeholder: T('dlgTypePlaceholder'),
-    'aria-label': T('dlgTypeAria'),
-    'aria-describedby': 'dlg-feedback',
-  });
+  // Reuse the exact letter-by-letter writing surface used in regular lessons.
+  const letterSurfaceApi = buildLetterSurface('', { ariaLabel: T('dlgTypeAria') });
+  const input = letterSurfaceApi.input;
   const feedback = el('p', { class: 'dialogue-practice-feedback', id: 'dlg-feedback', role: 'status', 'aria-live': 'polite' });
   const diffRow = el('div', { class: 'dlg-word-diff', hidden: true, 'aria-label': T('dlgMissingWords') });
-  const letterSlots = el('div', { class: 'dlg-letter-slots', role: 'group', 'aria-label': T('dlgTypeAria'), tabindex: '0' });
   const check = el('button', { class: 'btn btn-primary dlg-check', type: 'button', text: T('checkAnswer') });
   const skip = el('button', { class: 'btn btn-ghost', type: 'button', text: T('skip') });
   const reveal = el('button', { class: 'btn btn-ghost dlg-reveal', type: 'button', text: T('dlgShowAnswer'), hidden: true });
@@ -185,7 +178,7 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     el('h2', { class: 'dialogue-practice-title', text: T('typeWhatYouHear') }),
     el('div', { class: 'dialogue-practice-audio' }, [play, slow, hintBtn]),
     hint,
-    el('div', { class: 'dialogue-practice-typing' }, [input, letterSlots]),
+    el('div', { class: 'dialogue-practice-typing' }, [letterSurfaceApi.surface]),
     diffRow,
     feedback,
     el('div', { class: 'dialogue-practice-actions' }, [check, skip]),
@@ -195,7 +188,7 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
 
   const history = el('div', { class: 'chat-history', role: 'log', 'aria-live': 'polite' });
   const chatTitle = el('p', { class: 'chat-subtitle', dir: 'ltr', text: dialogue.title || '' });
-  const chatPanel = el('section', { class: 'card chat-panel', 'aria-label': T('dlgConversation'), hidden: true }, [
+  const chatPanel = el('section', { class: 'card chat-panel', 'aria-label': T('dlgConversation') }, [
     el('div', { class: 'chat-header' }, [
       el('h3', { text: T('dlgConversation') }),
       chatTitle,
@@ -276,6 +269,38 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
 
   function addSystemMessage(text) {
     history.appendChild(el('div', { class: 'chat-system', role: 'status', text }));
+    scrollHistory();
+  }
+
+  // WhatsApp-like history: show Arabic translations first, then reveal English after success.
+  function buildPracticeHistory() {
+    history.replaceChildren();
+    exercises.forEach((item, sentenceIndex) => {
+      const prev = sentenceIndex > 0 ? exercises[sentenceIndex - 1] : null;
+      const groupLabel = item.label && (!prev || prev.label !== item.label) ? item.label : '';
+      if (groupLabel) history.appendChild(el('div', { class: 'chat-divider', text: groupLabel }));
+      const hue = nameHue(item.speaker);
+      const english = el('div', { class: 'bubble bubble-ai chat-english-reveal', dir: 'ltr', lang: 'en', text: '', hidden: true });
+      const arabic = el('div', { class: 'bubble bubble-ai chat-arabic-text', dir: 'rtl', lang: 'ar', text: item.ar || 'استمع للجملة وحاول كتابتها بالإنجليزية' });
+      const row = el('div', { class: 'chat-message message-ai whatsapp-message' }, [
+        el('span', { class: 'chat-avatar', 'aria-hidden': 'true', style: { background: `hsl(${hue} 55% 88%)`, color: `hsl(${hue} 45% 30%)` }, text: initials(item.speaker) }),
+        el('div', { class: 'chat-msg-body' }, [
+          el('span', { class: 'chat-speaker', dir: 'ltr', text: item.speaker || '—' }),
+          arabic, english, el('span', { class: 'chat-time', text: '' }),
+        ]),
+      ]);
+      history.appendChild(row);
+      historyRows.set(sentenceIndex, { row, english });
+    });
+    chatPanel.hidden = false;
+  }
+
+  function revealHistorySentence(sentenceIndex, typedAnswer) {
+    const row = historyRows.get(sentenceIndex);
+    if (!row) return;
+    row.english.textContent = typedAnswer || exercises[sentenceIndex].en;
+    row.english.hidden = false;
+    row.row.classList.add('has-english');
     scrollHistory();
   }
 
@@ -381,33 +406,6 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
 
   /* ---------- core flow ---------- */
 
-  // Render one blank tile per expected character; letters themselves stay hidden until typed.
-  function renderLetterSlots(markWrong = false) {
-    const expected = exercises[index]?.en || '';
-    const typed = Array.from(input.value);
-    let typedIndex = 0;
-    const nodes = Array.from(expected).map((expectedChar, charIndex) => {
-      if (/\\s/.test(expectedChar)) {
-        return el('span', { class: 'dlg-letter-space', 'aria-hidden': 'true' });
-      }
-      const value = typed[charIndex] || '';
-      let state = 'is-empty';
-      if (value) {
-        state = value.toLocaleLowerCase() === expectedChar.toLocaleLowerCase() ? 'is-correct' : 'is-wrong';
-      }
-      if (markWrong && value) state = 'is-wrong';
-      typedIndex++;
-      return el('span', {
-        class: 'dlg-letter-slot ' + state,
-        dir: 'ltr',
-        'aria-label': value ? (state === 'is-wrong' ? 'Incorrect character' : 'Entered character') : 'Empty character',
-        text: value,
-      });
-    });
-    letterSlots.replaceChildren(...nodes);
-    letterSlots.classList.toggle('has-error', markWrong);
-  }
-
   function renderSentence() {
     locked = false;
     revealedThis = false;
@@ -430,7 +428,24 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     hint.hidden = true;
     hintBtn.hidden = true;
     input.value = '';
-    renderLetterSlots();
+    letterSurfaceApi.render('');
+    letterSurfaceApi.surface.classList.remove('lw-character-wrong', 'is-complete', 'lw-shake');
+    if (characterCheck) { characterCheck.destroy(); characterCheck = null; }
+    characterCheck = attachCharacterCheck(input, item.en, {
+      onCorrect: () => letterSurfaceApi.render(input.value),
+      onWrong: () => {
+        letterSurfaceApi.render(input.value);
+        letterSurfaceApi.surface.classList.remove('lw-shake');
+        void letterSurfaceApi.surface.offsetWidth;
+        letterSurfaceApi.surface.classList.add('lw-shake');
+        feedback.textContent = ar ? 'حرف غير صحيح، حاول مرة أخرى' : 'Incorrect letter — try again';
+        feedback.classList.add('is-bad');
+      },
+      onComplete: () => {
+        letterSurfaceApi.render(input.value);
+        letterSurfaceApi.surface.classList.add('is-complete');
+      },
+    });
     updateProgress();
 
     input.focus({ preventScroll: true });
@@ -463,7 +478,8 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
         persist(result.status === 'minor' ? 'minor' : 'correct', index);
       }
       acceptedAnswers.set(index, answer);
-      // Keep conversation history completely hidden until the final sentence is resolved.
+      revealHistorySentence(index, answer);
+      // Reveal the English line in the visible conversation after a correct answer.
       input.classList.add('correct-border');
       feedback.textContent = T('correct');
       feedback.classList.add('is-ok');
@@ -473,7 +489,7 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     } else {
       wrongThis = true;
       input.classList.add('wrong-border');
-      renderLetterSlots(true);
+      letterSurfaceApi.surface.classList.add('lw-shake');
       feedback.textContent = T('dlgAlmost');
       feedback.classList.add('is-bad');
       feedback.classList.remove('is-ok');
@@ -582,11 +598,9 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
   skip.addEventListener('click', skipSentence);
   reveal.addEventListener('click', revealAnswer);
   hintBtn.addEventListener('click', () => { hint.hidden = false; });
-  letterSlots.addEventListener('click', () => input.focus({ preventScroll: true }));
   input.addEventListener('input', () => {
     input.classList.remove('wrong-border', 'correct-border');
-    letterSlots.classList.remove('has-error');
-    renderLetterSlots();
+    letterSurfaceApi.render(input.value);
   });
   input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
@@ -596,5 +610,6 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
   });
 
   updateStats();
+  buildPracticeHistory();
   renderSentence();
 }
