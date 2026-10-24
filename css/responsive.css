@@ -274,7 +274,7 @@
     right: max(.8rem, env(safe-area-inset-right, 0px));
     bottom: max(.7rem, env(safe-area-inset-bottom, 0px));
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     align-items: stretch;
     padding: .45rem .4rem;
     background: var(--nav-bg);
