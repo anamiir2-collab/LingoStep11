@@ -1,12 +1,11 @@
 export default{
   id: "lesson-008",
   dialogueId: 8,
-  level: 1,
   title: "Is there...?",
   titleAr: "السؤال عن المكان",
 
-  section: foundations,
-  level: A1,
+  section: "foundations",
+  level: "A1",
   estimatedMinutes: 7,
   objectives: [
     "Understand and use key expressions about is there...?.",
