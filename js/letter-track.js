@@ -78,13 +78,10 @@ export function letterStates(expected, typed) {
  */
 export function isOptionalChar(ch, prev, next) {
   if (!ch) return false;
-  if (ch === "'") {
-    const word = /[a-z0-9]/i;
-    return !(word.test(prev || '') && word.test(next || ''));
-  }
-  return '.,!?;:"()[]{}\u2026\u060C\u061B\u061F\u00A1\u00BF'.includes(ch);
+  // Punctuation is fixed in the exercise surface; learners type letters only.
+  // This includes apostrophes in contractions such as I'm and don't.
+  return '.,!?;:"()[]{}\\'\\u2018\\u2019\\u201C\\u201D\\u2026\\u060C\\u061B\\u061F\\u00A1\\u00BF'.includes(ch);
 }
-
 /**
  * Align a typed value against the expected sentence with optional
  * punctuation. Pure and DOM-free (Node-testable).
@@ -177,10 +174,20 @@ export function buildLetterSurface(expected, opts = {}) {
       for (let i = seg.start; i < seg.end; i += 1) {
         const slot = document.createElement('span');
         slot.className = `lw-letter-slot is-${states[i]}`;
-        if (states[i] === 'filled' || states[i] === 'wrong') {
-          // show what the learner actually typed; skipped punctuation
-          // shows the expected mark auto-completed in green
-          slot.textContent = typedChars[i] ?? targetChars[i] ?? '';
+        const expectedChar = targetChars[i] ?? '';
+        const isPunctuation = isOptionalChar(expectedChar, targetChars[i - 1], targetChars[i + 1]);
+        if (isPunctuation) {
+          // Punctuation is printed in its original position and never consumes a typed character.
+          slot.textContent = expectedChar;
+          slot.classList.add('is-punctuation');
+        } else if (states[i] === 'filled' || states[i] === 'wrong') {
+          // Map typed letters by the expected prefix, not by raw slot index;
+          // skipped punctuation must not shift the letters that follow it.
+          let typedIndex = 0;
+          for (let j = 0; j < i; j += 1) {
+            if (!isOptionalChar(targetChars[j], targetChars[j - 1], targetChars[j + 1])) typedIndex += 1;
+          }
+          slot.textContent = typedChars[typedIndex] ?? '';
         }
         word.append(slot);
       }
