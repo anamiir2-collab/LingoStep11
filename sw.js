@@ -11,7 +11,7 @@
    Version bump replaces old caches on activate.
    ============================================================ */
 
-const VERSION = 'v2.3.0';
+const VERSION = 'v2.4.0';
 const SHELL_CACHE = `lingostep-shell-${VERSION}`;
 const LESSON_CACHE = `lingostep-lessons-${VERSION}`;
 const KNOWN_CACHES = [SHELL_CACHE, LESSON_CACHE];
@@ -27,6 +27,7 @@ const SHELL_ASSETS = [
   './css/dialogues.css',
   './js/app.js',
   './js/book-dialogues.js',
+  './js/dialogues.js',
   './dialogues/dialogue-01.js',
   './dialogues/dialogue-02.js',
   './dialogues/dialogue-03.js',
