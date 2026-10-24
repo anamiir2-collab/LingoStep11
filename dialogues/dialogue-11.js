@@ -1,1 +1,58 @@
-export default {id:11,level:1,title:"At the Supermarket",titleAr:"في السوبر ماركت",groups:[{label:"",lines:[["Dalia","Hi Leila! Where are you going?","مرحباً ليلى، إلى أين أنتِ ذاهبة؟"],["Leila","To the supermarket.","إلى السوبر ماركت."],["Dalia","What are you going to buy?","ماذا ستشترين؟"],["Leila","Some groceries. Do you want anything?","بعض المشتريات. هل تريدين شيئاً؟"],["Dalia","Yes, please. Some milk and some potatoes.","نعم من فضلك، بعض اللبن والبطاطس."],["Leila","How much milk do you want?","كم تريدين من اللبن؟"],["Dalia","A carton is enough.","علبة واحدة تكفي."],["Leila","Anything else?","أي شيء آخر؟"],["Dalia","No, thank you. That's very kind of you.","لا، شكراً لكِ. هذا لطف منكِ."]]}]};
+export default{
+  id: 11,
+  level: 1,
+  title: "At the Supermarket",
+  titleAr: "في السوبر ماركت",
+  groups:[
+    {
+      label: "",
+      lines:[
+        [
+          "Dalia",
+          "Hi Leila! Where are you going?",
+          "مرحباً ليلى، إلى أين أنتِ ذاهبة؟"
+        ],
+        [
+          "Leila",
+          "To the supermarket.",
+          "إلى السوبر ماركت."
+        ],
+        [
+          "Dalia",
+          "What are you going to buy?",
+          "ماذا ستشترين؟"
+        ],
+        [
+          "Leila",
+          "Some groceries. Do you want anything?",
+          "بعض المشتريات. هل تريدين شيئاً؟"
+        ],
+        [
+          "Dalia",
+          "Yes, please. Some milk and some potatoes.",
+          "نعم من فضلك، بعض اللبن والبطاطس."
+        ],
+        [
+          "Leila",
+          "How much milk do you want?",
+          "كم تريدين من اللبن؟"
+        ],
+        [
+          "Dalia",
+          "A carton is enough.",
+          "علبة واحدة تكفي."
+        ],
+        [
+          "Leila",
+          "Anything else?",
+          "أي شيء آخر؟"
+        ],
+        [
+          "Dalia",
+          "No, thank you. That's very kind of you.",
+          "لا، شكراً لكِ. هذا لطف منكِ."
+        ]
+      ]
+    }
+  ]
+};
