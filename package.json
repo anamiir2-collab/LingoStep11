@@ -1,6 +1,6 @@
 {
   "name": "lingostep",
-  "version": "2.1.0",
+  "version": "6.0.0",
   "description": "LingoStep — a free, offline-friendly English listening, typing and revision trainer with 252 lessons across 11 sections and 13,000+ practice sentences. Arabic/English interface.",
   "type": "module",
   "private": true,
