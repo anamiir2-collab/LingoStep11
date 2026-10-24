@@ -433,96 +433,6 @@ button.book-dialogue-levels .btn.is-active {
 }
 
 
-/* Letter-by-letter dictation tiles (replaces the long text rectangle). */
-.dialogue-practice-typing {
-  position: relative;
-  min-height: 54px;
-}
-.dialogue-practice-input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  min-height: 1px;
-  padding: 0;
-  border: 0;
-  opacity: 0.01;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-.dlg-letter-slots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 5px;
-  width: 100%;
-  min-height: 48px;
-  padding: 8px 5px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--surface);
-  cursor: text;
-  direction: ltr;
-  box-sizing: border-box;
-}
-.dlg-letter-slots:focus-visible {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 2px;
-}
-.dlg-letter-slot {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 27px;
-  width: 27px;
-  height: 34px;
-  box-sizing: border-box;
-  border: 1px solid var(--border-strong);
-  border-bottom-width: 3px;
-  border-radius: 7px;
-  background: var(--surface-2);
-  color: var(--text);
-  font-size: 1rem;
-  font-weight: 750;
-  line-height: 1;
-  text-transform: none;
-  transition: background .12s ease, border-color .12s ease, color .12s ease;
-}
-.dlg-letter-slot.is-empty { color: transparent; }
-.dlg-letter-slot.is-correct {
-  border-color: var(--success-border);
-  background: var(--success-tint);
-  color: var(--success-strong);
-}
-.dlg-letter-slot.is-wrong {
-  border-color: var(--danger-border);
-  background: var(--danger-tint);
-  color: var(--danger-strong);
-  animation: dlg-letter-shake .18s ease-in-out 1;
-}
-.dlg-letter-space {
-  flex: 0 0 10px;
-  width: 10px;
-  height: 20px;
-}
-.dlg-letter-slots.has-error {
-  border-color: var(--danger);
-  box-shadow: 0 0 0 2px var(--danger-tint);
-}
-@keyframes dlg-letter-shake {
-  25% { transform: translateX(-2px); }
-  75% { transform: translateX(2px); }
-}
-@media (max-width: 420px) {
-  .dlg-letter-slots { gap: 3px; padding-inline: 3px; }
-  .dlg-letter-slot { flex-basis: 23px; width: 23px; height: 31px; font-size: .92rem; }
-  .dlg-letter-space { flex-basis: 7px; width: 7px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dlg-letter-slot.is-wrong { animation: none; }
-}
-
 /* ------------------------------------------------------------
    3d) Feedback + word-level diff
    ------------------------------------------------------------ */
@@ -938,3 +848,18 @@ button.book-dialogue-levels .btn.is-active {
     transition: none;
   }
 }
+
+/* Dialogue practice reuses the lesson engine's letter-track surface. */
+.dialogue-practice-typing .lw-typing-surface { width: 100%; min-height: 66px; }
+.dialogue-practice-typing .lw-letter-track { justify-content: center; }
+.dialogue-practice-typing .lw-typing-input { opacity: 0; }
+.dialogue-practice-typing .lw-shake { animation: lw-shake .28s ease; }
+.dialogues-container .chat-panel { display: flex; }
+.whatsapp-message { max-width: 96%; }
+.whatsapp-message .chat-msg-body { max-width: min(100%, 420px); }
+.whatsapp-message .chat-arabic-text { direction: rtl; text-align: right; border-radius: 16px 16px 4px 16px; background: var(--surface); }
+.whatsapp-message .chat-english-reveal { margin-top: 4px; border-radius: 16px 16px 16px 4px; background: var(--success-tint); border: 1px solid var(--success-border); color: var(--text); animation: dlg-message-appear .22s ease-out; }
+.chat-time { align-self: flex-end; font-size: .68rem; color: var(--muted); }
+.whatsapp-message.has-english .chat-arabic-text { opacity: .82; }
+@keyframes dlg-message-appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .whatsapp-message .chat-english-reveal { animation: none; } }
