@@ -2,8 +2,6 @@ export default{
   id: "lesson-002",
   dialogueId: 2,
   level: 1,
-  title: "This is my family",
-  titleAr: "العائلة",
 
   title: "This is my family",
   titleAr: "العائلة",
