@@ -4,30 +4,30 @@ export default{
   title: "Whose dog is this?",
   titleAr: "الملكية",
   groups:[
-{
+    {
       label: "",
       lines:[
-[
+        [
           "Gihad",
           "Hello, Majid.",
           "مرحبا ماجد."
         ],
-[
+        [
           "Majid",
           "Gihad! There is a dog in the kitchen.",
           "جهاد! هناك كلب في المطبخ."
         ],
-[
+        [
           "Gihad",
           "Yes, its name is Tommy.",
           "نعم، اسمه تومي."
         ],
-[
+        [
           "Majid",
           "Well, whose dog is this? Is it yours?",
           "حسناً، كلب من هذا؟ هل هو لك؟"
         ],
-[
+        [
           "Gihad",
           "No, it's not mine. It's Mary's.",
           "لا، إنه ليس كلبي. إنه كلب ماري."
