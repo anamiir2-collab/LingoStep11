@@ -84,35 +84,56 @@ export async function renderBookDialoguesView(view, params = [], lang = 'en') {
     const settings = getSettings();
     const showArabic = settings.bookDialoguesShowArabic !== false;
     const lineCount = (dialogue.groups || []).reduce((n, g) => n + (g.lines || []).length, 0);
-    const lineNodes = [];
+    const messageNodes = [];
+    let messageIndex = 0;
     for (const group of dialogue.groups || []) {
-      if (group.label) lineNodes.push(el('h3', { class: 'book-dialogue-group', text: group.label }));
+      if (group.label) {
+        messageNodes.push(el('div', { class: 'book-chat-day', text: group.label }));
+      }
       for (const line of group.lines || []) {
         const [speaker, en, translation] = line;
-        const arLine = el('p', { class: 'book-dialogue-ar', dir: 'rtl', lang: 'ar', text: translation });
-        arLine.hidden = !showArabic;
-        const listenBtn = el('button', {
-          class: 'btn btn-sm btn-ghost book-line-listen', type: 'button',
-          'aria-label': T('play') + ' — ' + en,
-          text: T('play'),
-          onclick: () => toggleSpeech(listenBtn, en, settings, { play: T('play'), stop: T('dlgStopAudio'), unsupported: T('dlgSpeechUnsupported') }),
+        const isSecondSpeaker = messageIndex % 2 === 1;
+        const message = el('article', {
+          class: 'book-chat-message ' + (isSecondSpeaker ? 'is-right' : 'is-left'),
+          'aria-label': String(speaker || '') + ': ' + String(en || ''),
         });
-        lineNodes.push(el('article', { class: 'book-dialogue-line' }, [
-          el('div', { class: 'book-dialogue-line-top' }, [
-            el('strong', { class: 'book-dialogue-speaker', dir: 'ltr', text: speaker }),
-            listenBtn,
+        const avatar = el('span', {
+          class: 'book-chat-avatar',
+          'aria-hidden': 'true',
+          text: String(speaker || '?').trim().split(/\\s+/).map((part) => part[0] || '').slice(0, 2).join('').toUpperCase(),
+        });
+        const bubble = el('div', { class: 'book-chat-bubble' }, [
+          el('div', { class: 'book-chat-meta' }, [
+            el('strong', { class: 'book-chat-speaker', dir: 'ltr', text: speaker || '—' }),
+            el('button', {
+              class: 'book-chat-listen',
+              type: 'button',
+              'aria-label': T('play') + ' — ' + en,
+              title: T('play'),
+              text: '▶',
+              onclick: (event) => {
+                const button = event.currentTarget;
+                const active = button.dataset.speaking === '1';
+                toggleSpeech(button, en, settings, { play: '▶', stop: '■', unsupported: T('dlgSpeechUnsupported') });
+              },
+            }),
           ]),
-          el('p', { class: 'book-dialogue-en', dir: 'ltr', text: en }),
-          arLine,
-        ]));
+          el('p', { class: 'book-chat-en', dir: 'ltr', lang: 'en', text: en || '' }),
+        ]);
+        const arLine = el('p', { class: 'book-chat-ar', dir: 'rtl', lang: 'ar', text: translation || '' });
+        arLine.hidden = !showArabic;
+        bubble.append(arLine);
+        message.append(avatar, bubble);
+        messageNodes.push(message);
+        messageIndex += 1;
       }
     }
     const toggle = el('button', {
       class: 'btn btn-ghost', type: 'button', text: showArabic ? T('dlgHideTranslations') : T('dlgShowTranslations'),
       onclick: () => {
-        const next = lineNodes.filter((n) => n.classList?.contains('book-dialogue-line')).flatMap((n) => [...n.querySelectorAll('.book-dialogue-ar')]);
-        const hide = next.some((n) => !n.hidden);
-        next.forEach((n) => { n.hidden = hide; });
+        const translations = chatMessages.querySelectorAll('.book-chat-ar');
+        const hide = Array.from(translations).some((node) => !node.hidden);
+        translations.forEach((node) => { node.hidden = hide; });
         toggle.textContent = hide ? T('dlgShowTranslations') : T('dlgHideTranslations');
       },
     });
@@ -121,26 +142,32 @@ export async function renderBookDialoguesView(view, params = [], lang = 'en') {
       class: 'btn btn-primary', type: 'button', text: T('dlgListenFull'),
       onclick: () => toggleSpeech(listenAll, allText, settings, { play: T('dlgListenFull'), stop: T('dlgStopAudio'), unsupported: T('dlgSpeechUnsupported') }),
     });
-    view.replaceChildren(
-      el('a', { class: 'breadcrumb', href: '#/dialogues', text: T('dlgAllDialogues') }),
-      head,
-      el('div', { class: 'card book-dialogue-detail' }, [
-        el('div', { class: 'book-dialogue-detail-head' }, [
+    const chatMessages = el('div', { class: 'book-chat-messages', role: 'log', 'aria-label': dialogue.title || T('dlgConversation') }, messageNodes);
+    const chat = el('section', { class: 'card book-dialogue-chat' }, [
+      el('header', { class: 'book-chat-header' }, [
+        el('div', { class: 'book-chat-header-main' }, [
+          el('a', { class: 'book-chat-back', href: '#/dialogues', 'aria-label': T('dlgAllDialogues'), text: '←' }),
+          el('div', { class: 'book-chat-title-wrap' }, [
+            el('h2', { dir: 'ltr', text: dialogue.title || '' }),
+            el('p', { dir: 'rtl', lang: 'ar', text: dialogue.titleAr || '' }),
+          ]),
+        ]),
+        el('div', { class: 'book-chat-status' }, [
           el('span', { class: 'chip chip-level', text: T('dlgLevel') + ' ' + dialogue.level }),
           el('span', { class: 'chip', text: T('dlgSentencesCount', { n: lineCount }) }),
-          el('h2', { dir: 'ltr', text: dialogue.title || '' }),
-          el('p', { class: 'muted', dir: 'rtl', lang: 'ar', text: dialogue.titleAr || '' }),
         ]),
-        el('div', { class: 'row book-dialogue-actions' }, [
-          listenAll,
-          toggle,
-          el('a', { class: 'btn btn-primary', href: '#/dialogue-practice/' + id, text: T('dlgStartPractice') }),
-        ]),
-        ...lineNodes,
-      ])
+      ]),
+      chatMessages,
+      el('div', { class: 'book-chat-toolbar' }, [
+        listenAll,
+        toggle,
+        el('a', { class: 'btn btn-primary', href: '#/dialogue-practice/' + id, text: T('dlgStartPractice') }),
+      ]),
+    ]);
+    view.replaceChildren(
+      el('a', { class: 'breadcrumb', href: '#/dialogues', text: T('dlgAllDialogues') }),
+      chat
     );
-    return;
-  }
 
   /* ---------- library list ---------- */
   const search = el('input', {
