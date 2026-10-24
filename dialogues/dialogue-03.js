@@ -2,8 +2,6 @@ export default{
   id: "lesson-003",
   dialogueId: 3,
   level: 1,
-  title: "Colours",
-  titleAr: "الألوان",
 
   title: "Colours",
   titleAr: "الألوان",
