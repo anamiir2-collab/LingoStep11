@@ -1,7 +1,6 @@
 export default{
   id: "lesson-010",
   dialogueId: 10,
-  level: 1,
   title: "Amira's Family",
   titleAr: "شجرة العائلة",
   section: "foundations",
