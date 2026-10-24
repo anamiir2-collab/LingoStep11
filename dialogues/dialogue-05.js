@@ -1,12 +1,11 @@
 export default{
   id: "lesson-005",
   dialogueId: 5,
-  level: 1,
   title: "Where are you from?",
   titleAr: "لعبة التخمين",
 
-  section: foundations,
-  level: A1,
+  section: "foundations",
+  level: "A1",
   estimatedMinutes: 8,
   objectives: [
     "Understand and use key expressions about where are you from?.",
