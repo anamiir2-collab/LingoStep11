@@ -1,7 +1,6 @@
 export default{
   id: "lesson-011",
   dialogueId: 11,
-  level: 1,
   title: "At the Supermarket",
   titleAr: "في السوبر ماركت",
   section: "foundations",
