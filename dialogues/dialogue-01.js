@@ -1,12 +1,11 @@
 export default{
   id: "lesson-001",
   dialogueId: 1,
-  level: 1,
 
   title: "Hello, I'm Khaled",
   titleAr: "التعارف",
-  section: foundations,
-  level: A1,
+  section: "foundations",
+  level: "A1",
   estimatedMinutes: 5,
   objectives: [
     "Understand and use key expressions about hello, i'm khaled.",
