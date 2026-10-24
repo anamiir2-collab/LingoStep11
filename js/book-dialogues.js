@@ -41,7 +41,7 @@ export async function renderBookDialoguesView(view, params = [], lang = 'en') {
     const listenAll=el('button',{class:'btn btn-primary',text:ar?'استمع للحوار كاملاً':'Listen to full dialogue',onclick:()=>{if(speechSupported()) speak(allText,{rate:settings.rate||0.9,voiceURI:settings.voiceURI||''});}});
     view.replaceChildren(el('a',{class:'breadcrumb',href:'#/dialogues',text:ar?'← كل الحوارات':'← All dialogues'}),head,el('div',{class:'card book-dialogue-detail'},[
       el('div',{class:'book-dialogue-detail-head'},[el('span',{class:'chip',text:ar?'المستوى':'Level'}+' '+dialogue.level),el('h2',{text:ar?dialogue.titleAr:dialogue.title}),el('p',{class:'muted',text:dialogue.title})]),
-      el('div',{class:'row book-dialogue-actions'},[listenAll,toggle]),
+      el('div',{class:'row book-dialogue-actions'},[listenAll,toggle,el('a',{class:'btn btn-primary',href:'#/dialogue-practice/'+id,text:ar?'ابدأ تدريب الاستماع والكتابة':'Practice: Listen & Type'})]),
       ...lineNodes
     ]));
     return;
