@@ -1,7 +1,6 @@
 export default{
   id: "lesson-013",
   dialogueId: 13,
-  level: 2,
   title: "A lot of Arabs speak English",
   titleAr: "لغات العرب",
   section: "daily-life",
