@@ -115,6 +115,8 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
   let revealedThis = false;      // learner revealed the current answer
   let wrongThis = false;         // current sentence has a wrong attempt
   let wordQueue = null;          // { stop() } active word-by-word playback
+  const acceptedAnswers = new Map();
+  const skippedSentences = new Set();
   let sentenceStartedAt = Date.now();
   const resolved = new Set();    // sentence indexes already counted (no double stats)
 
@@ -185,14 +187,14 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     el('div', { class: 'dialogue-practice-typing' }, [input]),
     diffRow,
     feedback,
-    el('div', { class: 'dialogue-practice-actions' }, [check, skip, reveal]),
+    el('div', { class: 'dialogue-practice-actions' }, [check, skip]),
   ]);
 
   /* ---------- conversation panel ---------- */
 
   const history = el('div', { class: 'chat-history', role: 'log', 'aria-live': 'polite' });
   const chatTitle = el('p', { class: 'chat-subtitle', dir: 'ltr', text: dialogue.title || '' });
-  const chatPanel = el('section', { class: 'card chat-panel', 'aria-label': T('dlgConversation') }, [
+  const chatPanel = el('section', { class: 'card chat-panel', 'aria-label': T('dlgConversation'), hidden: true }, [
     el('div', { class: 'chat-header' }, [
       el('h3', { text: T('dlgConversation') }),
       chatTitle,
@@ -401,7 +403,6 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     input.value = '';
     updateProgress();
 
-    addSpeakerMessage(item.speaker, item.en, groupLabel);
     input.focus({ preventScroll: true });
     playSentence(false);
   }
@@ -431,6 +432,9 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
         updateProgress();
         persist(result.status === 'minor' ? 'minor' : 'correct', index);
       }
+      acceptedAnswers.set(index, answer);
+      chatPanel.hidden = false;
+      addSpeakerMessage(item.speaker, item.en, groupLabel);
       addLearnerMessage(answer);
       input.classList.add('correct-border');
       feedback.textContent = T('correct');
@@ -444,8 +448,10 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
       feedback.textContent = T('dlgAlmost');
       feedback.classList.add('is-bad');
       feedback.classList.remove('is-ok');
-      showWordDiff(answer, item.en);
-      reveal.hidden = false;
+      // Do not expose the expected sentence or missing words after a wrong attempt.
+      diffRow.replaceChildren();
+      diffRow.hidden = true;
+      reveal.hidden = true;
       persist('incorrect', index);
     }
   }
@@ -474,7 +480,7 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
       updateProgress();
       persist('skipped', index);
     }
-    addLearnerMessage(item.en, { skipped: true });
+    skippedSentences.add(index);
     index += 1;
     renderSentence();
   }
@@ -495,6 +501,20 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     counter.textContent = T('dlgLessonComplete');
     progressBar.setAttribute('aria-valuenow', '100');
     progressBar.firstElementChild.style.width = '100%';
+
+    // Show the full conversation only after the practice is complete.
+    chatPanel.hidden = false;
+    history.replaceChildren();
+    exercises.forEach((item, sentenceIndex) => {
+      const prev = sentenceIndex > 0 ? exercises[sentenceIndex - 1] : null;
+      const groupLabel = item.label && (!prev || prev.label !== item.label) ? item.label : '';
+      addSpeakerMessage(item.speaker, item.en, groupLabel);
+      if (acceptedAnswers.has(sentenceIndex)) {
+        addLearnerMessage(acceptedAnswers.get(sentenceIndex));
+      } else if (skippedSentences.has(sentenceIndex)) {
+        addLearnerMessage(item.en, { skipped: true });
+      }
+    });
 
     const acc = Math.round((eventuallyCorrect / total) * 100);
     const retry = el('button', {
