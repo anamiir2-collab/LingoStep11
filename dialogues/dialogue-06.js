@@ -1,12 +1,11 @@
 export default{
   id: "lesson-006",
   dialogueId: 6,
-  level: 1,
   title: "Today is Friday",
   titleAr: "الترتيب والخطط",
 
-  section: foundations,
-  level: A1,
+  section: "foundations",
+  level: "A1",
   estimatedMinutes: 6,
   objectives: [
     "Understand and use key expressions about today is friday.",
