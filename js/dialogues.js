@@ -397,9 +397,10 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     sentenceStartedAt = Date.now();
 
     counter.textContent = T('dlgSentenceOf', { i: index + 1, n: total });
-    hint.textContent = settings.showArabic !== false ? item.ar : '';
-    hint.hidden = settings.showArabic === false;
-    hintBtn.hidden = settings.showArabic !== false;
+    // Dictation mode: no translation or text hint before the learner answers.
+    hint.textContent = '';
+    hint.hidden = true;
+    hintBtn.hidden = true;
     input.value = '';
     updateProgress();
 
@@ -433,9 +434,7 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
         persist(result.status === 'minor' ? 'minor' : 'correct', index);
       }
       acceptedAnswers.set(index, answer);
-      chatPanel.hidden = false;
-      addSpeakerMessage(item.speaker, item.en, groupLabel);
-      addLearnerMessage(answer);
+      // Keep conversation history completely hidden until the final sentence is resolved.
       input.classList.add('correct-border');
       feedback.textContent = T('correct');
       feedback.classList.add('is-ok');
