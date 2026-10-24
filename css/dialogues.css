@@ -863,3 +863,18 @@ button.book-dialogue-levels .btn.is-active {
 .whatsapp-message.has-english .chat-arabic-text { opacity: .82; }
 @keyframes dlg-message-appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .whatsapp-message .chat-english-reveal { animation: none; } }
+
+/* Dialogue practice reuses the lesson engine's letter-track surface. */
+.dialogue-practice-typing .lw-typing-surface { width: 100%; min-height: 66px; }
+.dialogue-practice-typing .lw-letter-track { justify-content: center; }
+.dialogue-practice-typing .lw-typing-input { opacity: 0; }
+.dialogue-practice-typing .lw-shake { animation: lw-shake .28s ease; }
+.dialogues-container .chat-panel { display: flex; }
+.whatsapp-message { max-width: 96%; }
+.whatsapp-message .chat-msg-body { max-width: min(100%, 420px); }
+.whatsapp-message .chat-arabic-text { direction: rtl; text-align: right; border-radius: 16px 16px 4px 16px; background: var(--surface); }
+.whatsapp-message .chat-english-reveal { margin-top: 4px; border-radius: 16px 16px 16px 4px; background: var(--success-tint); border: 1px solid var(--success-border); color: var(--text); animation: dlg-message-appear .22s ease-out; }
+.chat-time { align-self: flex-end; font-size: .68rem; color: var(--muted); }
+.whatsapp-message.has-english .chat-arabic-text { opacity: .82; }
+@keyframes dlg-message-appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .whatsapp-message .chat-english-reveal { animation: none; } }
