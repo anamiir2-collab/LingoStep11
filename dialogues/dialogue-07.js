@@ -1,12 +1,11 @@
 export default{
   id: "lesson-007",
   dialogueId: 7,
-  level: 1,
   title: "Personal Details",
   titleAr: "مقابلة عمل وبيانات شخصية",
 
-  section: foundations,
-  level: A1,
+  section: "foundations",
+  level: "A1",
   estimatedMinutes: 12,
   objectives: [
     "Understand and use key expressions about personal details.",
