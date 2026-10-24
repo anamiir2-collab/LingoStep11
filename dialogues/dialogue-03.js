@@ -1,1 +1,48 @@
-export default {id:3,level:1,title:"Colours",titleAr:"الألوان",groups:[{label:"",lines:[["Shadi","Hi Samy, can I borrow your pen please?","مرحبا سامي، هل لي أن أستعير قلمك من فضلك؟"],["Samy","I'm sorry Shadi, I lost it.","آسف يا شادي، لقد فقدته."],["Shadi","Wait. I found a pen today.","لحظة، لقد وجدت قلماً اليوم."],["Samy","Is it green?","هل لونه أخضر؟"],["Shadi","No, it isn't. It is red.","لا، ليس كذلك. إنه أحمر."],["Samy","What colour is your pen?","ما لون قلمك؟"],["Shadi","It is green.","لونه أخضر."]]}]};
+export default{
+  id: 3,
+  level: 1,
+  title: "Colours",
+  titleAr: "الألوان",
+  groups:[
+{
+      label: "",
+      lines:[
+[
+          "Shadi",
+          "Hi Samy, can I borrow your pen please?",
+          "مرحبا سامي، هل لي أن أستعير قلمك من فضلك؟"
+        ],
+[
+          "Samy",
+          "I'm sorry Shadi, I lost it.",
+          "آسف يا شادي، لقد فقدته."
+        ],
+[
+          "Shadi",
+          "Wait. I found a pen today.",
+          "لحظة، لقد وجدت قلماً اليوم."
+        ],
+[
+          "Samy",
+          "Is it green?",
+          "هل لونه أخضر؟"
+        ],
+[
+          "Shadi",
+          "No, it isn't. It is red.",
+          "لا، ليس كذلك. إنه أحمر."
+        ],
+[
+          "Samy",
+          "What colour is your pen?",
+          "ما لون قلمك؟"
+        ],
+[
+          "Shadi",
+          "It is green.",
+          "لونه أخضر."
+        ]
+      ]
+    }
+  ]
+};
