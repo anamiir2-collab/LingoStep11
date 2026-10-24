@@ -1,3 +1,4 @@
+import { buildLessonFields } from './lesson-fields.js';
 export default{
   id: 44,
   level: 2,
@@ -90,4 +91,6 @@ export default{
       ]
     }
   ]
+,
+  ...buildLessonFields({ dialogueId: 44, title, titleAr, groups })
 };
