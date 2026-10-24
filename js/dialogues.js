@@ -139,8 +139,8 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
 
   const hint = el('p', { class: 'dialogue-practice-hint', dir: 'rtl', lang: 'ar' });
   // Reuse the exact letter-by-letter writing surface used in regular lessons.
-  const letterSurfaceApi = buildLetterSurface('', { ariaLabel: T('dlgTypeAria') });
-  const input = letterSurfaceApi.input;
+  let letterSurfaceApi = buildLetterSurface(exercises[0].en, { ariaLabel: T('dlgTypeAria') });
+  let input = letterSurfaceApi.input;
   const feedback = el('p', { class: 'dialogue-practice-feedback', id: 'dlg-feedback', role: 'status', 'aria-live': 'polite' });
   const diffRow = el('div', { class: 'dlg-word-diff', hidden: true, 'aria-label': T('dlgMissingWords') });
   const check = el('button', { class: 'btn btn-primary dlg-check', type: 'button', text: T('checkAnswer') });
@@ -215,9 +215,10 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
 
   /* ---------- on-screen keyboard (existing app feature) ---------- */
 
+  const typingHost = exercisePanel.querySelector('.dialogue-practice-typing');
   const kbMount = el('div', { class: 'dlg-kb-mount' });
-  exercisePanel.querySelector('.dialogue-practice-typing').after(kbMount);
-  const kbHandle = attachKeyboard(input, kbMount, settings.onScreenKeyboard !== false, {
+  typingHost.after(kbMount);
+  let kbHandle = attachKeyboard(input, kbMount, settings.onScreenKeyboard !== false, {
     enter: T('checkAnswer'),
   });
 
@@ -418,6 +419,20 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
 
     if (index >= total) { finish(); return; }
     const item = exercises[index];
+    if (characterCheck) { characterCheck.destroy(); characterCheck = null; }
+    if (kbHandle) { try { kbHandle.destroy(); } catch { /* ignore */ } }
+    try { letterSurfaceApi.destroy(); } catch { /* ignore */ }
+    letterSurfaceApi = buildLetterSurface(item.en, { ariaLabel: T('dlgTypeAria') });
+    input = letterSurfaceApi.input;
+    typingHost.replaceChildren(letterSurfaceApi.surface);
+    kbHandle = attachKeyboard(input, kbMount, settings.onScreenKeyboard !== false, { enter: T('checkAnswer') });
+    input.addEventListener('input', () => {
+      input.classList.remove('wrong-border', 'correct-border');
+      letterSurfaceApi.render(input.value);
+    });
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') { event.preventDefault(); checkAnswerNow(); }
+    });
     const prev = index > 0 ? exercises[index - 1] : null;
     const groupLabel = item.label && (!prev || prev.label !== item.label) ? item.label : '';
     sentenceStartedAt = Date.now();
@@ -430,7 +445,6 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     input.value = '';
     letterSurfaceApi.render('');
     letterSurfaceApi.surface.classList.remove('lw-character-wrong', 'is-complete', 'lw-shake');
-    if (characterCheck) { characterCheck.destroy(); characterCheck = null; }
     characterCheck = attachCharacterCheck(input, item.en, {
       onCorrect: () => letterSurfaceApi.render(input.value),
       onWrong: () => {
@@ -547,17 +561,10 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
     progressBar.setAttribute('aria-valuenow', '100');
     progressBar.firstElementChild.style.width = '100%';
 
-    // Show the full conversation only after the practice is complete.
-    chatPanel.hidden = false;
-    history.replaceChildren();
+    // Keep the conversation visible; reveal remaining English only at completion.
     exercises.forEach((item, sentenceIndex) => {
-      const prev = sentenceIndex > 0 ? exercises[sentenceIndex - 1] : null;
-      const groupLabel = item.label && (!prev || prev.label !== item.label) ? item.label : '';
-      addSpeakerMessage(item.speaker, item.en, groupLabel);
-      if (acceptedAnswers.has(sentenceIndex)) {
-        addLearnerMessage(acceptedAnswers.get(sentenceIndex));
-      } else if (skippedSentences.has(sentenceIndex)) {
-        addLearnerMessage(item.en, { skipped: true });
+      if (!acceptedAnswers.has(sentenceIndex) && !skippedSentences.has(sentenceIndex)) {
+        revealHistorySentence(sentenceIndex, item.en);
       }
     });
 
@@ -598,17 +605,6 @@ export async function renderDialoguePractice(view, params = [], lang = 'en') {
   skip.addEventListener('click', skipSentence);
   reveal.addEventListener('click', revealAnswer);
   hintBtn.addEventListener('click', () => { hint.hidden = false; });
-  input.addEventListener('input', () => {
-    input.classList.remove('wrong-border', 'correct-border');
-    letterSurfaceApi.render(input.value);
-  });
-  input.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      checkAnswerNow();
-    }
-  });
-
   updateStats();
   buildPracticeHistory();
   renderSentence();
