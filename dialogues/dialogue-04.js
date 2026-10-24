@@ -1,12 +1,11 @@
 export default{
   id: "lesson-004",
   dialogueId: 4,
-  level: 1,
 
   title: "My clothes",
   titleAr: "شراء الملابس",
-  section: foundations,
-  level: A1,
+  section: "foundations",
+  level: "A1",
   estimatedMinutes: 8,
   objectives: [
     "Understand and use key expressions about my clothes.",
