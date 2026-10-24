@@ -1,5 +1,5 @@
 import { buildLessonFields } from './lesson-fields.js';
-export default{
+const dialogue = {
   id: 41,
   level: 2,
   title: "Punctuation Marks / Job Interview",
@@ -61,6 +61,9 @@ export default{
       ]
     }
   ]
-,
-  ...buildLessonFields({ dialogueId: 41, title, titleAr, groups })
+};
+
+export default {
+  ...dialogue,
+  ...buildLessonFields({ dialogueId: 41, title: dialogue.title, titleAr: dialogue.titleAr, groups: dialogue.groups })
 };
