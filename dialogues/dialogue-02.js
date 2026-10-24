@@ -1,12 +1,11 @@
 export default{
   id: "lesson-002",
   dialogueId: 2,
-  level: 1,
 
   title: "This is my family",
   titleAr: "العائلة",
-  section: foundations,
-  level: A1,
+  section: "foundations",
+  level: "A1",
   estimatedMinutes: 5,
   objectives: [
     "Understand and use key expressions about this is my family.",
