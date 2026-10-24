@@ -2,7 +2,7 @@
   "name": "LingoStep — Learn English Step by Step",
   "short_name": "LingoStep",
   "id": "/LingoStep/",
-  "description": "Listen, type, and master English with 250 lessons across 11 sections, 13,000+ practice sentences, spaced revision and full offline support — in English and Arabic.",
+  "description": "Listen, type, and master English with 252 lessons across 11 sections, 13,000+ practice sentences, spaced revision and full offline support — in English and Arabic.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
