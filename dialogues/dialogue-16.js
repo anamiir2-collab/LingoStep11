@@ -1,7 +1,6 @@
 export default{
   id: "lesson-016",
   dialogueId: 16,
-  level: 2,
   title: "I like gardening",
   titleAr: "الهوايات والطقس",
   section: "daily-life",
