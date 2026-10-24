@@ -1,1 +1,63 @@
-export default {id:6,level:1,title:"Today is Friday",titleAr:"الترتيب والخطط",groups:[{label:"",lines:[["Ahmed","Hello.","مرحباً."],["Adel","Hello.","مرحباً."],["Ahmed","Can I speak to Adel please?","هل يمكنني التحدث مع عادل من فضلك؟"],["Adel","Adel's speaking.","عادل يتحدث معك."],["Ahmed","Hi Adel, it's Ahmed.","مرحباً عادل، أنا أحمد."],["Adel","Oh Ahmed, how are you?","أهلاً أحمد، كيف حالك؟"],["Ahmed","Oh, I'm fine. Adel, listen, is Saturday still ok for going to the cinema?","أنا بخير. عادل، اسمع، هل يوم السبت ما زال مناسباً للذهاب إلى السينما؟"],["Adel","Oh, sorry. I have an exam on Monday.","آسف، لدي امتحان يوم الاثنين."],["Ahmed","Ok, see you after the exam. Good luck. Bye.","حسناً، أراك بعد الامتحان. بالتوفيق، إلى اللقاء."],["Adel","Bye.","إلى اللقاء."]]}]};
+export default{
+  id: 6,
+  level: 1,
+  title: "Today is Friday",
+  titleAr: "الترتيب والخطط",
+  groups:[
+{
+      label: "",
+      lines:[
+[
+          "Ahmed",
+          "Hello.",
+          "مرحباً."
+        ],
+[
+          "Adel",
+          "Hello.",
+          "مرحباً."
+        ],
+[
+          "Ahmed",
+          "Can I speak to Adel please?",
+          "هل يمكنني التحدث مع عادل من فضلك؟"
+        ],
+[
+          "Adel",
+          "Adel's speaking.",
+          "عادل يتحدث معك."
+        ],
+[
+          "Ahmed",
+          "Hi Adel, it's Ahmed.",
+          "مرحباً عادل، أنا أحمد."
+        ],
+[
+          "Adel",
+          "Oh Ahmed, how are you?",
+          "أهلاً أحمد، كيف حالك؟"
+        ],
+[
+          "Ahmed",
+          "Oh, I'm fine. Adel, listen, is Saturday still ok for going to the cinema?",
+          "أنا بخير. عادل، اسمع، هل يوم السبت ما زال مناسباً للذهاب إلى السينما؟"
+        ],
+[
+          "Adel",
+          "Oh, sorry. I have an exam on Monday.",
+          "آسف، لدي امتحان يوم الاثنين."
+        ],
+[
+          "Ahmed",
+          "Ok, see you after the exam. Good luck. Bye.",
+          "حسناً، أراك بعد الامتحان. بالتوفيق، إلى اللقاء."
+        ],
+[
+          "Adel",
+          "Bye.",
+          "إلى اللقاء."
+        ]
+      ]
+    }
+  ]
+};
