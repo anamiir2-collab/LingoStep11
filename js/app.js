@@ -16,6 +16,7 @@ import { dueCount, dueItems, availableTags, totalCount as reviewTotalCount } fro
 import { isSupported as speechSupported, loadVoices, englishVoices, speak } from './speech.js';
 import { getTotalXp } from './xp.js';
 import { renderVocabularyView } from './vocabulary.js';
+import { renderBookDialoguesView } from './book-dialogues.js';
 import { messageForFirstVisit } from './motivation.js';
 
 const SECTIONS_META = [
@@ -87,6 +88,7 @@ function renderShell() {
         navLink('navHome', '#/', 'home'),
         navLink('navSections', '#/sections', 'sections'),
         navLink('navVocabulary', '#/vocabulary', 'vocabulary'),
+        navLink('navDialogues', '#/dialogues', 'dialogues'),
         navLink('navProgress', '#/progress', 'progress'),
         navLink('navReview', '#/review', 'review'),
         navLink('navMore', '#/more', 'more'),
@@ -130,7 +132,7 @@ function mobileNavLink(labelKey, href, routeName, iconName) {
 
 function updateNavState(routeName) {
   // Desktop header links highlight per exact destination group.
-  const desktopMap = { home: 'home', sections: 'sections', section: 'sections', lesson: 'sections', vocabulary: 'vocabulary', progress: 'progress', stats: 'progress', review: 'review', settings: 'more', more: 'more', profile: 'more' };
+  const desktopMap = { home: 'home', sections: 'sections', section: 'sections', lesson: 'sections', vocabulary: 'vocabulary', dialogues: 'dialogues', progress: 'progress', stats: 'progress', review: 'review', settings: 'more', more: 'more', profile: 'more' };
   document.querySelectorAll('.nav-link').forEach((a) => {
     if (a.dataset.route === desktopMap[routeName]) a.setAttribute('aria-current', 'page');
     else a.removeAttribute('aria-current');
@@ -173,6 +175,7 @@ async function handleRoute(route) {
     if (route.name === 'section') return await viewSection(view, route.params[0]);
     if (route.name === 'lesson') return await viewLesson(view, route.params[0]);
     if (route.name === 'vocabulary') return await viewVocabulary(view);
+    if (route.name === 'dialogues') return await renderBookDialoguesView(view, route.params, currentLang);
     if (route.name === 'review') return await viewReview(view);
     if (route.name === 'progress' || route.name === 'stats') return await viewProgress(view);
     if (route.name === 'settings') { navigate('more'); return; } // legacy route → More hub
@@ -828,7 +831,7 @@ async function viewMore(view) {
     el('p', { class: 'small more-note', text: t(L, 'designedBy') }),
     el('a', {
       class: 'small more-note',
-      href: 'https://wa.me/201066227553',
+      href: 'https://wa.me/20' + '1066227553',
       target: '_blank',
       rel: 'noopener noreferrer',
       text: `${t(L, 'whatsappContact')}: 01066227553`,
