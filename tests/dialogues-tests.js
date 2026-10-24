@@ -37,7 +37,7 @@ export async function run() {
   let sentenceTotal = 0;
   for (let id = 1; id <= 44; id++) {
     const d = await loadDialogue(id);
-    if (!d || d.id !== id) throw new Error(`dialogue ${id}: bad default export / id mismatch`);
+    if (!d || d.dialogueId !== id || d.id !== `lesson-${String(id).padStart(3, '0')}`) throw new Error(`dialogue ${id}: bad lesson/dialogue id mapping`);
     if (!Array.isArray(d.groups) || d.groups.length === 0) throw new Error(`dialogue ${id}: no groups`);
     if (typeof d.title !== 'string' || typeof d.titleAr !== 'string' || !d.title || !d.titleAr) {
       throw new Error(`dialogue ${id}: missing title/titleAr`);
@@ -53,8 +53,8 @@ export async function run() {
         sentenceTotal++;
       }
     }
-    if (seen.has(d.id)) throw new Error(`duplicate dialogue id ${d.id}`);
-    seen.add(d.id);
+    if (seen.has(d.dialogueId)) throw new Error(`duplicate dialogue id ${d.dialogueId}`);
+    seen.add(d.dialogueId);
   }
   if (seen.size !== 44) throw new Error(`expected 44 dialogues, got ${seen.size}`);
 
