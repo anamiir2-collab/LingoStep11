@@ -1,12 +1,11 @@
 export default{
   id: "lesson-003",
   dialogueId: 3,
-  level: 1,
 
   title: "Colours",
   titleAr: "الألوان",
-  section: foundations,
-  level: A1,
+  section: "foundations",
+  level: "A1",
   estimatedMinutes: 5,
   objectives: [
     "Understand and use key expressions about colours.",
