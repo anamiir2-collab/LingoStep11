@@ -33,7 +33,7 @@ jobs:
           echo "- Archive: LingoStep11-cleaned.zip (kept in repository; not deleted)" >> "$GITHUB_STEP_SUMMARY"
           echo "- Size and SHA-256 are recorded in the workflow log." >> "$GITHUB_STEP_SUMMARY"
           echo "### Archive paths" >> "$GITHUB_STEP_SUMMARY"
-          echo '```text' >> "$GITHUB_STEP_SUMMARY"
+          echo ' ```text' >> "$GITHUB_STEP_SUMMARY"
           cat /tmp/zip-tree.txt >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
 
@@ -52,13 +52,21 @@ jobs:
           mkdir -p /tmp/merge-conflicts
           while IFS= read -r -d '' file; do
             rel="${file#"$SRC"/}"
+            # Never import GitHub configuration/workflows from an archive.
+            case "$rel" in
+              .github|.github/*) continue ;;
+            esac
             if [ -e "$GITHUB_WORKSPACE/$rel" ]; then
               printf '%s\n' "$rel" >> /tmp/merge-conflicts/list.txt
             fi
           done < <(find "$SRC" -type f -print0)
-          rsync -a --ignore-existing "$SRC"/ "$GITHUB_WORKSPACE"/
+
+          # Ignore existing paths and exclude .github to prevent workflow permission failures.
+          rsync -a --ignore-existing --exclude='.github/' "$SRC"/ "$GITHUB_WORKSPACE"/
+
           echo "## Merge report" >> "$GITHUB_STEP_SUMMARY"
           echo "Only files that did not already exist were copied. Existing files were preserved without modification." >> "$GITHUB_STEP_SUMMARY"
+          echo "GitHub configuration and workflow files from the ZIP were deliberately excluded." >> "$GITHUB_STEP_SUMMARY"
           if [ -s /tmp/merge-conflicts/list.txt ]; then
             echo "### Existing paths preserved (not overwritten)" >> "$GITHUB_STEP_SUMMARY"
             echo '```text' >> "$GITHUB_STEP_SUMMARY"
