@@ -1,0 +1,16 @@
+{
+  "name": "lingostep",
+  "version": "6.1.0",
+  "description": "LingoStep — listen, type, and master English step by step. Zero-dependency static PWA (plain HTML/CSS/JS ES modules) deployed on GitHub Pages.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node tests/run-all.js",
+    "validate": "node scripts/validate-project.js",
+    "validate:lessons": "node scripts/validate-lessons.js",
+    "detect:duplicates": "node scripts/detect-duplicates.js",
+    "audio:check": "node scripts/apply-audio-upgrade.js --check"
+  }
+}
