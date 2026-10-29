@@ -1,0 +1,83 @@
+name: Inspect and Merge LingoStep11 Cleaned ZIP
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect-and-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Inspect ZIP structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP_URL="https://raw.githubusercontent.com/anamiir2-collab/LingoStep11/main/LingoStep11-cleaned.zip"
+          curl -fL --retry 3 "$ZIP_URL" -o /tmp/LingoStep11-cleaned.zip
+          echo "ZIP size:"
+          du -h /tmp/LingoStep11-cleaned.zip
+          echo "ZIP checksum:"
+          sha256sum /tmp/LingoStep11-cleaned.zip
+          echo "Complete archive directory structure:"
+          unzip -Z1 /tmp/LingoStep11-cleaned.zip | tee /tmp/zip-tree.txt
+          mkdir -p /tmp/lingostep-cleaned-extract
+          unzip -q /tmp/LingoStep11-cleaned.zip -d /tmp/lingostep-cleaned-extract
+          echo "## ZIP archive inspection" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Archive: LingoStep11-cleaned.zip (kept in repository; not deleted)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Size and SHA-256 are recorded in the workflow log." >> "$GITHUB_STEP_SUMMARY"
+          echo "### Archive paths" >> "$GITHUB_STEP_SUMMARY"
+          echo '```text' >> "$GITHUB_STEP_SUMMARY"
+          cat /tmp/zip-tree.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Safely merge missing files only
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC="/tmp/lingostep-cleaned-extract"
+          mapfile -t top_entries < <(find "$SRC" -mindepth 1 -maxdepth 1 -printf '%f\n' | sort)
+          if [ "${#top_entries[@]}" -eq 1 ] && [ -d "$SRC/${top_entries[0]}" ]; then
+            INNER="$SRC/${top_entries[0]}"
+            if [ -f "$INNER/index.html" ] || [ -d "$INNER/css" ] || [ -d "$INNER/js" ]; then
+              SRC="$INNER"
+            fi
+          fi
+          mkdir -p /tmp/merge-conflicts
+          while IFS= read -r -d '' file; do
+            rel="${file#"$SRC"/}"
+            if [ -e "$GITHUB_WORKSPACE/$rel" ]; then
+              printf '%s\n' "$rel" >> /tmp/merge-conflicts/list.txt
+            fi
+          done < <(find "$SRC" -type f -print0)
+          rsync -a --ignore-existing "$SRC"/ "$GITHUB_WORKSPACE"/
+          echo "## Merge report" >> "$GITHUB_STEP_SUMMARY"
+          echo "Only files that did not already exist were copied. Existing files were preserved without modification." >> "$GITHUB_STEP_SUMMARY"
+          if [ -s /tmp/merge-conflicts/list.txt ]; then
+            echo "### Existing paths preserved (not overwritten)" >> "$GITHUB_STEP_SUMMARY"
+            echo '```text' >> "$GITHUB_STEP_SUMMARY"
+            sort -u /tmp/merge-conflicts/list.txt >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No path conflicts were found." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Commit merged files if any
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No new files to commit; repository already contains all non-conflicting paths."
+            exit 0
+          fi
+          git commit -m "Safely merge missing files from LingoStep11-cleaned.zip"
+          git push
