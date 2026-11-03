@@ -1,11 +1,10 @@
 /* ============================================================
    LingoStep — ios-duo.css
    v2.2 design layer: iPhone-style (iOS) look + Duolingo-style
-   practice feedback. Loaded LAST in index.html, so it overrides
-   tokens/components from style.css + themes.css without touching
-   them (minimal-risk layering, easy to revert).
+   practice feedback. Component layer only — the global color
+   tokens come from style.css + themes.css (see css/redesign.css).
 
-   1. iOS design tokens (light / dark / system)
+   1. iOS font stack (colors come from the global tokens)
    2. iOS components (buttons, cards, switches, inputs, nav…)
    3. Duolingo-style feedback sheet, confetti, combo badge,
       word-by-word dots, celebration animations
@@ -20,190 +19,17 @@
    - brand-badge shadow uses --shadow-sm token.
    ============================================================ */
 
-/* ---------------- 1. iOS design tokens ---------------- */
+/* ---------------- 1. design tokens ----------------
+   The global palette now lives in style.css + themes.css and the
+   UI-refresh layer css/redesign.css (loaded last). This file no
+   longer redefines color tokens, so the practice screens inherit
+   the same sky-blue palette as the rest of the app. Only the iOS
+   font stack is kept locally. */
 
 :root {
   --font-ios: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
     "SF Arabic", ui-rounded, "SF Pro Rounded", system-ui, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
-
-  --radius: 18px;
-  --radius-lg: 24px;
-  --radius-sm: 12px;
-
-  /* light — pastel learning palette (lavender / mint / teal / soft yellow) */
-  --bg: #F8F7FB;
-  --surface: #FFFFFF;
-  --surface-2: #F1EEF6;
-  --surface-blur: rgba(250, 249, 253, .85);
-  --border: rgba(90, 80, 110, .14);
-  --border-strong: rgba(90, 80, 110, .28);
-  --text: #24232B;
-  --muted: #6E6A78;
-
-  --primary: #2F8277;
-  --primary-strong: #256B62;
-  --primary-deep: #123B36;
-  --primary-soft: rgba(118, 185, 176, .20);
-  --primary-tint: #E4F1EE;
-  --focus-ring: #4FA79C;
-
-  --mint: #D6EAE5;
-  --blue-soft: #DCC9EE;
-  --blue-tint: #F0EAF8;
-  --pink-soft: #FFD1DC;
-  --pink-tint: #FFEBF0;
-  --yellow-soft: #FFE5A0;
-  --yellow-tint: #FFF4D6;
-
-  /* green = correct · orange = hint · red = wrong (iOS system colors) */
-  --success: #34C759;
-  --success-strong: #1F8A43;
-  --success-tint: #E8F9EE;
-  --success-border: #B8ECC6;
-
-  --warn: #FF9500;
-  --warn-strong: #A85E00;
-  --warn-tint: #FFF3E0;
-  --warn-border: #FFD9A3;
-
-  --danger: #FF3B30;
-  --danger-strong: #D70015;
-  --danger-tint: #FFE9E7;
-  --danger-border: #FFC7C2;
-
-  --lw-success: #1F8A43;
-  --lw-danger: #D70015;
-
-  --hero-deco-1: rgba(255, 255, 255, .55);
-  --hero-deco-2: rgba(255, 255, 255, .35);
-
-  --accent-teal: #4FA79C;
-  --accent-pink: #FF375F;
-  --accent-gold: #B25000;
-
-  --level-tint: #EFE8F7;
-  --toast-bg: rgba(36, 35, 43, .88);
-  --shadow-sm: 0 1px 2px rgba(84, 74, 108, .06);
-  --shadow-card: 0 2px 10px rgba(84, 74, 108, .06), 0 10px 30px rgba(84, 74, 108, .05);
-  --shadow: 0 14px 38px rgba(84, 74, 108, .16);
-  --header-grad: linear-gradient(180deg, #FFFFFF, #F9F8FC);
-  --hero-grad: linear-gradient(165deg, #EFE8F7 0%, #F8F7FB 45%, #E3F1EE 100%);
-  --nav-bg: rgba(250, 249, 253, .85);
-}
-
-[data-theme="dark"] {
-  --bg: #000000;
-  --surface: #1C1C1E;
-  --surface-2: #2C2C2E;
-  --surface-blur: rgba(18, 18, 20, .78);
-  --border: rgba(84, 84, 88, .38);
-  --border-strong: rgba(84, 84, 88, .62);
-  --text: #F2F2F7;
-  --muted: #98989D;
-
-  --primary: #0A84FF;
-  --primary-strong: #409CFF;
-  --primary-deep: #04122B;
-  --primary-soft: rgba(10, 132, 255, .24);
-  --primary-tint: rgba(10, 132, 255, .15);
-  --focus-ring: #409CFF;
-
-  --mint: rgba(10, 132, 255, .15);
-  --blue-soft: #1F4A73;
-  --blue-tint: rgba(10, 132, 255, .14);
-  --pink-soft: #4A2C36;
-  --pink-tint: #3A222A;
-  --yellow-soft: #4A432A;
-  --yellow-tint: #38331E;
-
-  --success: #30D158;
-  --success-strong: #63E37D;
-  --success-tint: rgba(48, 209, 88, .14);
-  --success-border: rgba(48, 209, 88, .38);
-
-  --warn: #FF9F0A;
-  --warn-strong: #FFB84D;
-  --warn-tint: rgba(255, 159, 10, .14);
-  --warn-border: rgba(255, 159, 10, .38);
-
-  --danger: #FF453A;
-  --danger-strong: #FF7A72;
-  --danger-tint: rgba(255, 69, 58, .14);
-  --danger-border: rgba(255, 69, 58, .38);
-
-  --lw-success: #63E37D;
-  --lw-danger: #FF7A72;
-
-  --hero-deco-1: rgba(255, 255, 255, .06);
-  --hero-deco-2: rgba(255, 255, 255, .04);
-
-  --level-tint: rgba(10, 132, 255, .14);
-  --toast-bg: rgba(44, 44, 46, .95);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
-  --shadow-card: 0 2px 10px rgba(0, 0, 0, .35), 0 10px 30px rgba(0, 0, 0, .3);
-  --shadow: 0 14px 38px rgba(0, 0, 0, .55);
-  --header-grad: linear-gradient(180deg, #1C1C1E, #141416);
-  --hero-grad: linear-gradient(165deg, #17233C 0%, #101828 55%, #0C1220 100%);
-  --nav-bg: rgba(18, 18, 20, .78);
-}
-
-@media (prefers-color-scheme: dark) {
-  [data-theme="system"] {
-    --bg: #000000;
-    --surface: #1C1C1E;
-    --surface-2: #2C2C2E;
-    --surface-blur: rgba(18, 18, 20, .78);
-    --border: rgba(84, 84, 88, .38);
-    --border-strong: rgba(84, 84, 88, .62);
-    --text: #F2F2F7;
-    --muted: #98989D;
-
-    --primary: #0A84FF;
-    --primary-strong: #409CFF;
-    --primary-deep: #04122B;
-    --primary-soft: rgba(10, 132, 255, .24);
-    --primary-tint: rgba(10, 132, 255, .15);
-    --focus-ring: #409CFF;
-
-    --mint: rgba(10, 132, 255, .15);
-    --blue-soft: #1F4A73;
-    --blue-tint: rgba(10, 132, 255, .14);
-    --pink-soft: #4A2C36;
-    --pink-tint: #3A222A;
-    --yellow-soft: #4A432A;
-    --yellow-tint: #38331E;
-
-    --success: #30D158;
-    --success-strong: #63E37D;
-    --success-tint: rgba(48, 209, 88, .14);
-    --success-border: rgba(48, 209, 88, .38);
-
-    --warn: #FF9F0A;
-    --warn-strong: #FFB84D;
-    --warn-tint: rgba(255, 159, 10, .14);
-    --warn-border: rgba(255, 159, 10, .38);
-
-    --danger: #FF453A;
-    --danger-strong: #FF7A72;
-    --danger-tint: rgba(255, 69, 58, .14);
-    --danger-border: rgba(255, 69, 58, .38);
-
-    --lw-success: #63E37D;
-    --lw-danger: #FF7A72;
-
-    --hero-deco-1: rgba(255, 255, 255, .06);
-    --hero-deco-2: rgba(255, 255, 255, .04);
-
-    --level-tint: rgba(10, 132, 255, .14);
-    --toast-bg: rgba(44, 44, 46, .95);
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
-    --shadow-card: 0 2px 10px rgba(0, 0, 0, .35), 0 10px 30px rgba(0, 0, 0, .3);
-    --shadow: 0 14px 38px rgba(0, 0, 0, .55);
-    --header-grad: linear-gradient(180deg, #1C1C1E, #141416);
-    --hero-grad: linear-gradient(165deg, #17233C 0%, #101828 55%, #0C1220 100%);
-    --nav-bg: rgba(18, 18, 20, .78);
-  }
 }
 
 /* ---------------- base / typography ---------------- */
