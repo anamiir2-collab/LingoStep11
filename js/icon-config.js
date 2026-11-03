@@ -53,6 +53,8 @@ export const ICONS = {
   grid: { type: 'svg', src: './assets/icons/icons.svg#grid' },
   more: { type: 'svg', src: './assets/icons/icons.svg#more' },
   info: { type: 'svg', src: './assets/icons/icons.svg#info' },
+  search: { type: 'svg', src: './assets/icons/icons.svg#search' },
+  sliders: { type: 'svg', src: './assets/icons/icons.svg#sliders' },
   /* pre-rendered colored assets shipped in assets/icons (More-screen shortcuts) */
   languagePng: { type: 'png', src: './assets/icons/language.png' },
   settingsPng: { type: 'png', src: './assets/icons/settings.png' },

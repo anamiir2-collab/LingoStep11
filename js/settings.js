@@ -79,7 +79,7 @@ export function applyDocumentSettings(settings = getSettings()) {
   html.style.fontSize = `${16 * Math.min(1.2, Math.max(0.9, Number(settings.fontScale) || 1))}px`;
 
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', settings.theme === 'dark' ? '#000000' : '#F2F2F7');
+  if (meta) meta.setAttribute('content', settings.theme === 'dark' ? '#0e1620' : '#F7FAFC');
 }
 
 export function getLang() {

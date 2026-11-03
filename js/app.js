@@ -4,7 +4,7 @@
    statistics, settings. Wires router, settings, i18n, SW updates.
    ============================================================ */
 
-import { el, $, pct, formatDuration, toast } from './utils.js';
+import { el, $, pct, formatDuration, toast, normKey } from './utils.js';
 import { icon, iconLabel } from './icons.js';
 import { t } from './i18n.js';
 import { getSettings, saveSettings, applyDocumentSettings } from './settings.js';
@@ -38,7 +38,22 @@ const SECTIONS_META = [
 let appRoot = null;
 let currentLang = 'en';
 
-const APP_VERSION = '6.0.0';
+const APP_VERSION = '7.0.0';
+
+/* ---- UI refresh (v7): shared helpers for the redesigned home/courses ---- */
+const ACCENTS = ['blue', 'orange', 'purple', 'teal', 'green'];
+const accentFor = (i) => ACCENTS[((i % ACCENTS.length) + ACCENTS.length) % ACCENTS.length];
+
+function filterEmptyState(L) {
+  return el('div', { class: 'state-box', style: { padding: '1.5rem', textAlign: 'center' } }, [
+    el('div', { class: 'big' }, [icon('leaf')]),
+    el('p', { class: 'muted', style: { margin: '.4rem 0 0' }, text: t(L, 'uiEmptyFilter') }),
+  ]);
+}
+
+function sectionDone(list, states) {
+  return list.filter((l) => states[l.id]?.completed).length;
+}
 
 /* ============================================================
    Boot
@@ -223,11 +238,148 @@ async function viewDashboard(view) {
   const goalPct = pct(today.count, settings.dailyGoal);
   const goalLeft = Math.max(0, settings.dailyGoal - today.count);
 
-  // ---- hero: today's plan (personalized, never shows a raw placeholder) ----
+  // ---- welcome header: greeting + name + avatar (reference home screen) ----
   const name = (settings.userName || '').trim();
   const [greetKey] = greetingPair();
-  const greeting = name ? t(L, 'welcomeGreeting', { name }) : t(L, 'welcomeGreetingNoName');
 
+  const homeHead = el('div', { class: 'home-head' }, [
+    el('div', { class: 'home-titles' }, [
+      el('span', { class: 'home-greet', text: t(L, greetKey) }),
+      el('h1', { class: 'home-name' }, [
+        el('span', { text: name || t(L, 'uiGuestName') }),
+        el('span', { class: 'wave', text: '\u{1F44B}', 'aria-hidden': 'true' }),
+      ]),
+    ]),
+    el('a', {
+      class: 'home-avatar', href: '#/profile', 'aria-label': t(L, 'profileTitle'),
+    }, name ? [el('span', { text: name.charAt(0).toUpperCase() })] : [icon('user')]),
+  ]);
+
+  // ---- search bar + filter button (live results over sections & lessons) ----
+  const searchInput = el('input', {
+    type: 'search', placeholder: t(L, 'uiSearchPlaceholder'),
+    'aria-label': t(L, 'uiSearchHint'), autocomplete: 'off', spellcheck: 'false',
+  });
+  const searchPop = el('div', { class: 'search-pop' });
+  const searchBox = el('div', { class: 'home-search' }, [icon('search'), searchInput]);
+  const catRow = el('div', { class: 'cat-row' });
+  const filterBtn = el('button', {
+    class: 'filter-btn', type: 'button', 'aria-label': t(L, 'uiSearchHint'),
+    'aria-expanded': 'true', 'aria-controls': 'home-cat-row',
+    onclick: () => {
+      const show = catRow.hidden; // hidden -> show
+      catRow.hidden = !show;
+      filterBtn.setAttribute('aria-expanded', show ? 'true' : 'false');
+    },
+  }, [icon('sliders')]);
+  const searchRow = el('div', { class: 'home-search-row' }, [searchBox, filterBtn, searchPop]);
+
+  const renderSearchPop = () => {
+    const q = normKey(searchInput.value);
+    if (q.length < 2) { searchPop.replaceChildren(); return; }
+    const manifest = getManifest();
+    const hits = [];
+    for (const meta of SECTIONS_META) {
+      const hay = normKey(`${meta.en} ${meta.ar} ${meta.descEn} ${meta.descAr}`);
+      if (hay.includes(q)) {
+        hits.push(el('a', { class: 'search-hit', href: `#/section/${meta.id}` }, [
+          el('span', { class: 'hit-icon' }, [icon(meta.icon)]),
+          el('span', { class: 'hit-titles' }, [
+            el('span', { class: 'hit-t', text: L === 'ar' ? meta.ar : meta.en }),
+            el('span', { class: 'hit-s', text: L === 'ar' ? meta.descAr : meta.descEn }),
+          ]),
+          el('span', { class: 'chip hit-chip', text: t(L, 'uiSearchHitSection') }),
+        ]));
+      }
+    }
+    for (const les of manifest) {
+      if (hits.length >= 14) break;
+      const hay = normKey(`${les.title} ${les.titleAr} ${les.id}`);
+      if (!hay.includes(q)) continue;
+      hits.push(el('a', { class: 'search-hit', href: `#/lesson/${les.id}` }, [
+        el('span', { class: 'hit-icon' }, [icon('play')]),
+        el('span', { class: 'hit-titles' }, [
+          el('span', { class: 'hit-t', text: les.title }),
+          el('span', { class: 'hit-s', text: `${les.titleAr} · ${les.level}` }),
+        ]),
+        el('span', { class: 'chip hit-chip', text: t(L, 'lesson') }),
+      ]));
+    }
+    searchPop.replaceChildren(...(hits.length
+      ? hits.slice(0, 14)
+      : [el('p', { class: 'search-empty', text: t(L, 'uiSearchNoResults') })]));
+  };
+  searchInput.addEventListener('input', renderSearchPop);
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { searchInput.value = ''; renderSearchPop(); searchInput.blur(); }
+  });
+
+  // ---- category pills (real progress states) + colorful course cards ----
+  let homeFilter = 'all';
+  const catDefs = [
+    { key: 'all', label: 'uiFilterAll', accent: 'blue', icon: 'grid' },
+    { key: 'ongoing', label: 'uiFilterOngoing', accent: 'orange', icon: 'clock' },
+    { key: 'new', label: 'uiFilterNew', accent: 'purple', icon: 'sparkle' },
+    { key: 'completed', label: 'uiFilterCompleted', accent: 'green', icon: 'check' },
+  ];
+  catRow.id = 'home-cat-row';
+
+  const manifest = getManifest();
+  const buildPathCards = () => SECTIONS_META
+    .map((meta, i) => ({ meta, i, list: manifest.filter((l) => l.section === meta.id) }))
+    .filter(({ list }) => {
+      const done = sectionDone(list, states);
+      if (homeFilter === 'ongoing') return done > 0 && done < list.length;
+      if (homeFilter === 'new') return done === 0;
+      if (homeFilter === 'completed') return list.length > 0 && done === list.length;
+      return true;
+    })
+    .map(({ meta, i, list }) => {
+      const done = sectionDone(list, states);
+      const donePctv = pct(done, list.length);
+      const sentences = list.reduce((s, l) => s + (l.exercises || 0), 0);
+      return el('a', {
+        class: 'path-card', href: `#/section/${meta.id}`, 'data-accent': accentFor(i),
+      }, [
+        el('span', { class: 'section-icon' }, [icon(meta.icon)]),
+        el('h3', { text: L === 'ar' ? meta.ar : meta.en }),
+        el('p', { class: 'path-desc', text: L === 'ar' ? meta.descAr : meta.descEn }),
+        el('div', { class: 'path-meta' }, [
+          el('span', { class: 'path-chip' }, [icon('books'), el('span', { text: t(L, 'sectionLessons', { n: formatNumber(list.length) }) })]),
+          el('span', { class: 'path-chip' }, [icon('pen'), el('span', { text: `${formatNumber(sentences)} ${t(L, 'sentences')}` })]),
+        ]),
+        el('div', { class: 'progress' }, [el('span', { style: { width: `${donePctv}%` } })]),
+        el('div', { class: 'path-foot' }, [
+          el('span', { class: 'path-count', text: `${formatNumber(done)}/${formatNumber(list.length)} ${t(L, 'markDone')}` }),
+          el('span', { class: 'path-pct', text: `${donePctv}%` }),
+        ]),
+      ]);
+    });
+
+  const pathsGrid = el('div', { class: 'home-paths' });
+  const renderPathsGrid = () => {
+    const cards = buildPathCards();
+    pathsGrid.replaceChildren(...(cards.length ? cards : [filterEmptyState(L)]));
+  };
+  renderPathsGrid();
+
+  for (const def of catDefs) {
+    const pill = el('button', {
+      class: 'cat-pill', type: 'button', 'data-accent': def.accent,
+      'aria-pressed': homeFilter === def.key ? 'true' : 'false',
+    }, [
+      el('span', { class: 'cat-dot' }, [icon(def.icon)]),
+      el('span', { text: t(L, def.label) }),
+    ]);
+    pill.addEventListener('click', () => {
+      homeFilter = def.key;
+      [...catRow.children].forEach((c) => c.setAttribute('aria-pressed', c === pill ? 'true' : 'false'));
+      renderPathsGrid();
+    });
+    catRow.append(pill);
+  }
+
+  // ---- hero: today's plan (personalized, never shows a raw placeholder) ----
   const heroStats = el('div', { class: 'hero-stats' }, [
     el('div', { class: 'hero-stat' }, [icon('pen'), el('span', { text: `${formatNumber(today.count)} / ${formatNumber(settings.dailyGoal)} ${t(L, 'goalDoneToday')}` })]),
     el('div', { class: 'hero-stat' }, [icon('clock'), el('span', { text: `${formatDuration(today.timeMs)} ${t(L, 'todayTime')}` })]),
@@ -235,9 +387,8 @@ async function viewDashboard(view) {
   ]);
 
   const hero = el('section', { class: 'hero', 'aria-label': t(L, 'todaysPlan') }, [
-    el('span', { class: 'hero-kicker' }, [icon('sparkle'), t(L, greetKey)]),
-    el('h1', { text: greeting }),
-    el('p', { class: 'hero-sub', text: t(L, 'todaysPlanSub') }),
+    el('span', { class: 'hero-kicker' }, [icon('sparkle'), t(L, 'todaysPlan')]),
+    el('h1', { text: t(L, 'todaysPlanSub') }),
     el('div', { class: 'hero-grid' }, [
       el('div', {
         class: 'goal-ring',
@@ -297,18 +448,6 @@ async function viewDashboard(view) {
   ]);
 
   // ---- learning paths: quick access to every section with real progress ----
-  const manifest = getManifest();
-  const pathCards = SECTIONS_META.map((meta) => {
-    const list = manifest.filter((l) => l.section === meta.id);
-    const done = list.filter((l) => states[l.id]?.completed).length;
-    const donePct = pct(done, list.length);
-    return el('a', { class: 'path-card', href: `#/section/${meta.id}` }, [
-      el('span', { class: 'section-icon' }, [icon(meta.icon)]),
-      el('h3', { text: L === 'ar' ? meta.ar : meta.en }),
-      el('div', { class: 'progress' }, [el('span', { style: { width: `${donePct}%` } })]),
-      el('span', { class: 'small muted', text: `${done}/${list.length} ${t(L, 'markDone')}` }),
-    ]);
-  });
   const pathsSection = el('section', { class: 'home-paths-section', 'aria-label': t(L, 'learningPaths') }, [
     el('div', { class: 'section-head row-between' }, [
       el('div', {}, [
@@ -317,10 +456,10 @@ async function viewDashboard(view) {
       ]),
       el('a', { class: 'btn btn-sm', href: '#/sections' }, [iconLabel('grid', t(L, 'viewAll'))]),
     ]),
-    el('div', { class: 'home-paths' }, pathCards),
+    pathsGrid,
   ]);
 
-  view.replaceChildren(hero, statGrid, pathsSection, ...(firstVisitCard ? [firstVisitCard] : []), goalCard, reviewCard);
+  view.replaceChildren(homeHead, searchRow, catRow, pathsSection, hero, statGrid, ...(firstVisitCard ? [firstVisitCard] : []), goalCard, reviewCard);
 }
 
 function statCard(value, label, iconName) {
@@ -343,37 +482,125 @@ async function viewSections(view) {
   loading(view);
   docTitle('navSections');
   const L = currentLang;
-  const manifest = getManifest();
-  const states = await getAllLessonStates();
-
-  const head = el('div', { class: 'page-head' }, [
-    el('h2', { text: t(L, 'sectionsTitle') }),
-    el('p', { text: t(L, 'sectionsIntro') }),
+  const [manifest, states, overview] = await Promise.all([
+    Promise.resolve(getManifest()), getAllLessonStates(), getOverview(),
   ]);
 
-  const grid = el('div', { class: 'section-grid' });
-  for (const meta of SECTIONS_META) {
-    const list = manifest.filter((l) => l.section === meta.id);
-    const sentences = list.reduce((s, l) => s + (l.exercises || 0), 0);
-    const done = list.filter((l) => states[l.id]?.completed).length;
-    const donePct = pct(done, list.length);
-    grid.append(el('a', { class: 'section-card', href: `#/section/${meta.id}` }, [
-      el('div', { class: 'row' }, [
-        el('span', { class: 'section-icon' }, [icon(meta.icon)]),
-        el('div', { class: 'grow' }, [
-          el('h3', { text: L === 'ar' ? meta.ar : meta.en }),
-          el('div', { class: 'sub', text: `${t(L, 'sectionLessons', { n: formatNumber(list.length) })} · ${formatNumber(sentences)} ${t(L, 'sentences')}` }),
-        ]),
-      ]),
-      el('div', { class: 'progress' }, [el('span', { style: { width: `${donePct}%` } })]),
-      el('div', { class: 'row-between small muted' }, [
-        el('span', { text: `${done}/${list.length} ${t(L, 'markDone')}` }),
-        el('span', { text: `${donePct}%` }),
-      ]),
-    ]));
-  }
+  // ---- toolbar: back navigation + page title + search toggle ----
+  const searchArea = el('div', { class: 'page-search', hidden: true });
+  const searchToggle = el('button', {
+    class: 'btn btn-round', type: 'button', 'aria-label': t(L, 'uiSearchHint'),
+    'aria-expanded': 'false',
+    onclick: () => {
+      const show = searchArea.hidden; // hidden -> show
+      searchArea.hidden = !show;
+      searchToggle.setAttribute('aria-expanded', show ? 'true' : 'false');
+      if (show) pageInput.focus();
+    },
+  }, [icon('search')]);
 
-  view.replaceChildren(head, grid);
+  const toolbar = el('div', { class: 'page-toolbar' }, [
+    el('a', { class: 'btn btn-round', href: '#/', 'aria-label': t(L, 'uiBack') }, [icon('arrowLeft')]),
+    el('div', { class: 'pt-titles' }, [
+      el('h2', { text: t(L, 'uiCoursesTitle') }),
+      el('p', { class: 'pt-sub', text: t(L, 'uiCoursesSub') }),
+    ]),
+    searchToggle,
+  ]);
+
+  const pageInput = el('input', {
+    type: 'search', placeholder: t(L, 'uiSearchPlaceholder'),
+    'aria-label': t(L, 'uiSearchHint'), autocomplete: 'off', spellcheck: 'false',
+  });
+  searchArea.append(el('div', { class: 'home-search' }, [icon('search'), pageInput]));
+
+  // ---- filters: All / Ongoing / Completed (real section states) ----
+  let secFilter = 'all';
+  const filterRow = el('div', { class: 'course-filters', role: 'group', 'aria-label': t(L, 'uiFilterAll') });
+  const secDefs = [
+    { key: 'all', label: 'uiFilterAll', accent: 'blue', icon: 'grid' },
+    { key: 'ongoing', label: 'uiFilterOngoing', accent: 'orange', icon: 'clock' },
+    { key: 'completed', label: 'uiFilterCompleted', accent: 'purple', icon: 'check' },
+  ];
+
+  const grid = el('div', { class: 'section-grid' });
+  const buildSectionCards = () => SECTIONS_META
+    .map((meta, i) => ({ meta, i, list: manifest.filter((l) => l.section === meta.id) }))
+    .filter(({ list }) => {
+      const done = sectionDone(list, states);
+      if (secFilter === 'ongoing') return done > 0 && done < list.length;
+      if (secFilter === 'completed') return list.length > 0 && done === list.length;
+      return true;
+    })
+    .filter(({ meta, list }) => {
+      const q = normKey(pageInput.value || '');
+      if (q.length < 2) return true;
+      const hay = normKey(`${meta.en} ${meta.ar} ${meta.descEn} ${meta.descAr}`);
+      const inLessons = list.some((l) => normKey(`${l.title} ${l.titleAr}`).includes(q));
+      return hay.includes(q) || inLessons;
+    })
+    .map(({ meta, i, list }) => {
+      const sentences = list.reduce((s, l) => s + (l.exercises || 0), 0);
+      const done = sectionDone(list, states);
+      const donePctv = pct(done, list.length);
+      return el('a', {
+        class: 'section-card', href: `#/section/${meta.id}`, 'data-accent': accentFor(i),
+      }, [
+        el('span', { class: 'sc-badge', text: `${donePctv}%` }),
+        el('div', { class: 'row' }, [
+          el('span', { class: 'section-icon' }, [icon(meta.icon)]),
+          el('div', { class: 'grow' }, [
+            el('h3', { text: L === 'ar' ? meta.ar : meta.en }),
+            el('div', { class: 'sub', text: `${t(L, 'sectionLessons', { n: formatNumber(list.length) })} · ${formatNumber(sentences)} ${t(L, 'sentences')}` }),
+          ]),
+        ]),
+        el('div', { class: 'progress' }, [el('span', { style: { width: `${donePctv}%` } })]),
+        el('div', { class: 'row-between small' }, [
+          el('span', { text: `${formatNumber(done)}/${formatNumber(list.length)} ${t(L, 'markDone')}` }),
+          el('span', { text: `${donePctv}%` }),
+        ]),
+      ]);
+    });
+
+  const renderGrid = () => {
+    const cards = buildSectionCards();
+    grid.replaceChildren(...(cards.length ? cards : [filterEmptyState(L)]));
+  };
+
+  for (const def of secDefs) {
+    const chip = el('button', {
+      class: 'filter-chip', type: 'button', 'data-accent': def.accent,
+      'aria-pressed': secFilter === def.key ? 'true' : 'false',
+    }, [
+      el('span', { class: 'fc-dot' }, [icon(def.icon)]),
+      el('span', { text: t(L, def.label) }),
+    ]);
+    chip.addEventListener('click', () => {
+      secFilter = def.key;
+      [...filterRow.children].forEach((c) => c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'));
+      renderGrid();
+    });
+    filterRow.append(chip);
+  }
+  pageInput.addEventListener('input', renderGrid);
+
+  // ---- promotional banner → jumps to the lesson you left / next open course ----
+  const firstOpenSection = SECTIONS_META
+    .map((meta) => ({ meta, list: manifest.filter((l) => l.section === meta.id) }))
+    .find(({ list }) => list.some((l) => !states[l.id]?.completed));
+  const bannerHref = overview.lastLessonId
+    ? `#/lesson/${overview.lastLessonId}`
+    : (firstOpenSection ? `#/section/${firstOpenSection.meta.id}` : '#/');
+
+  const banner = el('section', { class: 'promo-banner', 'aria-label': t(L, 'uiBannerTitle') }, [
+    el('h3', { text: t(L, 'uiBannerTitle') }),
+    el('p', { text: t(L, 'uiBannerSub') }),
+    el('a', { class: 'promo-cta', href: bannerHref, text: t(L, 'uiBannerCta') }),
+    el('span', { class: 'promo-art', 'aria-hidden': 'true' }, [icon('compass')]),
+  ]);
+
+  renderGrid();
+  view.replaceChildren(toolbar, searchArea, filterRow, banner, grid);
 }
 
 /* ============================================================
