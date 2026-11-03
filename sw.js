@@ -11,7 +11,7 @@
    Version bump replaces old caches on activate.
    ============================================================ */
 
-const VERSION = 'v6.1.0-audio';
+const VERSION = 'v7.0.0-ui';
 const SHELL_CACHE = `lingostep-shell-${VERSION}`;
 const LESSON_CACHE = `lingostep-lessons-${VERSION}`;
 const KNOWN_CACHES = [SHELL_CACHE, LESSON_CACHE];
@@ -20,11 +20,12 @@ const SHELL_ASSETS = [
   './',
   './index.html',
   './manifest.json',
-  './css/style.css',
-  './css/themes.css',
-  './css/responsive.css',
-  './css/ios-duo.css',
-  './css/dialogues.css',
+  './css/style.css?v=7',
+  './css/themes.css?v=7',
+  './css/responsive.css?v=7',
+  './css/ios-duo.css?v=7',
+  './css/dialogues.css?v=7',
+  './css/redesign.css?v=7',
   './js/app.js',
   './js/book-dialogues.js',
   './js/dialogues.js',
